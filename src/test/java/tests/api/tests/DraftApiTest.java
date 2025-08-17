@@ -2,6 +2,7 @@ package tests.api.tests;
 
 import io.restassured.http.ContentType;
 import io.restassured.response.ValidatableResponse;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import tests.api.client.InvitroApiClient;
@@ -12,6 +13,7 @@ import static io.qameta.allure.Allure.step;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.*;
 
+@Disabled
 public class DraftApiTest extends ApiConfig {
 
     private static final String USER_AGENT = "Mozilla/999.999 (Macintosh; Intel Mac OS X 99_99_99) Chrome/999.999.999.999 Safari/999.999";

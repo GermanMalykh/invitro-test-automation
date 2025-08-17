@@ -5,6 +5,7 @@ import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.ValidatableResponse;
 import tests.api.constants.Endpoints;
+import tests.api.constants.ApiConfigConstants;
 import tests.api.specs.RestSpec;
 
 import java.util.HashMap;
@@ -12,7 +13,7 @@ import java.util.Map;
 
 public class InvitroApiClient {
 
-    private static final String USER_AGENT = "Mozilla/999.999 (Macintosh; Intel Mac OS X 99_99_99) Chrome/999.999.999.999 Safari/999.999";
+    private static final String USER_AGENT = ApiConfigConstants.USER_AGENT.getValue();
 
     @Description("GET /site/api/unauth/results - Получение результатов анализов")
     public ValidatableResponse getResultsInfo(String birthDate,
