@@ -1,12 +1,14 @@
 package tests.api.constants;
 
-import net.datafaker.Faker;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
 
-import java.util.Locale;
+@Getter
+@AllArgsConstructor
+public enum TestData {
+    INVALID_BIRTHDAY("17-08-2025"),
+    INVALID_INZ("validationTest"),
+    INVALID_LAST_NAME("Имя");
 
-public class TestData {
-    Faker faker = new Faker(Locale.forLanguageTag("ru"));
-    public String lastName = faker.name().lastName();
-    public String birthDate = faker.timeAndDate().birthday(18, 65, "yyyy-MM-dd");
-    public String inz = faker.numerify("#########");
+    private final String value;
 }
