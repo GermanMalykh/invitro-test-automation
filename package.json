@@ -1,0 +1,36 @@
+{
+  "name": "invitro-test-automation",
+  "version": "1.0.0",
+  "description": "Автоматизированное тестирование для Invitro",
+  "scripts": {
+    "allure:classic": "allure classic build/allure-results --single-file --output build/allure-classic-report",
+    "allure:awesome": "allure awesome build/allure-results --single-file --output build/allure-awesome-report",
+    "allure:log": "mkdir -p build/allure-log && allure log build/allure-results > build/allure-log/console.log",
+    "allure:log:view": "cat build/allure-log/console.log",
+    "allure:log:tail": "tail -f build/allure-log/console.log",
+    "allure:log:live": "npm run allure:log && npm run allure:log:view",
+    "log:now": "npx allure log build/allure-results",
+    "log:live": "npx allure log build/allure-results",
+    "test:log": "gradle test && npm run log:now",
+    "log:watch": "watch 'npm run log:now' 5",
+    "allure:serve": "allure serve build/allure-results",
+    "test:allure": "gradle test && npm run allure:classic",
+    "allure:all": "npm run allure:classic && npm run allure:awesome && npm run allure:log",
+    "allure:classic:open": "npm run allure:classic && open build/allure-classic-report/index.html",
+    "allure:awesome:open": "npm run allure:awesome && open build/allure-awesome-report/index.html",
+    "allure:serve:classic": "npm run allure:classic && allure serve build/allure-results",
+    "allure:serve:awesome": "npm run allure:awesome && allure serve build/allure-results"
+  },
+  "devDependencies": {
+    "allure": "^3.0.0-beta.17"
+  },
+  "keywords": [
+    "testing",
+    "automation",
+    "allure",
+    "selenide",
+    "junit5"
+  ],
+  "author": "Invitro Test Team",
+  "license": "MIT"
+}
