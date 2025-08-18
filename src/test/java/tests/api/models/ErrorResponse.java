@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
 @Data
-public class ResultsResponse {
+public class ErrorResponse {
 
     @JsonProperty("status")
     private Integer status;

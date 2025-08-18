@@ -33,4 +33,21 @@ public class InvitroApiClient {
                 .then()
                 .spec(RestSpec.responseSpecification);
     }
+
+    @Description("GET /site/api/products - Получение информации о позиции")
+    public ValidatableResponse getProductsInfo(String articles,
+                                               String cityId) {
+        Map<String, String> headers = new HashMap<>();
+        headers.put("User-Agent", USER_AGENT);
+        Map<String, String> params = new HashMap<>();
+        params.put("cityId", cityId);
+        if (articles != null) params.put("articles", articles);
+        return RestAssured.given(RestSpec.requestSpecification)
+                .contentType(ContentType.JSON)
+                .headers(headers)
+                .queryParams(params)
+                .get(Endpoints.PRODUCTS_PATH)
+                .then()
+                .spec(RestSpec.responseSpecification);
+    }
 }

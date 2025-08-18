@@ -4,9 +4,12 @@ import io.qameta.allure.Description;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import io.qameta.allure.Story;
 import io.restassured.response.ValidatableResponse;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
@@ -15,7 +18,7 @@ import tests.api.config.ApiConfig;
 import tests.api.constants.ErrorMessages;
 import tests.api.constants.Errors;
 import tests.api.constants.FakerTestData;
-import tests.api.models.ResultsResponse;
+import tests.api.models.ErrorResponse;
 
 import static io.qameta.allure.Allure.step;
 import static org.assertj.core.api.Assertions.assertThat;
@@ -29,6 +32,7 @@ import static tests.api.constants.TestData.INVALID_LAST_NAME;
 @Owner("germanmalykh")
 @DisplayName("API тестирование: Получение результатов анализов (неавторизованный доступ)")
 public class UnauthResultsApiTest extends ApiConfig {
+
     protected ValidatableResponse response;
     private final static InvitroApiClient apiClient = new InvitroApiClient();
     private final static FakerTestData fakerTestData = new FakerTestData();
@@ -37,6 +41,7 @@ public class UnauthResultsApiTest extends ApiConfig {
     @DisplayName("Получение результатов анализов по данным пациента, которого нет в системе")
     @Story("Patient Data Validation")
     @Description("Проверяем, что API корректно обрабатывает запросы с данными несуществующего пациента")
+    @Severity(SeverityLevel.CRITICAL)
     void testLabResultsNotFoundPatientData() {
         step("Получаем результаты анализов", () -> {
             response = apiClient.getResultsInfo(
@@ -48,14 +53,14 @@ public class UnauthResultsApiTest extends ApiConfig {
             response.statusCode(409);
         });
         step("Проверяем, что ответ содержит ошибку конфликта проверки данных", () -> {
-            ResultsResponse resultsResponse = response.extract().as(ResultsResponse.class);
-            assertThat(resultsResponse.getError())
+            ErrorResponse errorResponse = response.extract().as(ErrorResponse.class);
+            assertThat(errorResponse.getError())
                 .as("Тип ошибки должен быть " + Errors.CONFLICT.getValue() + " для отсутствующего пациента")
                 .isEqualTo(Errors.CONFLICT.getValue());
-            assertThat(resultsResponse.getMessage())
+            assertThat(errorResponse.getMessage())
                 .as("Сообщение об ошибке должно быть: " + ErrorMessages.EMPTY_MESSAGE.getValue())
                 .isEqualTo(ErrorMessages.EMPTY_MESSAGE.getValue());
-            assertThat(resultsResponse.getAttempts())
+            assertThat(errorResponse.getAttempts())
                 .as("Количество попыток должно быть равно лимиту: " + MAX_LIMIT_ATTEMPTS.getValue())
                 .isEqualTo(MAX_LIMIT_ATTEMPTS.getValue());
         });
@@ -65,6 +70,7 @@ public class UnauthResultsApiTest extends ApiConfig {
     @DisplayName("Блокировка проверки результатов при частых запросах")
     @Story("Rate Limiting")
     @Description("Проверяем, что API корректно ограничивает количество запросов и блокирует пользователя при превышении лимита")
+    @Severity(SeverityLevel.CRITICAL)
     void testLabResultsRateLimitExceeded() {
         String birthDate = fakerTestData.birthDate;
         String inz = fakerTestData.inz;
@@ -79,14 +85,14 @@ public class UnauthResultsApiTest extends ApiConfig {
                     .statusCode(429);
         });
         step("Проверяем, что ответ содержит ошибку множественных запросов при проверки данных", () -> {
-            ResultsResponse resultsResponse = response.extract().as(ResultsResponse.class);
-            assertThat(resultsResponse.getError())
+            ErrorResponse errorResponse = response.extract().as(ErrorResponse.class);
+            assertThat(errorResponse.getError())
                 .as("Тип ошибки должен быть " + Errors.EXCEEDED_REQUESTS.getValue() + " при превышении лимита")
                 .isEqualTo(Errors.EXCEEDED_REQUESTS.getValue());
-            assertThat(resultsResponse.getMessage())
+            assertThat(errorResponse.getMessage())
                 .as("Сообщение должно содержать: " + ErrorMessages.EXCEEDED_MESSAGE.getValue())
                 .isEqualTo(ErrorMessages.EXCEEDED_MESSAGE.getValue());
-            assertThat(resultsResponse.getAttempts())
+            assertThat(errorResponse.getAttempts())
                 .as("Количество попыток должно быть null при блокировке")
                 .isNull();
         });
@@ -97,6 +103,7 @@ public class UnauthResultsApiTest extends ApiConfig {
     @ValueSource(strings = {"birthDate", "inz", "lastName"})
     @Story("Input Validation")
     @Description("Проверяем, что API корректно валидирует null значения для всех обязательных параметров")
+    @Severity(SeverityLevel.NORMAL)
     void testNullParametersValidation(String nullParameter) {
         step("Получаем результаты анализов с null параметром '" + nullParameter + "'", () -> {
             response = apiClient.getResultsInfo(
@@ -109,11 +116,11 @@ public class UnauthResultsApiTest extends ApiConfig {
             response.statusCode(400);
         });
         step("Тело ответа содержит информацию об ошибке валидации", () -> {
-            ResultsResponse resultsResponse = response.extract().as(ResultsResponse.class);
-            assertThat(resultsResponse.getError())
+            ErrorResponse errorResponse = response.extract().as(ErrorResponse.class);
+            assertThat(errorResponse.getError())
                 .as("Тип ошибки должен быть " + Errors.BAD_REQUEST.getValue() + " для null параметров")
                 .isEqualTo(Errors.BAD_REQUEST.getValue());
-            assertThat(resultsResponse.getMessage())
+            assertThat(errorResponse.getMessage())
                 .as("Сообщение должно содержать информацию о валидации: " + ErrorMessages.BAD_REQUEST_MESSAGE.getValue())
                 .isEqualTo(ErrorMessages.BAD_REQUEST_MESSAGE.getValue());
         });
@@ -124,6 +131,8 @@ public class UnauthResultsApiTest extends ApiConfig {
     @ValueSource(strings = {"birthDate", "inz", "lastName"})
     @Story("Data Format Validation")
     @Description("Проверяем, что API корректно обрабатывает невалидные форматы данных для всех параметров")
+    @Tag("server-bug")
+    @Severity(SeverityLevel.MINOR)
     void testInvalidDataFormats(String invalidParameter) {
         step("Получаем результаты анализов с невалидным параметром '" + invalidParameter + "'", () -> {
             response = apiClient.getResultsInfo(
@@ -133,23 +142,23 @@ public class UnauthResultsApiTest extends ApiConfig {
             );
         });
         step("Проверяем тело ответа для параметра '" + invalidParameter + "'", () -> {
-            ResultsResponse resultsResponse = response.extract().as(ResultsResponse.class);
+            ErrorResponse errorResponse = response.extract().as(ErrorResponse.class);
             if ("birthDate".equals(invalidParameter)) {
                 response.statusCode(400);
-                assertThat(resultsResponse.getError())
+                assertThat(errorResponse.getError())
                     .as("Для невалидной даты ошибка должна быть " + Errors.BAD_REQUEST.getValue())
                     .isEqualTo(Errors.BAD_REQUEST.getValue());
             } else if ("inz".equals(invalidParameter)) {
                 response.statusCode(500);
-                assertThat(resultsResponse.getError())
+                assertThat(errorResponse.getError())
                     .as("Для невалидного ИНЗ ошибка должна быть " + Errors.INTERNAL_ERROR.getValue())
                     .isEqualTo(Errors.INTERNAL_ERROR.getValue());
             } else if ("lastName".equals(invalidParameter)) {
                 response.statusCode(409);
-                assertThat(resultsResponse.getError())
+                assertThat(errorResponse.getError())
                     .as("Для невалидной фамилии ошибка должна быть " + Errors.CONFLICT.getValue())
                     .isEqualTo(Errors.CONFLICT.getValue());
-                assertThat(resultsResponse.getAttempts())
+                assertThat(errorResponse.getAttempts())
                     .as("Количество попыток должно быть равно лимиту для конфликта: " + MAX_LIMIT_ATTEMPTS.getValue())
                     .isEqualTo(MAX_LIMIT_ATTEMPTS.getValue());
             }
@@ -161,7 +170,8 @@ public class UnauthResultsApiTest extends ApiConfig {
     @ValueSource(strings = {"birthDate", "inz", "lastName"})
     @Story("Security Testing")
     @Description("Проверяем, что API корректно блокирует попытки SQL-инъекций")
-    void testApiSecuritySqlInjection(String sqlParameter) {
+    @Severity(SeverityLevel.BLOCKER)
+    void testUnauthResultsSecurity(String sqlParameter) {
         step("Проверяем безопасность параметра '" + sqlParameter + "' от SQL-инъекций", () -> {
             response = apiClient.getResultsInfo(
                     "birthDate".equals(sqlParameter) ? fakerTestData.birthDate + "' OR '1'='1" : fakerTestData.birthDate,
