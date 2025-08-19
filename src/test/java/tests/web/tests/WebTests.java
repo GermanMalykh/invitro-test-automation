@@ -8,7 +8,7 @@ import static com.codeborne.selenide.Selenide.sleep;
 public class WebTests {
 
     @Test
-    void webTest(){
+    void webTest() {
         open("https://invitro.ru/");
         sleep(60_0000);
     }

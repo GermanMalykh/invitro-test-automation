@@ -8,7 +8,8 @@ import lombok.Getter;
 public enum TestData {
     INVALID_BIRTHDAY("17-08-2025"),
     INVALID_INZ("validationTest"),
-    INVALID_LAST_NAME("Имя");
+    INVALID_LAST_NAME("Имя"),
+    INVALID_GUID("invalid-guid-format");
 
     private final String value;
 }

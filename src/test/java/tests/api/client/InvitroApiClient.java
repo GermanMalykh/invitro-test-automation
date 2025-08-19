@@ -50,4 +50,43 @@ public class InvitroApiClient {
                 .then()
                 .spec(RestSpec.responseSpecification);
     }
+
+    @Description("GET /site/api/cities - Получение списка всех городов")
+    public ValidatableResponse getAllCities() {
+        Map<String, String> headers = new HashMap<>();
+        headers.put("User-Agent", USER_AGENT);
+        return RestAssured.given(RestSpec.requestSpecification)
+                .contentType(ContentType.JSON)
+                .headers(headers)
+                .get(Endpoints.ALL_CITIES_PATH)
+                .then()
+                .spec(RestSpec.responseSpecification);
+    }
+
+    @Description("GET /site/api/cities/cityId - Получение информации о городе")
+    public ValidatableResponse getCityInfo(String cityId) {
+        Map<String, String> headers = new HashMap<>();
+        headers.put("User-Agent", USER_AGENT);
+        return RestAssured.given(RestSpec.requestSpecification)
+                .contentType(ContentType.JSON)
+                .headers(headers)
+                .get(String.format(Endpoints.SINGLE_CITIES_PATH, cityId))
+                .then()
+                .spec(RestSpec.responseSpecification);
+    }
+
+    @Description("GET /site/api/cart/offices - Получение об офисе")
+    public ValidatableResponse getOfficeInfo(String cityId) {
+        Map<String, String> headers = new HashMap<>();
+        headers.put("User-Agent", USER_AGENT);
+        Map<String, String> params = new HashMap<>();
+        params.put("cityId", cityId);
+        return RestAssured.given(RestSpec.requestSpecification)
+                .contentType(ContentType.JSON)
+                .headers(headers)
+                .queryParams(params)
+                .get(Endpoints.OFFICES_PATH)
+                .then()
+                .spec(RestSpec.responseSpecification);
+    }
 }

@@ -17,16 +17,12 @@ public class Endpoints {
     /**
      * Cities Endpoint
      */
-    public static final String CITIES_PATH = SITE_API_PATH + "cities";
+    public static final String SINGLE_CITIES_PATH = SITE_API_PATH + "cities/%s";
+    public static final String ALL_CITIES_PATH = SITE_API_PATH + "cities";
 
     /**
      * Office Endpoint
      */
     public static final String OFFICES_PATH = SITE_API_PATH + "cart/offices";
-
-    /**
-     * Login Endpoint
-     */
-    public static final String LOGIN_PATH = SITE_API_PATH + "login-confirmation/send-login-code";
 
 }
