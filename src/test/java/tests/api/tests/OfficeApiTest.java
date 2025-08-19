@@ -59,7 +59,6 @@ public class OfficeApiTest extends ApiConfig {
         });
     }
 
-
     @Test
     @Tag("server-bug")
     @Severity(SeverityLevel.NORMAL)
