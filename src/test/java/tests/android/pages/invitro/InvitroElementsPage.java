@@ -12,11 +12,11 @@ import static io.appium.java_client.AppiumBy.id;
 
 public class InvitroElementsPage {
 
-    public final static String INVITRO_ID = "com.invitro.app:id/";
-    private final static SelenideElement LOADER_ELEMENT = $(id(INVITRO_ID + "loader")),
-            TOOLBAR_CLOSE_BUTTON = $(id(INVITRO_ID + "toolbar"))
-                    .$(id(INVITRO_ID + "backImageView")),
-            CITY_LIST = $(id(INVITRO_ID + "city_list"));
+    public final String INVITRO_ID = "com.invitro.app:id/";
+    private final SelenideElement LOADER_ELEMENT = $(id(INVITRO_ID + "loader"));
+    private final SelenideElement TOOLBAR_CLOSE_BUTTON = $(id(INVITRO_ID + "toolbar"))
+                                                            .$(id(INVITRO_ID + "backImageView"));
+    private final SelenideElement CITY_LIST = $(id(INVITRO_ID + "city_list"));
 
 
     public InvitroElementsPage waitForLoaderToDisappear() {
