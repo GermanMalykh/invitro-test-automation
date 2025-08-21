@@ -1,0 +1,14 @@
+{
+  "currency": "RUB",
+  "cityId": "9e4c02c6-274b-41e9-80bb-7f5d3359a463",
+  "products": [
+    {
+      "article": "ОБС158",
+      "price": "2220"
+    },
+    {
+      "article": "VEN",
+      "price": "145"
+    }
+  ]
+}

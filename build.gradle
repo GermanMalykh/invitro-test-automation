@@ -17,7 +17,7 @@ java {
 }
 
 def junit5Version = '5.13.4'
-def selenideVersion = '7.9.4'
+def selenideVersion = '7.10.0'
 def slf4jVersion = '2.0.17'
 def allureVersion = '2.29.0'
 def assertjVersion = '3.27.4'
