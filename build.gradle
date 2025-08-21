@@ -77,3 +77,9 @@ tasks.register('api', Test) {
         includeTags("api")
     }
 }
+
+tasks.register('web', Test) {
+    useJUnitPlatform {
+        includeTags("web")
+    }
+}
