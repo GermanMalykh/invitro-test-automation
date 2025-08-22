@@ -20,7 +20,7 @@ import static tests.web.constants.ProductConstants.PRODUCT_TITLE;
 @Tag("web")
 @Owner("germanmalykh")
 @DisplayName("[Web] Main Flow Tests")
-public class MainFlowTests extends WebConfig {
+public class MainFlowWebTests extends WebConfig {
 
     MainPage desktop = new MainPage();
     CookieBannerPage banner = new CookieBannerPage();

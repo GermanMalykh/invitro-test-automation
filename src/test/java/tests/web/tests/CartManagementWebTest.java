@@ -21,7 +21,7 @@ import static tests.web.constants.CommonData.CART_URL;
 @Tag("web")
 @Owner("germanmalykh")
 @DisplayName("[Web] Cart Management Tests")
-public class CartManagementTest extends WebConfig {
+public class CartManagementWebTest extends WebConfig {
 
     MainPage desktop = new MainPage();
     CookieManagerPage cookie = new CookieManagerPage();
