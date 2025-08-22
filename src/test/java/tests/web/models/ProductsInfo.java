@@ -6,13 +6,13 @@ import lombok.Data;
 @Data
 public class ProductsInfo {
 
-    @JsonProperty("ven_title")
-    private String ven_title;
+    @JsonProperty("venTitle")
+    private String venTitle;
 
-    @JsonProperty("obs158_title")
-    private String obs158_title;
+    @JsonProperty("obs158Title")
+    private String obs158Title;
 
-    @JsonProperty("citesInfo")
-    private CitiesInfo[] citesInfo;
+    @JsonProperty("citiesInfo")
+    private CitiesInfo[] citiesInfo;
 
 }

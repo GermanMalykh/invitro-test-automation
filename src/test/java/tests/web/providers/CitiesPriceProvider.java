@@ -13,7 +13,7 @@ public class CitiesPriceProvider {
     public static Stream<Arguments> provideCitiesData() {
         ProductsInfo productInfo = JsonConverter.deserialize(FilePathConstants.PRICE_BY_CITY_JSON, ProductsInfo.class);
 
-        return Arrays.stream(productInfo.getCitesInfo())
+        return Arrays.stream(productInfo.getCitiesInfo())
                 .map(city -> Arguments.of(city, productInfo));
     }
 }

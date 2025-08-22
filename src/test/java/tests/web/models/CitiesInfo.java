@@ -12,11 +12,11 @@ public class CitiesInfo {
     @JsonProperty("id")
     private String id;
 
-    @JsonProperty("ven_price")
-    private String ven_price;
+    @JsonProperty("venPrice")
+    private String venPrice;
 
-    @JsonProperty("obs158_price")
-    private String obs158_price;
+    @JsonProperty("obs158Price")
+    private String obs158Price;
 
     @Override
     public String toString() {

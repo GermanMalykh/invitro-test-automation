@@ -17,7 +17,6 @@ import static com.codeborne.selenide.Selectors.byTitle;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 import static com.codeborne.selenide.Selenide.open;
-import static com.codeborne.selenide.Selenide.sleep;
 
 public class MainPage {
 
@@ -74,7 +73,6 @@ public class MainPage {
         SelenideElement addToCartButton = $$(byTitle(NavigationConstants.CART_TITLE)).last();
         addToCartButton.shouldBe(visible, Duration.ofSeconds(5));
         addToCartButton.scrollIntoCenter();
-        sleep(500);
         addToCartButton.doubleClick();
         return this;
     }

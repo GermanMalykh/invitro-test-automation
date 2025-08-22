@@ -92,11 +92,11 @@ public class CartManagementTest extends WebConfig {
         });
     }
 
-    @ParameterizedTest(name = "{0}")
-    @MethodSource("tests.web.providers.CitiesPriceProvider#provideCitiesData")
     @Severity(SeverityLevel.CRITICAL)
     @DisplayName("[Web] Проверка цен в корзине для города:")
+    @ParameterizedTest(name = "{0}")
     @Description("Тест проверяет корректность отображения цен на продукты в корзине для различных городов")
+    @MethodSource("tests.web.providers.CitiesPriceProvider#provideCitiesData")
     void testPricesByCityInCart(CitiesInfo city, ProductsInfo productsInfo) {
         step("Подготавливаем исходные данные для корзины и города: " + city.getName(), () -> {
             cookie.setCartProducts()
@@ -106,8 +106,8 @@ public class CartManagementTest extends WebConfig {
             desktop.openPage(CART_URL);
         });
         step("Проверяем цены на продукты", () -> {
-            desktop.checkProductInCart(productsInfo.getVen_title(), city.getVen_price())
-                    .checkProductInCart(productsInfo.getObs158_title(), city.getObs158_price());
+            desktop.checkProductInCart(productsInfo.getVenTitle(), city.getVenPrice())
+                    .checkProductInCart(productsInfo.getObs158Title(), city.getObs158Price());
         });
     }
 

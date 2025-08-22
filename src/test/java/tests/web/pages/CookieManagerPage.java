@@ -13,7 +13,7 @@ public class CookieManagerPage {
 
     public static ElementsCollection CART_ITEMS = $$(".analyzes-item");
 
-    private final String PRE_CONFIG_URL = "https://lk3.invitro.ru/assets/edna-banner-close.svg";
+    private static final String PRE_CONFIG_URL = "https://lk3.invitro.ru/assets/edna-banner-close.svg";
 
     @Step("Добавляем куку c данными о продуктах")
     public CookieManagerPage setCartProducts() {

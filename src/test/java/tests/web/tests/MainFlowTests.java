@@ -25,7 +25,7 @@ public class MainFlowTests extends WebConfig {
     MainPage desktop = new MainPage();
     CookieBannerPage banner = new CookieBannerPage();
 
-    private final String[] productPrice = new String[1];
+    private String productPrice;
 
     @Test
     @Severity(SeverityLevel.CRITICAL)
@@ -45,7 +45,7 @@ public class MainFlowTests extends WebConfig {
             desktop.goToPage(PAGE_NUMBER_2);
         });
         step("Получаем цену продукта из корзины", () -> {
-            productPrice[0] = CookieManagerPage.CART_ITEMS
+            productPrice = CookieManagerPage.CART_ITEMS
                     .filterBy(Condition.text(PRODUCT_TITLE))
                     .first()
                     .$(".analyzes-item__total--sum")
@@ -54,7 +54,7 @@ public class MainFlowTests extends WebConfig {
         step("Находим продукт на странице и добавляем его в корзину", () -> {
             desktop.findProductOnPage(PRODUCT_TITLE);
             desktop.addProductToCart()
-                    .checkProductInCart(PRODUCT_TITLE, productPrice[0]);
+                    .checkProductInCart(PRODUCT_TITLE, productPrice);
         });
     }
 }
