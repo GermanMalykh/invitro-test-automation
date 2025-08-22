@@ -1,6 +1,9 @@
 package tests.web.tests;
 
 import com.codeborne.selenide.Condition;
+import io.qameta.allure.Owner;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import tests.web.configs.WebConfig;
 import tests.web.pages.BannersPage;
@@ -13,6 +16,9 @@ import static tests.web.constants.TestData.PRODUCT_CATEGORY;
 import static tests.web.constants.TestData.PRODUCT_TITLE;
 import static tests.web.constants.TestData.SIDEBAR_MENU_CATEGORY;
 
+@Tag("web")
+@Owner("germanmalykh")
+@DisplayName("E2E Web Tests")
 public class MainWebTest extends WebConfig {
 
     DesktopMainPage desktop = new DesktopMainPage();

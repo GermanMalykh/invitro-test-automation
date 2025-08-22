@@ -7,6 +7,7 @@ import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Assumptions;
 import tests.android.drivers.LocalMobileDriver;
 
 
@@ -20,6 +21,19 @@ public class PreRunConfig {
 
     @BeforeAll
     public static void setup() throws Exception {
+        // Проверяем, что это действительно Android тест
+        String testType = System.getProperty("test.type");
+        
+        // Android тесты должны запускаться только в android или all режиме
+        // НЕ должны запускаться в web режиме
+        if ("web".equals(testType)) {
+            throw new RuntimeException("Android тесты не могут запускаться в Web окружении. " +
+                "Используйте ./gradlew android для запуска только Android тестов или ./gradlew allTests для всех тестов.");
+        }
+        
+        Assumptions.assumeTrue("android".equals(testType) || "all".equals(testType) || testType == null, 
+            "Этот тест должен запускаться только для Android тестов или всех тестов");
+        
         switch (env) {
 //            case "remote":
 //                Configuration.browser = RemoteMobileDriver.class.getName();

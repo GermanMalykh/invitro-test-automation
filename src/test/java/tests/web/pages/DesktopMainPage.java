@@ -21,7 +21,8 @@ import static com.codeborne.selenide.Selenide.sleep;
 public class DesktopMainPage {
 
     SelenideElement HEADER_MAIN_MENU_TITLE = $(".invitro_header-menu_main-item");
-    ElementsCollection CART_ITEMS = $$("li [class*='CartProduct_product__']");
+    ElementsCollection CART_ITEMS = $$("li [class*='CartProduct_product__']"),
+            BUTTONS = $$("[class*='Button_button']");
 
     @Step("Открываем главную страницу")
     public DesktopMainPage openMainPage() {
@@ -88,4 +89,19 @@ public class DesktopMainPage {
         $("h1").shouldHave(Condition.text(title));
         return this;
     }
+
+    @Step("Проверяем, что заголовок содержит \"{title}\"")
+    public DesktopMainPage propertyCheckH2(String title) {
+        $("h2").shouldHave(Condition.text(title));
+        return this;
+    }
+
+    @Step("Проверяем, что кнопка \"{buttonText}\" в состоянии \"{condition}\"")
+    public DesktopMainPage buttonCondition(String buttonText, String condition) {
+        BUTTONS.findBy(Condition.exactText(buttonText))
+                .shouldHave(Condition.attribute(condition));
+        return this;
+    }
+
+
 }

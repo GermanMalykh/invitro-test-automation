@@ -1,6 +1,5 @@
 package tests.web.tests;
 
-import com.codeborne.selenide.Condition;
 import io.qameta.allure.Owner;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
@@ -14,13 +13,6 @@ import tests.web.models.ProductsInfo;
 import tests.web.pages.CookiePage;
 import tests.web.pages.DesktopMainPage;
 
-import java.io.IOException;
-
-import static com.codeborne.selenide.Condition.visible;
-import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.$$;
-import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
 import static tests.web.constants.TestData.CART_URL;
 
@@ -48,27 +40,46 @@ public class CartWebTest extends WebConfig {
     }
 
     @Test
-    void testChoosingOfficeInCart() throws IOException {
-        cookie.setProducts();
-        open("https://lk3.invitro.ru/cart");
-        $(byText("В ИНВИТРО")).click();
-        $(byText("Выбрать медицинский офис")).click();
-        $(byText("Севастополь, ул. Адмирала Октябрьского, д. 8")).shouldBe(visible).click();
-        $(byText("Выбрать офис")).click();
-        $(byText("Оформить заказ")).click();
-        $("h1").shouldHave(Condition.text("Оформление заказа"));
+    void testChoosingOfficeInCart() {
+        step("Подготавливаем исходные данные для корзины", () -> {
+            cookie.setProducts();
+        });
+        step("Переходим в корзину", () -> {
+            desktop.openDesiredPage(TestData.CART_URL);
+        });
+        step("Выбираем офис для сдачи анализов", () -> {
+            desktop.selectElement(TestData.INVITRO_OFFICE_TITLE)
+                    .selectElement(TestData.CHOOSING_MEDICAL_OFFICE_TITLE)
+                    .selectElement(TestData.OFFICE_ADDRESS)
+                    .selectElement(TestData.CHOOSING_OFFICE_TITLE)
+                    .selectElement(TestData.ORDER_TITLE);
+        });
+        step("Проверяем, что мы находится на странице оплаты заказа", () -> {
+            desktop.propertyCheckH1(TestData.ORDERING_TITLE);
+        });
     }
 
     @Test
-    void testChoosingHomeOrderInCart() throws IOException {
-        cookie.setProducts();
-        open("https://lk3.invitro.ru/cart");
-        $(byText("Выезд на дом")).click();
-        $("h2").shouldHave(Condition.text("Войдите или зарегистрируйтесь, чтобы оформить заказ"));
-        $$("[class*='Button_button']")
-                .findBy(Condition.exactText("Оформить заказ"))
-                .shouldHave(Condition.attribute("disabled"));
-        desktop.checkProductInCart("Выезд процедурной бригады", "400 ₽");
+    void testChoosingHomeOrderInCart() {
+        step("Подготавливаем исходные данные для корзины", () -> {
+            cookie.setProducts()
+                    .setCity(TestData.SEVASTOPOL_CITY_ID);
+        });
+        step("Переходим в корзину", () -> {
+            desktop.openDesiredPage(TestData.CART_URL);
+        });
+        step("Выбираем выезд на дом для сдачи анализов", () -> {
+            desktop.selectElement(TestData.HOME_ORDER_TITLE);
+        });
+        step("Проверяем, что на странице отображаются элементы для вызова специалистов на дом", () -> {
+            desktop.propertyCheckH2(TestData.UNAUTH_USER_INFO_ORDERING_TITLE)
+                    .buttonCondition(TestData.ORDER_TITLE, TestData.DISABLED);
+            step("Проверяем цену на вызов бригады", () -> {
+                desktop.checkProductInCart(
+                        TestData.MEDICAL_TEAM_ORDER_TITLE,
+                        TestData.SEVASTOPOL_MEDICAL_TEAM_PRICE_TITLE);
+            });
+        });
     }
 
     @ParameterizedTest(name = "{0}")
