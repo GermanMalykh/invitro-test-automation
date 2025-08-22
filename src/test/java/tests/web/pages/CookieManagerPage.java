@@ -11,9 +11,10 @@ import static com.codeborne.selenide.Selenide.executeJavaScript;
 
 public class CookieManagerPage {
 
-    public static ElementsCollection CART_ITEMS = $$(".analyzes-item");
-
+    private static final String CART_ITEMS_SELECTOR = ".analyzes-item";
     private static final String PRE_CONFIG_URL = "https://lk3.invitro.ru/assets/edna-banner-close.svg";
+
+    public static ElementsCollection CART_ITEMS = $$(CART_ITEMS_SELECTOR);
 
     @Step("Добавляем куку c данными о продуктах")
     public CookieManagerPage setCartProducts() {

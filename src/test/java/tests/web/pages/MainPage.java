@@ -20,9 +20,18 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class MainPage {
 
-    SelenideElement HEADER_MENU = $(".invitro_header-menu_main-item");
-    ElementsCollection CART_ITEMS = $$("li [class*='CartProduct_product__']"),
-            BUTTONS = $$("[class*='Button_button']");
+    private static final int DEFAULT_TIMEOUT_SECONDS = 10;
+    private static final int SHORT_TIMEOUT_SECONDS = 5;
+    private static final String PAGINATION_SELECTOR = ".catalog_pagination__elem--num[data-num='%s']";
+    private static final String PRODUCT_PRICE_SELECTOR = "[class*='CartProduct_productPrice']";
+    private static final String ACTIVE_PRODUCT_CARD_SELECTOR = ".item_card--active";
+    private static final String HEADER_MENU_SELECTOR = ".invitro_header-menu_main-item";
+    private static final String CART_ITEMS_SELECTOR = "li [class*='CartProduct_product__']";
+    private static final String BUTTONS_SELECTOR = "[class*='Button_button']";
+
+    SelenideElement HEADER_MENU = $(HEADER_MENU_SELECTOR);
+    ElementsCollection CART_ITEMS = $$(CART_ITEMS_SELECTOR),
+            BUTTONS = $$(BUTTONS_SELECTOR);
 
     @Step("Открываем главную страницу")
     public MainPage openMainPage() {
@@ -39,22 +48,22 @@ public class MainPage {
     @Step("Выбираем категорию в главном меню: \"{category}\"")
     public MainPage selectMainMenuCategory(String category) {
         HEADER_MENU.$(byText(category))
-                .shouldBe(visible, Duration.ofSeconds(10)).click();
+                .shouldBe(visible, Duration.ofSeconds(DEFAULT_TIMEOUT_SECONDS)).click();
         return this;
     }
 
     @Step("Кликаем на элемент с текстом \"{text}\"")
     public MainPage clickElement(String text) {
         $(byText(text))
-                .shouldBe(visible, Duration.ofSeconds(5))
+                .shouldBe(visible, Duration.ofSeconds(SHORT_TIMEOUT_SECONDS))
                 .click();
         return this;
     }
 
     @Step("Переходим на страницу номер \"{pageNumber}\"")
     public MainPage goToPage(String pageNumber) {
-        SelenideElement paginationElement = $(".catalog_pagination__elem--num[data-num='" + pageNumber + "']")
-                .shouldBe(visible, Duration.ofSeconds(10));
+        SelenideElement paginationElement = $(String.format(PAGINATION_SELECTOR, pageNumber))
+                .shouldBe(visible, Duration.ofSeconds(DEFAULT_TIMEOUT_SECONDS));
         paginationElement.scrollIntoCenter();
         paginationElement.click();
         return this;
@@ -62,8 +71,8 @@ public class MainPage {
 
     @Step("Находим продукт на странице: \"{productTitle}\"")
     public MainPage findProductOnPage(String productTitle) {
-        SelenideElement productCard = $$(".item_card--active").filterBy(text(productTitle)).first();
-        productCard.shouldBe(visible, Duration.ofSeconds(10));
+        SelenideElement productCard = $$(ACTIVE_PRODUCT_CARD_SELECTOR).filterBy(text(productTitle)).first();
+        productCard.shouldBe(visible, Duration.ofSeconds(DEFAULT_TIMEOUT_SECONDS));
         productCard.scrollIntoCenter();
         return this;
     }
@@ -71,7 +80,7 @@ public class MainPage {
     @Step("Добавляем продукт в корзину")
     public MainPage addProductToCart() {
         SelenideElement addToCartButton = $$(byTitle(NavigationConstants.CART_TITLE)).last();
-        addToCartButton.shouldBe(visible, Duration.ofSeconds(5));
+        addToCartButton.shouldBe(visible, Duration.ofSeconds(SHORT_TIMEOUT_SECONDS));
         addToCartButton.scrollIntoCenter();
         addToCartButton.doubleClick();
         return this;
@@ -82,7 +91,7 @@ public class MainPage {
         ElementsCollection matchingItem = CART_ITEMS
                 .filterBy(Condition.text(productTitle))
                 .shouldHave(size(1));
-        matchingItem.first().$("[class*='CartProduct_productPrice']")
+        matchingItem.first().$(PRODUCT_PRICE_SELECTOR)
                 .shouldHave(Condition.text(expectedPrice));
         return this;
     }
