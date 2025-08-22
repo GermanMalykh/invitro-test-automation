@@ -1,10 +1,7 @@
 package tests.android.tests;
 
 import io.qameta.allure.Description;
-import io.qameta.allure.Epic;
-import io.qameta.allure.Feature;
 import io.qameta.allure.Owner;
-import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -15,9 +12,8 @@ import tests.android.pages.invitro.InvitroElementsPage;
 import static io.qameta.allure.Allure.step;
 
 @Tag("android")
-@Epic("Invitro Mobile App")
-@Feature("City Search")
-@Story("Search Functionality")
+@Owner("germanmalykh")
+@DisplayName("[Android] Base Android Tests")
 public class BasicTests extends PreRunConfig {
 
     String UNKNOWN_CITY = "unknown",
@@ -27,7 +23,7 @@ public class BasicTests extends PreRunConfig {
 
     @Test
     @Owner("germanmalykh")
-    @DisplayName("Проверка появления заглушки при поиске несуществующего города")
+    @DisplayName("[Android] Проверка появления заглушки при поиске несуществующего города")
     @Description("Тест проверяет корректное отображение заглушки " +
                 "'Город не найден' при поиске несуществующего города " +
                 "в приложении")

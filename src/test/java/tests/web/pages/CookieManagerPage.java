@@ -9,14 +9,14 @@ import static com.codeborne.selenide.Selenide.$$;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.executeJavaScript;
 
-public class CookiePage {
+public class CookieManagerPage {
 
     public static ElementsCollection CART_ITEMS = $$(".analyzes-item");
 
     private final String PRE_CONFIG_URL = "https://lk3.invitro.ru/assets/edna-banner-close.svg";
 
     @Step("Добавляем куку c данными о продуктах")
-    public CookiePage setProducts() {
+    public CookieManagerPage setCartProducts() {
         String encodedCart = JsonConverter.readCompactEncodedJson(FilePathConstants.CART_PRODUCT_JSON);
 
         open(PRE_CONFIG_URL);
@@ -34,7 +34,7 @@ public class CookiePage {
     }
 
     @Step("Добавляем куку с данными города")
-    public CookiePage setCity(String cityId) {
+    public CookieManagerPage setCityCookie(String cityId) {
         open(PRE_CONFIG_URL);
 
         String cityScript = String.format(

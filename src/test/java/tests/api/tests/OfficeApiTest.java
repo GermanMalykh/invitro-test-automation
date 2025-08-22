@@ -22,7 +22,7 @@ import org.junit.jupiter.api.DisplayName;
 
 @Tag("api")
 @Owner("germanmalykh")
-@DisplayName("Office API Tests")
+@DisplayName("[API] Office API Tests")
 public class OfficeApiTest extends ApiConfig {
 
     protected ValidatableResponse response;
