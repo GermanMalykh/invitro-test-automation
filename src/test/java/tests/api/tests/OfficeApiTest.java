@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 import tests.api.client.InvitroApiClient;
 import tests.api.config.ApiConfig;
 import tests.api.constants.Errors;
-import tests.api.constants.FakerTestData;
+import tests.constants.FakerConstants;
 import tests.api.constants.TestData;
 import tests.api.models.CityResponse;
 import tests.api.models.ErrorResponse;
@@ -31,7 +31,7 @@ public class OfficeApiTest extends ApiConfig {
     private final String[] cityIdHolder = new String[1];
 
     private final InvitroApiClient apiClient = new InvitroApiClient();
-    private final FakerTestData fakerTestData = new FakerTestData();
+    private final FakerConstants fakerConstants = new FakerConstants();
 
     @Test
     @Severity(SeverityLevel.CRITICAL)
@@ -66,8 +66,8 @@ public class OfficeApiTest extends ApiConfig {
     @Description("Тест обработки случайного GUID при поиске офиса")
     void testFindOfficeByRandomId() {
         step("Выполняем запрос на получение информации об офисе со случайным идентификатором города", () -> {
-            addAttachment("Случайный GUID", "text/plain", fakerTestData.guid);
-            response = apiClient.getOfficeInfo(fakerTestData.guid);
+            addAttachment("Случайный GUID", "text/plain", fakerConstants.guid);
+            response = apiClient.getOfficeInfo(fakerConstants.guid);
         });
         step("Проверяем, что статус код ответа: \"500\"", () -> {
             response.statusCode(500);

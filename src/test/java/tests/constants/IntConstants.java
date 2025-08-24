@@ -1,4 +1,4 @@
-package tests.api.constants;
+package tests.constants;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

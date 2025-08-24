@@ -14,6 +14,7 @@ import java.util.Map;
 public class InvitroApiClient {
 
     private static final String USER_AGENT = ApiConfigConstants.USER_AGENT.getValue();
+    private static final String USER_AGENT_MOBILE = ApiConfigConstants.USER_AGENT_MOBILE.getValue();
 
     @Description("GET /site/api/unauth/results - Получение результатов анализов")
     public ValidatableResponse getResultsInfo(String birthDate,
@@ -30,6 +31,26 @@ public class InvitroApiClient {
                 .headers(headers)
                 .queryParams(params)
                 .get(Endpoints.RESULTS_PATH)
+                .then()
+                .spec(RestSpec.responseSpecification);
+    }
+
+    @Description("GET /v3/unauth/results - Получение результатов анализов (Mobile)")
+    public ValidatableResponse getResultsInfoMobile(String birthDate,
+                                              String inz,
+                                              String lastName) {
+        RestAssured.baseURI= ApiConfigConstants.BASE_URL_MOBILE.getValue();
+        Map<String, String> headers = new HashMap<>();
+        headers.put("User-Agent", USER_AGENT_MOBILE);
+        Map<String, String> params = new HashMap<>();
+        params.put("birthDate", birthDate);
+        params.put("inz", inz);
+        params.put("lastName", lastName);
+        return RestAssured.given(RestSpec.requestSpecification)
+                .contentType(ContentType.JSON)
+                .headers(headers)
+                .queryParams(params)
+                .get(Endpoints.RESULTS_PATH_MOBILE)
                 .then()
                 .spec(RestSpec.responseSpecification);
     }
