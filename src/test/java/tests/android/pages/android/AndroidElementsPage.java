@@ -12,9 +12,9 @@ public class AndroidElementsPage {
     private final SelenideElement SEARCH_BAR_ELEMENT = $(id("android:id/search_src_text")),
             PERMISSION_DENY_BUTTON = $(id("com.android.permissioncontroller:id/permission_deny_button"));
 
-    @Step("Установка текста в поисковую строку: {text}")
-    public AndroidElementsPage setSearchingText(String text) {
-        SEARCH_BAR_ELEMENT.setValue(text);
+    @Step("Установка текста в поисковую строку")
+    public AndroidElementsPage setSearchText(String text) {
+        SEARCH_BAR_ELEMENT.type(text);
         return this;
     }
 

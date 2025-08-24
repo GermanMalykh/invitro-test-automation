@@ -18,39 +18,35 @@ import static tests.constants.IntConstants.MAX_LIMIT_ATTEMPTS;
 @DisplayName("[Android] Check Results Tests")
 public class CheckResultsTests extends PreRunConfig {
 
-    InvitroElementsPage invitro = new InvitroElementsPage();
-    AndroidElementsPage android = new AndroidElementsPage();
+    private final InvitroElementsPage invitro = new InvitroElementsPage();
+    private final AndroidElementsPage android = new AndroidElementsPage();
 
     private final FakerConstants fakerConstants = new FakerConstants();
 
-    String VOLGOGRAD = "Волгоград";
+    private static final String CITY_VOLGOGRAD = "Волгоград";
 
     @Test
     @DisplayName("[Android] Блокировка проверки результатов анализов при частых запросах")
     @Description("Проверяем, что UI ограничивает количество запросов и блокирует пользователя при превышении лимита")
     void testCheckResultsRateLimitExceeded() {
-        step("Ожидание исчезновения лоадера", () -> {
+        step("Подготовка приложения к работе", () -> {
             invitro.waitForLoaderToDisappear();
-        });
-        step("Закрытие тулбара по клику на крестик", () -> {
             invitro.closeToolbar();
         });
-        step("Выбор города Волгоград", () -> {
-            invitro.selectCity(VOLGOGRAD);
-        });
-        step("Отклонение разрешения на геолокацию", () -> {
+        step("Настройка города и разрешений", () -> {
+            invitro.selectCity(CITY_VOLGOGRAD);
             android.locationPermissionDeny();
         });
-        step("Закрытие экрана авторизации и выбор пункта меню 'Все результаты'", () -> {
+        step("Переход к форме проверки результатов", () -> {
             invitro.closeAuthScreen()
                     .selectCityMenuItem("Все результаты");
         });
-        step("Заполнение формы данными для проверки результатов", () -> {
+        step("Ввод тестовых данных в форму", () -> {
             invitro.setInz(fakerConstants.inz)
                     .setBirthDate(fakerConstants.birthDateAndroid)
                     .setSurname(fakerConstants.lastName);
         });
-        step("Проверка ограничения количества попыток", () -> {
+        step("Тестирование ограничения количества попыток", () -> {
             for (int i = MAX_LIMIT_ATTEMPTS.getValue(); i > 0; i--) {
                 String expectedEnding = invitro.getRemainingAttemptsText(i);
                 String expectedError = String.format("По введенным данным результатов не найдено. %s", expectedEnding);
@@ -58,9 +54,9 @@ public class CheckResultsTests extends PreRunConfig {
                         .checkErrorText(expectedError);
             }
         });
-        step("Проверка сообщения о таймере ожидания после превышения лимита", () -> {
+        step("Проверка активации таймера ожидания", () -> {
             invitro.acceptCheckResult()
-                    .cooldownTimerMessage();
+                    .checkCooldownTimerMessage();
         });
     }
 

@@ -13,13 +13,13 @@ import static io.qameta.allure.Allure.step;
 
 @Tag("android")
 @Owner("germanmalykh")
-@DisplayName("[Android] Base Android Tests")
+@DisplayName("[Android] City Search Tests")
 public class CityInfoTests extends PreRunConfig {
 
-    String UNKNOWN_CITY = "unknown",
+    private static final String UNKNOWN_CITY = "qwe",
             UNKNOWN_CITY_PLACEHOLDER_TEXT = "Город не найден";
-    AndroidElementsPage android = new AndroidElementsPage();
-    InvitroElementsPage invitro = new InvitroElementsPage();
+    private final AndroidElementsPage android = new AndroidElementsPage();
+    private final InvitroElementsPage invitro = new InvitroElementsPage();
 
     @Test
     @Owner("germanmalykh")
@@ -28,16 +28,14 @@ public class CityInfoTests extends PreRunConfig {
             "'Город не найден' при поиске несуществующего города " +
             "в приложении")
     void unknownCityPlaceholderAppears() {
-        step("Ожидание исчезновения лоадера", () -> {
+        step("Инициализация приложения", () -> {
             invitro.waitForLoaderToDisappear();
-        });
-        step("Закрытие тулбара по клику на крестик", () -> {
             invitro.closeToolbar();
         });
-        step("Поиск города: " + UNKNOWN_CITY, () -> {
-            android.setSearchingText(UNKNOWN_CITY);
+        step("Поиск несуществующего города", () -> {
+            android.setSearchText(UNKNOWN_CITY);
         });
-        step("Проверка появления заглушки 'Город не найден'", () -> {
+        step("Валидация отображения заглушки", () -> {
             invitro.verifyCityPlaceholder(UNKNOWN_CITY_PLACEHOLDER_TEXT);
         });
     }

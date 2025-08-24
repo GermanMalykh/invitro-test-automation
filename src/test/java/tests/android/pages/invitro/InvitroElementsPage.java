@@ -30,7 +30,7 @@ public class InvitroElementsPage {
             SURNAME_INPUT = $(id(INVITRO_ID + "surnameText")),
             ACCEPT_CHECK_RESULTS = $(id(INVITRO_ID + "create_new_appointment")),
             ERROR_TEXT = $(id(INVITRO_ID + "textinput_error")),
-            TIMER_MESSAGE = $(id(INVITRO_ID + "cooldownTimerMessage"));
+            TIMER_MESSAGE = $(id(INVITRO_ID + "checkCooldownTimerMessage"));
 
     @Step("Ожидание исчезновения лоадера")
     public InvitroElementsPage waitForLoaderToDisappear() {
@@ -38,26 +38,26 @@ public class InvitroElementsPage {
         return this;
     }
 
-    @Step("Закрытие тулбара по клику на крестик")
+    @Step("Закрытие тулбара")
     public InvitroElementsPage closeToolbar() {
         TOOLBAR_CLOSE_BUTTON.should(appear, Duration.ofSeconds(15)).click();
         return this;
     }
 
-    @Step("Проверка плейсхолдера города: {placeholderText}")
+    @Step("Проверка плейсхолдера города")
     public InvitroElementsPage verifyCityPlaceholder(String placeholderText) {
         CITY_LIST.$(withText(placeholderText))
                 .should(appear);
         return this;
     }
 
-    @Step("Выбор города: {city}")
+    @Step("Выбор города")
     public InvitroElementsPage selectCity(String city) {
         CITY_NAME.findBy(Condition.text(city)).click();
         return this;
     }
 
-    @Step("Выбор пункта меню города: {menuName}")
+    @Step("Выбор пункта меню города")
     public InvitroElementsPage selectCityMenuItem(String menuName) {
         CITY_MENU.findBy(Condition.text(menuName)).click();
         return this;
@@ -69,19 +69,19 @@ public class InvitroElementsPage {
         return this;
     }
 
-    @Step("Установка ИНЗ: {inz}")
+    @Step("Установка ИНЗ")
     public InvitroElementsPage setInz(String inz) {
         INZ_INPUT.setValue(inz);
         return this;
     }
 
-    @Step("Установка даты рождения: {birthDate}")
+    @Step("Установка даты рождения")
     public InvitroElementsPage setBirthDate(String birthDate) {
         BIRTH_DATE_INPUT.setValue(birthDate);
         return this;
     }
 
-    @Step("Установка фамилии: {surname}")
+    @Step("Установка фамилии")
     public InvitroElementsPage setSurname(String surname) {
         SURNAME_INPUT.setValue(surname);
         return this;
@@ -93,14 +93,14 @@ public class InvitroElementsPage {
         return this;
     }
 
-    @Step("Проверка текста ошибки: {expectedError}")
+    @Step("Проверка текста ошибки")
     public InvitroElementsPage checkErrorText(String expectedError) {
         ERROR_TEXT.shouldHave(Condition.text(expectedError));
         return this;
     }
 
     @Step("Проверка сообщения о таймере ожидания")
-    public InvitroElementsPage cooldownTimerMessage() {
+    public InvitroElementsPage checkCooldownTimerMessage() {
         TIMER_MESSAGE.shouldBe(Condition.attribute("displayed", "true"));
         return this;
     }
