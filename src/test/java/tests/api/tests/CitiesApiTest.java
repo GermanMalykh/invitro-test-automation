@@ -11,7 +11,7 @@ import org.junit.jupiter.params.provider.MethodSource;
 import tests.api.client.InvitroApiClient;
 import tests.api.config.ApiConfig;
 import tests.api.constants.Errors;
-import tests.constants.FakerConstants;
+import constants.FakerConstants;
 import tests.api.constants.TestData;
 import tests.api.models.CityResponse;
 import tests.api.models.ErrorResponse;

@@ -1,6 +1,9 @@
 package tests.web.constants;
 
 public class NavigationConstants {
+
+    //TODO: сделать общим для вэб и мобилки
+
     // Категории меню
     public static final String MENU_CATEGORY = "Анализы";
     public static final String PRODUCT_CATEGORY = "COVID-19";

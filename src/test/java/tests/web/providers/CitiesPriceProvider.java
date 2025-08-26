@@ -1,8 +1,8 @@
 package tests.web.providers;
 
 import org.junit.jupiter.params.provider.Arguments;
-import tests.web.constants.FilePathConstants;
-import tests.web.helpers.JsonConverter;
+import constants.FilePathConstants;
+import helpers.JsonConverter;
 import tests.web.models.ProductsInfo;
 
 import java.util.Arrays;

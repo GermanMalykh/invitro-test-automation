@@ -16,13 +16,12 @@ import static io.qameta.allure.Allure.step;
 @DisplayName("[Android] City Search Tests")
 public class CityInfoTests extends PreRunConfig {
 
-    private static final String UNKNOWN_CITY = "qwe",
+    private static final String UNKNOWN_CITY = "AQA",
             UNKNOWN_CITY_PLACEHOLDER_TEXT = "Город не найден";
     private final AndroidElementsPage android = new AndroidElementsPage();
     private final InvitroElementsPage invitro = new InvitroElementsPage();
 
     @Test
-    @Owner("germanmalykh")
     @DisplayName("[Android] Проверка появления заглушки при поиске несуществующего города")
     @Description("Тест проверяет корректное отображение заглушки " +
             "'Город не найден' при поиске несуществующего города " +

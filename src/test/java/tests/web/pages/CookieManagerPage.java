@@ -2,8 +2,8 @@ package tests.web.pages;
 
 import com.codeborne.selenide.ElementsCollection;
 import io.qameta.allure.Step;
-import tests.web.constants.FilePathConstants;
-import tests.web.helpers.JsonConverter;
+import constants.FilePathConstants;
+import helpers.JsonConverter;
 
 import static com.codeborne.selenide.Selenide.$$;
 import static com.codeborne.selenide.Selenide.open;
@@ -18,7 +18,7 @@ public class CookieManagerPage {
 
     @Step("Добавляем куку c данными о продуктах")
     public CookieManagerPage setCartProducts() {
-        String encodedCart = JsonConverter.readCompactEncodedJson(FilePathConstants.CART_PRODUCT_JSON);
+        String encodedCart = JsonConverter.readCompactEncodedJson(FilePathConstants.CART_PRODUCT_JSON_WEB);
 
         open(PRE_CONFIG_URL);
 

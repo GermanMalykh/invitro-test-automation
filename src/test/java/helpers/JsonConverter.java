@@ -1,4 +1,4 @@
-package tests.web.helpers;
+package helpers;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 

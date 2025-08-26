@@ -1,6 +1,9 @@
 package tests.web.constants;
 
 public class ProductConstants {
+
+    //TODO: сделать общим для вэб и мобилки
+
     // Названия продуктов
     public static final String PRODUCT_TITLE = "Контрольное исследование после перенесенной острой респираторной вирусной инфекции";
     

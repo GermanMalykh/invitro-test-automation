@@ -14,12 +14,12 @@ import tests.api.client.InvitroApiClient;
 import tests.api.config.ApiConfig;
 import tests.api.constants.ErrorMessages;
 import tests.api.constants.Errors;
-import tests.constants.FakerConstants;
+import constants.FakerConstants;
 import tests.api.models.ErrorResponse;
 
 import static io.qameta.allure.Allure.step;
 import static org.assertj.core.api.Assertions.assertThat;
-import static tests.constants.IntConstants.MAX_LIMIT_ATTEMPTS;
+import static constants.IntConstants.MAX_LIMIT_ATTEMPTS;
 import static tests.api.constants.TestData.INVALID_BIRTHDAY;
 import static tests.api.constants.TestData.INVALID_INZ;
 import static tests.api.constants.TestData.INVALID_LAST_NAME;

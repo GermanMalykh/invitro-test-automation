@@ -1,0 +1,36 @@
+{
+  "productsInfo": [
+    {
+      "cityName": "Волгоград",
+      "items": [
+        {
+          "name": "Для переболевших COVID-19. Витамины и минералы (For recovered from COVID-19. Vitamins and minerals)",
+          "price": "4 640 ₽",
+          "number": "№ ОБС181"
+        },
+        {
+          "name": "Взятие крови из вены",
+          "price": "180 ₽",
+          "number": "№ VEN"
+        }
+      ],
+      "totalPrice": "4 820 ₽"
+    },
+    {
+      "cityName": "Санкт-Петербург",
+      "items": [
+        {
+          "name": "Для переболевших COVID-19. Витамины и минералы (For recovered from COVID-19. Vitamins and minerals)",
+          "price": "6 560 ₽",
+          "number": "№ ОБС181"
+        },
+        {
+          "name": "Взятие крови из вены",
+          "price": "250 ₽",
+          "number": "№ VEN"
+        }
+      ],
+      "totalPrice": "6 810 ₽"
+    }
+  ]
+}

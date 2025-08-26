@@ -8,10 +8,10 @@ import org.junit.jupiter.api.Test;
 import tests.android.config.PreRunConfig;
 import tests.android.pages.android.AndroidElementsPage;
 import tests.android.pages.invitro.InvitroElementsPage;
-import tests.constants.FakerConstants;
+import constants.FakerConstants;
 
 import static io.qameta.allure.Allure.step;
-import static tests.constants.IntConstants.MAX_LIMIT_ATTEMPTS;
+import static constants.IntConstants.MAX_LIMIT_ATTEMPTS;
 
 @Tag("android")
 @Owner("germanmalykh")

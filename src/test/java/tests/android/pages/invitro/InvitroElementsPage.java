@@ -9,6 +9,7 @@ import java.time.Duration;
 
 import static com.codeborne.selenide.Condition.appear;
 import static com.codeborne.selenide.Condition.disappear;
+import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$$;
 import static com.codeborne.selenide.appium.AppiumSelectors.withText;
 import static com.codeborne.selenide.appium.SelenideAppium.$;
@@ -30,7 +31,8 @@ public class InvitroElementsPage {
             SURNAME_INPUT = $(id(INVITRO_ID + "surnameText")),
             ACCEPT_CHECK_RESULTS = $(id(INVITRO_ID + "create_new_appointment")),
             ERROR_TEXT = $(id(INVITRO_ID + "textinput_error")),
-            TIMER_MESSAGE = $(id(INVITRO_ID + "checkCooldownTimerMessage"));
+            TIMER_ALERT_MESSAGE = $(id(INVITRO_ID + "alertMessageContainer")),
+            BASKET = $(id(INVITRO_ID + "basket"));
 
     @Step("Ожидание исчезновения лоадера")
     public InvitroElementsPage waitForLoaderToDisappear() {
@@ -59,7 +61,8 @@ public class InvitroElementsPage {
 
     @Step("Выбор пункта меню города")
     public InvitroElementsPage selectCityMenuItem(String menuName) {
-        CITY_MENU.findBy(Condition.text(menuName)).click();
+        CITY_MENU.findBy(Condition.text(menuName))
+                .shouldBe(visible, Duration.ofSeconds(15)).click();
         return this;
     }
 
@@ -101,7 +104,15 @@ public class InvitroElementsPage {
 
     @Step("Проверка сообщения о таймере ожидания")
     public InvitroElementsPage checkCooldownTimerMessage() {
-        TIMER_MESSAGE.shouldBe(Condition.attribute("displayed", "true"));
+        TIMER_ALERT_MESSAGE
+                .shouldBe(visible, Duration.ofSeconds(15))
+                .shouldBe(Condition.attribute("displayed", "true"));
+        return this;
+    }
+
+    @Step("Переходим в корзину")
+    public InvitroElementsPage navigateToBasket() {
+        BASKET.click();
         return this;
     }
 

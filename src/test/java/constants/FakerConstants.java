@@ -1,4 +1,4 @@
-package tests.constants;
+package constants;
 
 import net.datafaker.Faker;
 
