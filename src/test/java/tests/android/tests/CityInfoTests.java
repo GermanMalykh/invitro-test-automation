@@ -5,7 +5,10 @@ import io.qameta.allure.Owner;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.MethodSource;
 import tests.android.config.PreRunConfig;
+import tests.android.models.CityInfo;
 import tests.android.pages.android.AndroidElementsPage;
 import tests.android.pages.invitro.InvitroElementsPage;
 
@@ -36,6 +39,34 @@ public class CityInfoTests extends PreRunConfig {
         });
         step("Валидация отображения заглушки", () -> {
             invitro.verifyCityPlaceholder(UNKNOWN_CITY_PLACEHOLDER_TEXT);
+        });
+    }
+
+    @ParameterizedTest(name = "Проверка отображения секций в меню для города {0}")
+    @MethodSource("tests.android.providers.DataProvider#provideCitySectionsData")
+    void testCityMenuSections(CityInfo cityInfo){
+        step("Подготавливаем приложение к работе", () -> {
+            invitro.waitForLoaderToDisappear();
+            invitro.closeToolbar();
+        });
+        step("Выбираем город: " + cityInfo.getCityName(), () -> {
+            invitro.selectCity(cityInfo.getCityName());
+        });
+        step("Отклоняем разрешение на геолокацию", () -> {
+            android.locationPermissionDeny();
+            invitro.closeAuthScreen();
+        });
+        step("Проверяем корректность отображения секций меню", () -> {
+            invitro.verifySectionDisplayed(cityInfo.getSections().getAllResults());
+            invitro.verifySectionDisplayed(cityInfo.getSections().getDynamicResults());
+            invitro.verifySectionDisplayed(cityInfo.getSections().getMyRecords());
+            invitro.verifySectionDisplayed(cityInfo.getSections().getMyOrders());
+            invitro.verifySectionDisplayed(cityInfo.getSections().getAnalyses());
+            invitro.verifySectionDisplayed(cityInfo.getSections().getMedicalOrder());
+            invitro.verifySectionDisplayed(cityInfo.getSections().getAddresses());
+            if (cityInfo.getSections().getHomeOrder() != null) {
+                invitro.verifySectionDisplayed(cityInfo.getSections().getHomeOrder());
+            }
         });
     }
 

@@ -55,7 +55,8 @@ public class InvitroElementsPage {
 
     @Step("Выбор города")
     public InvitroElementsPage selectCity(String city) {
-        CITY_NAME.findBy(Condition.text(city)).click();
+        CITY_NAME.findBy(Condition.text(city))
+                .scrollTo().click();
         return this;
     }
 
@@ -113,6 +114,12 @@ public class InvitroElementsPage {
     @Step("Переходим в корзину")
     public InvitroElementsPage navigateToBasket() {
         BASKET.click();
+        return this;
+    }
+
+    @Step("Проверяем отображение секции \"{section}\" в меню")
+    public InvitroElementsPage verifySectionDisplayed(String section) {
+        CITY_MENU.findBy(Condition.attribute("text", section));
         return this;
     }
 

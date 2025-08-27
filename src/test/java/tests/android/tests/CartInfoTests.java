@@ -3,9 +3,11 @@ package tests.android.tests;
 import io.qameta.allure.Owner;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 import tests.android.config.PreRunConfig;
+import tests.android.constants.TestData;
 import tests.android.pages.android.AndroidElementsPage;
 import tests.android.pages.invitro.CartPage;
 import tests.android.pages.invitro.InvitroElementsPage;
@@ -30,7 +32,7 @@ public class CartInfoTests extends PreRunConfig {
 
     @Tag("server-bug. Для Москвы, в карточке и корзине разная цена на выполнение забора крови")
     @ParameterizedTest(name = "Проверка информации в корзине для города {0}")
-    @MethodSource("tests.android.providers.CartDataProvider#provideCartData")
+    @MethodSource("tests.android.providers.DataProvider#provideCartData")
     void testAddProductInCartAndCheckInfo(ProductsInfo productsInfo) {
         step("Подготавливаем приложение к работе", () -> {
             invitro.waitForLoaderToDisappear();
@@ -72,5 +74,38 @@ public class CartInfoTests extends PreRunConfig {
         step("Проверяем итоговую цену в корзине", () -> {
             cart.checkTotalPrice(productsInfo.getTotalPrice());
         });
+    }
+
+    @Test
+    void testChangeOffice(){
+        step("Подготавливаем приложение к работе", () -> {
+            invitro.waitForLoaderToDisappear();
+            invitro.closeToolbar();
+        });
+        step("Выбираем город: " + TestData.VOLGOGRAD, () -> {
+            invitro.selectCity(TestData.VOLGOGRAD);
+        });
+        step("Отклоняем разрешение на геолокацию", () -> {
+            android.locationPermissionDeny();
+            android.locationPermissionDeny();
+        });
+        step("Переходим к выбору анализов", () -> {
+            invitro.closeAuthScreen()
+                    .selectCityMenuItem("Каталог анализов");
+        });
+        step("Выбираем категорию анализов и добавляем товар в корзину", () -> {
+            test.selectCategory("Комплексы анализов")
+                    .selectItem(COVID_19_CATEGORY_NAME)
+                    .selectTest(COVID_19_TEST_NAME)
+                    .addItemToCart();
+        });
+        step("Закрываем тулбар и переходим в корзину", () -> {
+            invitro.closeToolbar()
+                    .navigateToBasket();
+        });
+        cart.changeOfficeButton()
+                .choseOfficeByList("ул. Невская")
+                .choseOfficeButton()
+                .checkAddress("ул. Невская");
     }
 }

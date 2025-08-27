@@ -1,0 +1,29 @@
+{
+  "cityInfo": [
+    {
+      "cityName": "Казань",
+      "sections": {
+        "allResults": "Все результаты",
+        "dynamicResults": "Динамика результатов",
+        "myRecords": "Мои записи",
+        "myOrders": "Мои заказы",
+        "analyses": "Каталог анализов",
+        "medicalOrder": "Мед. услуги, запись к врачу",
+        "homeOrder": "Выезд на дом",
+        "addresses": "Адреса"
+      }
+    },
+    {
+      "cityName": "Абакан",
+      "sections": {
+        "allResults": "Все результаты",
+        "dynamicResults": "Динамика результатов",
+        "myRecords": "Мои записи",
+        "myOrders": "Мои заказы",
+        "analyses": "Каталог анализов",
+        "medicalOrder": "Мед. услуги, запись к врачу",
+        "addresses": "Адреса"
+      }
+    }
+  ]
+}
