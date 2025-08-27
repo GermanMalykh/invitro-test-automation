@@ -56,7 +56,9 @@ public class InvitroElementsPage {
     @Step("Выбор города")
     public InvitroElementsPage selectCity(String city) {
         CITY_NAME.findBy(Condition.text(city))
-                .scrollTo().click();
+                .scrollTo()
+                .shouldBe(visible, Duration.ofSeconds(15))
+                .click();
         return this;
     }
 

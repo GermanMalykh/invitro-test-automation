@@ -55,7 +55,7 @@ public class MainPage {
     @Step("Кликаем на элемент с текстом \"{text}\"")
     public MainPage clickElement(String text) {
         $(byText(text))
-                .shouldBe(visible, Duration.ofSeconds(SHORT_TIMEOUT_SECONDS))
+                .shouldBe(visible, Duration.ofSeconds(DEFAULT_TIMEOUT_SECONDS))
                 .click();
         return this;
     }
