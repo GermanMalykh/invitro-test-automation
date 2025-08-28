@@ -38,7 +38,8 @@ public class CheckResultsTests extends PreRunConfig {
             android.locationPermissionDeny();
         });
         step("Переход к форме проверки результатов", () -> {
-            //TODO: Костыль из-за проблем с удаленным запуском и частичным отображением дерева в BrowserStack инспекторе
+            //TODO: Используем координаты из-за проблем с загрузкой дерева элементов в BrowserStack
+            // Когда BrowserStack исправит эту проблему, можно будет переписать на нормальные локаторы
             android.tapByCoordinates(993, 177);
             invitro.selectCityMenuItem("Все результаты");
         });

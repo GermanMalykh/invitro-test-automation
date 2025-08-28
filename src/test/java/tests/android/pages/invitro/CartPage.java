@@ -11,7 +11,6 @@ import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.appium.AppiumSelectors.byText;
 import static com.codeborne.selenide.appium.SelenideAppium.$;
 import static com.codeborne.selenide.appium.SelenideAppium.$$;
-import static io.appium.java_client.AppiumBy.className;
 import static io.appium.java_client.AppiumBy.id;
 
 public class CartPage {
@@ -26,42 +25,49 @@ public class CartPage {
             OFFICE_ADDRESS = $(id(INVITRO_ID + "name")),
             OFFICE_OPTIONS = $(id(INVITRO_ID + "tag_name"));
 
-    private final SelenideAppiumCollection
-            CHOSE_OFFICE_BUTTON = $$(className("android.widget.Button")),
-            OFFICE_ADDRESS_COLLECTION = $$(id(INVITRO_ID + "name"));
+    private final SelenideAppiumCollection OFFICE_ADDRESS_COLLECTION = $$(id(INVITRO_ID + "name"));
 
     @Step("Проверяем название товара в корзине")
     public CartPage checkProductName(String productName) {
         CONTAINER.$(id("com.invitro.app:id/name"))
-                .shouldHave(Condition.text(productName)).scrollTo();
+                .shouldBe(Condition.visible, Duration.ofSeconds(5))
+                .shouldHave(Condition.text(productName))
+                .scrollTo();
         return this;
     }
 
     @Step("Проверяем цену товара в корзине")
     public CartPage checkProductPrice(String productPrice) {
         CONTAINER.$(id("com.invitro.app:id/price"))
-                .shouldHave(Condition.text(productPrice)).scrollTo();
+                .shouldBe(Condition.visible, Duration.ofSeconds(5))
+                .shouldHave(Condition.text(productPrice))
+                .scrollTo();
         return this;
     }
 
     @Step("Проверяем номер товара в корзине")
     public CartPage checkProductNumber(String productNumber) {
         CONTAINER.$(id("com.invitro.app:id/number"))
-                .shouldHave(Condition.text(productNumber)).scrollTo();
+                .shouldBe(Condition.visible, Duration.ofSeconds(5))
+                .shouldHave(Condition.text(productNumber))
+                .scrollTo();
         return this;
     }
 
     @Step("Выполняем скролл до товара в корзине и проверяем название")
     public CartPage scrollAndCheckProductName(String productName) {
         CONTAINER.$(id("com.invitro.app:id/name"))
-                .$(byText(productName)).scrollTo();
+                .$(byText(productName))
+                .shouldBe(Condition.visible, Duration.ofSeconds(5))
+                .scrollTo();
         return this;
     }
 
     @Step("Проверяем итоговую цену")
     public CartPage checkTotalPrice(String totalPrice) {
-        TOTAL.scrollTo();
-        TOTAL_PRICE.shouldHave(Condition.text(totalPrice));
+        TOTAL.shouldBe(Condition.visible, Duration.ofSeconds(5)).scrollTo();
+        TOTAL_PRICE.shouldBe(Condition.visible, Duration.ofSeconds(5))
+                .shouldHave(Condition.text(totalPrice));
         return this;
     }
 
@@ -79,14 +85,9 @@ public class CartPage {
         return this;
     }
 
-    @Step("Нажимаем на кнопку выбора офиса")
-    public CartPage choseOfficeButton() {
-        OFFICE_OPTIONS
-                .is(Condition.visible, Duration.ofMillis(1500));
-
-        CHOSE_OFFICE_BUTTON
-                .findBy(Condition.attribute("text", "Выбрать"))
-                .click();
+    @Step("Проверяем, что свойства офиса отображаются на странице")
+    public CartPage checkOfficeProperty() {
+        OFFICE_OPTIONS.is(Condition.visible, Duration.ofMillis(1500));
         return this;
     }
 

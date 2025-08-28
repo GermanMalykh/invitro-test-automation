@@ -123,16 +123,19 @@ tasks.register('runAllTestsSequentially') {
     description = 'Запускает все тесты последовательно (Android -> Web -> API)'
 }
 
-task allRemoteTests(type: Test) {
+tasks.register('allRemoteTests', Test) {
     useJUnitPlatform {
         includeTags("android")
+        excludeTags("only-local")
     }
     systemProperty "env", "remote"
+    description = 'Запускает все Android тесты удаленно, исключая тесты с меткой only-local'
 }
 
-task allLocalTests(type: Test) {
+tasks.register('allLocalTests', Test) {
     useJUnitPlatform {
         includeTags("android")
     }
     systemProperty "env", "local"
+    description = 'Запускает все Android тесты локально'
 }
