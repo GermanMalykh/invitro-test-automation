@@ -2,21 +2,21 @@ package tests.android.pages.android;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
-import com.codeborne.selenide.appium.commands.AppiumClick;
 import io.qameta.allure.Step;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.openqa.selenium.Point;
+import org.openqa.selenium.interactions.PointerInput;
+import org.openqa.selenium.interactions.Sequence;
+import org.openqa.selenium.interactions.Pause;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.time.Duration;
+import java.util.Arrays;
 
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.appium.SelenideAppium.$;
-import static com.codeborne.selenide.appium.SelenideAppium.$$;
-import static com.codeborne.selenide.appium.AppiumSelectors.withText;
+import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 import static io.appium.java_client.AppiumBy.id;
-import static io.appium.java_client.AppiumBy.xpath;
-
 public class AndroidElementsPage {
 
     public final String INVITRO_ID = "com.invitro.app:id/";
@@ -40,6 +40,25 @@ public class AndroidElementsPage {
                 .is(Condition.visible, Duration.ofMillis(1500))) {
             PERMISSION_DENY_BUTTON.click();
         }
+        return this;
+    }
+
+    @Step("Клик по координатам: x={x}, y={y}")
+    public AndroidElementsPage tapByCoordinates(int x, int y) {
+        RemoteWebDriver driver = (RemoteWebDriver) getWebDriver();
+        
+        final var finger = new PointerInput(PointerInput.Kind.TOUCH, "finger");
+        var tapPoint = new Point(x, y);
+        var tap = new Sequence(finger, 1);
+        
+        tap.addAction(finger.createPointerMove(Duration.ofMillis(0),
+            PointerInput.Origin.viewport(), tapPoint.x, tapPoint.y));
+        tap.addAction(finger.createPointerDown(PointerInput.MouseButton.LEFT.asArg()));
+        tap.addAction(new Pause(finger, Duration.ofMillis(50)));
+        tap.addAction(finger.createPointerUp(PointerInput.MouseButton.LEFT.asArg()));
+        
+        driver.perform(Arrays.asList(tap));
+        
         return this;
     }
 

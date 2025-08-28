@@ -38,8 +38,9 @@ public class CheckResultsTests extends PreRunConfig {
             android.locationPermissionDeny();
         });
         step("Переход к форме проверки результатов", () -> {
-            invitro.closeAuthScreen()
-                    .selectCityMenuItem("Все результаты");
+            //TODO: Костыль из-за проблем с удаленным запуском и частичным отображением дерева в BrowserStack инспекторе
+            android.tapByCoordinates(993, 177);
+            invitro.selectCityMenuItem("Все результаты");
         });
         step("Ввод тестовых данных в форму", () -> {
             invitro.setInz(fakerConstants.inz)

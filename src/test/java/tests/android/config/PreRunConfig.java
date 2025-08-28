@@ -38,10 +38,8 @@ public class PreRunConfig {
         switch (env) {
             case "remote":
                 Configuration.browser = RemoteMobileDriver.class.getName();
-                // Устанавливаем разумные timeout'ы для Android тестов на удаленных устройствах
-                Configuration.pageLoadTimeout = 30000; // 30 секунд (как было)
-                Configuration.timeout = 15000; // 15 секунд (уменьшили)
-                Configuration.pollingInterval = 2000; // 2 секунды между попытками (увеличили)
+                // Устанавливаем разумный timeout для Android тестов
+                Configuration.pageLoadTimeout = 30000;
                 break;
             case "local":
                 Configuration.browser = LocalMobileDriver.class.getName();
