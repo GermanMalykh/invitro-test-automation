@@ -1,4 +1,4 @@
-package tests.api.specs;
+package specs;
 
 import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.specification.RequestSpecification;

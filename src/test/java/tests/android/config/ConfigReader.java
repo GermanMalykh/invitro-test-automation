@@ -36,4 +36,8 @@ public class ConfigReader {
     public static double getDouble(String key) {
         return Double.parseDouble(get(key));
     }
+
+    public static String getEnv() {
+        return System.getProperty("env", "local");
+    }
 }

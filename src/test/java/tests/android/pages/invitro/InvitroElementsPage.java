@@ -23,7 +23,8 @@ public class InvitroElementsPage {
             CITY_MENU = $$(id(INVITRO_ID + "title_text"));
 
     private final SelenideElement LOADER_ELEMENT = $(id(INVITRO_ID + "loader")),
-            TOOLBAR_CLOSE_BUTTON = $(id(INVITRO_ID + "toolbar")).$(id(INVITRO_ID + "backImageView")),
+            TOOLBAR_CLOSE_BUTTON = $(id(INVITRO_ID + "toolbar"))
+                    .$(id(INVITRO_ID + "backImageView")),
             CITY_LIST = $(id(INVITRO_ID + "city_list")),
             AUTH_EXIT_SCREEN = $(id(INVITRO_ID + "rightActionImageView")),
             INZ_INPUT = $(id(INVITRO_ID + "inzText")),
@@ -32,7 +33,8 @@ public class InvitroElementsPage {
             ACCEPT_CHECK_RESULTS = $(id(INVITRO_ID + "create_new_appointment")),
             ERROR_TEXT = $(id(INVITRO_ID + "textinput_error")),
             TIMER_ALERT_MESSAGE = $(id(INVITRO_ID + "alertMessageContainer")),
-            BASKET = $(id(INVITRO_ID + "basket"));
+            BASKET = $(id(INVITRO_ID + "basket")),
+            CITIES_LIST = $(id(INVITRO_ID + "letter"));
 
     @Step("Ожидание исчезновения лоадера")
     public InvitroElementsPage waitForLoaderToDisappear() {
@@ -55,6 +57,7 @@ public class InvitroElementsPage {
 
     @Step("Выбор города")
     public InvitroElementsPage selectCity(String city) {
+        CITIES_LIST.shouldBe(visible, Duration.ofSeconds(15));
         CITY_NAME.findBy(Condition.text(city))
                 .scrollTo()
                 .shouldBe(visible, Duration.ofSeconds(15))
