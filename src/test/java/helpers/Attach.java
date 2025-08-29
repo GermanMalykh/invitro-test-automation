@@ -7,6 +7,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import tests.android.config.ConfigReader;
 import tests.android.helpers.BrowserstackGetter;
+import io.qameta.allure.Allure;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -48,11 +49,22 @@ public class Attach {
                 + "' type='video/mp4'></video></body></html>";
     }
 
-    @Attachment(value = "Video", type = "text/html", fileExtension = ".html")
-    public static String getVideoBrowserstack(String sessionId) {
+    @Attachment(value = "Browserstack Video", type = "text/html", fileExtension = ".html")
+    private static String getVideoBrowserstack(String sessionId) {
         return "<html><body><video width='100%' height='100%' controls autoplay><source src='"
                 + BrowserstackGetter.videoUrl(sessionId)
                 + "' type='video/mp4'></video></body></html>";
+    }
+
+    /**
+     * Получает все вложения BrowserStack для сессии (видео + отчет)
+     */
+    public static void getBrowserstackAttachments(String sessionId) {
+        // Получаем видео
+        getVideoBrowserstack(sessionId);
+
+        // Генерируем HTML отчет
+        generateBrowserstackReport(sessionId);
     }
 
     public static URL getVideoUrl() {
@@ -68,4 +80,28 @@ public class Attach {
     public static String getSessionId() {
         return ((RemoteWebDriver) getWebDriver()).getSessionId().toString();
     }
+
+    @Attachment(value = "BrowserStack Session Report", type = "text/html")
+    private static String generateBrowserstackReport(String sessionId) {
+        try {
+            // Получаем данные сессии через API
+            var sessionInfo = BrowserstackGetter.getSessionInfo(sessionId);
+            String sessionData = sessionInfo.response().asString();
+            
+            // Генерируем HTML отчет
+            String htmlReport = BrowserstackGetter.generateHtmlReport(sessionData);
+            
+            // Добавляем информацию в Allure
+            Allure.description("BrowserStack Session ID: " + sessionId);
+            
+            return htmlReport;
+            
+        } catch (Exception e) {
+            System.err.println("Не удалось сгенерировать отчет BrowserStack: " + e.getMessage());
+            e.printStackTrace();
+            return "<html><body><h1>Ошибка генерации отчета BrowserStack</h1><p>" + e.getMessage() + "</p></body></html>";
+        }
+    }
+
+
 }
