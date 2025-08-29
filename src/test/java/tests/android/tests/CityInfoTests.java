@@ -45,7 +45,7 @@ public class CityInfoTests extends PreRunConfig {
         });
     }
 
-    @ParameterizedTest(name = "Проверка отображения секций в меню для города {0}")
+    @ParameterizedTest(name = "[Android] Проверка отображения секций в меню для города {0}")
     @MethodSource("tests.android.providers.DataProvider#provideCitySectionsData")
     void testCityMenuSections(CityInfo cityInfo){
         step("Подготавливаем приложение к работе", () -> {

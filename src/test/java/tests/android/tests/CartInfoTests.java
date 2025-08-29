@@ -30,8 +30,8 @@ public class CartInfoTests extends PreRunConfig {
     private final InvitroElementsPage invitro = new InvitroElementsPage();
     private final MedicalTestElementsPage test = new MedicalTestElementsPage();
 
-    @Tag("server-bug. Для Москвы, в карточке и корзине разная цена на выполнение забора крови")
-    @ParameterizedTest(name = "Проверка информации в корзине для города {0}")
+    @Tag("only-local")
+    @ParameterizedTest(name = "[Android] Проверка информации в корзине для города {0}")
     @MethodSource("tests.android.providers.DataProvider#provideCartData")
     void testAddProductInCartAndCheckInfo(ProductsInfo productsInfo) {
         step("Подготавливаем приложение к работе", () -> {
@@ -79,7 +79,8 @@ public class CartInfoTests extends PreRunConfig {
     }
 
     @Test
-    void testChangeOffice(){
+    @DisplayName("[Android] Смена офиса и проверка изменений")
+    void testChangeOffice() {
         step("Подготавливаем приложение к работе", () -> {
             invitro.waitForLoaderToDisappear();
             invitro.closeToolbar();

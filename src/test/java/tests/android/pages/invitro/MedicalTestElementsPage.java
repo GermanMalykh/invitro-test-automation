@@ -24,6 +24,7 @@ public class MedicalTestElementsPage {
 
     @Step("Выбор категории анализов: {tabName}")
     public MedicalTestElementsPage selectCategory(String tabName) {
+        ITEM_LIST.shouldBe(visible,Duration.ofSeconds(15));
         TAB_LIST.$(byText(tabName))
                 .shouldBe(visible, Duration.ofSeconds(15))
                 .click();
