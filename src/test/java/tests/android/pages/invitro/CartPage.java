@@ -30,8 +30,7 @@ public class CartPage {
     @Step("Проверяем название товара в корзине")
     public CartPage checkProductName(String productName) {
         CONTAINER.$(id("com.invitro.app:id/name"))
-                .shouldBe(Condition.visible, Duration.ofSeconds(5))
-                .shouldHave(Condition.text(productName))
+                .$(byText(productName))
                 .scrollTo();
         return this;
     }
@@ -39,8 +38,7 @@ public class CartPage {
     @Step("Проверяем цену товара в корзине")
     public CartPage checkProductPrice(String productPrice) {
         CONTAINER.$(id("com.invitro.app:id/price"))
-                .shouldBe(Condition.visible, Duration.ofSeconds(5))
-                .shouldHave(Condition.text(productPrice))
+                .$(byText(productPrice))
                 .scrollTo();
         return this;
     }
@@ -48,8 +46,7 @@ public class CartPage {
     @Step("Проверяем номер товара в корзине")
     public CartPage checkProductNumber(String productNumber) {
         CONTAINER.$(id("com.invitro.app:id/number"))
-                .shouldBe(Condition.visible, Duration.ofSeconds(5))
-                .shouldHave(Condition.text(productNumber))
+                .$(byText(productNumber))
                 .scrollTo();
         return this;
     }
@@ -58,7 +55,6 @@ public class CartPage {
     public CartPage scrollAndCheckProductName(String productName) {
         CONTAINER.$(id("com.invitro.app:id/name"))
                 .$(byText(productName))
-                .shouldBe(Condition.visible, Duration.ofSeconds(5))
                 .scrollTo();
         return this;
     }

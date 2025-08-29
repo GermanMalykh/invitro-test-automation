@@ -104,12 +104,6 @@ tasks.register('web', Test) {
     systemProperty "test.type", "web"
 }
 
-tasks.register('android', Test) {
-    useJUnitPlatform {
-        includeTags("android")
-    }
-    systemProperty "test.type", "android"
-}
 
 tasks.register('allTests', Test) {
     useJUnitPlatform {
@@ -125,7 +119,7 @@ tasks.register('runAllTestsSequentially') {
     description = 'Запускает все тесты последовательно (Android -> Web -> API)'
 }
 
-tasks.register('allRemoteTests', Test) {
+tasks.register('androidRemoteTests', Test) {
     useJUnitPlatform {
         includeTags("android")
         excludeTags("only-local")
@@ -134,7 +128,7 @@ tasks.register('allRemoteTests', Test) {
     description = 'Запускает все Android тесты удаленно, исключая тесты с меткой only-local'
 }
 
-tasks.register('allLocalTests', Test) {
+tasks.register('androidLocalTests', Test) {
     useJUnitPlatform {
         includeTags("android")
     }

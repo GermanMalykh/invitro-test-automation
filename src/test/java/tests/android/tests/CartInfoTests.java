@@ -30,7 +30,6 @@ public class CartInfoTests extends PreRunConfig {
     private final InvitroElementsPage invitro = new InvitroElementsPage();
     private final MedicalTestElementsPage test = new MedicalTestElementsPage();
 
-    @Tag("only-local")
     @ParameterizedTest(name = "[Android] Проверка информации в корзине для города {0}")
     @MethodSource("tests.android.providers.DataProvider#provideCartData")
     void testAddProductInCartAndCheckInfo(ProductsInfo productsInfo) {

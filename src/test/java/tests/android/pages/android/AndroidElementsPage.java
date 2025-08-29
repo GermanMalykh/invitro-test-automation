@@ -13,6 +13,7 @@ import java.time.Duration;
 import java.util.Arrays;
 
 import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Selenide.sleep;
 import static com.codeborne.selenide.appium.SelenideAppium.$;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
@@ -45,6 +46,7 @@ public class AndroidElementsPage {
 
     @Step("Клик по координатам: x={x}, y={y}")
     public AndroidElementsPage tapByCoordinates(int x, int y) {
+        sleep(1_500);
         RemoteWebDriver driver = (RemoteWebDriver) getWebDriver();
         
         final var finger = new PointerInput(PointerInput.Kind.TOUCH, "finger");
