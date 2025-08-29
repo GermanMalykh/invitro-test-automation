@@ -73,7 +73,6 @@ public class PreRunConfig {
         closeWebDriver();
         if (env.equals("remote")) {
             Attach.getVideoBrowserstack(sessionId);
-            Attach.browserstackFullInfoLink(sessionId);
         }
     }
 }

@@ -15,11 +15,6 @@ public class BrowserstackGetter {
                 .path("automation_session.video_url");
     }
 
-    public static String fullInfoPublicUrl(String sessionId) {
-        return getSessionInfo(sessionId)
-                .path("automation_session.public_url");
-    }
-
     public static ExtractableResponse<Response> getSessionInfo(String sessionId) {
         String url = format("https://api.browserstack.com/app-automate/sessions/%s.json", sessionId);
 
