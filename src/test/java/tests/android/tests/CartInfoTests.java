@@ -47,7 +47,7 @@ public class CartInfoTests extends PreRunConfig {
         step("Переходим к выбору анализов", () -> {
             //TODO: Используем координаты из-за проблем с загрузкой дерева элементов в BrowserStack
             // Когда BrowserStack исправит эту проблему, можно будет переписать на нормальные локаторы
-            android.tapByCoordinates(993, 177);
+            android.tapByCoordinates(999, 170);
             invitro.selectCityMenuItem("Каталог анализов");
         });
         step("Выбираем категорию анализов и добавляем товар в корзину", () -> {
@@ -94,7 +94,7 @@ public class CartInfoTests extends PreRunConfig {
         step("Переходим к выбору анализов", () -> {
             //TODO: Используем координаты из-за проблем с загрузкой дерева элементов в BrowserStack
             // Когда BrowserStack исправит эту проблему, можно будет переписать на нормальные локаторы
-            android.tapByCoordinates(993, 177);
+            android.tapByCoordinates(999, 170);
             invitro.selectCityMenuItem("Каталог анализов");
         });
         step("Выбираем категорию анализов и добавляем товар в корзину", () -> {

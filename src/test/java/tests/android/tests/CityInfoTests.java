@@ -59,7 +59,7 @@ public class CityInfoTests extends PreRunConfig {
             android.locationPermissionDeny();
             //TODO: Используем координаты из-за проблем с загрузкой дерева элементов в BrowserStack
             // Когда BrowserStack исправит эту проблему, можно будет переписать на нормальные локаторы
-            android.tapByCoordinates(993, 177);
+            android.tapByCoordinates(999, 170);
         });
         step("Проверяем корректность отображения секций меню", () -> {
             invitro.verifySectionDisplayed(cityInfo.getSections().getAllResults());
