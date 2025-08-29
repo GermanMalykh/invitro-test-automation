@@ -5,7 +5,7 @@ import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import tests.web.configs.WebConfig;
+import tests.web.config.WebConfig;
 import tests.web.pages.CookieBannerPage;
 import tests.web.pages.CookieManagerPage;
 import tests.web.pages.MainPage;

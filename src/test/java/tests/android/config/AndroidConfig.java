@@ -15,7 +15,7 @@ import static com.codeborne.selenide.Selenide.closeWebDriver;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.sessionId;
 
-public class PreRunConfig {
+public class AndroidConfig {
 
     @BeforeAll
     public static void setup() throws Exception {

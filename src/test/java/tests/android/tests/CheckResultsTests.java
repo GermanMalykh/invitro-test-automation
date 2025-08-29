@@ -5,7 +5,7 @@ import io.qameta.allure.Owner;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import tests.android.config.PreRunConfig;
+import tests.android.config.AndroidConfig;
 import tests.android.pages.android.AndroidElementsPage;
 import tests.android.pages.invitro.InvitroElementsPage;
 import constants.FakerConstants;
@@ -16,7 +16,7 @@ import static constants.IntConstants.MAX_LIMIT_ATTEMPTS;
 @Tag("android")
 @Owner("germanmalykh")
 @DisplayName("[Android] Check Results Tests")
-public class CheckResultsTests extends PreRunConfig {
+public class CheckResultsTests extends AndroidConfig {
 
     private final InvitroElementsPage invitro = new InvitroElementsPage();
     private final AndroidElementsPage android = new AndroidElementsPage();

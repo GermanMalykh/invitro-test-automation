@@ -135,3 +135,19 @@ tasks.register('androidLocalTests', Test) {
     systemProperty "env", "local"
     description = 'Запускает все Android тесты локально'
 }
+
+tasks.register('webRemoteTests', Test) {
+    useJUnitPlatform {
+        includeTags("web")
+    }
+    systemProperty "env", "remote"
+    description = 'Запускает все Web тесты удаленно'
+}
+
+tasks.register('webLocalTests', Test) {
+    useJUnitPlatform {
+        includeTags("web")
+    }
+    systemProperty "env", "local"
+    description = 'Запускает все Web тесты локально'
+}

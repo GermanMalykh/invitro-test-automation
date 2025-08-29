@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
-import tests.android.config.PreRunConfig;
+import tests.android.config.AndroidConfig;
 import tests.android.constants.TestData;
 import tests.android.pages.android.AndroidElementsPage;
 import tests.android.pages.invitro.CartPage;
@@ -19,7 +19,7 @@ import static io.qameta.allure.Allure.step;
 @Tag("android")
 @Owner("germanmalykh")
 @DisplayName("[Android] Cart Info Tests")
-public class CartInfoTests extends PreRunConfig {
+public class CartInfoTests extends AndroidConfig {
 
     private static final String COVID_19_CATEGORY_NAME = "COVID-19",
             COVID_19_TEST_NAME = "Для переболевших COVID-19. Витамины и минералы " +

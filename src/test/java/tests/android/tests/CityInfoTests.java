@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
-import tests.android.config.PreRunConfig;
+import tests.android.config.AndroidConfig;
 import tests.android.models.CityInfo;
 import tests.android.pages.android.AndroidElementsPage;
 import tests.android.pages.invitro.InvitroElementsPage;
@@ -17,7 +17,7 @@ import static io.qameta.allure.Allure.step;
 @Tag("android")
 @Owner("germanmalykh")
 @DisplayName("[Android] City Search Tests")
-public class CityInfoTests extends PreRunConfig {
+public class CityInfoTests extends AndroidConfig {
 
     private static final String UNKNOWN_CITY = "AQA",
             UNKNOWN_CITY_PLACEHOLDER_TEXT = "Город не найден";

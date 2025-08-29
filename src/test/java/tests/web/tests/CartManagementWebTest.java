@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
-import tests.web.configs.WebConfig;
+import tests.web.config.WebConfig;
 import tests.web.constants.CartConstants;
 import tests.web.constants.ProductConstants;
 import tests.web.constants.CommonData;
