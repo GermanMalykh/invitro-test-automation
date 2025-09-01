@@ -97,22 +97,6 @@ tasks.register('api', Test) {
     systemProperty "test.type", "api"
 }
 
-tasks.register('web', Test) {
-    useJUnitPlatform {
-        includeTags("web")
-    }
-    systemProperty "test.type", "web"
-}
-
-
-tasks.register('allTests', Test) {
-    useJUnitPlatform {
-        // Теперь запускаем все тесты в одном процессе для тестирования фикса
-        includeTags("android", "web", "api")
-    }
-    systemProperty "test.type", "all"
-}
-
 // Задача для последовательного запуска всех тестов в раздельных JVM
 tasks.register('runAllTestsSequentially') {
     dependsOn 'android', 'web', 'api'
