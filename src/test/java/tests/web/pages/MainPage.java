@@ -55,6 +55,7 @@ public class MainPage {
     @Step("Кликаем на элемент с текстом \"{text}\"")
     public MainPage clickElement(String text) {
         $(byText(text))
+                .scrollTo()
                 .shouldBe(visible, Duration.ofSeconds(DEFAULT_TIMEOUT_SECONDS))
                 .click();
         return this;
