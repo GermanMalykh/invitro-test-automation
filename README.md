@@ -61,7 +61,7 @@
 ```bash
 ./gradlew api                # API тесты
 ./gradlew androidLocalTests  # Android тесты локально
-./gradlew androidRemoteTests # Android тесты удалённо (без @Tag("only-local"))
+./gradlew androidRemoteTests # Android тесты удалённо
 ./gradlew webLocalTests      # Web тесты локально
 ./gradlew webRemoteTests     # Web тесты удалённо
 ```

@@ -11,6 +11,7 @@ import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.appium.AppiumSelectors.byText;
 import static com.codeborne.selenide.appium.SelenideAppium.$;
 import static com.codeborne.selenide.appium.SelenideAppium.$$;
+import static io.appium.java_client.AppiumBy.className;
 import static io.appium.java_client.AppiumBy.id;
 
 public class CartPage {
@@ -22,10 +23,11 @@ public class CartPage {
             TOTAL_PRICE = $(byXpath("//*[@resource-id='com.invitro.app:id/total']" +
                     "/following-sibling::*[@resource-id='com.invitro.app:id/price']")),
             CHANGE_OFFICE_BUTTON = $(id(INVITRO_ID + "change_office_button")),
-            OFFICE_ADDRESS = $(id(INVITRO_ID + "name")),
             OFFICE_OPTIONS = $(id(INVITRO_ID + "tag_name"));
 
-    private final SelenideAppiumCollection OFFICE_ADDRESS_COLLECTION = $$(id(INVITRO_ID + "name"));
+    private final SelenideAppiumCollection
+            OFFICE_ADDRESS_COLLECTION = $$(id(INVITRO_ID + "name")),
+            CHOSE_OFFICE_BUTTON = $$(className("android.widget.Button"));
 
     @Step("Проверяем название товара в корзине")
     public CartPage checkProductName(String productName) {
@@ -61,8 +63,9 @@ public class CartPage {
 
     @Step("Проверяем итоговую цену")
     public CartPage checkTotalPrice(String totalPrice) {
-        TOTAL.shouldBe(Condition.visible, Duration.ofSeconds(5)).scrollTo();
-        TOTAL_PRICE.shouldBe(Condition.visible, Duration.ofSeconds(5))
+        TOTAL.scrollTo();
+        TOTAL.shouldBe(Condition.visible);
+        TOTAL_PRICE.shouldBe(Condition.visible)
                 .shouldHave(Condition.text(totalPrice));
         return this;
     }
@@ -75,8 +78,10 @@ public class CartPage {
 
     @Step("Выбираем офис в списке")
     public CartPage choseOfficeByList(String address) {
-        OFFICE_ADDRESS.$(byText(address))
+        $(byText(address))
                 .scrollTo()
+                .shouldBe(Condition.visible)
+                .shouldBe(Condition.enabled)
                 .click();
         return this;
     }
@@ -92,6 +97,16 @@ public class CartPage {
         OFFICE_ADDRESS_COLLECTION
                 .findBy(Condition.text(address))
                 .is(Condition.visible);
+        return this;
+    }
+
+    @Step("Нажимаем на кнопку выбора офиса")
+    public CartPage choseOfficeButton() {
+        OFFICE_OPTIONS
+                .is(Condition.visible, Duration.ofMillis(1500));
+        CHOSE_OFFICE_BUTTON
+                .findBy(Condition.attribute("text", "Выбрать"))
+                .click();
         return this;
     }
 

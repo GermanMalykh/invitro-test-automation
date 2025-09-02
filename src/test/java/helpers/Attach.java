@@ -10,6 +10,7 @@ import tests.android.helpers.BrowserstackGetter;
 import io.qameta.allure.Allure;
 
 import java.net.MalformedURLException;
+import java.net.URI;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 
@@ -70,7 +71,7 @@ public class Attach {
     public static URL getVideoUrl() {
         String videoUrl = "https://selenoid.autotests.cloud/video/" + getSessionId() + ".mp4";
         try {
-            return new URL(videoUrl);
+            return URI.create(videoUrl).toURL();
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }

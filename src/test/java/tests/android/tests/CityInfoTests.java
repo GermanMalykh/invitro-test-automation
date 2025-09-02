@@ -24,10 +24,7 @@ public class CityInfoTests extends AndroidConfig {
     private final AndroidElementsPage android = new AndroidElementsPage();
     private final InvitroElementsPage invitro = new InvitroElementsPage();
 
-    //TODO: Тест не будет работать удаленно из-за проблем с загрузкой дерева элементов в BrowserStack
-    // Когда BrowserStack исправит эту проблему, можно будет запускать тест на прогон в BrowserStack
     @Test
-    @Tag("only-local")
     @DisplayName("[Android] Проверка появления заглушки при поиске несуществующего города")
     @Description("Тест проверяет корректное отображение заглушки " +
             "'Город не найден' при поиске несуществующего города " +
@@ -57,9 +54,6 @@ public class CityInfoTests extends AndroidConfig {
         });
         step("Отклоняем разрешение на геолокацию", () -> {
             android.locationPermissionDeny();
-            //TODO: Используем координаты из-за проблем с загрузкой дерева элементов в BrowserStack
-            // Когда BrowserStack исправит эту проблему, можно будет переписать на нормальные локаторы
-            android.tapByCoordinates(999, 170);
         });
         step("Проверяем корректность отображения секций меню", () -> {
             invitro.verifySectionDisplayed(cityInfo.getSections().getAllResults());

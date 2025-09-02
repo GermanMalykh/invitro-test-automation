@@ -38,10 +38,8 @@ public class CheckResultsTests extends AndroidConfig {
             android.locationPermissionDeny();
         });
         step("Переход к форме проверки результатов", () -> {
-            //TODO: Используем координаты из-за проблем с загрузкой дерева элементов в BrowserStack
-            // Когда BrowserStack исправит эту проблему, можно будет переписать на нормальные локаторы
-            android.tapByCoordinates(999, 170);
-            invitro.selectCityMenuItem("Все результаты");
+            invitro.closeAuthScreen()
+                    .selectCityMenuItem("Все результаты");
         });
         step("Ввод тестовых данных в форму", () -> {
             invitro.setInz(fakerConstants.inz)

@@ -114,11 +114,10 @@ tasks.register('api', Test) {
 tasks.register('androidRemoteTests', Test) {
     useJUnitPlatform {
         includeTags("android")
-        excludeTags("only-local")
     }
     systemProperty "env", "remote"
     classpath = configurations.androidTest + sourceSets.test.runtimeClasspath
-    description = 'Запускает все Android тесты удаленно, исключая тесты с меткой only-local'
+    description = 'Запускает все Android тесты удаленно'
 }
 
 tasks.register('androidLocalTests', Test) {
@@ -164,9 +163,8 @@ tasks.register('allLocalTests', Test) {
 tasks.register('allRemoteTests', Test) {
     useJUnitPlatform {
         includeTags("android", "web", "api")
-        excludeTags("only-local")
     }
     systemProperty "env", "remote"
     classpath = configurations.androidTest + sourceSets.test.runtimeClasspath
-    description = 'Запускает все тесты удаленно (Android, Web, API), исключая тесты с меткой only-local'
+    description = 'Запускает все тесты удаленно (Android, Web, API)'
 }

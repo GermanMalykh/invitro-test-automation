@@ -28,7 +28,8 @@ public class RemoteMobileDriver implements WebDriverProvider {
                 .setDeviceName(ConfigReader.get("device"))
                 .setPlatformVersion(ConfigReader.get("os_version"))
                 .setApp(ConfigReader.get("app"))
-                .setAutoGrantPermissions(true);
+                .setAutoGrantPermissions(true)
+                .setCapability("appium:disableSuppressAccessibilityService", false);
 
         // BrowserStack capabilities - используем MutableCapabilities чтобы избежать appium: префиксов
         MutableCapabilities bstackOptions = new MutableCapabilities();

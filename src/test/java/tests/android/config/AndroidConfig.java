@@ -32,13 +32,11 @@ public class AndroidConfig {
         Assumptions.assumeTrue("android".equals(testType) || "all".equals(testType) || testType == null,
                 "Этот тест должен запускаться только для Android тестов или всех тестов");
 
-        // Читаем окружение из системного свойства
         String env = System.getProperty("env", "local");
 
         switch (env) {
             case "remote":
                 Configuration.browser = RemoteMobileDriver.class.getName();
-                // Устанавливаем разумный timeout для Android тестов
                 Configuration.pageLoadTimeout = 30000;
                 break;
             case "local":
@@ -49,8 +47,6 @@ public class AndroidConfig {
         }
 
         Configuration.browserSize = null;
-
-        // Отключаем веб-функции Selenide для нативных приложений
         Configuration.remoteReadTimeout = 60000;
         Configuration.remoteConnectionTimeout = 60000;
     }

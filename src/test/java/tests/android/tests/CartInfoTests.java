@@ -44,10 +44,8 @@ public class CartInfoTests extends AndroidConfig {
             android.locationPermissionDeny();
         });
         step("Переходим к выбору анализов", () -> {
-            //TODO: Используем координаты из-за проблем с загрузкой дерева элементов в BrowserStack
-            // Когда BrowserStack исправит эту проблему, можно будет переписать на нормальные локаторы
-            android.tapByCoordinates(999, 170);
-            invitro.selectCityMenuItem("Каталог анализов");
+            invitro.closeAuthScreen()
+                    .selectCityMenuItem("Каталог анализов");
         });
         step("Выбираем категорию анализов и добавляем товар в корзину", () -> {
             test.selectCategory("Комплексы анализов")
@@ -91,10 +89,8 @@ public class CartInfoTests extends AndroidConfig {
             android.locationPermissionDeny();
         });
         step("Переходим к выбору анализов", () -> {
-            //TODO: Используем координаты из-за проблем с загрузкой дерева элементов в BrowserStack
-            // Когда BrowserStack исправит эту проблему, можно будет переписать на нормальные локаторы
-            android.tapByCoordinates(999, 170);
-            invitro.selectCityMenuItem("Каталог анализов");
+            invitro.closeAuthScreen()
+                    .selectCityMenuItem("Каталог анализов");
         });
         step("Выбираем категорию анализов и добавляем товар в корзину", () -> {
             test.selectCategory("Комплексы анализов")
@@ -107,9 +103,9 @@ public class CartInfoTests extends AndroidConfig {
                     .navigateToBasket();
         });
         cart.changeOfficeButton()
-                .choseOfficeByList("ул. Невская")
-                .checkOfficeProperty();
-        android.tapByCoordinates(540, 2000);
-        cart.checkAddress("ул. Невская");
+                .choseOfficeByList("ул. Огарёва")
+                .checkOfficeProperty()
+                .choseOfficeButton()
+                .checkAddress("ул. Огарёва");
     }
 }

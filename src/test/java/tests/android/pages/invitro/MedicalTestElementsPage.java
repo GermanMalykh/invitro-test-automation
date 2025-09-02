@@ -20,22 +20,26 @@ public class MedicalTestElementsPage {
             ITEMS_TITLE = $(id(INVITRO_ID + "text_title")),
             TESTS = $(id(INVITRO_ID + "tests")),
             NAME = $(id(INVITRO_ID + "name")),
-            CART_BUTTON = $(id(INVITRO_ID + "cart_button"));
+            CART_BUTTON = $(id(INVITRO_ID + "cart_button")),
+            PROGRESS = $(id(INVITRO_ID + "progress"));
 
     @Step("Выбор категории анализов: {tabName}")
     public MedicalTestElementsPage selectCategory(String tabName) {
-        ITEM_LIST.shouldBe(visible,Duration.ofSeconds(15));
+        PROGRESS.shouldBe(Condition.hidden,Duration.ofSeconds(15));
+        ITEM_LIST.shouldBe(visible);
         TAB_LIST.$(byText(tabName))
-                .shouldBe(visible, Duration.ofSeconds(15))
+                .shouldBe(visible)
                 .click();
         return this;
     }
 
     @Step("Выбор анализа из категории: {itemName}")
     public MedicalTestElementsPage selectItem(String itemName) {
-        ITEM_LIST.shouldBe(visible, Duration.ofSeconds(15));
+        PROGRESS.shouldBe(Condition.hidden,Duration.ofSeconds(15));
+        ITEM_LIST.shouldBe(visible);
         $(byText(itemName))
-                .shouldBe(visible, Duration.ofSeconds(15))
+                .scrollTo()
+                .shouldBe(visible)
                 .click();
         return this;
     }

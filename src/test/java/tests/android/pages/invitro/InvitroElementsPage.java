@@ -11,6 +11,7 @@ import static com.codeborne.selenide.Condition.appear;
 import static com.codeborne.selenide.Condition.disappear;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$$;
+import static com.codeborne.selenide.appium.AppiumSelectors.byText;
 import static com.codeborne.selenide.appium.AppiumSelectors.withText;
 import static com.codeborne.selenide.appium.SelenideAppium.$;
 import static io.appium.java_client.AppiumBy.id;
@@ -59,7 +60,7 @@ public class InvitroElementsPage {
     @Step("Выбор города")
     public InvitroElementsPage selectCity(String city) {
         CITIES_LIST.shouldBe(visible, Duration.ofSeconds(15));
-        CITY_NAME.findBy(Condition.text(city))
+        $(byText(city))
                 .scrollTo()
                 .shouldBe(visible, Duration.ofSeconds(15))
                 .click();
