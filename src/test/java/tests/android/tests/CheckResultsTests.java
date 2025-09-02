@@ -15,7 +15,7 @@ import static constants.IntConstants.MAX_LIMIT_ATTEMPTS;
 
 @Tag("android")
 @Owner("germanmalykh")
-@DisplayName("[Android] Check Results Tests")
+@DisplayName("[Android]")
 public class CheckResultsTests extends AndroidConfig {
 
     private final InvitroElementsPage invitro = new InvitroElementsPage();

@@ -26,7 +26,7 @@ import static tests.api.constants.TestData.INVALID_LAST_NAME;
 
 @Tag("api")
 @Owner("germanmalykh")
-@DisplayName("[API] Unauth Results API Tests")
+@DisplayName("[API]")
 public class UnauthResultsApiTest extends ApiConfig {
 
     protected ValidatableResponse response;

@@ -25,7 +25,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @Tag("api")
 @Owner("germanmalykh")
-@DisplayName("[API] Products Info API Tests")
+@DisplayName("[API]")
 public class ProductsInfoApiTest extends ApiConfig {
 
     protected ValidatableResponse response;

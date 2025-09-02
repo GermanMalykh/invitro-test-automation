@@ -20,7 +20,7 @@ import static tests.web.constants.CommonData.CART_URL;
 
 @Tag("web")
 @Owner("germanmalykh")
-@DisplayName("[Web] Cart Management Tests")
+@DisplayName("[Web]")
 public class CartManagementWebTest extends WebConfig {
 
     MainPage desktop = new MainPage();

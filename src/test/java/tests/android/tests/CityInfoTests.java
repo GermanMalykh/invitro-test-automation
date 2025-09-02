@@ -16,7 +16,7 @@ import static io.qameta.allure.Allure.step;
 
 @Tag("android")
 @Owner("germanmalykh")
-@DisplayName("[Android] City Search Tests")
+@DisplayName("[Android]")
 public class CityInfoTests extends AndroidConfig {
 
     private static final String UNKNOWN_CITY = "AQA",

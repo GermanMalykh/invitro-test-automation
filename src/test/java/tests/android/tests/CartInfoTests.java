@@ -18,7 +18,7 @@ import static io.qameta.allure.Allure.step;
 
 @Tag("android")
 @Owner("germanmalykh")
-@DisplayName("[Android] Cart Info Tests")
+@DisplayName("[Android]")
 public class CartInfoTests extends AndroidConfig {
 
     private static final String COVID_19_CATEGORY_NAME = "COVID-19",

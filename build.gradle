@@ -94,6 +94,8 @@ test {
     doFirst {
         println "Задача 'test' не запускает тесты по умолчанию."
         println "Используйте:"
+        println "  ./gradlew allRemoteTests      - для запуска всех тестов удаленно"
+        println "  ./gradlew allLocalTests       - для запуска всех тестов локально"
         println "  ./gradlew androidRemoteTests  - для запуска Android тестов удаленно"
         println "  ./gradlew androidLocalTests   - для запуска Android тестов локально"
         println "  ./gradlew webRemoteTests      - для запуска Web тестов удаленно"
@@ -148,4 +150,23 @@ tasks.register('webLocalTests', Test) {
         !it.name.contains('selenide-appium')
     }
     description = 'Запускает все Web тесты локально'
+}
+
+tasks.register('allLocalTests', Test) {
+    useJUnitPlatform {
+        includeTags("android", "web", "api")
+    }
+    systemProperty "env", "local"
+    classpath = configurations.androidTest + sourceSets.test.runtimeClasspath
+    description = 'Запускает все тесты локально (Android, Web, API)'
+}
+
+tasks.register('allRemoteTests', Test) {
+    useJUnitPlatform {
+        includeTags("android", "web", "api")
+        excludeTags("only-local")
+    }
+    systemProperty "env", "remote"
+    classpath = configurations.androidTest + sourceSets.test.runtimeClasspath
+    description = 'Запускает все тесты удаленно (Android, Web, API), исключая тесты с меткой only-local'
 }
