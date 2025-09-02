@@ -25,88 +25,96 @@ public class WebConfig {
 
     @BeforeAll
     static void setup() {
-
         String testType = System.getProperty("test.type");
         String env = System.getProperty("env", "local");
-
+        validateTestType(testType);
         DesiredCapabilities capabilities = new DesiredCapabilities();
-
-        Assumptions.assumeTrue("web".equals(testType) || "all".equals(testType) || testType == null,
-                "Этот тест должен запускаться только для Web тестов или всех тестов");
-
         if (env.equals("remote")) {
-            capabilities.setCapability("selenoid:options", Map.<String, Object>of(
-                    "enableVNC", true,
-                    "enableVideo", true
-            ));
-            Configuration.remote = ConfigReader.get("selenoid_url");
-            Configuration.reopenBrowserOnFail = false;
+            setupRemoteEnvironment(capabilities);
         }
-
-        Configuration.timeout = 10000;
-        Configuration.pageLoadTimeout = 60000;
-
-        Configuration.browser = ConfigReader.get("browser_name");
-        Configuration.browserVersion = ConfigReader.get("browser_version");
-        Configuration.browserSize = ConfigReader.get("browser_size");
-
-        Configuration.pageLoadStrategy = "eager";
-
-        // Настройка русской локали для браузеров
-        if (Configuration.browser.equals("chrome")) {
-            ChromeOptions chromeOptions = new ChromeOptions();
-            chromeOptions.addArguments("--lang=ru");
-            chromeOptions.addArguments("--accept-lang=ru");
-            chromeOptions.addArguments("--disable-blink-features=AutomationControlled");
-
-            // Устанавливаем русскую локаль в preferences
-            Map<String, Object> prefs = new HashMap<>();
-            prefs.put("intl.accept_languages", "ru");
-            prefs.put("profile.default_content_setting_values.notifications", 2);
-
-            chromeOptions.setExperimentalOption("prefs", prefs);
-
-            // Применяем ChromeOptions к capabilities
-            capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
-
-        } else if (Configuration.browser.equals("firefox")) {
-            // Настройка русской локали для Firefox
-            FirefoxOptions firefoxOptions = new FirefoxOptions();
-
-            // Устанавливаем русскую локаль
-            firefoxOptions.addPreference("intl.accept_languages", "ru");
-            firefoxOptions.addPreference("general.useragent.locale", "ru");
-
-            // Отключаем уведомления
-            firefoxOptions.addPreference("dom.webnotifications.enabled", false);
-
-            // Применяем FirefoxOptions к capabilities
-            capabilities.setCapability(org.openqa.selenium.firefox.FirefoxOptions.FIREFOX_OPTIONS, firefoxOptions);
-        }
+        setupBasicConfiguration();
+        setupBrowserConfiguration(capabilities);
         Configuration.browserCapabilities = capabilities;
     }
 
     @AfterEach
     void addAttachments() {
         String env = System.getProperty("env", "local");
-
         Attach.screenshot();
         Attach.pageSource();
-
         if (!Configuration.browser.equals("firefox")) {
             Attach.browserConsoleLogs();
         }
-
         if (env.equals("remote")) {
             Attach.addVideo();
         }
-
         Selenide.clearBrowserCookies();
         Selenide.clearBrowserLocalStorage();
-
         if (env.equals("remote")) {
             Selenide.closeWebDriver();
         }
     }
 
+    private static void validateTestType(String testType) {
+        Assumptions.assumeTrue("web".equals(testType) || "all".equals(testType) || testType == null,
+                "Этот тест должен запускаться только для Web тестов или всех тестов");
+    }
+
+    // Настройка удаленного окружения
+    private static void setupRemoteEnvironment(DesiredCapabilities capabilities) {
+        capabilities.setCapability("selenoid:options", Map.<String, Object>of(
+                "enableVNC", true,
+                "enableVideo", true
+        ));
+        Configuration.remote = ConfigReader.get("selenoid_url");
+        Configuration.reopenBrowserOnFail = false;
+    }
+
+    // Базовая конфигурация
+    private static void setupBasicConfiguration() {
+        Configuration.timeout = 10000;
+        Configuration.pageLoadTimeout = 60000;
+        Configuration.browser = ConfigReader.get("browser_name");
+        Configuration.browserVersion = ConfigReader.get("browser_version");
+        Configuration.browserSize = ConfigReader.get("browser_size");
+        Configuration.pageLoadStrategy = "eager";
+    }
+
+    // Настройка браузера
+    private static void setupBrowserConfiguration(DesiredCapabilities capabilities) {
+        if (Configuration.browser.equals("chrome")) {
+            setupChromeBrowser(capabilities);
+        } else if (Configuration.browser.equals("firefox")) {
+            setupFirefoxBrowser(capabilities);
+        }
+    }
+
+    private static void setupChromeBrowser(DesiredCapabilities capabilities) {
+        ChromeOptions chromeOptions = new ChromeOptions();
+
+        // Аргументы командной строки
+        chromeOptions.addArguments(
+                "--lang=ru",
+                "--accept-lang=ru",
+                "--disable-blink-features=AutomationControlled");
+
+        // Настройки предпочтений
+        Map<String, Object> prefs = new HashMap<>();
+        prefs.put("intl.accept_languages", "ru");
+        prefs.put("profile.default_content_setting_values.notifications", 2);
+        chromeOptions.setExperimentalOption("prefs", prefs);
+
+        capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
+    }
+
+    private static void setupFirefoxBrowser(DesiredCapabilities capabilities) {
+        FirefoxOptions firefoxOptions = new FirefoxOptions();
+
+        // Настройки локали и уведомлений
+        firefoxOptions.addPreference("intl.accept_languages", "ru");
+        firefoxOptions.addPreference("general.useragent.locale", "ru");
+        firefoxOptions.addPreference("dom.webnotifications.enabled", false);
+
+        capabilities.setCapability(FirefoxOptions.FIREFOX_OPTIONS, firefoxOptions);
+    }
 }
