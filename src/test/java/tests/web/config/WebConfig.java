@@ -75,7 +75,7 @@ public class WebConfig {
     void addAttachments() {
         String env = System.getProperty("env", "local");
 
-        Attach.screenshotAs("Last screenshot");
+        Attach.screenshot();
         Attach.pageSource();
         Attach.browserConsoleLogs();
 

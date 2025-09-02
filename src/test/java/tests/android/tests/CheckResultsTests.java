@@ -39,7 +39,7 @@ public class CheckResultsTests extends AndroidConfig {
         });
         step("Переход к форме проверки результатов", () -> {
             invitro.closeAuthScreen()
-                    .selectCityMenuItem("Все результаты");
+                    .selectCityMenuItem("Все результаты1");
         });
         step("Ввод тестовых данных в форму", () -> {
             invitro.setInz(fakerConstants.inz)

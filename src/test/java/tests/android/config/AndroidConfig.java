@@ -3,7 +3,7 @@ package tests.android.config;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import helpers.Attach;
-import io.qameta.allure.selenide.AllureSelenide;
+import helpers.AppiumAllureSelenideListener;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -53,7 +53,7 @@ public class AndroidConfig {
 
     @BeforeEach
     void addListener() {
-        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
+        SelenideLogger.addListener("AppiumAllureSelenide", AppiumAllureSelenideListener.forAppium());
         open();
     }
 
@@ -63,9 +63,11 @@ public class AndroidConfig {
         String env = System.getProperty("env", "local");
 
         if (env.equals("local")) {
-            Attach.screenshotAs("Last screenshot");
-            Attach.pageSource();
+            Attach.screenshot();
         }
+
+        Attach.androidPageSource();
+
         closeWebDriver();
         if (env.equals("remote")) {
             Attach.getBrowserstackAttachments(sessionId);

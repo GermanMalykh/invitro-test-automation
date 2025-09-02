@@ -1,7 +1,7 @@
 package tests.android.pages.invitro;
 
 import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.ElementsCollection;
+import com.codeborne.selenide.appium.SelenideAppiumCollection;
 import com.codeborne.selenide.appium.SelenideAppiumElement;
 import io.qameta.allure.Step;
 
@@ -10,18 +10,17 @@ import java.time.Duration;
 import static com.codeborne.selenide.Condition.appear;
 import static com.codeborne.selenide.Condition.disappear;
 import static com.codeborne.selenide.Condition.visible;
-import static com.codeborne.selenide.Selenide.$$;
 import static com.codeborne.selenide.appium.AppiumSelectors.byText;
 import static com.codeborne.selenide.appium.AppiumSelectors.withText;
 import static com.codeborne.selenide.appium.SelenideAppium.$;
+import static com.codeborne.selenide.appium.SelenideAppium.$$;
 import static io.appium.java_client.AppiumBy.id;
 
 public class InvitroElementsPage {
 
     public final String INVITRO_ID = "com.invitro.app:id/";
 
-    private final ElementsCollection CITY_NAME = $$(id(INVITRO_ID + "name")),
-            CITY_MENU = $$(id(INVITRO_ID + "title_text"));
+    private final SelenideAppiumCollection CITY_MENU = $$(id(INVITRO_ID + "title_text"));
 
     private final SelenideAppiumElement LOADER_ELEMENT = $(id(INVITRO_ID + "loader")),
             TOOLBAR_CLOSE_BUTTON = $(id(INVITRO_ID + "toolbar")),
