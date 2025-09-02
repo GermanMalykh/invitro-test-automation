@@ -31,6 +31,17 @@ repositories {
     mavenCentral()
 }
 
+configurations {
+    androidTest {
+        canBeResolved = true
+        canBeConsumed = false
+    }
+    webTest {
+        canBeResolved = true
+        canBeConsumed = false
+    }
+}
+
 dependencies {
     testImplementation(
             "org.junit.jupiter:junit-jupiter:${junit5Version}",
@@ -109,6 +120,7 @@ tasks.register('androidRemoteTests', Test) {
         excludeTags("only-local")
     }
     systemProperty "env", "remote"
+    classpath = configurations.androidTest + sourceSets.test.runtimeClasspath
     description = 'Запускает все Android тесты удаленно, исключая тесты с меткой only-local'
 }
 
@@ -117,6 +129,7 @@ tasks.register('androidLocalTests', Test) {
         includeTags("android")
     }
     systemProperty "env", "local"
+    classpath = configurations.androidTest + sourceSets.test.runtimeClasspath
     description = 'Запускает все Android тесты локально'
 }
 
@@ -125,6 +138,9 @@ tasks.register('webRemoteTests', Test) {
         includeTags("web")
     }
     systemProperty "env", "remote"
+    classpath = sourceSets.test.runtimeClasspath.filter {
+        !it.name.contains('selenide-appium')
+    }
     description = 'Запускает все Web тесты удаленно'
 }
 
@@ -133,5 +149,8 @@ tasks.register('webLocalTests', Test) {
         includeTags("web")
     }
     systemProperty "env", "local"
+    classpath = sourceSets.test.runtimeClasspath.filter {
+        !it.name.contains('selenide-appium')
+    }
     description = 'Запускает все Web тесты локально'
 }
