@@ -64,4 +64,6 @@
 ./gradlew androidRemoteTests # Android тесты удалённо
 ./gradlew webLocalTests      # Web тесты локально
 ./gradlew webRemoteTests     # Web тесты удалённо
+./gradlew allLocalTests      # Все тесты локально
+./gradlew allRemoteTests     # Все тесты удалённо
 ```
