@@ -1,8 +1,8 @@
 package tests.android.pages.invitro;
 
 import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.SelenideElement;
 import com.codeborne.selenide.appium.SelenideAppiumCollection;
+import com.codeborne.selenide.appium.SelenideAppiumElement;
 import io.qameta.allure.Step;
 
 import java.time.Duration;
@@ -17,7 +17,7 @@ public class CartPage {
 
     public final String INVITRO_ID = "com.invitro.app:id/";
 
-    private final SelenideElement CONTAINER = $(id(INVITRO_ID + "container")),
+    private final SelenideAppiumElement CONTAINER = $(id(INVITRO_ID + "container")),
             TOTAL = $(id(INVITRO_ID + "total")),
             TOTAL_PRICE = $(byXpath("//*[@resource-id='com.invitro.app:id/total']" +
                     "/following-sibling::*[@resource-id='com.invitro.app:id/price']")),

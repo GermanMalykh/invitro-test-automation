@@ -2,7 +2,7 @@ package tests.android.pages.invitro;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
-import com.codeborne.selenide.SelenideElement;
+import com.codeborne.selenide.appium.SelenideAppiumElement;
 import io.qameta.allure.Step;
 
 import java.time.Duration;
@@ -22,9 +22,8 @@ public class InvitroElementsPage {
     private final ElementsCollection CITY_NAME = $$(id(INVITRO_ID + "name")),
             CITY_MENU = $$(id(INVITRO_ID + "title_text"));
 
-    private final SelenideElement LOADER_ELEMENT = $(id(INVITRO_ID + "loader")),
-            TOOLBAR_CLOSE_BUTTON = $(id(INVITRO_ID + "toolbar"))
-                    .$(id(INVITRO_ID + "backImageView")),
+    private final SelenideAppiumElement LOADER_ELEMENT = $(id(INVITRO_ID + "loader")),
+            TOOLBAR_CLOSE_BUTTON = $(id(INVITRO_ID + "toolbar")),
             CITY_LIST = $(id(INVITRO_ID + "city_list")),
             AUTH_EXIT_SCREEN = $(id(INVITRO_ID + "rightActionImageView")),
             INZ_INPUT = $(id(INVITRO_ID + "inzText")),
@@ -44,7 +43,9 @@ public class InvitroElementsPage {
 
     @Step("Закрытие тулбара")
     public InvitroElementsPage closeToolbar() {
-        TOOLBAR_CLOSE_BUTTON.should(appear, Duration.ofSeconds(15)).click();
+        TOOLBAR_CLOSE_BUTTON
+                .$(id(INVITRO_ID + "backImageView"))
+                .should(appear, Duration.ofSeconds(15)).click();
         return this;
     }
 

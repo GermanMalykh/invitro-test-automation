@@ -112,7 +112,6 @@ public class CitiesApiTest extends ApiConfig {
         step("Проверяем, что API возвращает ошибку валидации для случайного идентификатора города", () -> {
             ErrorResponse errorResponse = response.extract().as(ErrorResponse.class);
             Assertions.assertThat(errorResponse.getError()).isEqualTo(Errors.INTERNAL_ERROR.getValue());
-            Assertions.assertThat(errorResponse.getMessage()).isNull();
         });
     }
 

@@ -1,7 +1,7 @@
 package tests.android.pages.android;
 
 import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.SelenideElement;
+import com.codeborne.selenide.appium.SelenideAppiumElement;
 import io.qameta.allure.Step;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.interactions.PointerInput;
@@ -22,7 +22,7 @@ public class AndroidElementsPage {
 
     public final String INVITRO_ID = "com.invitro.app:id/";
 
-    private final SelenideElement SEARCH_BAR_ELEMENT = $(id("android:id/search_src_text")),
+    private final SelenideAppiumElement SEARCH_BAR_ELEMENT = $(id("android:id/search_src_text")),
             PERMISSION_DENY_BUTTON = $(id("com.android.permissioncontroller:id/permission_deny_button")),
             CITIES_LIST = $(id(INVITRO_ID + "letter"));
 

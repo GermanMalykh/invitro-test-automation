@@ -1,7 +1,7 @@
 package tests.android.pages.invitro;
 
 import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.SelenideElement;
+import com.codeborne.selenide.appium.SelenideAppiumElement;
 import io.qameta.allure.Step;
 
 import java.time.Duration;
@@ -15,7 +15,7 @@ public class MedicalTestElementsPage {
 
     public final String INVITRO_ID = "com.invitro.app:id/";
 
-    private final SelenideElement TAB_LIST = $(id(INVITRO_ID + "tabLayout")),
+    private final SelenideAppiumElement TAB_LIST = $(id(INVITRO_ID + "tabLayout")),
             ITEM_LIST = $(id(INVITRO_ID + "itemList")),
             ITEMS_TITLE = $(id(INVITRO_ID + "text_title")),
             TESTS = $(id(INVITRO_ID + "tests")),
@@ -33,7 +33,8 @@ public class MedicalTestElementsPage {
 
     @Step("Выбор анализа из категории: {itemName}")
     public MedicalTestElementsPage selectItem(String itemName) {
-        ITEM_LIST.$(byText(itemName))
+        ITEM_LIST.shouldBe(visible, Duration.ofSeconds(15));
+        $(byText(itemName))
                 .shouldBe(visible, Duration.ofSeconds(15))
                 .click();
         return this;

@@ -94,10 +94,11 @@ test {
     doFirst {
         println "Задача 'test' не запускает тесты по умолчанию."
         println "Используйте:"
-        println "  ./gradlew android  - для Android тестов"
-        println "  ./gradlew web      - для Web тестов"
-        println "  ./gradlew api      - для API тестов"
-        println "  ./gradlew allTests - для всех тестов"
+        println "  ./gradlew androidRemoteTests  - для запуска Android тестов удаленно"
+        println "  ./gradlew androidLocalTests   - для запуска Android тестов локально"
+        println "  ./gradlew webRemoteTests      - для запуска Web тестов удаленно"
+        println "  ./gradlew webLocalTests       - для запуска Web тестов локально"
+        println "  ./gradlew api                 - для API тестов"
     }
 }
 
@@ -106,12 +107,6 @@ tasks.register('api', Test) {
         includeTags("api")
     }
     systemProperty "test.type", "api"
-}
-
-// Задача для последовательного запуска всех тестов в раздельных JVM
-tasks.register('runAllTestsSequentially') {
-    dependsOn 'android', 'web', 'api'
-    description = 'Запускает все тесты последовательно (Android -> Web -> API)'
 }
 
 tasks.register('androidRemoteTests', Test) {
