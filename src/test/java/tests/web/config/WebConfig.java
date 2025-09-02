@@ -10,6 +10,7 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Assumptions;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.util.Map;
@@ -51,7 +52,7 @@ public class WebConfig {
 
         Configuration.pageLoadStrategy = "eager";
 
-        // Настройка русской локали для Chrome
+        // Настройка русской локали для браузеров
         if (Configuration.browser.equals("chrome")) {
             ChromeOptions chromeOptions = new ChromeOptions();
             chromeOptions.addArguments("--lang=ru");
@@ -62,11 +63,25 @@ public class WebConfig {
             Map<String, Object> prefs = new HashMap<>();
             prefs.put("intl.accept_languages", "ru");
             prefs.put("profile.default_content_setting_values.notifications", 2);
+
             chromeOptions.setExperimentalOption("prefs", prefs);
 
             // Применяем ChromeOptions к capabilities
             capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
 
+        } else if (Configuration.browser.equals("firefox")) {
+            // Настройка русской локали для Firefox
+            FirefoxOptions firefoxOptions = new FirefoxOptions();
+
+            // Устанавливаем русскую локаль
+            firefoxOptions.addPreference("intl.accept_languages", "ru");
+            firefoxOptions.addPreference("general.useragent.locale", "ru");
+
+            // Отключаем уведомления
+            firefoxOptions.addPreference("dom.webnotifications.enabled", false);
+
+            // Применяем FirefoxOptions к capabilities
+            capabilities.setCapability(org.openqa.selenium.firefox.FirefoxOptions.FIREFOX_OPTIONS, firefoxOptions);
         }
         Configuration.browserCapabilities = capabilities;
     }
@@ -77,7 +92,10 @@ public class WebConfig {
 
         Attach.screenshot();
         Attach.pageSource();
-        Attach.browserConsoleLogs();
+
+        if (!Configuration.browser.equals("firefox")) {
+            Attach.browserConsoleLogs();
+        }
 
         if (env.equals("remote")) {
             Attach.addVideo();
