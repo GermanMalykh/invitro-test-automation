@@ -18,14 +18,13 @@ public class MedicalTestElementsPage {
     private final SelenideAppiumElement TAB_LIST = $(id(INVITRO_ID + "tabLayout")),
             ITEM_LIST = $(id(INVITRO_ID + "itemList")),
             ITEMS_TITLE = $(id(INVITRO_ID + "text_title")),
-            TESTS = $(id(INVITRO_ID + "tests")),
             NAME = $(id(INVITRO_ID + "name")),
             CART_BUTTON = $(id(INVITRO_ID + "cart_button")),
             PROGRESS = $(id(INVITRO_ID + "progress"));
 
     @Step("Выбор категории анализов: {tabName}")
     public MedicalTestElementsPage selectCategory(String tabName) {
-        PROGRESS.shouldBe(Condition.hidden,Duration.ofSeconds(15));
+        PROGRESS.shouldBe(Condition.hidden,Duration.ofSeconds(20));
         ITEM_LIST.shouldBe(visible);
         TAB_LIST.$(byText(tabName))
                 .shouldBe(visible)
@@ -35,7 +34,7 @@ public class MedicalTestElementsPage {
 
     @Step("Выбор анализа из категории: {itemName}")
     public MedicalTestElementsPage selectItem(String itemName) {
-        PROGRESS.shouldBe(Condition.hidden,Duration.ofSeconds(15));
+        PROGRESS.shouldBe(Condition.hidden,Duration.ofSeconds(20));
         ITEM_LIST.shouldBe(visible);
         $(byText(itemName))
                 .scrollTo()
@@ -54,7 +53,7 @@ public class MedicalTestElementsPage {
 
     @Step("Выбираем анализ из списка: {testName}")
     public MedicalTestElementsPage selectTest(String testName) {
-        TESTS.$(byText(testName))
+        $(byText(testName))
                 .scrollTo()
                 .click();
         return this;

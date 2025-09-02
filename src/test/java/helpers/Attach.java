@@ -18,12 +18,12 @@ import static org.openqa.selenium.logging.LogType.BROWSER;
 
 public class Attach {
 
-    @Attachment(value = "Last screenshot", type = "image/png")
+    @Attachment(value = "Last Screenshot", type = "image/png")
     public static byte[] screenshot() {
         return ((TakesScreenshot) getWebDriver()).getScreenshotAs(OutputType.BYTES);
     }
 
-    @Attachment(value = "Page source", type = "text/plain")
+    @Attachment(value = "Page Source", type = "text/plain")
     public static byte[] pageSource() {
         return getWebDriver().getPageSource().getBytes(StandardCharsets.UTF_8);
     }
@@ -40,7 +40,7 @@ public class Attach {
 
     public static void browserConsoleLogs() {
         attachAsText(
-                "Browser console logs",
+                "Browser Console Logs",
                 String.join("\n", Selenide.getWebDriverLogs(BROWSER))
         );
     }
