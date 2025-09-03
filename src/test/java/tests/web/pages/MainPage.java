@@ -1,8 +1,8 @@
 package tests.web.pages;
 
 import com.codeborne.selenide.SelenideElement;
+import constants.UrlConstants;
 import io.qameta.allure.Step;
-import tests.web.constants.CommonData;
 
 import java.time.Duration;
 
@@ -17,9 +17,9 @@ public class MainPage {
 
     private static final SelenideElement HEADER_MENU = $(".invitro_header-menu_main-item");
 
-    @Step(CommonData.BASE_URL)
+    @Step(UrlConstants.INVITRO_MAIN)
     public MainPage openMainPage() {
-        open(CommonData.BASE_URL);
+        open(UrlConstants.INVITRO_MAIN);
         return this;
     }
 

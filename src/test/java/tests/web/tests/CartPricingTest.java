@@ -1,5 +1,6 @@
 package tests.web.tests;
 
+import constants.UrlConstants;
 import io.qameta.allure.Description;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Severity;
@@ -8,7 +9,6 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
-import tests.web.constants.CommonData;
 import tests.web.models.CitiesInfo;
 import tests.web.models.ProductsInfo;
 import tests.web.base.PageManager;
@@ -31,7 +31,7 @@ public class CartPricingTest extends PageManager {
                     .setCityCookie(city.getId());
         });
         step("Переходим в корзину", () -> {
-            base.openPage(CommonData.CART_URL);
+            base.openPage(UrlConstants.CART_URL);
         });
         step("Проверяем цены на продукты в корзине", () -> {
             cart.checkProductPrice(productsInfo.getVenTitle(), city.getVenPrice())

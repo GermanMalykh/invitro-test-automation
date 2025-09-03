@@ -1,9 +1,9 @@
 package tests.web.pages;
 
+import constants.UrlConstants;
 import io.qameta.allure.Step;
 import constants.FilePathConstants;
 import helpers.JsonConverter;
-import tests.web.constants.CartConstants;
 
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.executeJavaScript;
@@ -13,7 +13,7 @@ public class CookiePage {
     @Step("Добавляем куку с данными о продуктах")
     public CookiePage setCartProducts() {
         String encodedCart = JsonConverter.readCompactEncodedJson(FilePathConstants.CART_PRODUCT_JSON_WEB);
-        open(CartConstants.COOKIE_CONFIG_URL);
+        open(UrlConstants.COOKIE_CONFIG_URL);
 
         String productInCartScript = String.format(
                 "document.cookie = 'INVITRO_CART=%s; path=/; domain=.invitro.ru';",
@@ -29,7 +29,7 @@ public class CookiePage {
 
     @Step("Добавляем куку с данными города")
     public CookiePage setCityCookie(String cityId) {
-        open(CartConstants.COOKIE_CONFIG_URL);
+        open(UrlConstants.COOKIE_CONFIG_URL);
 
         String cityScript = String.format(
                 "document.cookie = 'INVITRO_CITY_LK_GUID=%s; path=/; domain=.invitro.ru';",

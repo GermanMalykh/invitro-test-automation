@@ -2,9 +2,6 @@ package tests.web.constants;
 
 public class CartConstants {
 
-    // Ссылка для добавления куки
-    public static final String COOKIE_CONFIG_URL = "https://lk3.invitro.ru/assets/edna-banner-close.svg";
-
     // Действия с корзиной
     public static final String CLEAN_CERT = "Очистить корзину";
     public static final String EMPTY_CART = "Ваша корзина пуста";

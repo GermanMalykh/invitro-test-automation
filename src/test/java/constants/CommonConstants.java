@@ -24,4 +24,8 @@ public class CommonConstants {
     public static final String CITY_VOLGOGRAD = "Волгоград";
     public static final String UNKNOWN_CITY = "AQA";
     public static final String UNKNOWN_CITY_PLACEHOLDER_TEXT = "Город не найден";
+    public static final String OGAREVA_OFFICE_ADDRESS = "ул. Огарёва";
+
+    // Общие состояния
+    public static final String DISABLED = "disabled";
 }

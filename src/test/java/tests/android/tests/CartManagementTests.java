@@ -1,5 +1,6 @@
 package tests.android.tests;
 
+import constants.CommonConstants;
 import io.qameta.allure.Description;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Severity;
@@ -10,13 +11,11 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 import tests.android.base.PageManager;
-import tests.android.constants.TestData;
 import tests.android.models.ProductsInfo;
 
 import static constants.CommonConstants.COVID_19_CATEGORY;
 import static constants.CommonConstants.COVID_19_TEST_NAME;
 import static io.qameta.allure.Allure.step;
-import static tests.android.constants.TestData.OGAREVA_OFFICE_ADDRESS;
 
 @Tag("android")
 @Owner("germanmalykh")
@@ -83,8 +82,8 @@ public class CartManagementTests extends PageManager {
             invitro.waitForLoaderToDisappear();
             invitro.closeToolbar();
         });
-        step("Выбираем город: " + TestData.VOLGOGRAD, () -> {
-            invitro.selectCity(TestData.VOLGOGRAD);
+        step("Выбираем город: " + CommonConstants.CITY_VOLGOGRAD, () -> {
+            invitro.selectCity(CommonConstants.CITY_VOLGOGRAD);
         });
         step("Отклоняем разрешение на геолокацию", () -> {
             android.locationPermissionDeny();
@@ -105,12 +104,12 @@ public class CartManagementTests extends PageManager {
         });
         step("Выбираем офис", () -> {
             cart.changeOfficeButton()
-                    .chooseOfficeByList(OGAREVA_OFFICE_ADDRESS)
+                    .chooseOfficeByList(CommonConstants.OGAREVA_OFFICE_ADDRESS)
                     .checkOfficeProperty()
                     .chooseOfficeButton();
         });
         step("Проверяем адрес выбранного офиса", () -> {
-            cart.checkAddress(OGAREVA_OFFICE_ADDRESS);
+            cart.checkAddress(CommonConstants.OGAREVA_OFFICE_ADDRESS);
         });
     }
 }

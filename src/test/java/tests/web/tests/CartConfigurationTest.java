@@ -1,12 +1,13 @@
 package tests.web.tests;
 
+import constants.CommonConstants;
+import constants.UrlConstants;
 import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import tests.web.constants.CartConstants;
 import tests.web.constants.ProductConstants;
-import tests.web.constants.CommonData;
 import tests.web.base.PageManager;
 
 import static io.qameta.allure.Allure.step;
@@ -25,7 +26,7 @@ public class CartConfigurationTest extends PageManager {
             cookie.setCartProducts();
         });
         step("Переходим в корзину", () -> {
-            base.openPage(CommonData.CART_URL);
+            base.openPage(UrlConstants.CART_URL);
         });
         step("Выбираем офис для сдачи анализов", () -> {
             base.clickByText(CartConstants.INVITRO_OFFICE_TITLE)
@@ -51,14 +52,14 @@ public class CartConfigurationTest extends PageManager {
                     .setCityCookie(ProductConstants.SEVASTOPOL_CITY_ID);
         });
         step("Переходим в корзину", () -> {
-            base.openPage(CommonData.CART_URL);
+            base.openPage(UrlConstants.CART_URL);
         });
         step("Выбираем выезд на дом для сдачи анализов", () -> {
             base.clickByText(CartConstants.HOME_ORDER_TITLE);
         });
         step("Проверяем, что на странице отображаются элементы для вызова специалистов на дом", () -> {
             base.checkH2(CartConstants.UNAUTH_USER_INFO_ORDERING_TITLE)
-                    .checkButtonState(CartConstants.ORDER_TITLE, CommonData.DISABLED);
+                    .checkButtonState(CartConstants.ORDER_TITLE, CommonConstants.DISABLED);
             step("Проверяем цену на вызов бригады", () -> {
                 cart.checkProductPrice(
                         CartConstants.MEDICAL_TEAM_ORDER_TITLE,

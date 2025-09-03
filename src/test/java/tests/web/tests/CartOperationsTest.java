@@ -1,5 +1,6 @@
 package tests.web.tests;
 
+import constants.UrlConstants;
 import io.qameta.allure.Description;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Severity;
@@ -8,7 +9,6 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import tests.web.constants.CartConstants;
-import tests.web.constants.CommonData;
 import tests.web.base.PageManager;
 
 import static io.qameta.allure.Allure.step;
@@ -65,7 +65,7 @@ public class CartOperationsTest extends PageManager {
             cookie.setCartProducts();
         });
         step("Переходим в корзину", () -> {
-            base.openPage(CommonData.CART_URL);
+            base.openPage(UrlConstants.CART_URL);
         });
         step("Очищаем корзину и проверяем её состояние", () -> {
             base.clickByText(CartConstants.CLEAN_CERT)
