@@ -10,6 +10,7 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import tests.web.constants.CartConstants;
 import tests.web.base.PageManager;
+import tests.web.constants.ProductConstants;
 
 import static io.qameta.allure.Allure.step;
 import static constants.CommonConstants.ANALYSIS_CATEGORY;
@@ -62,7 +63,7 @@ public class CartOperationsTest extends PageManager {
     @Description("Тест проверяет функциональность очистки корзины и корректное отображение пустого состояния")
     void cartCleanAndCheckEmptyInfo() {
         step("Подготавливаем исходные данные для корзины", () -> {
-            cookie.setCartProducts();
+            cookie.fillingCartInfo(ProductConstants.SEVASTOPOL_CITY_ID);
         });
         step("Переходим в корзину", () -> {
             base.openPage(UrlConstants.CART_URL);

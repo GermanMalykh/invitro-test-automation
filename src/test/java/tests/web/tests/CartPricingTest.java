@@ -27,8 +27,7 @@ public class CartPricingTest extends PageManager {
     @MethodSource("tests.web.providers.CitiesPriceProvider#provideCitiesData")
     void pricesByCityInCart(CitiesInfo city, ProductsInfo productsInfo) {
         step("Подготавливаем исходные данные для корзины города: " + city.getName(), () -> {
-            cookie.setCartProducts()
-                    .setCityCookie(city.getId());
+            cookie.fillingCartInfo(city.getId());
         });
         step("Переходим в корзину", () -> {
             base.openPage(UrlConstants.CART_URL);

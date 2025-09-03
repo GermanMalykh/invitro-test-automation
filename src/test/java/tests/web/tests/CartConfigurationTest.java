@@ -23,7 +23,7 @@ public class CartConfigurationTest extends PageManager {
     @Description("Тест проверяет процесс выбора медицинского офиса для сдачи анализов и переход к оформлению заказа")
     void choosingOfficeOrderInCartAndCheckOrderDetails() {
         step("Подготавливаем исходные данные для корзины", () -> {
-            cookie.setCartProducts();
+            cookie.fillingCartInfo(ProductConstants.SEVASTOPOL_CITY_ID);
         });
         step("Переходим в корзину", () -> {
             base.openPage(UrlConstants.CART_URL);
@@ -48,8 +48,7 @@ public class CartConfigurationTest extends PageManager {
     @Description("Тест проверяет функциональность выбора выезда специалистов на дом и корректное отображение информации")
     void choosingHomeOrderInCartAndCheckOrderDetails() {
         step("Подготавливаем исходные данные для корзины", () -> {
-            cookie.setCartProducts()
-                    .setCityCookie(ProductConstants.SEVASTOPOL_CITY_ID);
+            cookie.fillingCartInfo(ProductConstants.SEVASTOPOL_CITY_ID);
         });
         step("Переходим в корзину", () -> {
             base.openPage(UrlConstants.CART_URL);
