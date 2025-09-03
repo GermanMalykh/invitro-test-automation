@@ -15,48 +15,170 @@
     <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
 
     <style>
+        .container-fluid {
+            padding: 20px;
+        }
+        @media (max-width: 768px) {
+            .col-md-6 {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+            .container-fluid {
+                padding: 10px;
+            }
+            .left-panel, .right-panel {
+                padding: 10px;
+            }
+        }
+        .left-panel {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        .right-panel {
+            background-color: #ffffff;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        .section-title {
+            color: #495057;
+            font-weight: bold;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #28a745;
+            padding-bottom: 5px;
+        }
+        .parameter-item {
+            margin-bottom: 8px;
+            padding: 5px;
+            background-color: #ffffff;
+            border-radius: 3px;
+        }
+        .parameter-name {
+            font-weight: bold;
+            color: #28a745;
+        }
+        .parameter-value {
+            color: #6c757d;
+            word-break: break-all;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            max-width: 100%;
+            display: block;
+        }
         pre {
             white-space: pre-wrap;
+            background-color: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 3px;
+            padding: 10px;
+            margin: 0;
+        }
+        .status-badge {
+            display: inline-block;
+            padding: 4px 8px;
+            background-color: #28a745;
+            color: white;
+            border-radius: 3px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .url-text {
+            color: #007bff;
+            font-family: monospace;
+            word-break: break-all;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            max-width: 100%;
+            display: block;
         }
     </style>
 </head>
 <body>
-<div><h4>Status code</h4> <#if data.responseCode??>
-        <pre><code><b>${data.responseCode}</b></code></pre>
-    <#else>Unknown</#if></div>
-<#if data.url??>
+<div class="container-fluid">
+    <div class="row">
+        <!-- Левая панель с параметрами -->
+        <div class="col-md-6">
+            <div class="left-panel">
+                <h4 class="section-title">Параметры ответа</h4>
+                
+                <!-- Статус код -->
+                <div class="parameter-item">
+                    <#assign statusCode = data.responseCode!0>
+                    <#assign bgColor = "#28a745">
+                    <#assign textColor = "white">
+                    <#if statusCode gte 200 && statusCode lt 300>
+                        <#assign bgColor = "#28a745">
+                        <#assign textColor = "white">
+                    <#elseif statusCode gte 400>
+                        <#assign bgColor = "#dc3545">
+                        <#assign textColor = "white">
+                    <#elseif statusCode gte 300>
+                        <#assign bgColor = "#ffc107">
+                        <#assign textColor = "#212529">
+                    <#else>
+                        <#assign bgColor = "#17a2b8">
+                        <#assign textColor = "white">
+                    </#if>
+                    <div class="status-badge" style="background-color: ${bgColor}; color: ${textColor};">
+                        <#if data.responseCode??>${data.responseCode}<#else>Unknown</#if>
+                    </div>
+                    <span>HTTP Status Code</span>
+                </div>
 
-    <div>
-    <pre><code>${data.url}</code></pre>
-    </div></#if>
+                <!-- URL -->
+                <#if data.url??>
+                    <h5 class="section-title">URL</h5>
+                    <div class="parameter-item">
+                        <span class="url-text">${data.url}</span>
+                    </div>
+                </#if>
 
-<#if (data.headers)?has_content>
-    <h4>Headers</h4>
-    <div>
-        <#list data.headers as name, value>
-            <div>
-                <pre><code><b>${name}</b>: ${value}</code></pre>
+                <!-- Headers -->
+                <#if (data.headers)?has_content>
+                    <h5 class="section-title">Headers</h5>
+                    <#list data.headers as name, value>
+                        <div class="parameter-item">
+                            <div class="parameter-name">${name}</div>
+                            <div class="parameter-value">${value}</div>
+                        </div>
+                    </#list>
+                </#if>
+
+                <!-- Cookies -->
+                <#if (data.cookies)?has_content>
+                    <h5 class="section-title">Cookies</h5>
+                    <#list data.cookies as name, value>
+                        <div class="parameter-item">
+                            <div class="parameter-name">${name}</div>
+                            <div class="parameter-value">${value}</div>
+                        </div>
+                    </#list>
+                </#if>
             </div>
-        </#list>
-    </div>
-</#if>
+        </div>
 
-<#if data.body??>
-    <h4>Body</h4>
-    <div>
-        <pre><code>${data.body}</code></pre>
-    </div>
-</#if>
-
-<#if (data.cookies)?has_content>
-    <h4>Cookies</h4>
-    <div>
-        <#list data.cookies as name, value>
-            <div>
-                <pre><code><b>${name}</b>: ${value}</code></pre>
+        <!-- Правая панель с телом ответа -->
+        <div class="col-md-6">
+            <div class="right-panel">
+                <h4 class="section-title">Тело ответа</h4>
+                
+                <#if data.body??>
+                    <div class="parameter-item">
+                        <pre><code>${data.body}</code></pre>
+                    </div>
+                <#else>
+                    <div class="parameter-item">
+                        <em>Тело ответа отсутствует</em>
+                    </div>
+                </#if>
             </div>
-        </#list>
+        </div>
     </div>
-</#if>
+</div>
 </body>
 </html>

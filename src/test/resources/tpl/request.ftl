@@ -15,51 +15,186 @@
     <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
 
     <style>
+        .container-fluid {
+            padding: 20px;
+        }
+        @media (max-width: 768px) {
+            .col-md-6 {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+            .container-fluid {
+                padding: 10px;
+            }
+            .left-panel, .right-panel {
+                padding: 10px;
+            }
+        }
+        .left-panel {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        .right-panel {
+            background-color: #ffffff;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        .section-title {
+            color: #495057;
+            font-weight: bold;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 5px;
+        }
+        .parameter-item {
+            margin-bottom: 8px;
+            padding: 5px;
+            background-color: #ffffff;
+            border-radius: 3px;
+        }
+        .parameter-name {
+            font-weight: bold;
+            color: #007bff;
+        }
+        .parameter-value {
+            color: #6c757d;
+            word-break: break-all;
+        }
         pre {
             white-space: pre-wrap;
+            background-color: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 3px;
+            padding: 10px;
+            margin: 0;
+        }
+        .method-badge {
+            display: inline-block;
+            padding: 4px 8px;
+            color: white;
+            border-radius: 3px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        .method-get {
+            background-color: #61affe;
+        }
+        .method-post {
+            background-color: #49cc90;
+        }
+        .method-put {
+            background-color: #fca130;
+        }
+        .method-patch {
+            background-color: #50e3c2;
+        }
+        .method-delete {
+            background-color: #f93e3e;
+        }
+        .method-head {
+            background-color: #9012fe;
+        }
+        .method-options {
+            background-color: #0d5aa7;
+        }
+        .url-text {
+            color: #28a745;
+            font-family: monospace;
+            word-break: break-all;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            max-width: 100%;
+            display: block;
         }
     </style>
 </head>
 <body>
-<div>
-    <pre><code><#if data.method??>${data.method}<#else>GET</#if>: <#if data.url??>${data.url}<#else>Unknown</#if></code></pre>
+<div class="container-fluid">
+    <div class="row">
+        <!-- Левая панель с параметрами -->
+        <div class="col-md-6">
+            <div class="left-panel">
+                <h4 class="section-title">Параметры запроса</h4>
+                
+                <!-- Метод и URL -->
+                <div class="parameter-item">
+                    <#assign method = data.method!"GET">
+                    <#assign methodClass = "method-get">
+                    <#if method?upper_case == "POST">
+                        <#assign methodClass = "method-post">
+                    <#elseif method?upper_case == "PUT">
+                        <#assign methodClass = "method-put">
+                    <#elseif method?upper_case == "PATCH">
+                        <#assign methodClass = "method-patch">
+                    <#elseif method?upper_case == "DELETE">
+                        <#assign methodClass = "method-delete">
+                    <#elseif method?upper_case == "HEAD">
+                        <#assign methodClass = "method-head">
+                    <#elseif method?upper_case == "OPTIONS">
+                        <#assign methodClass = "method-options">
+                    </#if>
+                    <div class="method-badge ${methodClass}">
+                        ${method}
+                    </div>
+                    <div class="url-text">
+                        <#if data.url??>${data.url}<#else>Unknown</#if>
+                    </div>
+                </div>
+
+                <!-- Headers -->
+                <#if (data.headers)?has_content>
+                    <h5 class="section-title">Headers</h5>
+                    <#list data.headers as name, value>
+                        <div class="parameter-item">
+                            <div class="parameter-name">${name}</div>
+                            <div class="parameter-value">${value}</div>
+                        </div>
+                    </#list>
+                </#if>
+
+                <!-- Cookies -->
+                <#if (data.cookies)?has_content>
+                    <h5 class="section-title">Cookies</h5>
+                    <#list data.cookies as name, value>
+                        <div class="parameter-item">
+                            <div class="parameter-name">${name}</div>
+                            <div class="parameter-value">${value}</div>
+                        </div>
+                    </#list>
+                </#if>
+
+                <!-- Curl -->
+                <#if data.curl??>
+                    <h5 class="section-title">Curl</h5>
+                    <div class="parameter-item">
+                        <pre><code>${data.curl}</code></pre>
+                    </div>
+                </#if>
+            </div>
+        </div>
+
+        <!-- Правая панель с телом запроса -->
+        <div class="col-md-6">
+            <div class="right-panel">
+                <h4 class="section-title">Тело запроса</h4>
+                
+                <#if data.body??>
+                    <div class="parameter-item">
+                        <pre><code>${data.body}</code></pre>
+                    </div>
+                <#else>
+                    <div class="parameter-item">
+                        <em>Тело запроса отсутствует</em>
+                    </div>
+                </#if>
+            </div>
+        </div>
+    </div>
 </div>
-
-<#if data.body??>
-    <h4>Body</h4>
-    <div>
-        <pre><code>${data.body}</code></pre>
-    </div>
-</#if>
-
-<#if (data.headers)?has_content>
-    <h4>Headers</h4>
-    <div>
-        <#list data.headers as name, value>
-            <div>
-                <pre><code><b>${name}</b>: ${value}</code></pre>
-            </div>
-        </#list>
-    </div>
-</#if>
-
-
-<#if (data.cookies)?has_content>
-    <h4>Cookies</h4>
-    <div>
-        <#list data.cookies as name, value>
-            <div>
-                <pre><code><b>${name}</b>: ${value}</code></pre>
-            </div>
-        </#list>
-    </div>
-</#if>
-
-<#if data.curl??>
-    <h4>Curl</h4>
-    <div>
-        <pre><code>${data.curl}</code></pre>
-    </div>
-</#if>
 </body>
 </html>
