@@ -27,8 +27,8 @@ public class InvitroElementsPage {
             TOOLBAR_CLOSE_BUTTON = $(id(INVITRO_ID + "toolbar")),
             CITY_LIST = $(id(INVITRO_ID + "city_list")),
             AUTH_EXIT_SCREEN = $(id(INVITRO_ID + "rightActionImageView")),
-            INZ_INPUT = $(id(INVITRO_ID + "inzText")),
-            BIRTH_DATE_INPUT = $(id(INVITRO_ID + "birthdayText")),
+            INZ_INPUT_FIELD = $(id(INVITRO_ID + "inzText")),
+            BIRTH_DATE_INPUT_FIELD = $(id(INVITRO_ID + "birthdayText")),
             SURNAME_INPUT = $(id(INVITRO_ID + "surnameText")),
             ACCEPT_CHECK_RESULTS = $(id(INVITRO_ID + "create_new_appointment")),
             ERROR_TEXT = $(id(INVITRO_ID + "textinput_error")),
@@ -86,13 +86,13 @@ public class InvitroElementsPage {
 
     @Step("Устанавливаем ИНЗ: \"{inz}\"")
     public InvitroElementsPage setInz(String inz) {
-        INZ_INPUT.setValue(inz);
+        INZ_INPUT_FIELD.setValue(inz);
         return this;
     }
 
     @Step("Устанавливаем дату рождения: \"{birthDate}\"")
     public InvitroElementsPage setBirthDate(String birthDate) {
-        BIRTH_DATE_INPUT.setValue(birthDate);
+        BIRTH_DATE_INPUT_FIELD.setValue(birthDate);
         return this;
     }
 
@@ -148,7 +148,7 @@ public class InvitroElementsPage {
      * @param attempts
      * @return
      */
-    public String getRemainingAttemptsText(int attempts) {
+    private String getRemainingAttemptsText(int attempts) {
         if (attempts == 1) {
             return "Осталась 1 попытка";
         }

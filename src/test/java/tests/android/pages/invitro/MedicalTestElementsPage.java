@@ -17,7 +17,7 @@ public class MedicalTestElementsPage {
 
     public final String INVITRO_ID = "com.invitro.app:id/";
 
-    private final SelenideAppiumElement TAB_LIST = $(id(INVITRO_ID + "tabLayout")),
+    private final SelenideAppiumElement CATEGORY_TAB_LIST = $(id(INVITRO_ID + "tabLayout")),
             ITEM_LIST = $(id(INVITRO_ID + "itemList")),
             ITEMS_TITLE = $(id(INVITRO_ID + "text_title")),
             NAME = $(id(INVITRO_ID + "name")),
@@ -28,7 +28,7 @@ public class MedicalTestElementsPage {
     public MedicalTestElementsPage selectCategory(String tabName) {
         PROGRESS.shouldBe(Condition.hidden, Duration.ofSeconds(20));
         ITEM_LIST.shouldBe(visible);
-        TAB_LIST.$(byText(tabName))
+        CATEGORY_TAB_LIST.$(byText(tabName))
                 .shouldBe(visible)
                 .click();
         return this;

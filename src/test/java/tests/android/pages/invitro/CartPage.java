@@ -97,9 +97,9 @@ public class CartPage {
     }
 
     @Step("Проверяем адрес выбранного офиса в корзине")
-    public CartPage checkAddress(String address) {
+    public CartPage checkAddress(String officeAddress) {
         OFFICE_ADDRESS_COLLECTION
-                .findBy(Condition.text(address))
+                .findBy(Condition.text(officeAddress))
                 .is(Condition.visible);
         return this;
     }
