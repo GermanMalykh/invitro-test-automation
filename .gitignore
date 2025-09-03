@@ -151,3 +151,4 @@ allure-report/
 *.sublime-workspace
 .atom/
 .brackets.json
+/src/test/resources/configs/*/remote.properties
