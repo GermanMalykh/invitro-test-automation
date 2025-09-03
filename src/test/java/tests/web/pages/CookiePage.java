@@ -1,26 +1,19 @@
 package tests.web.pages;
 
-import com.codeborne.selenide.ElementsCollection;
 import io.qameta.allure.Step;
 import constants.FilePathConstants;
 import helpers.JsonConverter;
+import tests.web.constants.CartConstants;
 
-import static com.codeborne.selenide.Selenide.$$;
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.executeJavaScript;
 
-public class CookieManagerPage {
+public class CookiePage {
 
-    private static final String CART_ITEMS_SELECTOR = ".analyzes-item";
-    private static final String PRE_CONFIG_URL = "https://lk3.invitro.ru/assets/edna-banner-close.svg";
-
-    public static ElementsCollection CART_ITEMS = $$(CART_ITEMS_SELECTOR);
-
-    @Step("Добавляем куку c данными о продуктах")
-    public CookieManagerPage setCartProducts() {
+    @Step("Добавляем куку с данными о продуктах")
+    public CookiePage setCartProducts() {
         String encodedCart = JsonConverter.readCompactEncodedJson(FilePathConstants.CART_PRODUCT_JSON_WEB);
-
-        open(PRE_CONFIG_URL);
+        open(CartConstants.COOKIE_CONFIG_URL);
 
         String productInCartScript = String.format(
                 "document.cookie = 'INVITRO_CART=%s; path=/; domain=.invitro.ru';",
@@ -35,15 +28,21 @@ public class CookieManagerPage {
     }
 
     @Step("Добавляем куку с данными города")
-    public CookieManagerPage setCityCookie(String cityId) {
-        open(PRE_CONFIG_URL);
+    public CookiePage setCityCookie(String cityId) {
+        open(CartConstants.COOKIE_CONFIG_URL);
 
         String cityScript = String.format(
                 "document.cookie = 'INVITRO_CITY_LK_GUID=%s; path=/; domain=.invitro.ru';",
                 cityId
         );
-
         executeJavaScript(cityScript);
+        return this;
+    }
+
+    @Step("Закрываем cookie-баннер и всплывающие окна")
+    public CookiePage closeCookieBanner() {
+        executeJavaScript("document.querySelectorAll(" +
+                "'.cookie--popup, .attention--page, .attention--fixed').forEach(e => e.remove());");
         return this;
     }
 
