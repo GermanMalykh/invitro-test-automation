@@ -24,7 +24,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 @Tag("api")
 @Owner("germanmalykh")
-@DisplayName("[API]")
+@DisplayName("API Tests")
 public class CitiesApiTest extends ApiConfig {
 
     protected ValidatableResponse response;
@@ -37,7 +37,7 @@ public class CitiesApiTest extends ApiConfig {
     @Severity(SeverityLevel.BLOCKER)
     @DisplayName("[API] Получение списка всех городов")
     @Description("Тест проверяет успешное получение списка всех городов с валидацией структуры ответа")
-    void testGetAllCities() {
+    void getAllCities() {
         step("Выполняем запрос на получение списка всех городов", () -> {
             response = apiClient.getAllCities();
         });
@@ -58,7 +58,7 @@ public class CitiesApiTest extends ApiConfig {
     @Severity(SeverityLevel.CRITICAL)
     @DisplayName("[API] Получение информации о конкретном городе")
     @Description("Тест проверяет получение детальной информации о конкретном городе по его ID")
-    void testGetCityInfo() {
+    void getCityInfo() {
         step("Выполняем запрос на получение списка всех городов", () -> {
             response = apiClient.getAllCities().statusCode(200);
         });
@@ -83,7 +83,7 @@ public class CitiesApiTest extends ApiConfig {
     @Severity(SeverityLevel.MINOR)
     @DisplayName("[API] Получение информации о городе с невалидным идентификатором")
     @Description("Тест проверяет корректную обработку невалидного формата ID города")
-    void testGetCityInfoWithInvalidId() {
+    void getCityInfoWithInvalidId() {
         step("Выполняем запрос на получение информации о городе с невалидным идентификатором города", () -> {
             response = apiClient.getCityInfo(TestData.INVALID_GUID.getValue());
         });
@@ -101,7 +101,7 @@ public class CitiesApiTest extends ApiConfig {
     @Severity(SeverityLevel.MINOR)
     @DisplayName("[API] Получение информации о городе со случайным идентификатором")
     @Description("Тест проверяет обработку случайного GUID при запросе информации о городе")
-    void testGetCityInfoWithRandomId() {
+    void getCityInfoWithRandomId() {
         step("Выполняем запрос на получение информации о городе со случайным идентификатором", () -> {
             addAttachment("Случайный GUID", "text/plain", fakerConstants.guid);
             response = apiClient.getCityInfo(fakerConstants.guid);
@@ -119,7 +119,7 @@ public class CitiesApiTest extends ApiConfig {
     @DisplayName("[API] Проверка соответствия \"Страна\" - \"Столица\". ")
     @ParameterizedTest(name = "Стране \"{1}\" соответствует столица \"{0}\"")
     @MethodSource("tests.api.providers.CapitalsProvider#provideCapitalCountryPairs")
-    void testCapitalCityCountryCorrespondence(String cityName, String expectedCountry) {
+    void capitalCityCountryCorrespondence(String cityName, String expectedCountry) {
         step("Выполняем запрос на получение списка всех городов", () -> {
             response = apiClient.getAllCities().statusCode(200);
         });

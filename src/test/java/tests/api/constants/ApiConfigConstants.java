@@ -7,6 +7,7 @@ import lombok.Getter;
  * Константы конфигурации API
  * Централизованное место для всех API настроек
  */
+//TODO: объединить вызов https://lk3.invitro.ru ?
 @Getter
 @AllArgsConstructor
 public enum ApiConfigConstants {

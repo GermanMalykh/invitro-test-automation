@@ -1,10 +1,10 @@
-package specs;
+package tests.api.specs;
 
 import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
 
-import static helpers.RestAssuredAllureListener.withCustomTemplates;
+import static helpers.RestAllureListener.withCustomTemplates;
 import static io.restassured.RestAssured.with;
 import static io.restassured.filter.log.LogDetail.ALL;
 

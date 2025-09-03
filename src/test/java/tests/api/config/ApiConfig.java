@@ -4,7 +4,7 @@ import io.restassured.RestAssured;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Assumptions;
-import tests.api.utils.AllureEnv;
+import utils.AllureEnv;
 import tests.api.constants.ApiConfigConstants;
 
 public class ApiConfig {

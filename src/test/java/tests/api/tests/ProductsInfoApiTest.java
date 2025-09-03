@@ -25,12 +25,12 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @Tag("api")
 @Owner("germanmalykh")
-@DisplayName("[API]")
+@DisplayName("API Tests")
 public class ProductsInfoApiTest extends ApiConfig {
 
     protected ValidatableResponse response;
 
-    private final String[] cityIdHolder = new String[1];
+    private String cityId;
 
     private final InvitroApiClient apiClient = new InvitroApiClient();
 
@@ -38,7 +38,7 @@ public class ProductsInfoApiTest extends ApiConfig {
     @Severity(SeverityLevel.NORMAL)
     @DisplayName("[API] Получение информации о продукте с цифровым артикулом")
     @Description("Проверяем, что API корректно возвращает информацию о продукте с цифровым артикулом 16 (Глюкоза)")
-    void testProductInfoCheckByNumericArticle() {
+    void productInfoCheckByNumericArticle() {
         step("Получаем информацию о продукте с цифровым артикулом " + NumericProducts.GLUCOSE.getValue(), () -> {
             response = apiClient.getProductsInfo(
                     NumericProducts.GLUCOSE.getValue(),
@@ -60,7 +60,7 @@ public class ProductsInfoApiTest extends ApiConfig {
     @Severity(SeverityLevel.NORMAL)
     @DisplayName("[API] Получение информации о продукте с буквенным артикулом")
     @Description("Проверяем, что API корректно возвращает информацию о продукте с буквенным артикулом VEN (Взятие крови)")
-    void testProductInfoCheckByLetterArticle() {
+    void productInfoCheckByLetterArticle() {
         step("Получаем информацию о продукте с буквенным артикулом", () -> {
             response = apiClient.getProductsInfo(
                     LetterProducts.VEN.getValue(),
@@ -82,18 +82,18 @@ public class ProductsInfoApiTest extends ApiConfig {
     @Severity(SeverityLevel.NORMAL)
     @DisplayName("[API] Получение информации о продукте с указанием существующего идентификатора города")
     @Description("Проверяем, что API корректно возвращает информацию о продукте при указании cityId")
-    void testProductInfoByCity() {
+    void productInfoByCity() {
         step("Выполняем запрос на получение списка всех городов", () -> {
             response = apiClient.getAllCities().statusCode(200);
         });
         step("Получаем идентификатор города", () -> {
             CityResponse[] cityResponse = response.extract().as(CityResponse[].class);
-            cityIdHolder[0] = cityResponse[0].getId();
+            cityId = cityResponse[0].getId();
         });
         step("Получаем информацию о продукте с указанием идентификатора города", () -> {
             response = apiClient.getProductsInfo(
                     LetterProducts.VEN.getValue(),
-                    cityIdHolder[0]);
+                    cityId);
         });
         step("Проверяем, что статус код ответа: \"200\"", () -> {
             response.statusCode(200);
@@ -110,7 +110,7 @@ public class ProductsInfoApiTest extends ApiConfig {
     @Severity(SeverityLevel.CRITICAL)
     @DisplayName("[API] Получение информации о продукте с пустым идентификатором артикула")
     @Description("Проверяем, что API корректно обрабатывает запрос без указания артикула (articles=null)")
-    void testProductInfoWithNullArticle() {
+    void productInfoWithNullArticle() {
         step("Получаем информацию о продукте без указания артикула", () -> {
             response = apiClient.getProductsInfo(
                     null,
@@ -129,7 +129,7 @@ public class ProductsInfoApiTest extends ApiConfig {
     @Severity(SeverityLevel.MINOR)
     @DisplayName("[API] Получение информации о продукте с невалидным форматом идентификатора города")
     @Description("Проверяем, что API корректно валидирует невалидное значение для cityId")
-    void testProductInfoInvalidValues() {
+    void productInfoInvalidValues() {
         step("Выполняем запрос на получение информации о продукте с невалидным идентификатором города", () -> {
             response = apiClient.getProductsInfo(
                     NumericProducts.GLUCOSE.getValue(),

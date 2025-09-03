@@ -6,7 +6,7 @@ import io.restassured.http.ContentType;
 import io.restassured.response.ValidatableResponse;
 import tests.api.constants.Endpoints;
 import tests.api.constants.ApiConfigConstants;
-import specs.RestSpec;
+import tests.api.specs.RestSpec;
 
 import java.util.HashMap;
 import java.util.Map;

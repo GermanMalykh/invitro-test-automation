@@ -1,4 +1,4 @@
-package tests.api.utils;
+package utils;
 
 import tests.api.constants.ApiConfigConstants;
 
@@ -7,6 +7,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Properties;
 
+//TODO: Сделать общим
 public class AllureEnv {
     /**
      * Сгенерировать build/allure-results/environment.properties

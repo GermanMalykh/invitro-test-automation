@@ -22,13 +22,13 @@ import org.junit.jupiter.api.DisplayName;
 
 @Tag("api")
 @Owner("germanmalykh")
-@DisplayName("[API]")
+@DisplayName("API Tests")
 public class OfficeApiTest extends ApiConfig {
 
     protected ValidatableResponse response;
 
-    private final String[] cityNameHolder = new String[1];
-    private final String[] cityIdHolder = new String[1];
+    private String cityId;
+    private String cityName;
 
     private final InvitroApiClient apiClient = new InvitroApiClient();
     private final FakerConstants fakerConstants = new FakerConstants();
@@ -37,17 +37,17 @@ public class OfficeApiTest extends ApiConfig {
     @Severity(SeverityLevel.CRITICAL)
     @DisplayName("[API] Поиск офиса с существующим идентификатору города")
     @Description("Тест успешного поиска офиса по корректному ID города")
-    void testFindOfficeByCityId() {
+    void findOfficeByCityId() {
         step("Выполняем запрос на получение списка всех городов", () -> {
             response = apiClient.getAllCities().statusCode(200);
         });
         step("Получаем информацию о городе", () -> {
             CityResponse[] cityResponses = response.extract().as(CityResponse[].class);
-            cityIdHolder[0] = cityResponses[0].getId();
-            cityNameHolder[0] = cityResponses[0].getName();
+            cityId = cityResponses[0].getId();
+            cityName = cityResponses[0].getName();
         });
         step("Получаем информацию об офисе в городе", () -> {
-            response = apiClient.getOfficeInfo(cityIdHolder[0]);
+            response = apiClient.getOfficeInfo(cityId);
         });
         step("Проверяем, что статус код ответа: \"200\"", () -> {
             response.statusCode(200);
@@ -55,7 +55,7 @@ public class OfficeApiTest extends ApiConfig {
         step("Проверяем что информация об офисе отображается для выбранного города", () -> {
             OfficeResponse[] officeResponses = response.extract().as(OfficeResponse[].class);
             assertThat(officeResponses[0].getOffice()).isNotNull();
-            assertThat(officeResponses[0].getOffice().getAddress()).contains(cityNameHolder[0]);
+            assertThat(officeResponses[0].getOffice().getAddress()).contains(cityName);
         });
     }
 
@@ -64,7 +64,7 @@ public class OfficeApiTest extends ApiConfig {
     @Severity(SeverityLevel.NORMAL)
     @DisplayName("[API] Поиск офиса со случайным идентификатором города")
     @Description("Тест обработки случайного GUID при поиске офиса")
-    void testFindOfficeByRandomId() {
+    void findOfficeByRandomId() {
         step("Выполняем запрос на получение информации об офисе со случайным идентификатором города", () -> {
             addAttachment("Случайный GUID", "text/plain", fakerConstants.guid);
             response = apiClient.getOfficeInfo(fakerConstants.guid);
@@ -82,7 +82,7 @@ public class OfficeApiTest extends ApiConfig {
     @Severity(SeverityLevel.BLOCKER)
     @DisplayName("[API] Поиск офиса с пустым идентификатором города")
     @Description("Тест валидации при передаче null ID города")
-    void testFindOfficeWithNullId() {
+    void findOfficeWithNullId() {
         step("Выполняем запрос на получение информации об офисе без передачи идентификатора города", () -> {
             response = apiClient.getOfficeInfo(null);
         });
@@ -99,7 +99,7 @@ public class OfficeApiTest extends ApiConfig {
     @Severity(SeverityLevel.BLOCKER)
     @DisplayName("[API] Поиск офиса с невалидным форматом идентификатора города")
     @Description("Тест валидации при передаче невалидного формата ID города")
-    void testFindOfficeWithInvalidId() {
+    void findOfficeWithInvalidId() {
         step("Выполняем запрос на получение информации об офисе с невалидным идентификатором города", () -> {
             response = apiClient.getOfficeInfo(TestData.INVALID_GUID.getValue());
         });
