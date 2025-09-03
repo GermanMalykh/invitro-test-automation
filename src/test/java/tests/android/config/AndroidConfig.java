@@ -4,12 +4,14 @@ import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import helpers.Attach;
 import helpers.AppiumAllureListener;
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Assumptions;
 import tests.android.drivers.LocalMobileDriver;
 import tests.android.drivers.RemoteMobileDriver;
+import utils.AllureEnv;
 
 import static com.codeborne.selenide.Selenide.closeWebDriver;
 import static com.codeborne.selenide.Selenide.open;
@@ -72,5 +74,10 @@ public class AndroidConfig {
         if (env.equals("remote")) {
             Attach.getBrowserstackAttachments(sessionId);
         }
+    }
+
+    @AfterAll
+    static void afterAll() {
+        AllureEnv.writeAllureEnvironment();
     }
 }

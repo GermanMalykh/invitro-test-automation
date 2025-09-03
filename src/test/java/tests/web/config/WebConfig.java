@@ -5,6 +5,7 @@ import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Assumptions;
@@ -12,6 +13,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import utils.AllureEnv;
 
 import java.util.Map;
 import java.util.HashMap;
@@ -53,6 +55,11 @@ public class WebConfig {
         if (env.equals("remote")) {
             Selenide.closeWebDriver();
         }
+    }
+
+    @AfterAll
+    static void afterAll() {
+        AllureEnv.writeAllureEnvironment();
     }
 
     private static void validateTestType(String testType) {

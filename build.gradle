@@ -117,6 +117,7 @@ tasks.register('androidRemoteTests', Test) {
         includeTags("android")
     }
     systemProperty "env", "remote"
+    systemProperty "test.type", "android"
     classpath = configurations.androidTest + sourceSets.test.runtimeClasspath
     description = 'Запускает все Android тесты удаленно'
 }
@@ -126,6 +127,7 @@ tasks.register('androidLocalTests', Test) {
         includeTags("android")
     }
     systemProperty "env", "local"
+    systemProperty "test.type", "android"
     classpath = configurations.androidTest + sourceSets.test.runtimeClasspath
     description = 'Запускает все Android тесты локально'
 }
@@ -135,6 +137,7 @@ tasks.register('webRemoteTests', Test) {
         includeTags("web")
     }
     systemProperty "env", "remote"
+    systemProperty "test.type", "web"
     classpath = sourceSets.test.runtimeClasspath.filter {
         !it.name.contains('selenide-appium')
     }
@@ -146,6 +149,7 @@ tasks.register('webLocalTests', Test) {
         includeTags("web")
     }
     systemProperty "env", "local"
+    systemProperty "test.type", "web"
     classpath = sourceSets.test.runtimeClasspath.filter {
         !it.name.contains('selenide-appium')
     }
@@ -157,6 +161,7 @@ tasks.register('allLocalTests', Test) {
         includeTags("android", "web", "api")
     }
     systemProperty "env", "local"
+    systemProperty "test.type", "all"
     classpath = configurations.androidTest + sourceSets.test.runtimeClasspath
     description = 'Запускает все тесты локально (Android, Web, API)'
 }
@@ -166,6 +171,7 @@ tasks.register('allRemoteTests', Test) {
         includeTags("android", "web", "api")
     }
     systemProperty "env", "remote"
+    systemProperty "test.type", "all"
     classpath = configurations.androidTest + sourceSets.test.runtimeClasspath
     description = 'Запускает все тесты удаленно (Android, Web, API)'
 }
