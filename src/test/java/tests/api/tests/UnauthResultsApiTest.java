@@ -39,7 +39,7 @@ public class UnauthResultsApiTest extends ApiConfig {
     @Severity(SeverityLevel.CRITICAL)
     @DisplayName("[API] Получение результатов анализов по данным пациента, которого нет в системе")
     @Description("Проверяем, что API корректно обрабатывает запросы с данными несуществующего пациента")
-    void labResultsNotFoundPatientData() {
+    void getLabResultsNotFoundPatientData() {
         step("Выполняем запрос на получение результатов анализов", () -> {
             response = apiClient.getResultsInfo(
                     fakerConstants.birthDate,
@@ -59,7 +59,7 @@ public class UnauthResultsApiTest extends ApiConfig {
     @Severity(SeverityLevel.CRITICAL)
     @DisplayName("[API] Блокировка проверки результатов анализов при частых запросах")
     @Description("Проверяем, что API корректно ограничивает количество запросов и блокирует пользователя при превышении лимита")
-    void labResultsRateLimitExceeded() {
+    void getLabResultsRateLimitExceeded() {
         step("Выполняем запрос на получение результатов анализов \"" + MAX_LIMIT_ATTEMPTS.getValue() + "\" раза", () -> {
             for (int i = 0; i < MAX_LIMIT_ATTEMPTS.getValue(); i++) {
                 apiClient.getResultsInfo(
@@ -94,7 +94,7 @@ public class UnauthResultsApiTest extends ApiConfig {
     @ParameterizedTest
     @ValueSource(strings = {"birthDate", "inz", "lastName"})
     @Description("Проверяем, что API корректно валидирует null значения для всех обязательных параметров")
-    void nullParametersValidation(String nullParameter) {
+    void getLabResultsWithNullParameters(String nullParameter) {
         step("Выполняем запрос на получение результатов анализов с пустым значением параметра: '" + nullParameter + "'", () -> {
             response = apiClient.getResultsInfo(
                     "birthDate".equals(nullParameter) ? null : fakerConstants.birthDate,
@@ -120,7 +120,7 @@ public class UnauthResultsApiTest extends ApiConfig {
     @ParameterizedTest
     @ValueSource(strings = {"birthDate", "inz", "lastName"})
     @Description("Проверяем, что API корректно обрабатывает невалидные форматы данных для всех параметров")
-    void invalidDataFormats(String invalidParameter) {
+    void getLabResultsWithInvalidDataFormats(String invalidParameter) {
         step("Выполняем запрос на получение результатов анализов с невалидным значением параметра: '" + invalidParameter + "'", () -> {
             response = apiClient.getResultsInfo(
                     "birthDate".equals(invalidParameter) ? INVALID_BIRTHDAY.getValue() : fakerConstants.birthDate,

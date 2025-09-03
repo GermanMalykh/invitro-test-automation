@@ -37,7 +37,7 @@ public class CitiesApiTest extends ApiConfig {
     @Severity(SeverityLevel.BLOCKER)
     @DisplayName("[API] Получение списка всех городов")
     @Description("Тест проверяет успешное получение списка всех городов с валидацией структуры ответа")
-    void getAllCities() {
+    void getAllCitiesAndCheckDetails() {
         step("Выполняем запрос на получение списка всех городов", () -> {
             response = apiClient.getAllCities();
         });
@@ -58,7 +58,7 @@ public class CitiesApiTest extends ApiConfig {
     @Severity(SeverityLevel.CRITICAL)
     @DisplayName("[API] Получение информации о конкретном городе")
     @Description("Тест проверяет получение детальной информации о конкретном городе по его ID")
-    void getCityInfo() {
+    void getCityInfoAndCheckDetails() {
         step("Выполняем запрос на получение списка всех городов", () -> {
             response = apiClient.getAllCities().statusCode(200);
         });
@@ -119,7 +119,7 @@ public class CitiesApiTest extends ApiConfig {
     @DisplayName("[API] Проверка соответствия \"Страна\" - \"Столица\". ")
     @ParameterizedTest(name = "Стране \"{1}\" соответствует столица \"{0}\"")
     @MethodSource("tests.api.providers.CapitalsProvider#provideCapitalCountryPairs")
-    void capitalCityCountryCorrespondence(String cityName, String expectedCountry) {
+    void getCapitalCityCountryAndCheckDetails(String cityName, String expectedCountry) {
         step("Выполняем запрос на получение списка всех городов", () -> {
             response = apiClient.getAllCities().statusCode(200);
         });

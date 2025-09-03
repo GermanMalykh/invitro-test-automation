@@ -9,19 +9,19 @@ import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import tests.web.constants.CartConstants;
 import tests.web.constants.CommonData;
-import tests.web.base.CartPageManager;
+import tests.web.base.PageManager;
 
 import static io.qameta.allure.Allure.step;
-import static tests.web.constants.NavigationConstants.ANALYSIS_CATEGORY;
-import static tests.web.constants.NavigationConstants.ANALYSIS_COMPLEXES_CATEGORY;
-import static tests.web.constants.NavigationConstants.COVID_19_CATEGORY;
-import static tests.web.constants.NavigationConstants.PAGE_NUMBER_2;
+import static constants.CommonConstants.ANALYSIS_CATEGORY;
+import static constants.CommonConstants.ANALYSIS_COMPLEXES_CATEGORY;
+import static constants.CommonConstants.COVID_19_CATEGORY;
+import static constants.CommonConstants.PAGE_NUMBER_2;
 import static tests.web.constants.ProductConstants.PRODUCT_TITLE;
 
 @Tag("web")
 @Owner("germanmalykh")
 @DisplayName("Web Tests")
-public class CartOperationsTest extends CartPageManager {
+public class CartOperationsTest extends PageManager {
 
     String productPrice;
 

@@ -2,49 +2,48 @@ package tests.android.tests;
 
 import io.qameta.allure.Description;
 import io.qameta.allure.Owner;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
-import tests.android.config.AndroidConfig;
+import tests.android.base.PageManager;
 import tests.android.models.CityInfo;
-import tests.android.pages.android.AndroidElementsPage;
-import tests.android.pages.invitro.InvitroElementsPage;
 
+import static constants.CommonConstants.UNKNOWN_CITY;
+import static constants.CommonConstants.UNKNOWN_CITY_PLACEHOLDER_TEXT;
 import static io.qameta.allure.Allure.step;
 
 @Tag("android")
 @Owner("germanmalykh")
-@DisplayName("[Android]")
-public class CityInfoTests extends AndroidConfig {
-
-    private static final String UNKNOWN_CITY = "AQA",
-            UNKNOWN_CITY_PLACEHOLDER_TEXT = "Город не найден";
-    private final AndroidElementsPage android = new AndroidElementsPage();
-    private final InvitroElementsPage invitro = new InvitroElementsPage();
+@DisplayName("Android Tests")
+public class CityInfoTests extends PageManager {
 
     @Test
+    @Severity(SeverityLevel.NORMAL)
     @DisplayName("[Android] Проверка появления заглушки при поиске несуществующего города")
-    @Description("Тест проверяет корректное отображение заглушки " +
-            "'Город не найден' при поиске несуществующего города " +
-            "в приложении")
-    void unknownCityPlaceholderAppears() {
-        step("Инициализация приложения", () -> {
+    @Description("Тест проверяет корректное отображение заглушки 'Город не найден' в приложении")
+    void verifyCityNotFoundPlaceholder() {
+        step("Подготавливаем приложение к работе", () -> {
             invitro.waitForLoaderToDisappear();
             invitro.closeToolbar();
         });
-        step("Поиск несуществующего города", () -> {
+        step("Выполняем поиск несуществующего города", () -> {
             android.setSearchText(UNKNOWN_CITY);
         });
-        step("Валидация отображения заглушки", () -> {
-            invitro.verifyCityPlaceholder(UNKNOWN_CITY_PLACEHOLDER_TEXT);
+        step("Проверяем отображение заглушки", () -> {
+            invitro.checkCityPlaceholder(UNKNOWN_CITY_PLACEHOLDER_TEXT);
         });
     }
 
-    @ParameterizedTest(name = "[Android] Проверка отображения секций в меню для города {0}")
+    @Severity(SeverityLevel.CRITICAL)
+    @DisplayName("[Android] Проверка отображения секций в меню для города:")
+    @ParameterizedTest(name = "{0}")
+    @Description("Тест проверяет корректное отображение всех секций меню для различных городов")
     @MethodSource("tests.android.providers.DataProvider#provideCitySectionsData")
-    void testCityMenuSections(CityInfo cityInfo){
+    void verifyCityMenuSections(CityInfo cityInfo) {
         step("Подготавливаем приложение к работе", () -> {
             invitro.waitForLoaderToDisappear();
             invitro.closeToolbar();
@@ -56,15 +55,15 @@ public class CityInfoTests extends AndroidConfig {
             android.locationPermissionDeny();
         });
         step("Проверяем корректность отображения секций меню", () -> {
-            invitro.verifySectionDisplayed(cityInfo.getSections().getAllResults());
-            invitro.verifySectionDisplayed(cityInfo.getSections().getDynamicResults());
-            invitro.verifySectionDisplayed(cityInfo.getSections().getMyRecords());
-            invitro.verifySectionDisplayed(cityInfo.getSections().getMyOrders());
-            invitro.verifySectionDisplayed(cityInfo.getSections().getAnalyses());
-            invitro.verifySectionDisplayed(cityInfo.getSections().getMedicalOrder());
-            invitro.verifySectionDisplayed(cityInfo.getSections().getAddresses());
+            invitro.checkSectionDisplayed(cityInfo.getSections().getAllResults());
+            invitro.checkSectionDisplayed(cityInfo.getSections().getDynamicResults());
+            invitro.checkSectionDisplayed(cityInfo.getSections().getMyRecords());
+            invitro.checkSectionDisplayed(cityInfo.getSections().getMyOrders());
+            invitro.checkSectionDisplayed(cityInfo.getSections().getAnalyses());
+            invitro.checkSectionDisplayed(cityInfo.getSections().getMedicalOrder());
+            invitro.checkSectionDisplayed(cityInfo.getSections().getAddresses());
             if (cityInfo.getSections().getHomeOrder() != null) {
-                invitro.verifySectionDisplayed(cityInfo.getSections().getHomeOrder());
+                invitro.checkSectionDisplayed(cityInfo.getSections().getHomeOrder());
             }
         });
     }

@@ -18,7 +18,8 @@ import static io.appium.java_client.AppiumBy.id;
 
 public class InvitroElementsPage {
 
-    public final String INVITRO_ID = "com.invitro.app:id/";
+    public final String INVITRO_ID = "com.invitro.app:id/",
+            TOOLBAR = INVITRO_ID + "backImageView";
 
     private final SelenideAppiumCollection CITY_MENU = $$(id(INVITRO_ID + "title_text"));
 
@@ -35,30 +36,33 @@ public class InvitroElementsPage {
             BASKET = $(id(INVITRO_ID + "basket")),
             CITIES_LIST = $(id(INVITRO_ID + "letter"));
 
-    @Step("Ожидание исчезновения лоадера")
+    @Step("Ожидаем исчезновения лоадера")
     public InvitroElementsPage waitForLoaderToDisappear() {
         LOADER_ELEMENT.should(disappear, Duration.ofSeconds(15));
         return this;
     }
 
-    @Step("Закрытие тулбара")
+    @Step("Закрываем тулбар")
     public InvitroElementsPage closeToolbar() {
         TOOLBAR_CLOSE_BUTTON
-                .$(id(INVITRO_ID + "backImageView"))
-                .should(appear, Duration.ofSeconds(15)).click();
+                .$(id(TOOLBAR))
+                .should(appear, Duration.ofSeconds(15))
+                .click();
         return this;
     }
 
-    @Step("Проверка плейсхолдера города")
-    public InvitroElementsPage verifyCityPlaceholder(String placeholderText) {
-        CITY_LIST.$(withText(placeholderText))
+    @Step("Проверяем плейсхолдер \"{placeholderText}\" для города")
+    public InvitroElementsPage checkCityPlaceholder(String placeholderText) {
+        CITY_LIST
+                .$(withText(placeholderText))
                 .should(appear);
         return this;
     }
 
-    @Step("Выбор города")
+    @Step("Выбираем город \"{city}\"")
     public InvitroElementsPage selectCity(String city) {
-        CITIES_LIST.shouldBe(visible, Duration.ofSeconds(15));
+        CITIES_LIST
+                .shouldBe(visible, Duration.ofSeconds(15));
         $(byText(city))
                 .scrollTo()
                 .shouldBe(visible, Duration.ofSeconds(15))
@@ -66,50 +70,51 @@ public class InvitroElementsPage {
         return this;
     }
 
-    @Step("Выбор пункта меню города")
+    @Step("Выбираем пункт \"{menuName}\" в меню города")
     public InvitroElementsPage selectCityMenuItem(String menuName) {
-        CITY_MENU.findBy(Condition.text(menuName))
+        CITY_MENU
+                .findBy(Condition.text(menuName))
                 .shouldBe(visible, Duration.ofSeconds(15)).click();
         return this;
     }
 
-    @Step("Закрытие экрана авторизации")
+    @Step("Закрываем экран авторизации")
     public InvitroElementsPage closeAuthScreen() {
         AUTH_EXIT_SCREEN.click();
         return this;
     }
 
-    @Step("Установка ИНЗ")
+    @Step("Устанавливаем ИНЗ: \"{inz}\"")
     public InvitroElementsPage setInz(String inz) {
         INZ_INPUT.setValue(inz);
         return this;
     }
 
-    @Step("Установка даты рождения")
+    @Step("Устанавливаем дату рождения: \"{birthDate}\"")
     public InvitroElementsPage setBirthDate(String birthDate) {
         BIRTH_DATE_INPUT.setValue(birthDate);
         return this;
     }
 
-    @Step("Установка фамилии")
+    @Step("Устанавливаем фамилию: \"{surname}\"")
     public InvitroElementsPage setSurname(String surname) {
         SURNAME_INPUT.setValue(surname);
         return this;
     }
 
-    @Step("Подтверждение проверки результатов")
+    @Step("Подтверждаем проверку результатов")
     public InvitroElementsPage acceptCheckResult() {
         ACCEPT_CHECK_RESULTS.click();
         return this;
     }
 
-    @Step("Проверка текста ошибки")
+    @Step("Проверяем текст ошибки: \"{expectedError}\"")
     public InvitroElementsPage checkErrorText(String expectedError) {
         ERROR_TEXT.shouldHave(Condition.text(expectedError));
         return this;
     }
 
-    @Step("Проверка сообщения о таймере ожидания")
+    @Step("Проверяем сообщение о таймере ожидания")
     public InvitroElementsPage checkCooldownTimerMessage() {
         TIMER_ALERT_MESSAGE
                 .shouldBe(visible, Duration.ofSeconds(15))
@@ -124,8 +129,16 @@ public class InvitroElementsPage {
     }
 
     @Step("Проверяем отображение секции \"{section}\" в меню")
-    public InvitroElementsPage verifySectionDisplayed(String section) {
+    public InvitroElementsPage checkSectionDisplayed(String section) {
         CITY_MENU.findBy(Condition.attribute("text", section));
+        return this;
+    }
+
+    @Step("Проверяем текст ошибки")
+    public InvitroElementsPage checkErrorTextForAttempt(int attempts) {
+        String expectedEnding = getRemainingAttemptsText(attempts);
+        String expectedError = String.format("По введенным данным результатов не найдено. %s", expectedEnding);
+        ERROR_TEXT.shouldHave(Condition.text(expectedError));
         return this;
     }
 

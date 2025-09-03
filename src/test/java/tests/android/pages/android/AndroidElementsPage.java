@@ -10,9 +10,11 @@ import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.appium.SelenideAppium.$;
 
 import static io.appium.java_client.AppiumBy.id;
+
 public class AndroidElementsPage {
 
-    public final String INVITRO_ID = "com.invitro.app:id/";
+    public final String INVITRO_ID = "com.invitro.app:id/",
+            PERMISSION_DIALOG = "com.android.permissioncontroller:id/grant_dialog";
 
     private final SelenideAppiumElement SEARCH_BAR_ELEMENT = $(id("android:id/search_src_text")),
             PERMISSION_DENY_BUTTON = $(id("com.android.permissioncontroller:id/permission_deny_button")),
@@ -22,14 +24,14 @@ public class AndroidElementsPage {
     public AndroidElementsPage setSearchText(String city) {
         CITIES_LIST.shouldBe(visible, Duration.ofSeconds(15));
         SEARCH_BAR_ELEMENT
-                .shouldBe(Condition.visible,Duration.ofSeconds(2))
+                .shouldBe(Condition.visible, Duration.ofSeconds(2))
                 .type(city);
         return this;
     }
 
-    @Step("Отклонение разрешения на геолокацию")
+    @Step("Отклоняем разрешение на геолокацию")
     public AndroidElementsPage locationPermissionDeny() {
-        if ($(id("com.android.permissioncontroller:id/grant_dialog"))
+        if ($(id(PERMISSION_DIALOG))
                 .is(Condition.visible, Duration.ofMillis(1500))) {
             PERMISSION_DENY_BUTTON.click();
         }

@@ -7,7 +7,7 @@ import tests.web.pages.CatalogPage;
 import tests.web.pages.CookiePage;
 import tests.web.pages.MainPage;
 
-public class CartPageManager extends WebConfig {
+public class PageManager extends WebConfig {
     protected BasePage base = new BasePage();
     protected MainPage main = new MainPage();
     protected CookiePage cookie = new CookiePage();

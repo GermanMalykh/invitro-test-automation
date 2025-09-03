@@ -9,6 +9,8 @@ import java.time.Duration;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.appium.AppiumSelectors.byText;
 import static com.codeborne.selenide.appium.SelenideAppium.$;
+import static constants.CommonConstants.ADD_TO_CART;
+import static constants.CommonConstants.IN_CART;
 import static io.appium.java_client.AppiumBy.id;
 
 public class MedicalTestElementsPage {
@@ -22,9 +24,9 @@ public class MedicalTestElementsPage {
             CART_BUTTON = $(id(INVITRO_ID + "cart_button")),
             PROGRESS = $(id(INVITRO_ID + "progress"));
 
-    @Step("Выбор категории анализов: {tabName}")
+    @Step("Выбираем категорию анализов: \"{tabName}\"")
     public MedicalTestElementsPage selectCategory(String tabName) {
-        PROGRESS.shouldBe(Condition.hidden,Duration.ofSeconds(20));
+        PROGRESS.shouldBe(Condition.hidden, Duration.ofSeconds(20));
         ITEM_LIST.shouldBe(visible);
         TAB_LIST.$(byText(tabName))
                 .shouldBe(visible)
@@ -32,9 +34,9 @@ public class MedicalTestElementsPage {
         return this;
     }
 
-    @Step("Выбор анализа из категории: {itemName}")
+    @Step("Выбираем анализ из категории: \"{itemName}\"")
     public MedicalTestElementsPage selectItem(String itemName) {
-        PROGRESS.shouldBe(Condition.hidden,Duration.ofSeconds(20));
+        PROGRESS.shouldBe(Condition.hidden, Duration.ofSeconds(20));
         ITEM_LIST.shouldBe(visible);
         $(byText(itemName))
                 .scrollTo()
@@ -43,7 +45,7 @@ public class MedicalTestElementsPage {
         return this;
     }
 
-    @Step("Проверяем заголовок для выбранного анализа")
+    @Step("Проверяем заголовок \"{itemsTitle}\" для выбранного анализа")
     public MedicalTestElementsPage checkItemsTitle(String itemsTitle) {
         ITEMS_TITLE
                 .shouldBe(visible, Duration.ofSeconds(15))
@@ -51,7 +53,7 @@ public class MedicalTestElementsPage {
         return this;
     }
 
-    @Step("Выбираем анализ из списка: {testName}")
+    @Step("Выбираем анализ из списка: \"{testName}\"")
     public MedicalTestElementsPage selectTest(String testName) {
         $(byText(testName))
                 .scrollTo()
@@ -59,7 +61,7 @@ public class MedicalTestElementsPage {
         return this;
     }
 
-    @Step("Проверяем имя для выбранного анализа: {itemsName}")
+    @Step("Проверяем имя для выбранного анализа: \"{itemsName}\"")
     public MedicalTestElementsPage checkItemsName(String itemsName) {
         NAME.shouldBe(visible, Duration.ofSeconds(15))
                 .shouldHave(Condition.text(itemsName));
@@ -70,7 +72,7 @@ public class MedicalTestElementsPage {
     public MedicalTestElementsPage addItemToCart() {
         CART_BUTTON
                 .shouldBe(visible, Duration.ofSeconds(15))
-                .shouldHave(Condition.attribute("text", "Добавить в корзину"))
+                .shouldHave(Condition.attribute("text", ADD_TO_CART))
                 .click();
         return this;
     }
@@ -79,7 +81,7 @@ public class MedicalTestElementsPage {
     public MedicalTestElementsPage checkButtonCart() {
         CART_BUTTON
                 .shouldBe(visible, Duration.ofSeconds(15))
-                .shouldHave(Condition.attribute("text", "В корзине"));
+                .shouldHave(Condition.attribute("text", IN_CART));
         return this;
     }
 

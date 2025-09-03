@@ -4,7 +4,7 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
-import tests.web.constants.NavigationConstants;
+import constants.CommonConstants;
 
 import java.time.Duration;
 
@@ -45,7 +45,7 @@ public class CatalogPage {
 
     @Step("Добавляем продукт в корзину")
     public CatalogPage addProductToCart() {
-        SelenideElement addToCartButton = $$(byTitle(NavigationConstants.CART_TITLE)).last();
+        SelenideElement addToCartButton = $$(byTitle(CommonConstants.TO_CART)).last();
         addToCartButton.shouldBe(visible, Duration.ofSeconds(SHORT_TIMEOUT_SECONDS));
         addToCartButton.scrollIntoCenter();
         addToCartButton.doubleClick();

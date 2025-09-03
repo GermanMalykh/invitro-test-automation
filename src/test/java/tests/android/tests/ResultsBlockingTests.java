@@ -2,59 +2,51 @@ package tests.android.tests;
 
 import io.qameta.allure.Description;
 import io.qameta.allure.Owner;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import tests.android.config.AndroidConfig;
-import tests.android.pages.android.AndroidElementsPage;
-import tests.android.pages.invitro.InvitroElementsPage;
-import constants.FakerConstants;
+import tests.android.base.PageManager;
 
+import static constants.CommonConstants.CITY_VOLGOGRAD;
 import static io.qameta.allure.Allure.step;
 import static constants.IntConstants.MAX_LIMIT_ATTEMPTS;
 
 @Tag("android")
 @Owner("germanmalykh")
-@DisplayName("[Android]")
-public class CheckResultsTests extends AndroidConfig {
-
-    private final InvitroElementsPage invitro = new InvitroElementsPage();
-    private final AndroidElementsPage android = new AndroidElementsPage();
-
-    private final FakerConstants fakerConstants = new FakerConstants();
-
-    private static final String CITY_VOLGOGRAD = "Волгоград";
+@DisplayName("Android Tests")
+public class ResultsBlockingTests extends PageManager {
 
     @Test
+    @Severity(SeverityLevel.BLOCKER)
     @DisplayName("[Android] Блокировка проверки результатов анализов при частых запросах")
     @Description("Проверяем, что UI ограничивает количество запросов и блокирует пользователя при превышении лимита")
-    void testCheckResultsRateLimitExceeded() {
-        step("Подготовка приложения к работе", () -> {
+    void verifyResultsBlocking() {
+        step("Подготавливаем приложение к работе", () -> {
             invitro.waitForLoaderToDisappear();
             invitro.closeToolbar();
         });
-        step("Настройка города и разрешений", () -> {
+        step("Выбираем город и настраиваем разрешения в приложении", () -> {
             invitro.selectCity(CITY_VOLGOGRAD);
             android.locationPermissionDeny();
         });
-        step("Переход к форме проверки результатов", () -> {
+        step("Переходим к форме проверки результатов", () -> {
             invitro.closeAuthScreen()
                     .selectCityMenuItem("Все результаты");
         });
-        step("Ввод тестовых данных в форму", () -> {
+        step("Вводим тестовые данные в форму", () -> {
             invitro.setInz(fakerConstants.inz)
                     .setBirthDate(fakerConstants.birthDateAndroid)
                     .setSurname(fakerConstants.lastName);
         });
-        step("Тестирование ограничения количества попыток", () -> {
+        step("Проверяем текст ошибки при повторных попытках проверки анализов", () -> {
             for (int i = MAX_LIMIT_ATTEMPTS.getValue(); i > 0; i--) {
-                String expectedEnding = invitro.getRemainingAttemptsText(i);
-                String expectedError = String.format("По введенным данным результатов не найдено. %s", expectedEnding);
                 invitro.acceptCheckResult()
-                        .checkErrorText(expectedError);
+                        .checkErrorTextForAttempt(i);
             }
         });
-        step("Проверка активации таймера ожидания", () -> {
+        step("Проверяем отображение таймера ожидания", () -> {
             invitro.acceptCheckResult()
                     .checkCooldownTimerMessage();
         });

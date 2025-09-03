@@ -21,7 +21,6 @@ public class DataProvider {
                 .map(Arguments::of);
     }
 
-
     public static Stream<Arguments> provideCitySectionsData() {
         CitySectionsData city = JsonConverter.deserialize(
                 FilePathConstants.CITY_SECTIONS_JSON,

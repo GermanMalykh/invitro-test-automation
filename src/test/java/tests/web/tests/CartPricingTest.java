@@ -11,14 +11,14 @@ import org.junit.jupiter.params.provider.MethodSource;
 import tests.web.constants.CommonData;
 import tests.web.models.CitiesInfo;
 import tests.web.models.ProductsInfo;
-import tests.web.base.CartPageManager;
+import tests.web.base.PageManager;
 
 import static io.qameta.allure.Allure.step;
 
 @Tag("web")
 @Owner("germanmalykh")
 @DisplayName("Web Tests")
-public class CartPricingTest extends CartPageManager {
+public class CartPricingTest extends PageManager {
 
     @Severity(SeverityLevel.CRITICAL)
     @DisplayName("[Web] Проверка цен на продукты в корзине для города:")

@@ -11,17 +11,21 @@ import static com.codeborne.selenide.Selectors.byXpath;
 import static com.codeborne.selenide.appium.AppiumSelectors.byText;
 import static com.codeborne.selenide.appium.SelenideAppium.$;
 import static com.codeborne.selenide.appium.SelenideAppium.$$;
+import static constants.CommonConstants.CHOICE;
 import static io.appium.java_client.AppiumBy.className;
 import static io.appium.java_client.AppiumBy.id;
 
 public class CartPage {
 
-    public final String INVITRO_ID = "com.invitro.app:id/";
+    public final String INVITRO_ID = "com.invitro.app:id/",
+            PRODUCT_PRICE = INVITRO_ID + "price",
+            PRODUCT_NAME = INVITRO_ID + "name",
+            PRODUCT_NUMBER = INVITRO_ID + "number";
 
     private final SelenideAppiumElement CONTAINER = $(id(INVITRO_ID + "container")),
             TOTAL = $(id(INVITRO_ID + "total")),
-            TOTAL_PRICE = $(byXpath("//*[@resource-id='com.invitro.app:id/total']" +
-                    "/following-sibling::*[@resource-id='com.invitro.app:id/price']")),
+            TOTAL_PRICE = $(byXpath("//*[@resource-id='" + INVITRO_ID + "total']" +
+                    "/following-sibling::*[@resource-id='" + INVITRO_ID + "price']")),
             CHANGE_OFFICE_BUTTON = $(id(INVITRO_ID + "change_office_button")),
             OFFICE_OPTIONS = $(id(INVITRO_ID + "tag_name"));
 
@@ -31,7 +35,7 @@ public class CartPage {
 
     @Step("Проверяем название товара в корзине")
     public CartPage checkProductName(String productName) {
-        CONTAINER.$(id("com.invitro.app:id/name"))
+        CONTAINER.$(id(PRODUCT_NAME))
                 .$(byText(productName))
                 .scrollTo();
         return this;
@@ -39,7 +43,7 @@ public class CartPage {
 
     @Step("Проверяем цену товара в корзине")
     public CartPage checkProductPrice(String productPrice) {
-        CONTAINER.$(id("com.invitro.app:id/price"))
+        CONTAINER.$(id(PRODUCT_PRICE))
                 .$(byText(productPrice))
                 .scrollTo();
         return this;
@@ -47,7 +51,7 @@ public class CartPage {
 
     @Step("Проверяем номер товара в корзине")
     public CartPage checkProductNumber(String productNumber) {
-        CONTAINER.$(id("com.invitro.app:id/number"))
+        CONTAINER.$(id(PRODUCT_NUMBER))
                 .$(byText(productNumber))
                 .scrollTo();
         return this;
@@ -55,7 +59,7 @@ public class CartPage {
 
     @Step("Выполняем скролл до товара в корзине и проверяем название")
     public CartPage scrollAndCheckProductName(String productName) {
-        CONTAINER.$(id("com.invitro.app:id/name"))
+        CONTAINER.$(id(PRODUCT_NAME))
                 .$(byText(productName))
                 .scrollTo();
         return this;
@@ -77,7 +81,7 @@ public class CartPage {
     }
 
     @Step("Выбираем офис в списке")
-    public CartPage choseOfficeByList(String address) {
+    public CartPage chooseOfficeByList(String address) {
         $(byText(address))
                 .scrollTo()
                 .shouldBe(Condition.visible)
@@ -101,11 +105,11 @@ public class CartPage {
     }
 
     @Step("Нажимаем на кнопку выбора офиса")
-    public CartPage choseOfficeButton() {
+    public CartPage chooseOfficeButton() {
         OFFICE_OPTIONS
                 .is(Condition.visible, Duration.ofMillis(1500));
         CHOSE_OFFICE_BUTTON
-                .findBy(Condition.attribute("text", "Выбрать"))
+                .findBy(Condition.attribute("text", CHOICE))
                 .click();
         return this;
     }

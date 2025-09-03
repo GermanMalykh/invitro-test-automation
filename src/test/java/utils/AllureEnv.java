@@ -10,7 +10,6 @@ import java.util.Properties;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-//TODO: Сделать общим
 public class AllureEnv {
     /**
      * Сгенерировать build/allure-results/environment.properties

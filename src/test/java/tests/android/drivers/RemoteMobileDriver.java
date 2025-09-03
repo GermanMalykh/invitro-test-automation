@@ -9,6 +9,7 @@ import org.openqa.selenium.MutableCapabilities;
 import org.openqa.selenium.WebDriver;
 import tests.android.config.ConfigReader;
 
+import java.net.URI;
 import java.net.URL;
 
 import static io.appium.java_client.remote.AutomationName.ANDROID_UIAUTOMATOR2;
@@ -45,7 +46,7 @@ public class RemoteMobileDriver implements WebDriverProvider {
         try {
             String userName = ConfigReader.get("browserstack.user");
             String accessKey = ConfigReader.get("browserstack.key");
-            URL hubUrl = new URL(String.format("https://%s:%s@hub.browserstack.com/wd/hub", userName, accessKey));
+            URL hubUrl = URI.create(String.format("https://%s:%s@hub.browserstack.com/wd/hub", userName, accessKey)).toURL();
             return new AndroidDriver(hubUrl, options);
 
         } catch (Exception e) {

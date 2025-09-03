@@ -7,14 +7,14 @@ import org.junit.jupiter.api.Test;
 import tests.web.constants.CartConstants;
 import tests.web.constants.ProductConstants;
 import tests.web.constants.CommonData;
-import tests.web.base.CartPageManager;
+import tests.web.base.PageManager;
 
 import static io.qameta.allure.Allure.step;
 
 @Tag("web")
 @Owner("germanmalykh")
 @DisplayName("Web Tests")
-public class CartConfigurationTest extends CartPageManager {
+public class CartConfigurationTest extends PageManager {
 
     @Test
     @Severity(SeverityLevel.CRITICAL)

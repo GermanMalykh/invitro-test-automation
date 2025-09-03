@@ -1,38 +1,36 @@
 package tests.android.tests;
 
+import io.qameta.allure.Description;
 import io.qameta.allure.Owner;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
-import tests.android.config.AndroidConfig;
+import tests.android.base.PageManager;
 import tests.android.constants.TestData;
-import tests.android.pages.android.AndroidElementsPage;
-import tests.android.pages.invitro.CartPage;
-import tests.android.pages.invitro.InvitroElementsPage;
-import tests.android.pages.invitro.MedicalTestElementsPage;
 import tests.android.models.ProductsInfo;
 
+import static constants.CommonConstants.COVID_19_CATEGORY;
+import static constants.CommonConstants.COVID_19_TEST_NAME;
 import static io.qameta.allure.Allure.step;
+import static tests.android.constants.TestData.OGAREVA_OFFICE_ADDRESS;
 
 @Tag("android")
 @Owner("germanmalykh")
-@DisplayName("[Android]")
-public class CartInfoTests extends AndroidConfig {
+@DisplayName("Android Tests")
+public class CartManagementTests extends PageManager {
 
-    private static final String COVID_19_CATEGORY_NAME = "COVID-19",
-            COVID_19_TEST_NAME = "Для переболевших COVID-19. Витамины и минералы " +
-                    "(For recovered from COVID-19. Vitamins and minerals)";
-
-    private final CartPage cart = new CartPage();
-    private final AndroidElementsPage android = new AndroidElementsPage();
-    private final InvitroElementsPage invitro = new InvitroElementsPage();
-    private final MedicalTestElementsPage test = new MedicalTestElementsPage();
-
-    @ParameterizedTest(name = "[Android] Проверка информации в корзине для города {0}")
+    @Severity(SeverityLevel.CRITICAL)
+    @DisplayName("[Android] Проверка информации в корзине для города:")
+    @ParameterizedTest(name = "{0}")
+    @Description("Тест проверяет корректность добавления товаров в корзину " +
+            "и отображения информации о товарах (название, цена, количество) " +
+            "для различных городов")
     @MethodSource("tests.android.providers.DataProvider#provideCartData")
-    void testAddProductInCartAndCheckInfo(ProductsInfo productsInfo) {
+    void verifyCartProductInfo(ProductsInfo productsInfo) {
         step("Подготавливаем приложение к работе", () -> {
             invitro.waitForLoaderToDisappear();
             invitro.closeToolbar();
@@ -48,9 +46,9 @@ public class CartInfoTests extends AndroidConfig {
                     .selectCityMenuItem("Каталог анализов");
         });
         step("Выбираем категорию анализов и добавляем товар в корзину", () -> {
-            test.selectCategory("Комплексы анализов")
-                    .selectItem(COVID_19_CATEGORY_NAME)
-                    .checkItemsTitle(COVID_19_CATEGORY_NAME)
+            medicalTest.selectCategory("Комплексы анализов")
+                    .selectItem(COVID_19_CATEGORY)
+                    .checkItemsTitle(COVID_19_CATEGORY)
                     .selectTest(COVID_19_TEST_NAME)
                     .checkItemsName(COVID_19_TEST_NAME)
                     .addItemToCart()
@@ -76,8 +74,11 @@ public class CartInfoTests extends AndroidConfig {
     }
 
     @Test
+    @Severity(SeverityLevel.NORMAL)
     @DisplayName("[Android] Смена офиса и проверка изменений")
-    void testChangeOffice() {
+    @Description("Тест проверяет функциональность смены офиса в корзине " +
+            "и корректность отображения выбранного адреса")
+    void verifyOfficeAddressChange() {
         step("Подготавливаем приложение к работе", () -> {
             invitro.waitForLoaderToDisappear();
             invitro.closeToolbar();
@@ -93,8 +94,8 @@ public class CartInfoTests extends AndroidConfig {
                     .selectCityMenuItem("Каталог анализов");
         });
         step("Выбираем категорию анализов и добавляем товар в корзину", () -> {
-            test.selectCategory("Комплексы анализов")
-                    .selectItem(COVID_19_CATEGORY_NAME)
+            medicalTest.selectCategory("Комплексы анализов")
+                    .selectItem(COVID_19_CATEGORY)
                     .selectTest(COVID_19_TEST_NAME)
                     .addItemToCart();
         });
@@ -102,10 +103,14 @@ public class CartInfoTests extends AndroidConfig {
             invitro.closeToolbar()
                     .navigateToBasket();
         });
-        cart.changeOfficeButton()
-                .choseOfficeByList("ул. Огарёва")
-                .checkOfficeProperty()
-                .choseOfficeButton()
-                .checkAddress("ул. Огарёва");
+        step("Выбираем офис", () -> {
+            cart.changeOfficeButton()
+                    .chooseOfficeByList(OGAREVA_OFFICE_ADDRESS)
+                    .checkOfficeProperty()
+                    .chooseOfficeButton();
+        });
+        step("Проверяем адрес выбранного офиса", () -> {
+            cart.checkAddress(OGAREVA_OFFICE_ADDRESS);
+        });
     }
 }
