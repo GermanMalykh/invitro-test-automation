@@ -9,7 +9,15 @@ public class ConfigReader {
 
     static {
         String env = System.getProperty("env", "local");
-        String path = "src/test/resources/configs/mobile/" + env + ".properties";
+        String path;
+        
+        if ("remote".equals(env)) {
+            // Для удаленных запусков читаем из configs/mobile/remote.properties
+            path = "configs/mobile/remote.properties";
+        } else {
+            // Для локальных запусков читаем из ресурсов
+            path = "src/test/resources/configs/mobile/" + env + ".properties";
+        }
 
         try (FileInputStream fis = new FileInputStream(path)) {
             props.load(fis);
