@@ -1,0 +1,4 @@
+[2025-09-04T13:54:38.396Z] [SEVERE] https://burp/favicon.ico - Failed to load resource: net::ERR_NAME_NOT_RESOLVED
+[2025-09-04T13:54:38.396Z] [SEVERE] https://zap/favicon.ico - Failed to load resource: net::ERR_NAME_NOT_RESOLVED
+[2025-09-04T13:54:39.790Z] [WARNING] https://lk3.invitro.ru/static/webrtc/js/c2c_utils.js 67 The AudioContext was not allowed to start. It must be resumed (or created) after a user gesture on the page. https://goo.gl/7K7WLu
+[2025-09-04T13:54:40.807Z] [WARNING] https://api-maps.yandex.ru/2.1/?onload=__yandex-maps-api-onload__$$1j4ag43p5&onerror=__yandex-maps-api-onerror__$$1j4ag43p5&lang=ru_RU&load=&ns=&mode=release 0:28789 "(Yandex Maps JS API): Invalid API key"

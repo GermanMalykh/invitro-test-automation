@@ -1,0 +1,667 @@
+{
+  "uid" : "22995a54cfb0af8e",
+  "name" : "[Web] Проверка цен на продукты в корзине для города: Москва",
+  "fullName" : "tests.web.tests.CartPricingTest.pricesByCityInCart",
+  "historyId" : "2075d25cd67fcd3f45f33344376633e",
+  "time" : {
+    "start" : 1756994126676,
+    "stop" : 1756994142047,
+    "duration" : 15371
+  },
+  "description" : "Тест проверяет корректность отображения цен на продукты в корзине для различных городов",
+  "descriptionHtml" : "<p>Тест проверяет корректность отображения цен на продукты в корзине для различных городов</p>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ {
+    "name" : "setup",
+    "time" : {
+      "start" : 1756994126569,
+      "stop" : 1756994126569,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "addListener",
+    "time" : {
+      "start" : 1756994126677,
+      "stop" : 1756994126677,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "description" : "Тест проверяет корректность отображения цен на продукты в корзине для различных городов",
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Подготавливаем исходные данные для корзины города: Москва",
+      "time" : {
+        "start" : 1756994126685,
+        "stop" : 1756994135633,
+        "duration" : 8948
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Добавляем куку с данными города и продукта",
+        "time" : {
+          "start" : 1756994126685,
+          "stop" : 1756994135633,
+          "duration" : 8948
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "Добавляем куку с данными о продуктах",
+          "time" : {
+            "start" : 1756994126685,
+            "stop" : 1756994135553,
+            "duration" : 8868
+          },
+          "status" : "passed",
+          "steps" : [ {
+            "name" : "$(\"open\") https://lk3.invitro.ru/assets/edna-banner-close.svg",
+            "time" : {
+              "start" : 1756994126685,
+              "stop" : 1756994135543,
+              "duration" : 8858
+            },
+            "status" : "passed",
+            "steps" : [ {
+              "name" : "$(\"webdriver\") create()",
+              "time" : {
+                "start" : 1756994126685,
+                "stop" : 1756994134145,
+                "duration" : 7460
+              },
+              "status" : "passed",
+              "steps" : [ ],
+              "attachments" : [ ],
+              "parameters" : [ ],
+              "stepsCount" : 0,
+              "attachmentsCount" : 0,
+              "shouldDisplayMessage" : false,
+              "hasContent" : false
+            } ],
+            "attachments" : [ ],
+            "parameters" : [ ],
+            "stepsCount" : 1,
+            "attachmentsCount" : 0,
+            "shouldDisplayMessage" : false,
+            "hasContent" : true
+          } ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 2,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : true
+        }, {
+          "name" : "Добавляем куку с данными города",
+          "time" : {
+            "start" : 1756994135553,
+            "stop" : 1756994135633,
+            "duration" : 80
+          },
+          "status" : "passed",
+          "steps" : [ {
+            "name" : "$(\"open\") https://lk3.invitro.ru/assets/edna-banner-close.svg",
+            "time" : {
+              "start" : 1756994135553,
+              "stop" : 1756994135625,
+              "duration" : 72
+            },
+            "status" : "passed",
+            "steps" : [ ],
+            "attachments" : [ ],
+            "parameters" : [ ],
+            "stepsCount" : 0,
+            "attachmentsCount" : 0,
+            "shouldDisplayMessage" : false,
+            "hasContent" : false
+          } ],
+          "attachments" : [ ],
+          "parameters" : [ {
+            "name" : "cityId",
+            "value" : "f1c3c4f0-3426-4cda-8449-e5d326e02f97"
+          } ],
+          "stepsCount" : 1,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : true
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "cityId",
+          "value" : "f1c3c4f0-3426-4cda-8449-e5d326e02f97"
+        } ],
+        "stepsCount" : 5,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 6,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Переходим в корзину",
+      "time" : {
+        "start" : 1756994135633,
+        "stop" : 1756994137241,
+        "duration" : 1608
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Открываем адрес: \"https://lk3.invitro.ru/cart\"",
+        "time" : {
+          "start" : 1756994135634,
+          "stop" : 1756994137241,
+          "duration" : 1607
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "$(\"open\") https://lk3.invitro.ru/cart",
+          "time" : {
+            "start" : 1756994135634,
+            "stop" : 1756994137241,
+            "duration" : 1607
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "url",
+          "value" : "https://lk3.invitro.ru/cart"
+        } ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Проверяем цены на продукты в корзине",
+      "time" : {
+        "start" : 1756994137242,
+        "stop" : 1756994139245,
+        "duration" : 2003
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Проверяем цену \"310 ₽\" для \"Взятие крови из вены\"",
+        "time" : {
+          "start" : 1756994137242,
+          "stop" : 1756994139139,
+          "duration" : 1897
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "$(\"li [class*='CartProduct_product__'].filter(text \"Взятие крови из вены\")\") should have(size(1))",
+          "time" : {
+            "start" : 1756994137242,
+            "stop" : 1756994139026,
+            "duration" : 1784
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "$(\"li [class*='CartProduct_product__'].filter(text \"Взятие крови из вены\")[0]/[class*='CartProduct_productPrice']\") should have(text \"310 ₽\")",
+          "time" : {
+            "start" : 1756994139026,
+            "stop" : 1756994139139,
+            "duration" : 113
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "productTitle",
+          "value" : "Взятие крови из вены"
+        }, {
+          "name" : "expectedPrice",
+          "value" : "310 ₽"
+        } ],
+        "stepsCount" : 2,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "Проверяем цену \"4 230 ₽\" для \"Контрольное исследование после перенесенной острой респираторной вирусной инфекции\"",
+        "time" : {
+          "start" : 1756994139139,
+          "stop" : 1756994139245,
+          "duration" : 106
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "$(\"li [class*='CartProduct_product__'].filter(text \"Контрольное исследование после перенесенной острой респираторной вирусной инфекции\")\") should have(size(1))",
+          "time" : {
+            "start" : 1756994139139,
+            "stop" : 1756994139191,
+            "duration" : 52
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "$(\"li [class*='CartProduct_product__'].filter(text \"Контрольное исследование после перенесенной острой респираторной вирусной инфекции\")[0]/[class*='CartProduct_productPrice']\") should have(text \"4 230 ₽\")",
+          "time" : {
+            "start" : 1756994139192,
+            "stop" : 1756994139245,
+            "duration" : 53
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "productTitle",
+          "value" : "Контрольное исследование после перенесенной острой респираторной вирусной инфекции"
+        }, {
+          "name" : "expectedPrice",
+          "value" : "4 230 ₽"
+        } ],
+        "stepsCount" : 2,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 6,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 17,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ {
+    "name" : "addAttachments",
+    "time" : {
+      "start" : 1756994139245,
+      "stop" : 1756994142046,
+      "duration" : 2801
+    },
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "$(\"clearCookies\") ",
+      "time" : {
+        "start" : 1756994139617,
+        "stop" : 1756994141981,
+        "duration" : 2364
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "$(\"webdriver\") close()",
+      "time" : {
+        "start" : 1756994141992,
+        "stop" : 1756994142046,
+        "duration" : 54
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    } ],
+    "attachments" : [ {
+      "uid" : "ed0578b361b27be",
+      "name" : "Last Screenshot",
+      "source" : "ed0578b361b27be.png",
+      "type" : "image/png",
+      "size" : 104333
+    }, {
+      "uid" : "b784f475f777b7cb",
+      "name" : "Page Source",
+      "source" : "b784f475f777b7cb.html",
+      "type" : "text/plain",
+      "size" : 542151
+    }, {
+      "uid" : "177f2c2c4a527fc6",
+      "name" : "Browser Console Logs",
+      "source" : "177f2c2c4a527fc6.txt",
+      "type" : "text/plain",
+      "size" : 452
+    }, {
+      "uid" : "3fe50a50476009bc",
+      "name" : "Selenoid Video",
+      "source" : "3fe50a50476009bc.html",
+      "type" : "text/html",
+      "size" : 193
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 2,
+    "attachmentsCount" : 4,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  }, {
+    "name" : "afterAll",
+    "time" : {
+      "start" : 1756994171860,
+      "stop" : 1756994171861,
+      "duration" : 1
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "web"
+  }, {
+    "name" : "junit.platform.uniqueid",
+    "value" : "[engine:junit-jupiter]/[class:tests.web.tests.CartPricingTest]/[test-template:pricesByCityInCart(tests.web.models.CitiesInfo, tests.web.models.ProductsInfo)]/[test-template-invocation:#1]"
+  }, {
+    "name" : "owner",
+    "value" : "germanmalykh"
+  }, {
+    "name" : "host",
+    "value" : "319ab4d25e4d"
+  }, {
+    "name" : "thread",
+    "value" : "24098@319ab4d25e4d.Test worker(1)"
+  }, {
+    "name" : "framework",
+    "value" : "junit-platform"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "package",
+    "value" : "tests.web.tests.CartPricingTest"
+  }, {
+    "name" : "testClass",
+    "value" : "tests.web.tests.CartPricingTest"
+  }, {
+    "name" : "testMethod",
+    "value" : "pricesByCityInCart"
+  }, {
+    "name" : "suite",
+    "value" : "Web Tests"
+  }, {
+    "name" : "severity",
+    "value" : "critical"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "arg0",
+    "value" : "Москва"
+  }, {
+    "name" : "arg1",
+    "value" : "ProductsInfo(venTitle=Взятие крови из вены, obs158Title=Контрольное исследование после перенесенной острой респираторной вирусной инфекции, citiesInfo=[Москва, Севастополь, Калининград])"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "critical",
+    "owner" : "germanmalykh",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 3,
+        "skipped" : 0,
+        "passed" : 17,
+        "unknown" : 0,
+        "total" : 20
+      },
+      "items" : [ {
+        "uid" : "ba59ad14f92856a3",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/31/allure/#testresult/ba59ad14f92856a3",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756993973728,
+          "stop" : 1756993989194,
+          "duration" : 15466
+        }
+      }, {
+        "uid" : "f9ff5306f9596e76",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/30/allure/#testresult/f9ff5306f9596e76",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756993385284,
+          "stop" : 1756993399999,
+          "duration" : 14715
+        }
+      }, {
+        "uid" : "ef5b92cd84149324",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/29/allure/#testresult/ef5b92cd84149324",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756993145958,
+          "stop" : 1756993161291,
+          "duration" : 15333
+        }
+      }, {
+        "uid" : "d6d9d126bb997430",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/28/allure/#testresult/d6d9d126bb997430",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756992794280,
+          "stop" : 1756992800087,
+          "duration" : 5807
+        }
+      }, {
+        "uid" : "4fe38f599d64b982",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/27/allure/#testresult/4fe38f599d64b982",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756992139126,
+          "stop" : 1756992144391,
+          "duration" : 5265
+        }
+      }, {
+        "uid" : "dac7bd0d69e3d887",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/26/allure/#testresult/dac7bd0d69e3d887",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756988814659,
+          "stop" : 1756988820587,
+          "duration" : 5928
+        }
+      }, {
+        "uid" : "a3e693aaaeb6a095",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/25/allure/#testresult/a3e693aaaeb6a095",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756987584656,
+          "stop" : 1756987590613,
+          "duration" : 5957
+        }
+      }, {
+        "uid" : "e963bc4e61e4c06c",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/24/allure/#testresult/e963bc4e61e4c06c",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756987066277,
+          "stop" : 1756987071538,
+          "duration" : 5261
+        }
+      }, {
+        "uid" : "731121a9ee1980a3",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/23/allure/#testresult/731121a9ee1980a3",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756986559219,
+          "stop" : 1756986565018,
+          "duration" : 5799
+        }
+      }, {
+        "uid" : "cc07bb0454615298",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/22/allure/#testresult/cc07bb0454615298",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756985892347,
+          "stop" : 1756985897713,
+          "duration" : 5366
+        }
+      }, {
+        "uid" : "82344984621a64ec",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/21/allure/#testresult/82344984621a64ec",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756985520466,
+          "stop" : 1756985535088,
+          "duration" : 14622
+        }
+      }, {
+        "uid" : "46e7ef7988a13582",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/20/allure/#testresult/46e7ef7988a13582",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756985309851,
+          "stop" : 1756985324072,
+          "duration" : 14221
+        }
+      }, {
+        "uid" : "b439fc002b7666a0",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/19/allure/#testresult/b439fc002b7666a0",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756984303495,
+          "stop" : 1756984318337,
+          "duration" : 14842
+        }
+      }, {
+        "uid" : "eb02434a4c2569a3",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/18/allure/#testresult/eb02434a4c2569a3",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756983569108,
+          "stop" : 1756983583959,
+          "duration" : 14851
+        }
+      }, {
+        "uid" : "13f7a8a892f4a01d",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/17/allure/#testresult/13f7a8a892f4a01d",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756983203203,
+          "stop" : 1756983221437,
+          "duration" : 18234
+        }
+      }, {
+        "uid" : "42f69be5b48dd0a2",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/16/allure/#testresult/42f69be5b48dd0a2",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756982974425,
+          "stop" : 1756982994760,
+          "duration" : 20335
+        }
+      }, {
+        "uid" : "ef037ecf8c79fb87",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/15/allure/#testresult/ef037ecf8c79fb87",
+        "status" : "broken",
+        "statusDetails" : "Class not found: ",
+        "time" : {
+          "start" : 1756982419971,
+          "stop" : 1756982419990,
+          "duration" : 19
+        }
+      }, {
+        "uid" : "3c0af2486a14f109",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/14/allure/#testresult/3c0af2486a14f109",
+        "status" : "broken",
+        "statusDetails" : "Class not found: ",
+        "time" : {
+          "start" : 1756982211221,
+          "stop" : 1756982211238,
+          "duration" : 17
+        }
+      }, {
+        "uid" : "36422f55cfedcb81",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/13/allure/#testresult/36422f55cfedcb81",
+        "status" : "broken",
+        "statusDetails" : "Class not found: ",
+        "time" : {
+          "start" : 1756982015931,
+          "stop" : 1756982015949,
+          "duration" : 18
+        }
+      } ]
+    },
+    "tags" : [ "web" ]
+  },
+  "source" : "22995a54cfb0af8e.json",
+  "parameterValues" : [ "Москва", "ProductsInfo(venTitle=Взятие крови из вены, obs158Title=Контрольное исследование после перенесенной острой респираторной вирусной инфекции, citiesInfo=[Москва, Севастополь, Калининград])" ]
+}

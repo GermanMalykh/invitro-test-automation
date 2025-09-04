@@ -1,0 +1,544 @@
+{
+  "uid" : "98d3104e051c652961429bf95fa0b5d6",
+  "children" : [ {
+    "name" : "Web Tests",
+    "children" : [ {
+      "name" : "[Web] Выбор выезда на дом для сдачи анализов и проверка деталей заказа",
+      "uid" : "7c8cfbd6b32c9bd3",
+      "parentUid" : "c3a1de8f6986c1a976197f8b77e992fd",
+      "status" : "passed",
+      "time" : {
+        "start" : 1756994052573,
+        "stop" : 1756994067873,
+        "duration" : 15300
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : true,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "[Web] Выбор офиса для сдачи анализов и проверка деталей заказа",
+      "uid" : "bd575676b9f5e372",
+      "parentUid" : "c3a1de8f6986c1a976197f8b77e992fd",
+      "status" : "passed",
+      "time" : {
+        "start" : 1756994067968,
+        "stop" : 1756994085940,
+        "duration" : 17972
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : true,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "[Web] Добавление продукта в корзину и проверка информации",
+      "uid" : "cb3e5845addd415d",
+      "parentUid" : "c3a1de8f6986c1a976197f8b77e992fd",
+      "status" : "passed",
+      "time" : {
+        "start" : 1756994085956,
+        "stop" : 1756994111114,
+        "duration" : 25158
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : true,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "[Web] Очистка корзины и проверка информации",
+      "uid" : "5929a1abcc40ea3f",
+      "parentUid" : "c3a1de8f6986c1a976197f8b77e992fd",
+      "status" : "passed",
+      "time" : {
+        "start" : 1756994111118,
+        "stop" : 1756994126564,
+        "duration" : 15446
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : true,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "[Web] Проверка цен на продукты в корзине для города: Москва",
+      "uid" : "22995a54cfb0af8e",
+      "parentUid" : "c3a1de8f6986c1a976197f8b77e992fd",
+      "status" : "passed",
+      "time" : {
+        "start" : 1756994126676,
+        "stop" : 1756994142047,
+        "duration" : 15371
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Москва", "ProductsInfo(venTitle=Взятие крови из вены, obs158Title=Контрольное исследование после перенесенной острой респираторной вирусной инфекции, citiesInfo=[Москва, Севастополь, Калининград])" ]
+    }, {
+      "name" : "[Web] Проверка цен на продукты в корзине для города: Севастополь",
+      "uid" : "ebb3cdf93fc2d2a",
+      "parentUid" : "c3a1de8f6986c1a976197f8b77e992fd",
+      "status" : "passed",
+      "time" : {
+        "start" : 1756994142051,
+        "stop" : 1756994157121,
+        "duration" : 15070
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Севастополь", "ProductsInfo(venTitle=Взятие крови из вены, obs158Title=Контрольное исследование после перенесенной острой респираторной вирусной инфекции, citiesInfo=[Москва, Севастополь, Калининград])" ]
+    }, {
+      "name" : "[Web] Проверка цен на продукты в корзине для города: Калининград",
+      "uid" : "6be51b9f6a5e998c",
+      "parentUid" : "c3a1de8f6986c1a976197f8b77e992fd",
+      "status" : "passed",
+      "time" : {
+        "start" : 1756994157127,
+        "stop" : 1756994171858,
+        "duration" : 14731
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Калининград", "ProductsInfo(venTitle=Взятие крови из вены, obs158Title=Контрольное исследование после перенесенной острой респираторной вирусной инфекции, citiesInfo=[Москва, Севастополь, Калининград])" ]
+    } ],
+    "uid" : "c3a1de8f6986c1a976197f8b77e992fd"
+  }, {
+    "name" : "Android Tests",
+    "children" : [ {
+      "name" : "[Android] Проверка информации в корзине для города: Волгоград",
+      "uid" : "1eaf00d4f2fe415d",
+      "parentUid" : "65f287c10ed3146f255073ace9f7f3c8",
+      "status" : "passed",
+      "time" : {
+        "start" : 1756994175600,
+        "stop" : 1756994269407,
+        "duration" : 93807
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Волгоград" ]
+    }, {
+      "name" : "[Android] Проверка информации в корзине для города: Санкт-Петербург",
+      "uid" : "d4f6dd76e22247a9",
+      "parentUid" : "65f287c10ed3146f255073ace9f7f3c8",
+      "status" : "passed",
+      "time" : {
+        "start" : 1756994269492,
+        "stop" : 1756994352833,
+        "duration" : 83341
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Санкт-Петербург" ]
+    }, {
+      "name" : "[Android] Смена офиса и проверка изменений",
+      "uid" : "3c641ed8b847778d",
+      "parentUid" : "65f287c10ed3146f255073ace9f7f3c8",
+      "status" : "passed",
+      "time" : {
+        "start" : 1756994352839,
+        "stop" : 1756994438448,
+        "duration" : 85609
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "[Android] Проверка отображения секций в меню для города: Казань",
+      "uid" : "84530617e2c4d45a",
+      "parentUid" : "65f287c10ed3146f255073ace9f7f3c8",
+      "status" : "passed",
+      "time" : {
+        "start" : 1756994438485,
+        "stop" : 1756994469864,
+        "duration" : 31379
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Казань" ]
+    }, {
+      "name" : "[Android] Проверка отображения секций в меню для города: Абакан",
+      "uid" : "8caea112a2f26ac5",
+      "parentUid" : "65f287c10ed3146f255073ace9f7f3c8",
+      "status" : "passed",
+      "time" : {
+        "start" : 1756994469867,
+        "stop" : 1756994499712,
+        "duration" : 29845
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Абакан" ]
+    }, {
+      "name" : "[Android] Проверка появления заглушки при поиске несуществующего города",
+      "uid" : "aed2a04667a21e56",
+      "parentUid" : "65f287c10ed3146f255073ace9f7f3c8",
+      "status" : "passed",
+      "time" : {
+        "start" : 1756994499716,
+        "stop" : 1756994527664,
+        "duration" : 27948
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "[Android] Блокировка проверки результатов анализов при частых запросах",
+      "uid" : "794e6be9852a50e1",
+      "parentUid" : "65f287c10ed3146f255073ace9f7f3c8",
+      "status" : "passed",
+      "time" : {
+        "start" : 1756994527698,
+        "stop" : 1756994571350,
+        "duration" : 43652
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "65f287c10ed3146f255073ace9f7f3c8"
+  }, {
+    "name" : "API Tests",
+    "children" : [ {
+      "name" : "[API] Получение информации о городе с невалидным идентификатором",
+      "uid" : "6e24b531444e4567",
+      "parentUid" : "faa16f93fe4deb7d0d82100941f2eb29",
+      "status" : "passed",
+      "time" : {
+        "start" : 1756994571384,
+        "stop" : 1756994572036,
+        "duration" : 652
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "[API] Получение информации о городе со случайным идентификатором",
+      "uid" : "df109f74f34e9b5b",
+      "parentUid" : "faa16f93fe4deb7d0d82100941f2eb29",
+      "status" : "passed",
+      "time" : {
+        "start" : 1756994572039,
+        "stop" : 1756994572463,
+        "duration" : 424
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "[API] Проверка соответствия \"Страна\" - \"Столица\". Стране \"RUSSIA\" соответствует столица \"Москва\"",
+      "uid" : "daa808e5666cc652",
+      "parentUid" : "faa16f93fe4deb7d0d82100941f2eb29",
+      "status" : "passed",
+      "time" : {
+        "start" : 1756994572468,
+        "stop" : 1756994573262,
+        "duration" : 794
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Москва", "RUSSIA" ]
+    }, {
+      "name" : "[API] Проверка соответствия \"Страна\" - \"Столица\". Стране \"ARMENIA\" соответствует столица \"Ереван\"",
+      "uid" : "971569c828abd495",
+      "parentUid" : "faa16f93fe4deb7d0d82100941f2eb29",
+      "status" : "passed",
+      "time" : {
+        "start" : 1756994573268,
+        "stop" : 1756994573946,
+        "duration" : 678
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Ереван", "ARMENIA" ]
+    }, {
+      "name" : "[API] Проверка соответствия \"Страна\" - \"Столица\". Стране \"BELARUS\" соответствует столица \"Минск\"",
+      "uid" : "18bb893c542b4a8a",
+      "parentUid" : "faa16f93fe4deb7d0d82100941f2eb29",
+      "status" : "passed",
+      "time" : {
+        "start" : 1756994573951,
+        "stop" : 1756994574622,
+        "duration" : 671
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Минск", "BELARUS" ]
+    }, {
+      "name" : "[API] Проверка соответствия \"Страна\" - \"Столица\". Стране \"KAZAKHSTAN\" соответствует столица \"Астана\"",
+      "uid" : "dc42b0b83035a8c3",
+      "parentUid" : "faa16f93fe4deb7d0d82100941f2eb29",
+      "status" : "passed",
+      "time" : {
+        "start" : 1756994574631,
+        "stop" : 1756994575296,
+        "duration" : 665
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ "Астана", "KAZAKHSTAN" ]
+    }, {
+      "name" : "[API] Получение информации о конкретном городе",
+      "uid" : "b1ddac89cd0a8e96",
+      "parentUid" : "faa16f93fe4deb7d0d82100941f2eb29",
+      "status" : "passed",
+      "time" : {
+        "start" : 1756994575299,
+        "stop" : 1756994576296,
+        "duration" : 997
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "[API] Получение списка всех городов",
+      "uid" : "5d7c1f859b32396",
+      "parentUid" : "faa16f93fe4deb7d0d82100941f2eb29",
+      "status" : "passed",
+      "time" : {
+        "start" : 1756994576298,
+        "stop" : 1756994576896,
+        "duration" : 598
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "[API] Поиск офиса с пустым идентификатором города",
+      "uid" : "5e3dbe60716166f9",
+      "parentUid" : "faa16f93fe4deb7d0d82100941f2eb29",
+      "status" : "passed",
+      "time" : {
+        "start" : 1756994576951,
+        "stop" : 1756994577319,
+        "duration" : 368
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "[API] Поиск офиса с существующим идентификатору города",
+      "uid" : "e7fc4672fe484eb9",
+      "parentUid" : "faa16f93fe4deb7d0d82100941f2eb29",
+      "status" : "passed",
+      "time" : {
+        "start" : 1756994577323,
+        "stop" : 1756994578401,
+        "duration" : 1078
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "[API] Поиск офиса со случайным идентификатором города",
+      "uid" : "a1899035f1543b71",
+      "parentUid" : "faa16f93fe4deb7d0d82100941f2eb29",
+      "status" : "passed",
+      "time" : {
+        "start" : 1756994578404,
+        "stop" : 1756994578813,
+        "duration" : 409
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "[API] Поиск офиса с невалидным форматом идентификатора города",
+      "uid" : "adf69b6c43c83b7f",
+      "parentUid" : "faa16f93fe4deb7d0d82100941f2eb29",
+      "status" : "passed",
+      "time" : {
+        "start" : 1756994578815,
+        "stop" : 1756994579262,
+        "duration" : 447
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "[API] Получение информации о продукте с буквенным артикулом",
+      "uid" : "9f4a03bdc6b6c78b",
+      "parentUid" : "faa16f93fe4deb7d0d82100941f2eb29",
+      "status" : "passed",
+      "time" : {
+        "start" : 1756994579268,
+        "stop" : 1756994579663,
+        "duration" : 395
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "[API] Получение информации о продукте с пустым идентификатором артикула",
+      "uid" : "49852d4d00ea3751",
+      "parentUid" : "faa16f93fe4deb7d0d82100941f2eb29",
+      "status" : "passed",
+      "time" : {
+        "start" : 1756994579664,
+        "stop" : 1756994579988,
+        "duration" : 324
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "[API] Получение информации о продукте с цифровым артикулом",
+      "uid" : "9e53f4f9f621bdd0",
+      "parentUid" : "faa16f93fe4deb7d0d82100941f2eb29",
+      "status" : "passed",
+      "time" : {
+        "start" : 1756994579990,
+        "stop" : 1756994580445,
+        "duration" : 455
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "[API] Получение информации о продукте с невалидным форматом идентификатора города",
+      "uid" : "d5a8bbfe40475caa",
+      "parentUid" : "faa16f93fe4deb7d0d82100941f2eb29",
+      "status" : "passed",
+      "time" : {
+        "start" : 1756994580447,
+        "stop" : 1756994580767,
+        "duration" : 320
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "[API] Получение информации о продукте с указанием существующего идентификатора города",
+      "uid" : "118419decaac2de4",
+      "parentUid" : "faa16f93fe4deb7d0d82100941f2eb29",
+      "status" : "passed",
+      "time" : {
+        "start" : 1756994580768,
+        "stop" : 1756994581847,
+        "duration" : 1079
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "newPassed" : false,
+      "newBroken" : false,
+      "retriesCount" : 0,
+      "retriesStatusChange" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "faa16f93fe4deb7d0d82100941f2eb29"
+  } ],
+  "name" : "suites"
+}

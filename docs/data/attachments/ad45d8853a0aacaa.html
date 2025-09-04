@@ -1,0 +1,220 @@
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset = UTF-8">
+    <script src="https://yastatic.net/jquery/2.2.3/jquery.min.js" crossorigin="anonymous"></script>
+
+    <link href="https://yastatic.net/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <script src="https://yastatic.net/bootstrap/3.3.6/js/bootstrap.min.js" crossorigin="anonymous"></script>
+
+    <link type="text/css" href="https://yandex.st/highlightjs/8.0/styles/github.min.css" rel="stylesheet"/>
+    <script type="text/javascript" src="https://yandex.st/highlightjs/8.0/highlight.min.js"></script>
+    <script type="text/javascript" src="https://yandex.st/highlightjs/8.0/languages/bash.min.js"></script>
+    <script type="text/javascript" src="https://yandex.st/highlightjs/8.0/languages/json.min.js"></script>
+    <script type="text/javascript" src="https://yandex.st/highlightjs/8.0/languages/xml.min.js"></script>
+    <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
+
+    <style>
+        .container-fluid {
+            padding: 20px;
+        }
+        @media (max-width: 768px) {
+            .col-md-6 {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+            .container-fluid {
+                padding: 10px;
+            }
+            .left-panel, .right-panel {
+                padding: 10px;
+            }
+        }
+        .left-panel {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        .right-panel {
+            background-color: #ffffff;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        .section-title {
+            color: #495057;
+            font-weight: bold;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #28a745;
+            padding-bottom: 5px;
+        }
+        .parameter-item {
+            margin-bottom: 8px;
+            padding: 5px;
+            background-color: #ffffff;
+            border-radius: 3px;
+        }
+        .parameter-name {
+            font-weight: bold;
+            color: #28a745;
+        }
+        .parameter-value {
+            color: #6c757d;
+            word-break: break-all;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            max-width: 100%;
+            display: block;
+        }
+        pre {
+            white-space: pre-wrap;
+            background-color: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 3px;
+            padding: 10px;
+            margin: 0;
+        }
+        .status-badge {
+            display: inline-block;
+            padding: 4px 8px;
+            background-color: #28a745;
+            color: white;
+            border-radius: 3px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .url-text {
+            color: #007bff;
+            font-family: monospace;
+            word-break: break-all;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            max-width: 100%;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <!-- Левая панель с параметрами -->
+        <div class="col-md-6">
+            <div class="left-panel">
+                <h4 class="section-title">Параметры ответа</h4>
+                
+                <!-- Статус код -->
+                <div class="parameter-item">
+                    <div class="status-badge" style="background-color: #28a745; color: white;">
+                        200
+                    </div>
+                    <span>HTTP Status Code</span>
+                </div>
+
+                <!-- URL -->
+
+                <!-- Headers -->
+                    <h5 class="section-title">Headers</h5>
+                        <div class="parameter-item">
+                            <div class="parameter-name">Transfer-Encoding</div>
+                            <div class="parameter-value">chunked</div>
+                        </div>
+                        <div class="parameter-item">
+                            <div class="parameter-name">X-Content-Type-Options</div>
+                            <div class="parameter-value">nosniff</div>
+                        </div>
+                        <div class="parameter-item">
+                            <div class="parameter-name">Connection</div>
+                            <div class="parameter-value">keep-alive</div>
+                        </div>
+                        <div class="parameter-item">
+                            <div class="parameter-name">Pragma</div>
+                            <div class="parameter-value">no-cache</div>
+                        </div>
+                        <div class="parameter-item">
+                            <div class="parameter-name">Date</div>
+                            <div class="parameter-value">Thu, 04 Sep 2025 14:02:59 GMT</div>
+                        </div>
+                        <div class="parameter-item">
+                            <div class="parameter-name">X-Frame-Options</div>
+                            <div class="parameter-value">SAMEORIGIN</div>
+                        </div>
+                        <div class="parameter-item">
+                            <div class="parameter-name">Territory-Settings-Version</div>
+                            <div class="parameter-value">69</div>
+                        </div>
+                        <div class="parameter-item">
+                            <div class="parameter-name">Cache-Control</div>
+                            <div class="parameter-value">no-cache, no-store, max-age=0, must-revalidate</div>
+                        </div>
+                        <div class="parameter-item">
+                            <div class="parameter-name">Vary</div>
+                            <div class="parameter-value">Accept-Encoding</div>
+                        </div>
+                        <div class="parameter-item">
+                            <div class="parameter-name">Set-Cookie</div>
+                            <div class="parameter-value">session-cookie=186219429e73a6391559f388beb261f52a4dae06dbd0a71eddb673298851287f3d82fccb98f5b008ee1f0d4ef655a846; Max-Age=86400; Path=/; secure</div>
+                        </div>
+                        <div class="parameter-item">
+                            <div class="parameter-name">Expires</div>
+                            <div class="parameter-value">0</div>
+                        </div>
+                        <div class="parameter-item">
+                            <div class="parameter-name">X-XSS-Protection</div>
+                            <div class="parameter-value">1; mode=block</div>
+                        </div>
+                        <div class="parameter-item">
+                            <div class="parameter-name">Content-Type</div>
+                            <div class="parameter-value">application/json;charset=UTF-8</div>
+                        </div>
+
+                <!-- Cookies -->
+            </div>
+        </div>
+
+        <!-- Правая панель с телом ответа -->
+        <div class="col-md-6">
+            <div class="right-panel">
+                <h4 class="section-title">Тело ответа</h4>
+                
+                    <div class="parameter-item">
+                        <pre><code>[
+    {
+        "id": "335beb84-eb61-4b96-8cfd-8a1a6130391c",
+        "article": "16",
+        "shortName": "Глюкоза (в крови)",
+        "name": "Глюкоза (в крови) (Glucose)",
+        "unitName": null,
+        "type": "COMMON_PRODUCT",
+        "classifierData": {
+            "classifierType": "TEST",
+            "hasQuantity": false,
+            "hasPriority": true,
+            "planningAvailable": false,
+            "selectable": true,
+            "aggregated": true,
+            "dependent": true,
+            "service": false,
+            "requiredService": false,
+            "requirePatient": true,
+            "requireDelivery": true,
+            "hasDeadline": true,
+            "printTaxDeduction": true,
+            "printEstimate": true
+        },
+        "interpretationDescription": "<p style=\"text-align: justify;\">\r\n</p>\r\n<p style=\"text-align: justify;\">\r\n <b>A09.05.023 (Номенклатура МЗ РФ, Приказ №804н)</b>\r\n</p>\r\n<p style=\"text-align: justify;\">\r\n <b>Материал для исследования <br>\r\n </b><br>\r\n\t Сыворотка или плазма крови. Если нет возможности центрифугировать пробу через 30 минут после взятия для отделения сыворотки/плазмы от клеток, пробу берут в специальную пробирку, содержащую ингибитор гликолиза (флюорид натрия).\r\n</p>\r\n<p style=\"text-align: justify;\">\r\n <b>Синонимы: </b>Анализ крови на глюкозу; Глюкоза в плазме или сыворотке крови; Сахар крови; Глюкоза в крови; Анализ глюкозы в крови натощак; Анализ сахара в крови. Glucose, Plasma or Serum; Fasting blood glucose; FBG; Fasting plasma glucose; Blood glucose; Blood sugar; Fasting blood sugar; FBS.\r\n</p>\r\n<p style=\"text-align: justify;\">\r\n</p>\r\n<p style=\"text-align: justify;\">\r\n</p>\r\n<p style=\"text-align: justify;\">\r\n</p>\r\n<p style=\"text-align: justify;\">\r\n <b> </b>\r\n</p>\r\n<p style=\"text-align: justify;\">\r\n</p>\r\n<p style=\"text-align: justify;\">\r\n</p>\r\n<p style=\"text-align: justify;\">\r\n</p>\r\n<h2 style=\"text-align: justify;\"><span style=\"font-size: 16px;\">Краткая характеристика определяемого вещества Глюкоза</span></h2>\r\n<p style=\"text-align: justify;\">\r\n</p>\r\n<p style=\"text-align: justify;\">\r\n</p>\r\n<p style=\"text-align: justify;\">\r\n</p>\r\n<p style=\"text-align: justify;\">\r\n <b>Глюкоза</b> – это основной источник энергии для метаболических процессов в организме человека. Является обязательным компонентом большинства внутриклеточных структур, участвует в синтезе нуклеиновых кислот (рибоза, дезоксирибоза), образует соединения с белками (гликопротеиды, протеогликаны) и липидами (гликолипиды). Источниками глюкозы для организма являются углеводы (быстрые и медленные), поступающие с пищей в виде сахарозы, фруктозы, мальтозы, лактозы, крахмала и т.д. В организме глюкоза накапливается в виде гликогена в печени и при необходимости может быть синтезирована из неуглеводных субстратов (аминокислот, глицерола, лактата).\r\n</p>\r\n<p style=\"text-align: justify;\">\r\n</p>\r\n<p style=\"text-align: justify;\">\r\n</p>\r\n<p style=\"text-align: justify;\">\r\n</p>\r\n<p style=\"text-align: justify;\">\r\n\t Поддержание содержания глюкозы в крови на определенном уровне является примером одного из самых совершенных механизмов регуляции гомеостаза, в функционировании которого участвует печень, внепеченочные ткани и некоторые гормоны. Инсулин обеспечивает транспорт глюкозы внутрь клеток и является единственным гормоном, снижающим уровень глюкозы в крови. Другие гормоны, такие как глюкагон, кортизол, адреналин, гормоны щитовидной железы, гормон роста вызывают повышение ее уровня в крови, проявляя контринсулярный эффект. В результате действия регуляторных механизмов содержание глюкозы в крови в норме колеблется в узком диапазоне значений.\r\n</p>\r\n<p style=\"text-align: justify;\">\r\n <b>С какой целью определяют уровень Глюкозы в сыворотке или плазме крови</b>\r\n</p>\r\n<p style=\"text-align: justify;\">\r\n</p>\r\n<p style=\"text-align: justify;\">\r\n</p>\r\n<p style=\"text-align: justify;\">\r\n</p>\r\n<p style=\"text-align: justify;\">\r\n <b>Анализ глюкозы в крови</b> – это главный лабораторный тест для оценки углеводного обмена. Повышенное её содержание называется гипергликемией и может являться симптомом сахарного диабета.\r\n</p>\r\n<p style=\"text-align: justify;\">\r\n</p>\r\n<p style=\"text-align: justify;\">\r\n</p>\r\n<p style=\"text-align: justify;\">\r\n</p>\r\n<h2 style=\"text-align: justify;\"><span style=\"font-size: 16px;\">Диагностические критерии сахарного диабета</span></h2>\r\n<p style=\"text-align: justify;\">\r\n</p>\r\n<p style=\"text-align: justify;\">\r\n</p>\r\n<p style=\"text-align: justify;\">\r\n</p>\r\n<p style=\"text-align: justify;\">\r\n\t Лабораторными критериями в диагностике сахарного диабета по уровню глюкозы крови в настоящее время считается:\r\n</p>\r\n<p style=\"text-align: justify;\">\r\n</p>\r\n<p style=\"text-align: justify;\">\r\n</p>\r\n<p style=\"text-align: justify;\">\r\n</p>\r\n<p style=\"text-align: justify;\">\r\n\t 1) уровень глюкозы натощак 7,0 ммоль/л и выше;\r\n</p>\r\n<p style=\"text-align: justify;\">\r\n</p>\r\n<p style=\"text-align: justify;\">\r\n</p>\r\n<p style=\"text-align: justify;\">\r\n</p>\r\n<p style=\"text-align: justify;\">\r\n\t 2) сочетание клинических симптомов СД и случайного (независимого от времени предыдущего приема пищи) повышения глюкозы плазмы крови до 11,1 ммоль/л и выше;\r\n</p>\r\n<p style=\"text-align: justify;\">\r\n</p>\r\n<p style=\"text-align: justify;\">\r\n</p>\r\n<p style=\"text-align: justify;\">\r\n</p>\r\n<p style=\"text-align: justify;\">\r\n\t 3) уровень глюкозы через два часа после приема глюкозы (75 г) при проведении перорального глюкозотолерантного теста 11,1 ммоль/л и выше.\r\n</p>\r\n<p style=\"text-align: justify;\">\r\n</p>\r\n<p style=\"text-align: justify;\">\r\n</p>\r\n<p style=\"text-align: justify;\">\r\n</p>\r\n<p style=\"text-align: justify;\">\r\n\t Поскольку изменения концентрации глюкозы в крови могут быть обнаружены намного раньше клинических проявлений сахарного диабета, всем людям старше 45 лет (даже без симптомов СД) рекомендуется проводить ежегодное контрольное исследование уровня глюкозы крови натощак. В более раннем возрасте скрининговое исследование проводится у людей при повышенном риске возникновения диабета (включая детей старше десяти лет).\r\n</p>\r\n<p style=\"text-align: justify;\">\r\n</p>\r\n<p style=\"text-align: justify;\">\r\n</p>\r\n<p style=\"text-align: justify;\">\r\n</p>\r\n<p style=\"text-align: justify;\">\r\n\t Также определение уровня глюкозы крови натощак входит в обязательное обследование беременных. Гормональные сдвиги при беременности вызывают физиологическое повышение инсулинорезистентности в организме женщины. Относительная недостаточность инсулина в этот период у некоторых женщин может привести к повышению глюкозы в крови и развитию диабета беременных (гестационный диабет).\r\n</p>\r\n<p style=\"text-align: justify;\">\r\n</p>\r\n<p style=\"text-align: justify;\">\r\n</p>\r\n<p style=\"text-align: justify;\">\r\n</p>\r\n<h2 style=\"text-align: justify;\"><span style=\"font-size: 16px;\">Что может повлиять на результат теста Глюкоза</span></h2>\r\n<p style=\"text-align: justify;\">\r\n</p>\r\n<p style=\"text-align: justify;\">\r\n</p>\r\n<p style=\"text-align: justify;\">\r\n</p>\r\n<p style=\"text-align: justify;\">\r\n\t В лабораторных условиях глюкоза может быть определена в цельной крови, сыворотке или плазме крови (последнее предпочтительно). При трактовке результатов исследования глюкозы полезно учитывать следующие данные: глюкоза свободно проникает в эритроциты, но концентрация ее в плазме крови примерно на 11-14% выше, чем в цельной крови вследствие разного содержания воды в плазме и форменных элементах крови. Так, содержание глюкозы в плазме венозной крови, взятой натощак, может быть выше, чем в одновременно взятой на анализ цельной крови из пальца. Содержание глюкозы в гепаринизированной плазме на 5% ниже содержания глюкозы в сыворотке. Цельная венозная кровь содержит меньше глюкозы, чем капиллярная кровь из пальца вследствие утилизации глюкозы в тканях. Это различие незначительно при взятии крови натощак (разница около 0,1 ммоль/л), но заметно увеличивается после приема пищи (разница около 15%) или при проведении перорального глюкозотолерантного теста (разница 20-25%) – эффект выброса инсулина.\r\n</p>",
+        "textInterpretation": "<p>\r\n</p>\r\n<p style=\"text-align: justify;\">\r\n <b>Единицы измерения:</b> ммоль/л.\r\n</p>\r\n<p style=\"text-align: justify;\">\r\n</p>\r\n<p style=\"text-align: justify;\">\r\n <b>Альтернативные единицы:</b> мг/дл = мг/100 мл = мг%.\r\n</p>\r\n<p style=\"text-align: justify;\">\r\n</p>\r\n<p style=\"text-align: justify;\">\r\n <b>Коэффициенты пересчета:</b> мг/дл х 0,0555 =&gt; ммоль/л.\r\n</p>\r\n<p style=\"text-align: justify;\">\r\n</p>\r\n<p style=\"text-align: justify;\">\r\n <b>Референсные значения</b>\r\n</p>\r\n<p style=\"text-align: justify;\">\r\n</p>\r\n<table border=\"1\">\r\n<tbody>\r\n<tr>\r\n\t<td style=\"text-align: justify;\">\r\n\t\t<p>\r\n <b>Возраст</b>\r\n\t\t</p>\r\n\t</td>\r\n\t<td style=\"text-align: justify;\">\r\n\t\t<p>\r\n <b>Глюкоза, ммоль/л</b>\r\n\t\t</p>\r\n\t</td>\r\n</tr>\r\n<tr>\r\n\t<td style=\"text-align: justify;\">\r\n\t\t<p>\r\n\t\t\t 2 дня - 1 мес.\r\n\t\t</p>\r\n\t</td>\r\n\t<td style=\"text-align: justify;\">\r\n\t\t<p>\r\n\t\t\t 2,8 - 4,4\r\n\t\t</p>\r\n\t</td>\r\n</tr>\r\n<tr>\r\n\t<td style=\"text-align: justify;\">\r\n\t\t<p>\r\n\t\t\t 1 мес. - 14 лет\r\n\t\t</p>\r\n\t</td>\r\n\t<td style=\"text-align: justify;\">\r\n\t\t<p>\r\n\t\t\t 3,3 - 5,5\r\n\t\t</p>\r\n\t</td>\r\n</tr>\r\n<tr>\r\n\t<td style=\"text-align: justify;\">\r\n\t\t<p>\r\n\t\t\t старше 14 лет\r\n\t\t</p>\r\n\t</td>\r\n\t<td style=\"text-align: justify;\">\r\n\t\t<p>\r\n\t\t\t 4,1 - 6,0\r\n\t\t</p>\r\n\t</td>\r\n</tr>\r\n</tbody>\r\n</table>\r\n<p>\r\n</p>\r\n<h2 style=\"text-align: justify;\"><span style=\"font-size: 16px;\">Интерпретация результатов исследования на Глюкозу</span></h2>\r\n<p style=\"text-align: justify;\">\r\n</p>\r\n<p style=\"text-align: justify;\">\r\n <b>Причины повышения уровня глюкозы (гипергликемия)</b>\r\n</p>\r\n<p style=\"text-align: justify;\">\r\n</p>\r\n<ol style=\"text-align: justify;\">\r\n\t<li>Сахарный диабет 1-го и 2-го типов у взрослых и детей.</li>\r\n\t<li>Физиологическая гипергликемия (умеренная физическая нагрузка, сильные эмоции, стресс, курение, выброс адреналина при инъекции).</li>\r\n\t<li>Эндокринные заболевания: феохромоцитома, тиреотоксикоз, акромегалия, гигантизм, синдром Иценко-Кушинга.</li>\r\n\t<li>Заболевания поджелудочной железы (острый и хронический панкреатит, панкреатит при эпидемическом паротите, муковисцидозе, гемохроматозе, опухоли поджелудочной железы).</li>\r\n\t<li>Хронические заболевания печени и почек.</li>\r\n\t<li>Острые сердечно-сосудистые заболевания (кровоизлияние в мозг, инфаркт миокарда).</li>\r\n\t<li>Прием лекарственных препаратов: бета-адренергические агонисты (альбутерол, изопротеренол, тербуталин), кофеин, кортикостероиды, диазоксид, диуретики (ацетазоламид, хлорталидон, этакриновая кислота, фуросемид, тиазиды, триамтерен), допамин, индометацин, большие дозы никотиновой кислоты, пероральные контрацептивы, фенотиазины, фенитоин, стрептозотоцин, теофиллин, тироксин.</li>\r\n</ol>\r\n<p>\r\n</p>\r\n<p style=\"text-align: justify;\">\r\n <b> </b>\r\n</p>\r\n<p style=\"text-align: justify;\">\r\n</p>\r\n<p style=\"text-align: justify;\">\r\n <b>Причины понижения уровня глюкозы (гипогликемия)</b>\r\n</p>\r\n<p style=\"text-align: justify;\">\r\n</p>\r\n<ol style=\"text-align: justify;\">\r\n\t<li>Заболевания поджелудочной железы (гиперплазия, аденома или карцинома бета-клеток островков Лангерганса – инсулинома, недостаточность альфа-клеток островков – дефицит глюкагона).</li>\r\n\t<li>Эндокринная патология (болезнь Аддисона, адреногенитальный синдром, гипопитуитаризм, гипотиреоз).</li>\r\n\t<li>В детском возрасте (у недоношенных детей, у детей, рожденных от матерей с сахарным диабетом, кетотическая гипогликемия).</li>\r\n\t<li>Передозировка гипогликемических препаратов и инсулина.</li>\r\n\t<li>Тяжелые болезни печени (цирроз, гепатит, карцинома, гемохроматоз).</li>\r\n\t<li>Злокачественные непанкреатические опухоли: рак надпочечника, рак желудка, фибросаркома.</li>\r\n\t<li>Ферментопатии (гликогенозы – болезнь Гирке, галактоземия, нарушенная толерантность к фруктозе).</li>\r\n\t<li>Функциональные нарушения – реактивная гипогликемия (гастроэнтеростома, постгастроэктомические состояния, вегетативные расстройства, нарушение перистальтики ЖКТ).</li>\r\n\t<li>Нарушения питания (длительное голодание, синдром мальабсорбции).</li>\r\n\t<li>Отравления мышьяком, хлороформом, салицилатами, антигистаминными препаратами, алкогольная интоксикация.</li>\r\n\t<li>Прием лекарственных препаратов, таких как ацетаминофен (токсические дозы), бета-адреноблокаторы, анаболические стероиды (у диабетиков), антигистаминные, аспирин (токсические дозы), безафибрат, каптоприл, циптотерон, дизопирамид, этанол, аналоги гуанетидина, индометацин (вариабельно), ингибиторы моноаминоксидазы (МАО), нифедипин и др.</li>\r\n\t<li>Ложное занижение результата при нарушении требований по обработке пробы венозной крови (длительное хранение до центрифугирования).</li>\r\n</ol>\r\n<p>\r\n</p>",
+        "textStatement": "<h2 style=\"text-align: justify;\"></h2>\r\n<h2 style=\"text-align: justify;\"><span style=\"font-size: 16px;\">В каких случаях проводят анализ на Глюкозу:</span><br>\r\n </h2>\r\n<p style=\"text-align: justify;\">\r\n</p>\r\n<p style=\"text-align: justify;\">\r\n</p>\r\n<p style=\"text-align: justify;\">\r\n</p>\r\n<ul style=\"text-align: justify;\">\r\n\t<li>диагностика сахарного диабета 1-го и 2-го типов;</li>\r\n\t<li>контроль уровня глюкозы при сахарном диабете;</li>\r\n\t<li>скрининговые обследования лиц старше 45 лет;</li>\r\n\t<li>скрининговые обследования лиц с повышенным риском развития сахарного диабета (наследственная предрасположенность, ожирение);</li>\r\n\t<li>обследования при патологии щитовидной железы, надпочечников, гипофиза, заболеваниях печени;</li>\r\n\t<li>скрининговые биохимические исследования при диспансерных осмотрах, госпитализации;</li>\r\n\t<li>обследования при беременности.</li>\r\n</ul>\r\n<p>\r\n</p>\r\n<p>\r\n</p>",
+        "textPreparation": "<p>\r\n</p>\r\n<p style=\"text-align: justify;\">\r\n <b>Правила подготовки к исследованию Глюкозы</b>\r\n</p>\r\n<p style=\"text-align: justify;\">\r\n</p>\r\n<p style=\"text-align: justify;\">\r\n\t Если нет иных указаний лечащего врача, взятие крови предпочтительно проводить утром натощак, после 8-14-часового периода ночного голодания (воду пить можно). Исключить перед исследованием повышенные психоэмоциональные и физические нагрузки.\r\n</p>",
+        "price": null
+    }
+]</code></pre>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

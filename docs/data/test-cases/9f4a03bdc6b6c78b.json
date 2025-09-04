@@ -1,0 +1,292 @@
+{
+  "uid" : "9f4a03bdc6b6c78b",
+  "name" : "[API] Получение информации о продукте с буквенным артикулом",
+  "fullName" : "tests.api.tests.ProductsInfoApiTest.getProductInfoByLetterArticle",
+  "historyId" : "ad16a71f09619b3d11bd7051904c4f39",
+  "time" : {
+    "start" : 1756994579268,
+    "stop" : 1756994579663,
+    "duration" : 395
+  },
+  "description" : "Проверяем, что API корректно возвращает информацию о продукте с буквенным артикулом VEN (Взятие крови)",
+  "descriptionHtml" : "<p>Проверяем, что API корректно возвращает информацию о продукте с буквенным артикулом VEN (Взятие крови)</p>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ {
+    "name" : "setUp",
+    "time" : {
+      "start" : 1756994579266,
+      "stop" : 1756994579266,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "description" : "Проверяем, что API корректно возвращает информацию о продукте с буквенным артикулом VEN (Взятие крови)",
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Получаем информацию о продукте с буквенным артикулом",
+      "time" : {
+        "start" : 1756994579269,
+        "stop" : 1756994579645,
+        "duration" : 376
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "75abbbf006ae5eb5",
+        "name" : "Request",
+        "source" : "75abbbf006ae5eb5.html",
+        "type" : "text/html",
+        "size" : 6156
+      }, {
+        "uid" : "b762ce11f1492bc6",
+        "name" : "HTTP/1.1 200 ",
+        "source" : "b762ce11f1492bc6.html",
+        "type" : "text/html",
+        "size" : 8645
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 2,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Проверяем, что статус код ответа: \"200\"",
+      "time" : {
+        "start" : 1756994579645,
+        "stop" : 1756994579646,
+        "duration" : 1
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Проверяем, что ответ заполнен согласно структуре",
+      "time" : {
+        "start" : 1756994579646,
+        "stop" : 1756994579662,
+        "duration" : 16
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 3,
+    "attachmentsCount" : 2,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ {
+    "name" : "afterAll",
+    "time" : {
+      "start" : 1756994581847,
+      "stop" : 1756994581900,
+      "duration" : 53
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "api"
+  }, {
+    "name" : "junit.platform.uniqueid",
+    "value" : "[engine:junit-jupiter]/[class:tests.api.tests.ProductsInfoApiTest]/[method:getProductInfoByLetterArticle()]"
+  }, {
+    "name" : "owner",
+    "value" : "germanmalykh"
+  }, {
+    "name" : "host",
+    "value" : "319ab4d25e4d"
+  }, {
+    "name" : "thread",
+    "value" : "24202@319ab4d25e4d.Test worker(1)"
+  }, {
+    "name" : "framework",
+    "value" : "junit-platform"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "package",
+    "value" : "tests.api.tests.ProductsInfoApiTest"
+  }, {
+    "name" : "testClass",
+    "value" : "tests.api.tests.ProductsInfoApiTest"
+  }, {
+    "name" : "testMethod",
+    "value" : "getProductInfoByLetterArticle"
+  }, {
+    "name" : "suite",
+    "value" : "API Tests"
+  }, {
+    "name" : "severity",
+    "value" : "normal"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "owner" : "germanmalykh",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 13,
+        "unknown" : 0,
+        "total" : 13
+      },
+      "items" : [ {
+        "uid" : "51c89cea675089c2",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/31/allure/#testresult/51c89cea675089c2",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756993880554,
+          "stop" : 1756993880934,
+          "duration" : 380
+        }
+      }, {
+        "uid" : "a5cb3a543248b7b6",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/28/allure/#testresult/a5cb3a543248b7b6",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756992709100,
+          "stop" : 1756992709500,
+          "duration" : 400
+        }
+      }, {
+        "uid" : "752b268a96d524ab",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/26/allure/#testresult/752b268a96d524ab",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756988749815,
+          "stop" : 1756988750188,
+          "duration" : 373
+        }
+      }, {
+        "uid" : "c377d1ebecaebfb9",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/23/allure/#testresult/c377d1ebecaebfb9",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756986494245,
+          "stop" : 1756986494652,
+          "duration" : 407
+        }
+      }, {
+        "uid" : "dcf0339f65e47641",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/20/allure/#testresult/dcf0339f65e47641",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756985198528,
+          "stop" : 1756985198912,
+          "duration" : 384
+        }
+      }, {
+        "uid" : "bdd52865350c90f5",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/19/allure/#testresult/bdd52865350c90f5",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756984196771,
+          "stop" : 1756984197242,
+          "duration" : 471
+        }
+      }, {
+        "uid" : "51c09d77f34e9f4d",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/7/allure/#testresult/51c09d77f34e9f4d",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756980249677,
+          "stop" : 1756980250064,
+          "duration" : 387
+        }
+      }, {
+        "uid" : "642fc686d1cc7081",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/6/allure/#testresult/642fc686d1cc7081",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756980185527,
+          "stop" : 1756980185945,
+          "duration" : 418
+        }
+      }, {
+        "uid" : "230781043434e7e8",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/5/allure/#testresult/230781043434e7e8",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756979173972,
+          "stop" : 1756979174392,
+          "duration" : 420
+        }
+      }, {
+        "uid" : "a3bc77cbda3cdd9b",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/4/allure/#testresult/a3bc77cbda3cdd9b",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756978887339,
+          "stop" : 1756978887753,
+          "duration" : 414
+        }
+      }, {
+        "uid" : "38b500b93cb40e09",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/3/allure/#testresult/38b500b93cb40e09",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756977959835,
+          "stop" : 1756977960242,
+          "duration" : 407
+        }
+      }, {
+        "uid" : "60f37e023eb5fe4e",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/2/allure/#testresult/60f37e023eb5fe4e",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756977608320,
+          "stop" : 1756977608731,
+          "duration" : 411
+        }
+      } ]
+    },
+    "tags" : [ "api" ]
+  },
+  "source" : "9f4a03bdc6b6c78b.json",
+  "parameterValues" : [ ]
+}

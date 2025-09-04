@@ -1,0 +1,241 @@
+[ {
+  "buildOrder" : 32,
+  "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/32/allure",
+  "reportName" : "AllureReport",
+  "data" : {
+    "failed" : 0,
+    "broken" : 0,
+    "skipped" : 0,
+    "passed" : 31,
+    "unknown" : 0,
+    "total" : 31
+  }
+}, {
+  "buildOrder" : 31,
+  "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/31/allure",
+  "reportName" : "AllureReport",
+  "data" : {
+    "failed" : 0,
+    "broken" : 4,
+    "skipped" : 0,
+    "passed" : 27,
+    "unknown" : 0,
+    "total" : 31
+  }
+}, {
+  "buildOrder" : 30,
+  "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/30/allure",
+  "reportName" : "AllureReport",
+  "data" : {
+    "failed" : 1,
+    "broken" : 0,
+    "skipped" : 0,
+    "passed" : 6,
+    "unknown" : 0,
+    "total" : 7
+  }
+}, {
+  "buildOrder" : 29,
+  "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/29/allure",
+  "reportName" : "AllureReport",
+  "data" : {
+    "failed" : 1,
+    "broken" : 0,
+    "skipped" : 0,
+    "passed" : 6,
+    "unknown" : 0,
+    "total" : 7
+  }
+}, {
+  "buildOrder" : 28,
+  "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/28/allure",
+  "reportName" : "AllureReport",
+  "data" : {
+    "failed" : 0,
+    "broken" : 4,
+    "skipped" : 0,
+    "passed" : 27,
+    "unknown" : 0,
+    "total" : 31
+  }
+}, {
+  "buildOrder" : 27,
+  "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/27/allure",
+  "reportName" : "AllureReport",
+  "data" : {
+    "failed" : 1,
+    "broken" : 0,
+    "skipped" : 0,
+    "passed" : 6,
+    "unknown" : 0,
+    "total" : 7
+  }
+}, {
+  "buildOrder" : 26,
+  "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/26/allure",
+  "reportName" : "AllureReport",
+  "data" : {
+    "failed" : 0,
+    "broken" : 4,
+    "skipped" : 0,
+    "passed" : 27,
+    "unknown" : 0,
+    "total" : 31
+  }
+}, {
+  "buildOrder" : 25,
+  "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/25/allure",
+  "reportName" : "AllureReport",
+  "data" : {
+    "failed" : 0,
+    "broken" : 0,
+    "skipped" : 0,
+    "passed" : 7,
+    "unknown" : 0,
+    "total" : 7
+  }
+}, {
+  "buildOrder" : 24,
+  "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/24/allure",
+  "reportName" : "AllureReport",
+  "data" : {
+    "failed" : 0,
+    "broken" : 0,
+    "skipped" : 0,
+    "passed" : 7,
+    "unknown" : 0,
+    "total" : 7
+  }
+}, {
+  "buildOrder" : 23,
+  "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/23/allure",
+  "reportName" : "AllureReport",
+  "data" : {
+    "failed" : 0,
+    "broken" : 4,
+    "skipped" : 0,
+    "passed" : 27,
+    "unknown" : 0,
+    "total" : 31
+  }
+}, {
+  "buildOrder" : 22,
+  "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/22/allure",
+  "reportName" : "AllureReport",
+  "data" : {
+    "failed" : 0,
+    "broken" : 0,
+    "skipped" : 0,
+    "passed" : 7,
+    "unknown" : 0,
+    "total" : 7
+  }
+}, {
+  "buildOrder" : 21,
+  "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/21/allure",
+  "reportName" : "AllureReport",
+  "data" : {
+    "failed" : 1,
+    "broken" : 0,
+    "skipped" : 0,
+    "passed" : 6,
+    "unknown" : 0,
+    "total" : 7
+  }
+}, {
+  "buildOrder" : 20,
+  "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/20/allure",
+  "reportName" : "AllureReport",
+  "data" : {
+    "failed" : 0,
+    "broken" : 4,
+    "skipped" : 0,
+    "passed" : 27,
+    "unknown" : 0,
+    "total" : 31
+  }
+}, {
+  "buildOrder" : 19,
+  "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/19/allure",
+  "reportName" : "AllureReport",
+  "data" : {
+    "failed" : 0,
+    "broken" : 4,
+    "skipped" : 0,
+    "passed" : 27,
+    "unknown" : 0,
+    "total" : 31
+  }
+}, {
+  "buildOrder" : 18,
+  "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/18/allure",
+  "reportName" : "AllureReport",
+  "data" : {
+    "failed" : 1,
+    "broken" : 0,
+    "skipped" : 0,
+    "passed" : 6,
+    "unknown" : 0,
+    "total" : 7
+  }
+}, {
+  "buildOrder" : 17,
+  "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/17/allure",
+  "reportName" : "AllureReport",
+  "data" : {
+    "failed" : 1,
+    "broken" : 0,
+    "skipped" : 0,
+    "passed" : 6,
+    "unknown" : 0,
+    "total" : 7
+  }
+}, {
+  "buildOrder" : 16,
+  "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/16/allure",
+  "reportName" : "AllureReport",
+  "data" : {
+    "failed" : 1,
+    "broken" : 0,
+    "skipped" : 0,
+    "passed" : 6,
+    "unknown" : 0,
+    "total" : 7
+  }
+}, {
+  "buildOrder" : 15,
+  "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/15/allure",
+  "reportName" : "AllureReport",
+  "data" : {
+    "failed" : 0,
+    "broken" : 7,
+    "skipped" : 0,
+    "passed" : 0,
+    "unknown" : 0,
+    "total" : 7
+  }
+}, {
+  "buildOrder" : 14,
+  "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/14/allure",
+  "reportName" : "AllureReport",
+  "data" : {
+    "failed" : 0,
+    "broken" : 7,
+    "skipped" : 0,
+    "passed" : 0,
+    "unknown" : 0,
+    "total" : 7
+  }
+}, {
+  "buildOrder" : 13,
+  "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/13/allure",
+  "reportName" : "AllureReport",
+  "data" : {
+    "failed" : 0,
+    "broken" : 7,
+    "skipped" : 0,
+    "passed" : 0,
+    "unknown" : 0,
+    "total" : 7
+  }
+} ]

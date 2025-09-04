@@ -1,0 +1,161 @@
+[ {
+  "buildOrder" : 32,
+  "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/32/allure",
+  "reportName" : "AllureReport",
+  "data" : {
+    "run" : 31,
+    "retry" : 0
+  }
+}, {
+  "buildOrder" : 31,
+  "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/31/allure",
+  "reportName" : "AllureReport",
+  "data" : {
+    "run" : 31,
+    "retry" : 0
+  }
+}, {
+  "buildOrder" : 30,
+  "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/30/allure",
+  "reportName" : "AllureReport",
+  "data" : {
+    "run" : 7,
+    "retry" : 0
+  }
+}, {
+  "buildOrder" : 29,
+  "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/29/allure",
+  "reportName" : "AllureReport",
+  "data" : {
+    "run" : 7,
+    "retry" : 0
+  }
+}, {
+  "buildOrder" : 28,
+  "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/28/allure",
+  "reportName" : "AllureReport",
+  "data" : {
+    "run" : 31,
+    "retry" : 0
+  }
+}, {
+  "buildOrder" : 27,
+  "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/27/allure",
+  "reportName" : "AllureReport",
+  "data" : {
+    "run" : 7,
+    "retry" : 0
+  }
+}, {
+  "buildOrder" : 26,
+  "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/26/allure",
+  "reportName" : "AllureReport",
+  "data" : {
+    "run" : 31,
+    "retry" : 0
+  }
+}, {
+  "buildOrder" : 25,
+  "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/25/allure",
+  "reportName" : "AllureReport",
+  "data" : {
+    "run" : 7,
+    "retry" : 0
+  }
+}, {
+  "buildOrder" : 24,
+  "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/24/allure",
+  "reportName" : "AllureReport",
+  "data" : {
+    "run" : 7,
+    "retry" : 0
+  }
+}, {
+  "buildOrder" : 23,
+  "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/23/allure",
+  "reportName" : "AllureReport",
+  "data" : {
+    "run" : 31,
+    "retry" : 0
+  }
+}, {
+  "buildOrder" : 22,
+  "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/22/allure",
+  "reportName" : "AllureReport",
+  "data" : {
+    "run" : 7,
+    "retry" : 0
+  }
+}, {
+  "buildOrder" : 21,
+  "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/21/allure",
+  "reportName" : "AllureReport",
+  "data" : {
+    "run" : 7,
+    "retry" : 0
+  }
+}, {
+  "buildOrder" : 20,
+  "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/20/allure",
+  "reportName" : "AllureReport",
+  "data" : {
+    "run" : 31,
+    "retry" : 0
+  }
+}, {
+  "buildOrder" : 19,
+  "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/19/allure",
+  "reportName" : "AllureReport",
+  "data" : {
+    "run" : 31,
+    "retry" : 0
+  }
+}, {
+  "buildOrder" : 18,
+  "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/18/allure",
+  "reportName" : "AllureReport",
+  "data" : {
+    "run" : 7,
+    "retry" : 0
+  }
+}, {
+  "buildOrder" : 17,
+  "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/17/allure",
+  "reportName" : "AllureReport",
+  "data" : {
+    "run" : 7,
+    "retry" : 0
+  }
+}, {
+  "buildOrder" : 16,
+  "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/16/allure",
+  "reportName" : "AllureReport",
+  "data" : {
+    "run" : 7,
+    "retry" : 0
+  }
+}, {
+  "buildOrder" : 15,
+  "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/15/allure",
+  "reportName" : "AllureReport",
+  "data" : {
+    "run" : 7,
+    "retry" : 0
+  }
+}, {
+  "buildOrder" : 14,
+  "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/14/allure",
+  "reportName" : "AllureReport",
+  "data" : {
+    "run" : 7,
+    "retry" : 0
+  }
+}, {
+  "buildOrder" : 13,
+  "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/13/allure",
+  "reportName" : "AllureReport",
+  "data" : {
+    "run" : 7,
+    "retry" : 0
+  }
+} ]

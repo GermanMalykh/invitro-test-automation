@@ -1,0 +1,10 @@
+[ {
+  "name" : "Jenkins",
+  "type" : "jenkins",
+  "url" : "https://jenkins.autotests.cloud/",
+  "buildOrder" : 32,
+  "buildName" : "C14_gnmalykh_invitro_java #32",
+  "buildUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/32/",
+  "reportName" : "AllureReport",
+  "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/32/allure"
+} ]

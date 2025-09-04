@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Automation Session — done</title>
+  <link href="https://yastatic.net/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+  <style>
+    :root{
+      --bg:#f6f8fb; --text:#121826; --muted:#5b6475; --card:#ffffff; --border:#e5e9f0;
+      --shadow:0 6px 18px rgba(16,24,40,.06); --accent:#2563eb;
+      --ok:#16a34a; --warn:#d97706; --err:#dc2626;
+    }
+    html,body{background:var(--bg);color:var(--text);} body{padding:28px}
+    .container-narrow{max-width:1080px;margin:0 auto}
+    .stack{display:flex;flex-direction:column;gap:18px}
+    .page-title{margin:0 0 16px;font-weight:800}
+
+    /* чип по умолчанию читаемый, даже если статус пустой */
+    .chip{display:inline-block;padding:4px 10px;border-radius:999px;font-size:12px;line-height:1;
+          border:1px solid var(--border); background:#eef2f7; color:#334155; font-weight:600}
+    .chip.done,.chip.passed{background:var(--ok);border-color:var(--ok);color:#fff}
+    .chip.failed,.chip.error{background:var(--err);border-color:var(--err);color:#fff}
+    .chip.running,.chip.queued,.chip.warning,.chip.timeout{background:var(--warn);border-color:var(--warn);color:#fff}
+
+    .card{background:var(--card);border:1px solid var(--border);border-radius:14px;box-shadow:var(--shadow);overflow:hidden}
+    .card-header{padding:14px 16px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px}
+    .card-title{font-size:16px;font-weight:700;margin:0}
+    .card-body{padding:16px}
+
+    .kv{display:grid;grid-template-columns:200px 1fr;gap:10px 16px}
+    .kv .k{color:var(--muted)}
+    .mono{font-family:Menlo,Monaco,Consolas,"Liberation Mono",monospace}
+    .break{word-break:break-all}
+
+    .links-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}
+    .link-card{display:block;background:#f8fafc;border:1px solid var(--border);border-radius:12px;padding:14px;text-decoration:none;color:var(--text);transition:all .15s}
+    .link-card:hover{transform:translateY(-2px);border-color:#cdd6e3;box-shadow:0 6px 16px rgba(37,99,235,.12)}
+    .link-head{display:flex;align-items:center;gap:10px;margin-bottom:6px}
+    .link-title{font-weight:700;font-size:14px;margin:0}
+    .link-desc{font-size:12px;color:var(--muted)}
+    .pill{display:inline-block;padding:3px 8px;border-radius:999px;font-size:11px;color:var(--accent);
+          background:rgba(37,99,235,.10);border:1px solid rgba(37,99,235,.25)}
+
+    .row{margin-left:0;margin-right:0}
+    [class*="col-"]{padding-left:0;padding-right:0;width:100%;float:none}
+    a{word-break:break-word}
+  </style>
+</head>
+<body>
+<div class="container-narrow">
+  <h2 class="page-title">
+    Automation Session
+    <span class="chip done">done</span>
+  </h2>
+
+  <div class="stack">
+    <!-- Summary -->
+    <div class="card">
+      <div class="card-header"><span class="pill">Overview</span><h3 class="card-title">Сводка</h3></div>
+      <div class="card-body">
+        <div class="kv">
+          <div class="k">Name</div><div>Samsung Galaxy S23_13.0_Invitro_Test</div>
+          <div class="k">Project</div><div>Invitro Project</div>
+          <div class="k">Build</div><div>Invitro   BuildDateAndTime: 04.09.2025_14:01:39</div>
+          <div class="k">Reason</div><div>CLIENT_STOPPED_SESSION</div>
+          <div class="k">Created At</div><div>2025-09-04T14:01:40.000Z</div>
+          <div class="k">Duration</div><div>26 sec</div>
+          <div class="k">Session ID</div><div class="mono break">6c6a53890b50fa4f87f697ba44e2183dcd0e8005</div>
+          <div class="k">Build ID</div><div class="mono break">c9420b2536bbea494861ef724f413d7184207acc</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Device & OS -->
+    <div class="card">
+      <div class="card-header"><span class="pill">Environment</span><h3 class="card-title">Device & OS</h3></div>
+      <div class="card-body">
+        <div class="kv">
+          <div class="k">Device</div><div>Samsung Galaxy S23</div>
+          <div class="k">OS</div><div>android 13.0</div>
+          <div class="k">Browser</div><div>app</div>
+          <div class="k">BrowserStack</div><div>done</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- App Details -->
+    <div class="card">
+      <div class="card-header"><span class="pill">Application</span><h3 class="card-title">App Details</h3></div>
+      <div class="card-body">
+        <div class="kv">
+          <div class="k">App Name</div><div>com.invitro.app</div>
+          <div class="k">Version</div><div>2.21.0</div>
+          <div class="k">File</div><div>com.invitro.apk</div>
+          <div class="k">Uploaded</div><div>2025-09-02T13:08:04.000Z</div>
+          <div class="k">App URL</div><div class="mono break">bs://619a40da27e852a488f97f06ac660c7ae4fe05d9</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Links & Artifacts -->
+    <div class="card">
+      <div class="card-header"><span class="pill">Artifacts</span><h3 class="card-title">Logs & Links</h3></div>
+      <div class="card-body">
+        <div class="links-grid">
+          <a class="link-card" href="https://app-automate.browserstack.com/builds/c9420b2536bbea494861ef724f413d7184207acc/sessions/6c6a53890b50fa4f87f697ba44e2183dcd0e8005" target="_blank" rel="noreferrer noopener">
+            <div class="link-head"><div class="pill">Open</div><div class="link-title">Browser URL</div></div>
+            <div class="link-desc">Ссылка на сессию в BrowserStack</div>
+          </a>
+
+          <a class="link-card" href="https://app-automate.browserstack.com/builds/c9420b2536bbea494861ef724f413d7184207acc/sessions/6c6a53890b50fa4f87f697ba44e2183dcd0e8005?auth_token=875f66dd0e49b47ef6672042e12b85f5bc8ee77cf88969c7ca427640c38d015a" target="_blank" rel="noreferrer noopener">
+            <div class="link-head"><div class="pill">Share</div><div class="link-title">Public URL</div></div>
+            <div class="link-desc">Публичная ссылка на сессию</div>
+          </a>
+
+          <a class="link-card" href="https://app-automate.browserstack.com/builds/c9420b2536bbea494861ef724f413d7184207acc/sessions/6c6a53890b50fa4f87f697ba44e2183dcd0e8005/logs" target="_blank" rel="noreferrer noopener">
+            <div class="link-head"><div class="pill">Logs</div><div class="link-title">Session Logs</div></div>
+            <div class="link-desc">Логи сессии</div>
+          </a>
+
+          <a class="link-card" href="https://app-automate.browserstack.com/sessions/6c6a53890b50fa4f87f697ba44e2183dcd0e8005/video?token=d2hLTk9peXR2UGkzd3o3aFJiVkxjWG8vblZIRGJIck8zSTVybGw0bXhjY0VuN1VMblFqbkhYMXRNanZTSlU1a0YrRld5QUphK2JzRXFTam11Q0FlK0E9PS0tT3czVGxEdkpFQ3cwS1ZsV1RpSTJSdz09--0b3c5d98d6d4aa0fe4f121b4279b0ce4b4c763e2&source=rest_api&diff=1.584400474" target="_blank" rel="noreferrer noopener">
+            <div class="link-head"><div class="pill">Video</div><div class="link-title">Recording</div></div>
+            <div class="link-desc">Видео прохождения</div>
+          </a>
+
+          <a class="link-card" href="https://api.browserstack.com/app-automate/builds/c9420b2536bbea494861ef724f413d7184207acc/sessions/6c6a53890b50fa4f87f697ba44e2183dcd0e8005/appiumlogs" target="_blank" rel="noreferrer noopener">
+            <div class="link-head"><div class="pill">Appium</div><div class="link-title">Appium Logs</div></div>
+            <div class="link-desc">Журнал драйвера</div>
+          </a>
+
+          <a class="link-card" href="https://api.browserstack.com/app-automate/builds/c9420b2536bbea494861ef724f413d7184207acc/sessions/6c6a53890b50fa4f87f697ba44e2183dcd0e8005/devicelogs" target="_blank" rel="noreferrer noopener">
+            <div class="link-head"><div class="pill">Device</div><div class="link-title">Device Logs</div></div>
+            <div class="link-desc">Системные логи устройства</div>
+          </a>
+
+          <a class="link-card" href="https://app-automate.browserstack.com/s3-upload/bs-selenium-logs-use/s3.us-east-1/data/c9420b2536bbea494861ef724f413d7184207acc/6c6a53890b50fa4f87f697ba44e2183dcd0e8005-terminal-logs.txt?response-content-type=text%2Fplain&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA2XUQHUQMIIBX5QJ6%2F20250904%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250904T140207Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=650840ae54a6e04ffd517fd261a694d645832ca5a94ea68a97018d2c8ad5a059" target="_blank" rel="noreferrer noopener">
+            <div class="link-head"><div class="pill">Terminal</div><div class="link-title">Session Terminal</div></div>
+            <div class="link-desc">Терминальные логи сессии</div>
+          </a>
+
+          <a class="link-card" href="https://app-automate.browserstack.com/s3-upload/bs-selenium-logs-use/s3.us-east-1/data/c9420b2536bbea494861ef724f413d7184207acc/terminal-logs.txt?response-content-type=text%2Fplain&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA2XUQHUQMIIBX5QJ6%2F20250904%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250904T140207Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=2bfbded01cadca6e7aeaaece511e60e7acaeb7fbe5020a8873d82a7529a80ed5" target="_blank" rel="noreferrer noopener">
+            <div class="link-head"><div class="pill">Terminal</div><div class="link-title">Build Terminal</div></div>
+            <div class="link-desc">Терминальные логи билда</div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

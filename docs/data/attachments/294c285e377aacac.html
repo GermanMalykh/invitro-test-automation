@@ -1,0 +1,171 @@
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset = UTF-8">
+    <script src="https://yastatic.net/jquery/2.2.3/jquery.min.js" crossorigin="anonymous"></script>
+
+    <link href="https://yastatic.net/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <script src="https://yastatic.net/bootstrap/3.3.6/js/bootstrap.min.js" crossorigin="anonymous"></script>
+
+    <link type="text/css" href="https://yandex.st/highlightjs/8.0/styles/github.min.css" rel="stylesheet"/>
+    <script type="text/javascript" src="https://yandex.st/highlightjs/8.0/highlight.min.js"></script>
+    <script type="text/javascript" src="https://yandex.st/highlightjs/8.0/languages/bash.min.js"></script>
+    <script type="text/javascript" src="https://yandex.st/highlightjs/8.0/languages/json.min.js"></script>
+    <script type="text/javascript" src="https://yandex.st/highlightjs/8.0/languages/xml.min.js"></script>
+    <script type="text/javascript">hljs.initHighlightingOnLoad();</script>
+
+    <style>
+        .container-fluid {
+            padding: 20px;
+        }
+        @media (max-width: 768px) {
+            .col-md-6 {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+            .container-fluid {
+                padding: 10px;
+            }
+            .left-panel, .right-panel {
+                padding: 10px;
+            }
+        }
+        .left-panel {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        .right-panel {
+            background-color: #ffffff;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        .section-title {
+            color: #495057;
+            font-weight: bold;
+            margin-bottom: 10px;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 5px;
+        }
+        .parameter-item {
+            margin-bottom: 8px;
+            padding: 5px;
+            background-color: #ffffff;
+            border-radius: 3px;
+        }
+        .parameter-name {
+            font-weight: bold;
+            color: #007bff;
+        }
+        .parameter-value {
+            color: #6c757d;
+            word-break: break-all;
+        }
+        pre {
+            white-space: pre-wrap;
+            background-color: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 3px;
+            padding: 10px;
+            margin: 0;
+        }
+        .method-badge {
+            display: inline-block;
+            padding: 4px 8px;
+            color: white;
+            border-radius: 3px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        .method-get {
+            background-color: #61affe;
+        }
+        .method-post {
+            background-color: #49cc90;
+        }
+        .method-put {
+            background-color: #fca130;
+        }
+        .method-patch {
+            background-color: #50e3c2;
+        }
+        .method-delete {
+            background-color: #f93e3e;
+        }
+        .method-head {
+            background-color: #9012fe;
+        }
+        .method-options {
+            background-color: #0d5aa7;
+        }
+        .url-text {
+            color: #28a745;
+            font-family: monospace;
+            word-break: break-all;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            max-width: 100%;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <!-- Левая панель с параметрами -->
+        <div class="col-md-6">
+            <div class="left-panel">
+                <h4 class="section-title">Параметры запроса</h4>
+                
+                <!-- Метод и URL -->
+                <div class="parameter-item">
+                    <div class="method-badge method-get">
+                        GET
+                    </div>
+                    <div class="url-text">
+                        https://lk3.invitro.ru/site/api/cities
+                    </div>
+                </div>
+
+                <!-- Headers -->
+                    <h5 class="section-title">Headers</h5>
+                        <div class="parameter-item">
+                            <div class="parameter-name">User-Agent</div>
+                            <div class="parameter-value">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36</div>
+                        </div>
+                        <div class="parameter-item">
+                            <div class="parameter-name">Accept</div>
+                            <div class="parameter-value">*/*</div>
+                        </div>
+                        <div class="parameter-item">
+                            <div class="parameter-name">Content-Type</div>
+                            <div class="parameter-value">application/json</div>
+                        </div>
+
+                <!-- Cookies -->
+
+                <!-- Curl -->
+                    <h5 class="section-title">Curl</h5>
+                    <div class="parameter-item">
+                        <pre><code>curl -v -X GET 'https://lk3.invitro.ru/site/api/cities' -H 'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36' -H 'Accept: */*' -H 'Content-Type: application/json'</code></pre>
+                    </div>
+            </div>
+        </div>
+
+        <!-- Правая панель с телом запроса -->
+        <div class="col-md-6">
+            <div class="right-panel">
+                <h4 class="section-title">Тело запроса</h4>
+                
+                    <div class="parameter-item">
+                        <em>Тело запроса отсутствует</em>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

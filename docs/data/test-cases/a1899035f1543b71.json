@@ -1,0 +1,301 @@
+{
+  "uid" : "a1899035f1543b71",
+  "name" : "[API] Поиск офиса со случайным идентификатором города",
+  "fullName" : "tests.api.tests.OfficeApiTest.findOfficeByRandomId",
+  "historyId" : "48ac5d172b36fee200cadef24f066411",
+  "time" : {
+    "start" : 1756994578404,
+    "stop" : 1756994578813,
+    "duration" : 409
+  },
+  "description" : "Тест обработки случайного GUID при поиске офиса",
+  "descriptionHtml" : "<p>Тест обработки случайного GUID при поиске офиса</p>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ {
+    "name" : "setUp",
+    "time" : {
+      "start" : 1756994576948,
+      "stop" : 1756994576948,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "description" : "Тест обработки случайного GUID при поиске офиса",
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Выполняем запрос на получение информации об офисе со случайным идентификатором города",
+      "time" : {
+        "start" : 1756994578404,
+        "stop" : 1756994578809,
+        "duration" : 405
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "958959b6a5e1f3fe",
+        "name" : "Случайный GUID",
+        "source" : "958959b6a5e1f3fe.txt",
+        "type" : "text/plain",
+        "size" : 36
+      }, {
+        "uid" : "1a3cb99bccff1de0",
+        "name" : "Request",
+        "source" : "1a3cb99bccff1de0.html",
+        "type" : "text/html",
+        "size" : 6212
+      }, {
+        "uid" : "f697f8f02065760e",
+        "name" : "HTTP/1.1 500 ",
+        "source" : "f697f8f02065760e.html",
+        "type" : "text/html",
+        "size" : 7421
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 3,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Проверяем, что статус код ответа: \"500\"",
+      "time" : {
+        "start" : 1756994578810,
+        "stop" : 1756994578810,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Проверяем, что API возвращает ошибку валидации для случайного идентификатора города",
+      "time" : {
+        "start" : 1756994578810,
+        "stop" : 1756994578812,
+        "duration" : 2
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 3,
+    "attachmentsCount" : 3,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ {
+    "name" : "afterAll",
+    "time" : {
+      "start" : 1756994579263,
+      "stop" : 1756994579264,
+      "duration" : 1
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "server-bug"
+  }, {
+    "name" : "tag",
+    "value" : "api"
+  }, {
+    "name" : "junit.platform.uniqueid",
+    "value" : "[engine:junit-jupiter]/[class:tests.api.tests.OfficeApiTest]/[method:findOfficeByRandomId()]"
+  }, {
+    "name" : "owner",
+    "value" : "germanmalykh"
+  }, {
+    "name" : "host",
+    "value" : "319ab4d25e4d"
+  }, {
+    "name" : "thread",
+    "value" : "24202@319ab4d25e4d.Test worker(1)"
+  }, {
+    "name" : "framework",
+    "value" : "junit-platform"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "package",
+    "value" : "tests.api.tests.OfficeApiTest"
+  }, {
+    "name" : "testClass",
+    "value" : "tests.api.tests.OfficeApiTest"
+  }, {
+    "name" : "testMethod",
+    "value" : "findOfficeByRandomId"
+  }, {
+    "name" : "suite",
+    "value" : "API Tests"
+  }, {
+    "name" : "severity",
+    "value" : "normal"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "owner" : "germanmalykh",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 13,
+        "unknown" : 0,
+        "total" : 13
+      },
+      "items" : [ {
+        "uid" : "86b4779fc4b1135b",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/31/allure/#testresult/86b4779fc4b1135b",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756993879856,
+          "stop" : 1756993880207,
+          "duration" : 351
+        }
+      }, {
+        "uid" : "76d0dfcd1b68913a",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/28/allure/#testresult/76d0dfcd1b68913a",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756992708370,
+          "stop" : 1756992708744,
+          "duration" : 374
+        }
+      }, {
+        "uid" : "cbd9571a77f009b3",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/26/allure/#testresult/cbd9571a77f009b3",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756988749006,
+          "stop" : 1756988749360,
+          "duration" : 354
+        }
+      }, {
+        "uid" : "f3c98d3909576dc5",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/23/allure/#testresult/f3c98d3909576dc5",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756986493487,
+          "stop" : 1756986493877,
+          "duration" : 390
+        }
+      }, {
+        "uid" : "3cd12bffb46c23a4",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/20/allure/#testresult/3cd12bffb46c23a4",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756985197727,
+          "stop" : 1756985198080,
+          "duration" : 353
+        }
+      }, {
+        "uid" : "81120b91bd50f8d4",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/19/allure/#testresult/81120b91bd50f8d4",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756984195999,
+          "stop" : 1756984196344,
+          "duration" : 345
+        }
+      }, {
+        "uid" : "93f89abdb2b52a9f",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/7/allure/#testresult/93f89abdb2b52a9f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756980248882,
+          "stop" : 1756980249246,
+          "duration" : 364
+        }
+      }, {
+        "uid" : "e1e959367aaef945",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/6/allure/#testresult/e1e959367aaef945",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756980184711,
+          "stop" : 1756980185104,
+          "duration" : 393
+        }
+      }, {
+        "uid" : "9d43d596cbe35f42",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/5/allure/#testresult/9d43d596cbe35f42",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756979173157,
+          "stop" : 1756979173531,
+          "duration" : 374
+        }
+      }, {
+        "uid" : "6fe535eedd9db3fb",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/4/allure/#testresult/6fe535eedd9db3fb",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756978886559,
+          "stop" : 1756978886908,
+          "duration" : 349
+        }
+      }, {
+        "uid" : "6e34b0a3a38a4134",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/3/allure/#testresult/6e34b0a3a38a4134",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756977959059,
+          "stop" : 1756977959411,
+          "duration" : 352
+        }
+      }, {
+        "uid" : "ee323b58b3f2d4c7",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/2/allure/#testresult/ee323b58b3f2d4c7",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756977607481,
+          "stop" : 1756977607866,
+          "duration" : 385
+        }
+      } ]
+    },
+    "tags" : [ "server-bug", "api" ]
+  },
+  "source" : "a1899035f1543b71.json",
+  "parameterValues" : [ ]
+}

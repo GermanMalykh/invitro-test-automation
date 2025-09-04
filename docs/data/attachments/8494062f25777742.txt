@@ -1,0 +1,1 @@
+{"name": "Астана", "territory": "KAZAKHSTAN", "capital": true}

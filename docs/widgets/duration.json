@@ -1,0 +1,311 @@
+[ {
+  "uid" : "6be51b9f6a5e998c",
+  "name" : "[Web] Проверка цен на продукты в корзине для города: Калининград",
+  "time" : {
+    "start" : 1756994157127,
+    "stop" : 1756994171858,
+    "duration" : 14731
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "5929a1abcc40ea3f",
+  "name" : "[Web] Очистка корзины и проверка информации",
+  "time" : {
+    "start" : 1756994111118,
+    "stop" : 1756994126564,
+    "duration" : 15446
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "6e24b531444e4567",
+  "name" : "[API] Получение информации о городе с невалидным идентификатором",
+  "time" : {
+    "start" : 1756994571384,
+    "stop" : 1756994572036,
+    "duration" : 652
+  },
+  "status" : "passed",
+  "severity" : "minor"
+}, {
+  "uid" : "ebb3cdf93fc2d2a",
+  "name" : "[Web] Проверка цен на продукты в корзине для города: Севастополь",
+  "time" : {
+    "start" : 1756994142051,
+    "stop" : 1756994157121,
+    "duration" : 15070
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "d5a8bbfe40475caa",
+  "name" : "[API] Получение информации о продукте с невалидным форматом идентификатора города",
+  "time" : {
+    "start" : 1756994580447,
+    "stop" : 1756994580767,
+    "duration" : 320
+  },
+  "status" : "passed",
+  "severity" : "minor"
+}, {
+  "uid" : "d4f6dd76e22247a9",
+  "name" : "[Android] Проверка информации в корзине для города: Санкт-Петербург",
+  "time" : {
+    "start" : 1756994269492,
+    "stop" : 1756994352833,
+    "duration" : 83341
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "dc42b0b83035a8c3",
+  "name" : "[API] Проверка соответствия \"Страна\" - \"Столица\". Стране \"KAZAKHSTAN\" соответствует столица \"Астана\"",
+  "time" : {
+    "start" : 1756994574631,
+    "stop" : 1756994575296,
+    "duration" : 665
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "49852d4d00ea3751",
+  "name" : "[API] Получение информации о продукте с пустым идентификатором артикула",
+  "time" : {
+    "start" : 1756994579664,
+    "stop" : 1756994579988,
+    "duration" : 324
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "a1899035f1543b71",
+  "name" : "[API] Поиск офиса со случайным идентификатором города",
+  "time" : {
+    "start" : 1756994578404,
+    "stop" : 1756994578813,
+    "duration" : 409
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "e7fc4672fe484eb9",
+  "name" : "[API] Поиск офиса с существующим идентификатору города",
+  "time" : {
+    "start" : 1756994577323,
+    "stop" : 1756994578401,
+    "duration" : 1078
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "adf69b6c43c83b7f",
+  "name" : "[API] Поиск офиса с невалидным форматом идентификатора города",
+  "time" : {
+    "start" : 1756994578815,
+    "stop" : 1756994579262,
+    "duration" : 447
+  },
+  "status" : "passed",
+  "severity" : "blocker"
+}, {
+  "uid" : "7c8cfbd6b32c9bd3",
+  "name" : "[Web] Выбор выезда на дом для сдачи анализов и проверка деталей заказа",
+  "time" : {
+    "start" : 1756994052573,
+    "stop" : 1756994067873,
+    "duration" : 15300
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "971569c828abd495",
+  "name" : "[API] Проверка соответствия \"Страна\" - \"Столица\". Стране \"ARMENIA\" соответствует столица \"Ереван\"",
+  "time" : {
+    "start" : 1756994573268,
+    "stop" : 1756994573946,
+    "duration" : 678
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "bd575676b9f5e372",
+  "name" : "[Web] Выбор офиса для сдачи анализов и проверка деталей заказа",
+  "time" : {
+    "start" : 1756994067968,
+    "stop" : 1756994085940,
+    "duration" : 17972
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "18bb893c542b4a8a",
+  "name" : "[API] Проверка соответствия \"Страна\" - \"Столица\". Стране \"BELARUS\" соответствует столица \"Минск\"",
+  "time" : {
+    "start" : 1756994573951,
+    "stop" : 1756994574622,
+    "duration" : 671
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "118419decaac2de4",
+  "name" : "[API] Получение информации о продукте с указанием существующего идентификатора города",
+  "time" : {
+    "start" : 1756994580768,
+    "stop" : 1756994581847,
+    "duration" : 1079
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "9f4a03bdc6b6c78b",
+  "name" : "[API] Получение информации о продукте с буквенным артикулом",
+  "time" : {
+    "start" : 1756994579268,
+    "stop" : 1756994579663,
+    "duration" : 395
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "b1ddac89cd0a8e96",
+  "name" : "[API] Получение информации о конкретном городе",
+  "time" : {
+    "start" : 1756994575299,
+    "stop" : 1756994576296,
+    "duration" : 997
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "cb3e5845addd415d",
+  "name" : "[Web] Добавление продукта в корзину и проверка информации",
+  "time" : {
+    "start" : 1756994085956,
+    "stop" : 1756994111114,
+    "duration" : 25158
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "794e6be9852a50e1",
+  "name" : "[Android] Блокировка проверки результатов анализов при частых запросах",
+  "time" : {
+    "start" : 1756994527698,
+    "stop" : 1756994571350,
+    "duration" : 43652
+  },
+  "status" : "passed",
+  "severity" : "blocker"
+}, {
+  "uid" : "5e3dbe60716166f9",
+  "name" : "[API] Поиск офиса с пустым идентификатором города",
+  "time" : {
+    "start" : 1756994576951,
+    "stop" : 1756994577319,
+    "duration" : 368
+  },
+  "status" : "passed",
+  "severity" : "blocker"
+}, {
+  "uid" : "84530617e2c4d45a",
+  "name" : "[Android] Проверка отображения секций в меню для города: Казань",
+  "time" : {
+    "start" : 1756994438485,
+    "stop" : 1756994469864,
+    "duration" : 31379
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "5d7c1f859b32396",
+  "name" : "[API] Получение списка всех городов",
+  "time" : {
+    "start" : 1756994576298,
+    "stop" : 1756994576896,
+    "duration" : 598
+  },
+  "status" : "passed",
+  "severity" : "blocker"
+}, {
+  "uid" : "aed2a04667a21e56",
+  "name" : "[Android] Проверка появления заглушки при поиске несуществующего города",
+  "time" : {
+    "start" : 1756994499716,
+    "stop" : 1756994527664,
+    "duration" : 27948
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "3c641ed8b847778d",
+  "name" : "[Android] Смена офиса и проверка изменений",
+  "time" : {
+    "start" : 1756994352839,
+    "stop" : 1756994438448,
+    "duration" : 85609
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "9e53f4f9f621bdd0",
+  "name" : "[API] Получение информации о продукте с цифровым артикулом",
+  "time" : {
+    "start" : 1756994579990,
+    "stop" : 1756994580445,
+    "duration" : 455
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "daa808e5666cc652",
+  "name" : "[API] Проверка соответствия \"Страна\" - \"Столица\". Стране \"RUSSIA\" соответствует столица \"Москва\"",
+  "time" : {
+    "start" : 1756994572468,
+    "stop" : 1756994573262,
+    "duration" : 794
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "8caea112a2f26ac5",
+  "name" : "[Android] Проверка отображения секций в меню для города: Абакан",
+  "time" : {
+    "start" : 1756994469867,
+    "stop" : 1756994499712,
+    "duration" : 29845
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "22995a54cfb0af8e",
+  "name" : "[Web] Проверка цен на продукты в корзине для города: Москва",
+  "time" : {
+    "start" : 1756994126676,
+    "stop" : 1756994142047,
+    "duration" : 15371
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "1eaf00d4f2fe415d",
+  "name" : "[Android] Проверка информации в корзине для города: Волгоград",
+  "time" : {
+    "start" : 1756994175600,
+    "stop" : 1756994269407,
+    "duration" : 93807
+  },
+  "status" : "passed",
+  "severity" : "critical"
+}, {
+  "uid" : "df109f74f34e9b5b",
+  "name" : "[API] Получение информации о городе со случайным идентификатором",
+  "time" : {
+    "start" : 1756994572039,
+    "stop" : 1756994572463,
+    "duration" : 424
+  },
+  "status" : "passed",
+  "severity" : "minor"
+} ]

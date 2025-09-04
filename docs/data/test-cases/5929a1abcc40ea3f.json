@@ -1,0 +1,661 @@
+{
+  "uid" : "5929a1abcc40ea3f",
+  "name" : "[Web] Очистка корзины и проверка информации",
+  "fullName" : "tests.web.tests.CartOperationsTest.cartCleanAndCheckEmptyInfo",
+  "historyId" : "8386e4752d299c6623de4566cbe886d3",
+  "time" : {
+    "start" : 1756994111118,
+    "stop" : 1756994126564,
+    "duration" : 15446
+  },
+  "description" : "Тест проверяет функциональность очистки корзины и корректное отображение пустого состояния",
+  "descriptionHtml" : "<p>Тест проверяет функциональность очистки корзины и корректное отображение пустого состояния</p>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : true,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ {
+    "name" : "setup",
+    "time" : {
+      "start" : 1756994085953,
+      "stop" : 1756994085953,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "addListener",
+    "time" : {
+      "start" : 1756994111119,
+      "stop" : 1756994111119,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "description" : "Тест проверяет функциональность очистки корзины и корректное отображение пустого состояния",
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Подготавливаем исходные данные для корзины",
+      "time" : {
+        "start" : 1756994111119,
+        "stop" : 1756994119539,
+        "duration" : 8420
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Добавляем куку с данными города и продукта",
+        "time" : {
+          "start" : 1756994111120,
+          "stop" : 1756994119539,
+          "duration" : 8419
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "Добавляем куку с данными о продуктах",
+          "time" : {
+            "start" : 1756994111120,
+            "stop" : 1756994119458,
+            "duration" : 8338
+          },
+          "status" : "passed",
+          "steps" : [ {
+            "name" : "$(\"open\") https://lk3.invitro.ru/assets/edna-banner-close.svg",
+            "time" : {
+              "start" : 1756994111120,
+              "stop" : 1756994119450,
+              "duration" : 8330
+            },
+            "status" : "passed",
+            "steps" : [ {
+              "name" : "$(\"webdriver\") create()",
+              "time" : {
+                "start" : 1756994111120,
+                "stop" : 1756994118171,
+                "duration" : 7051
+              },
+              "status" : "passed",
+              "steps" : [ ],
+              "attachments" : [ ],
+              "parameters" : [ ],
+              "stepsCount" : 0,
+              "attachmentsCount" : 0,
+              "shouldDisplayMessage" : false,
+              "hasContent" : false
+            } ],
+            "attachments" : [ ],
+            "parameters" : [ ],
+            "stepsCount" : 1,
+            "attachmentsCount" : 0,
+            "shouldDisplayMessage" : false,
+            "hasContent" : true
+          } ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 2,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : true
+        }, {
+          "name" : "Добавляем куку с данными города",
+          "time" : {
+            "start" : 1756994119458,
+            "stop" : 1756994119539,
+            "duration" : 81
+          },
+          "status" : "passed",
+          "steps" : [ {
+            "name" : "$(\"open\") https://lk3.invitro.ru/assets/edna-banner-close.svg",
+            "time" : {
+              "start" : 1756994119458,
+              "stop" : 1756994119532,
+              "duration" : 74
+            },
+            "status" : "passed",
+            "steps" : [ ],
+            "attachments" : [ ],
+            "parameters" : [ ],
+            "stepsCount" : 0,
+            "attachmentsCount" : 0,
+            "shouldDisplayMessage" : false,
+            "hasContent" : false
+          } ],
+          "attachments" : [ ],
+          "parameters" : [ {
+            "name" : "cityId",
+            "value" : "9e4c02c6-274b-41e9-80bb-7f5d3359a463"
+          } ],
+          "stepsCount" : 1,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : true
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "cityId",
+          "value" : "9e4c02c6-274b-41e9-80bb-7f5d3359a463"
+        } ],
+        "stepsCount" : 5,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 6,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Переходим в корзину",
+      "time" : {
+        "start" : 1756994119540,
+        "stop" : 1756994120994,
+        "duration" : 1454
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Открываем адрес: \"https://lk3.invitro.ru/cart\"",
+        "time" : {
+          "start" : 1756994119540,
+          "stop" : 1756994120994,
+          "duration" : 1454
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "$(\"open\") https://lk3.invitro.ru/cart",
+          "time" : {
+            "start" : 1756994119540,
+            "stop" : 1756994120994,
+            "duration" : 1454
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "url",
+          "value" : "https://lk3.invitro.ru/cart"
+        } ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Очищаем корзину и проверяем её состояние",
+      "time" : {
+        "start" : 1756994120994,
+        "stop" : 1756994123738,
+        "duration" : 2744
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Кликаем на элемент с текстом \"Очистить корзину\"",
+        "time" : {
+          "start" : 1756994120994,
+          "stop" : 1756994123695,
+          "duration" : 2701
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "$(\"by text: Очистить корзину\") scroll to()",
+          "time" : {
+            "start" : 1756994120994,
+            "stop" : 1756994123470,
+            "duration" : 2476
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "$(\"by text: Очистить корзину\") should be([visible, 10 s.])",
+          "time" : {
+            "start" : 1756994123470,
+            "stop" : 1756994123502,
+            "duration" : 32
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "$(\"by text: Очистить корзину\") click()",
+          "time" : {
+            "start" : 1756994123502,
+            "stop" : 1756994123695,
+            "duration" : 193
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "text",
+          "value" : "Очистить корзину"
+        } ],
+        "stepsCount" : 3,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "Проверяем наличие заголовка \"Ваша корзина пуста\"",
+        "time" : {
+          "start" : 1756994123695,
+          "stop" : 1756994123738,
+          "duration" : 43
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "$(\"h1\") should have(text \"Ваша корзина пуста\")",
+          "time" : {
+            "start" : 1756994123695,
+            "stop" : 1756994123738,
+            "duration" : 43
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "title",
+          "value" : "Ваша корзина пуста"
+        } ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 6,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 17,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ {
+    "name" : "addAttachments",
+    "time" : {
+      "start" : 1756994123738,
+      "stop" : 1756994126564,
+      "duration" : 2826
+    },
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "$(\"clearCookies\") ",
+      "time" : {
+        "start" : 1756994124091,
+        "stop" : 1756994126500,
+        "duration" : 2409
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "$(\"webdriver\") close()",
+      "time" : {
+        "start" : 1756994126510,
+        "stop" : 1756994126563,
+        "duration" : 53
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    } ],
+    "attachments" : [ {
+      "uid" : "ae611f95ae8961e8",
+      "name" : "Last Screenshot",
+      "source" : "ae611f95ae8961e8.png",
+      "type" : "image/png",
+      "size" : 81866
+    }, {
+      "uid" : "4b15d8c47c62ee6a",
+      "name" : "Page Source",
+      "source" : "4b15d8c47c62ee6a.html",
+      "type" : "text/plain",
+      "size" : 540885
+    }, {
+      "uid" : "42029351324d6df",
+      "name" : "Browser Console Logs",
+      "source" : "42029351324d6df.txt",
+      "type" : "text/plain",
+      "size" : 452
+    }, {
+      "uid" : "4e9681e4610dd3ff",
+      "name" : "Selenoid Video",
+      "source" : "4e9681e4610dd3ff.html",
+      "type" : "text/html",
+      "size" : 193
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 2,
+    "attachmentsCount" : 4,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  }, {
+    "name" : "afterAll",
+    "time" : {
+      "start" : 1756994126566,
+      "stop" : 1756994126566,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "web"
+  }, {
+    "name" : "junit.platform.uniqueid",
+    "value" : "[engine:junit-jupiter]/[class:tests.web.tests.CartOperationsTest]/[method:cartCleanAndCheckEmptyInfo()]"
+  }, {
+    "name" : "owner",
+    "value" : "germanmalykh"
+  }, {
+    "name" : "host",
+    "value" : "319ab4d25e4d"
+  }, {
+    "name" : "thread",
+    "value" : "24098@319ab4d25e4d.Test worker(1)"
+  }, {
+    "name" : "framework",
+    "value" : "junit-platform"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "package",
+    "value" : "tests.web.tests.CartOperationsTest"
+  }, {
+    "name" : "testClass",
+    "value" : "tests.web.tests.CartOperationsTest"
+  }, {
+    "name" : "testMethod",
+    "value" : "cartCleanAndCheckEmptyInfo"
+  }, {
+    "name" : "suite",
+    "value" : "Web Tests"
+  }, {
+    "name" : "severity",
+    "value" : "critical"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "critical",
+    "owner" : "germanmalykh",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 9,
+        "skipped" : 0,
+        "passed" : 11,
+        "unknown" : 0,
+        "total" : 20
+      },
+      "items" : [ {
+        "uid" : "b8b93fc898c3c6df",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/31/allure/#testresult/b8b93fc898c3c6df",
+        "status" : "broken",
+        "statusDetails" : "JdkWebSocket initial request execution error\nBuild info: version: '4.35.0', revision: '1c58e5028b'\nSystem info: os.name: 'Linux', os.arch: 'amd64', os.version: '4.19.0-26-amd64', java.version: '17.0.9'\nDriver info: driver.version: unknown",
+        "time" : {
+          "start" : 1756993950057,
+          "stop" : 1756993973716,
+          "duration" : 23659
+        }
+      }, {
+        "uid" : "3934b30912c79725",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/30/allure/#testresult/3934b30912c79725",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756993369530,
+          "stop" : 1756993385177,
+          "duration" : 15647
+        }
+      }, {
+        "uid" : "2b92bbf121486773",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/29/allure/#testresult/2b92bbf121486773",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756993130662,
+          "stop" : 1756993145861,
+          "duration" : 15199
+        }
+      }, {
+        "uid" : "135b4e0a23bfeaf5",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/28/allure/#testresult/135b4e0a23bfeaf5",
+        "status" : "broken",
+        "statusDetails" : "JdkWebSocket initial request execution error\nBuild info: version: '4.35.0', revision: '1c58e5028b'\nSystem info: os.name: 'Linux', os.arch: 'amd64', os.version: '4.19.0-26-amd64', java.version: '17.0.9'\nDriver info: driver.version: unknown",
+        "time" : {
+          "start" : 1756992780387,
+          "stop" : 1756992794270,
+          "duration" : 13883
+        }
+      }, {
+        "uid" : "31d3d2c760e07eb6",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/27/allure/#testresult/31d3d2c760e07eb6",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756992133012,
+          "stop" : 1756992139024,
+          "duration" : 6012
+        }
+      }, {
+        "uid" : "25292705306befa9",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/26/allure/#testresult/25292705306befa9",
+        "status" : "broken",
+        "statusDetails" : "JdkWebSocket initial request execution error\nBuild info: version: '4.35.0', revision: '1c58e5028b'\nSystem info: os.name: 'Linux', os.arch: 'amd64', os.version: '4.19.0-26-amd64', java.version: '17.0.9'\nDriver info: driver.version: unknown",
+        "time" : {
+          "start" : 1756988801247,
+          "stop" : 1756988814649,
+          "duration" : 13402
+        }
+      }, {
+        "uid" : "56ac7cc4bae20251",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/25/allure/#testresult/56ac7cc4bae20251",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756987578510,
+          "stop" : 1756987584488,
+          "duration" : 5978
+        }
+      }, {
+        "uid" : "2fef511509e4486b",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/24/allure/#testresult/2fef511509e4486b",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756987060773,
+          "stop" : 1756987066172,
+          "duration" : 5399
+        }
+      }, {
+        "uid" : "8524f87fb1955ab7",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/23/allure/#testresult/8524f87fb1955ab7",
+        "status" : "broken",
+        "statusDetails" : "JdkWebSocket initial request execution error\nBuild info: version: '4.35.0', revision: '1c58e5028b'\nSystem info: os.name: 'Linux', os.arch: 'amd64', os.version: '4.19.0-26-amd64', java.version: '17.0.9'\nDriver info: driver.version: unknown",
+        "time" : {
+          "start" : 1756986545497,
+          "stop" : 1756986559180,
+          "duration" : 13683
+        }
+      }, {
+        "uid" : "a766c4066745ede9",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/22/allure/#testresult/a766c4066745ede9",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756985886960,
+          "stop" : 1756985892255,
+          "duration" : 5295
+        }
+      }, {
+        "uid" : "41ce4364ea70a2fe",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/21/allure/#testresult/41ce4364ea70a2fe",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756985504901,
+          "stop" : 1756985520360,
+          "duration" : 15459
+        }
+      }, {
+        "uid" : "c063ca1a05d206fb",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/20/allure/#testresult/c063ca1a05d206fb",
+        "status" : "broken",
+        "statusDetails" : "JdkWebSocket initial request execution error\nBuild info: version: '4.35.0', revision: '1c58e5028b'\nSystem info: os.name: 'Linux', os.arch: 'amd64', os.version: '4.19.0-26-amd64', java.version: '17.0.9'\nDriver info: driver.version: unknown",
+        "time" : {
+          "start" : 1756985282596,
+          "stop" : 1756985309841,
+          "duration" : 27245
+        }
+      }, {
+        "uid" : "f6beba6a1de6817c",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/19/allure/#testresult/f6beba6a1de6817c",
+        "status" : "broken",
+        "statusDetails" : "JdkWebSocket initial request execution error\nBuild info: version: '4.35.0', revision: '1c58e5028b'\nSystem info: os.name: 'Linux', os.arch: 'amd64', os.version: '4.19.0-26-amd64', java.version: '17.0.9'\nDriver info: driver.version: unknown",
+        "time" : {
+          "start" : 1756984274106,
+          "stop" : 1756984303487,
+          "duration" : 29381
+        }
+      }, {
+        "uid" : "30ef5ea9e922d2da",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/18/allure/#testresult/30ef5ea9e922d2da",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756983553902,
+          "stop" : 1756983568984,
+          "duration" : 15082
+        }
+      }, {
+        "uid" : "8753006f783b50a",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/17/allure/#testresult/8753006f783b50a",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756983184281,
+          "stop" : 1756983203095,
+          "duration" : 18814
+        }
+      }, {
+        "uid" : "1859c4d95b7346f3",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/16/allure/#testresult/1859c4d95b7346f3",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756982957000,
+          "stop" : 1756982974273,
+          "duration" : 17273
+        }
+      }, {
+        "uid" : "f5f8c4fe9d7eef16",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/15/allure/#testresult/f5f8c4fe9d7eef16",
+        "status" : "broken",
+        "statusDetails" : "Class not found: ",
+        "time" : {
+          "start" : 1756982419822,
+          "stop" : 1756982419829,
+          "duration" : 7
+        }
+      }, {
+        "uid" : "77ba5a6941a0366f",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/14/allure/#testresult/77ba5a6941a0366f",
+        "status" : "broken",
+        "statusDetails" : "Class not found: ",
+        "time" : {
+          "start" : 1756982211061,
+          "stop" : 1756982211068,
+          "duration" : 7
+        }
+      }, {
+        "uid" : "3ddc628e9ec39ce",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/13/allure/#testresult/3ddc628e9ec39ce",
+        "status" : "broken",
+        "statusDetails" : "Class not found: ",
+        "time" : {
+          "start" : 1756982015771,
+          "stop" : 1756982015779,
+          "duration" : 8
+        }
+      } ]
+    },
+    "tags" : [ "web" ]
+  },
+  "source" : "5929a1abcc40ea3f.json",
+  "parameterValues" : [ ]
+}

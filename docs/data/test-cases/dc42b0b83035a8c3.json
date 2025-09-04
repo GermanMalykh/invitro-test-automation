@@ -1,0 +1,288 @@
+{
+  "uid" : "dc42b0b83035a8c3",
+  "name" : "[API] Проверка соответствия \"Страна\" - \"Столица\". Стране \"KAZAKHSTAN\" соответствует столица \"Астана\"",
+  "fullName" : "tests.api.tests.CitiesApiTest.getCapitalCityCountryAndCheckDetails",
+  "historyId" : "bd94e1a32376f3ff013286a2e5701d81",
+  "time" : {
+    "start" : 1756994574631,
+    "stop" : 1756994575296,
+    "duration" : 665
+  },
+  "description" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ {
+    "name" : "setUp",
+    "time" : {
+      "start" : 1756994571382,
+      "stop" : 1756994571382,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Выполняем запрос на получение списка всех городов",
+      "time" : {
+        "start" : 1756994574632,
+        "stop" : 1756994575289,
+        "duration" : 657
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "87611a5d33389d1a",
+        "name" : "Request",
+        "source" : "87611a5d33389d1a.html",
+        "type" : "text/html",
+        "size" : 6112
+      }, {
+        "uid" : "cc6d6b46d43b8aa8",
+        "name" : "HTTP/1.1 200 ",
+        "source" : "cc6d6b46d43b8aa8.html",
+        "type" : "text/html",
+        "size" : 213916
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 2,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Проверяем, что для города 'Астана' отображается актуальная информация о признаке столицы и страны",
+      "time" : {
+        "start" : 1756994575289,
+        "stop" : 1756994575295,
+        "duration" : 6
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "8494062f25777742",
+        "name" : "Информация о городе",
+        "source" : "8494062f25777742.txt",
+        "type" : "application/json",
+        "size" : 68
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 2,
+    "attachmentsCount" : 3,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ {
+    "name" : "afterAll",
+    "time" : {
+      "start" : 1756994576896,
+      "stop" : 1756994576947,
+      "duration" : 51
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "api"
+  }, {
+    "name" : "junit.platform.uniqueid",
+    "value" : "[engine:junit-jupiter]/[class:tests.api.tests.CitiesApiTest]/[test-template:getCapitalCityCountryAndCheckDetails(java.lang.String, java.lang.String)]/[test-template-invocation:#4]"
+  }, {
+    "name" : "owner",
+    "value" : "germanmalykh"
+  }, {
+    "name" : "host",
+    "value" : "319ab4d25e4d"
+  }, {
+    "name" : "thread",
+    "value" : "24202@319ab4d25e4d.Test worker(1)"
+  }, {
+    "name" : "framework",
+    "value" : "junit-platform"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "package",
+    "value" : "tests.api.tests.CitiesApiTest"
+  }, {
+    "name" : "testClass",
+    "value" : "tests.api.tests.CitiesApiTest"
+  }, {
+    "name" : "testMethod",
+    "value" : "getCapitalCityCountryAndCheckDetails"
+  }, {
+    "name" : "suite",
+    "value" : "API Tests"
+  }, {
+    "name" : "severity",
+    "value" : "critical"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "arg0",
+    "value" : "Астана"
+  }, {
+    "name" : "arg1",
+    "value" : "KAZAKHSTAN"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "critical",
+    "owner" : "germanmalykh",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 13,
+        "unknown" : 0,
+        "total" : 13
+      },
+      "items" : [ {
+        "uid" : "7d2a742ffce5de2f",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/31/allure/#testresult/7d2a742ffce5de2f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756993876284,
+          "stop" : 1756993876905,
+          "duration" : 621
+        }
+      }, {
+        "uid" : "ba19cc4254a95cb0",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/28/allure/#testresult/ba19cc4254a95cb0",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756992704587,
+          "stop" : 1756992705242,
+          "duration" : 655
+        }
+      }, {
+        "uid" : "f11c944d08f63502",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/26/allure/#testresult/f11c944d08f63502",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756988745321,
+          "stop" : 1756988745968,
+          "duration" : 647
+        }
+      }, {
+        "uid" : "ca8e3087c8b5230c",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/23/allure/#testresult/ca8e3087c8b5230c",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756986489817,
+          "stop" : 1756986490509,
+          "duration" : 692
+        }
+      }, {
+        "uid" : "1cbf44e13ffdd5bf",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/20/allure/#testresult/1cbf44e13ffdd5bf",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756985194093,
+          "stop" : 1756985194711,
+          "duration" : 618
+        }
+      }, {
+        "uid" : "5d606427018ca74b",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/19/allure/#testresult/5d606427018ca74b",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756984192374,
+          "stop" : 1756984192976,
+          "duration" : 602
+        }
+      }, {
+        "uid" : "2d6eb1df0b7b25c7",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/7/allure/#testresult/2d6eb1df0b7b25c7",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756980244688,
+          "stop" : 1756980245472,
+          "duration" : 784
+        }
+      }, {
+        "uid" : "2847fb77f3fa2145",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/6/allure/#testresult/2847fb77f3fa2145",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756980180969,
+          "stop" : 1756980181608,
+          "duration" : 639
+        }
+      }, {
+        "uid" : "3c3f4c660e2db86f",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/5/allure/#testresult/3c3f4c660e2db86f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756979169460,
+          "stop" : 1756979170109,
+          "duration" : 649
+        }
+      }, {
+        "uid" : "800a6d79c199e474",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/4/allure/#testresult/800a6d79c199e474",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756978882864,
+          "stop" : 1756978883494,
+          "duration" : 630
+        }
+      }, {
+        "uid" : "505b0b04402df02a",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/3/allure/#testresult/505b0b04402df02a",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756977955254,
+          "stop" : 1756977955930,
+          "duration" : 676
+        }
+      }, {
+        "uid" : "816a914e9732e5af",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/2/allure/#testresult/816a914e9732e5af",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756977603635,
+          "stop" : 1756977604396,
+          "duration" : 761
+        }
+      } ]
+    },
+    "tags" : [ "api" ]
+  },
+  "source" : "dc42b0b83035a8c3.json",
+  "parameterValues" : [ "Астана", "KAZAKHSTAN" ]
+}

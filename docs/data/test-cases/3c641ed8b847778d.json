@@ -1,0 +1,1225 @@
+{
+  "uid" : "3c641ed8b847778d",
+  "name" : "[Android] Смена офиса и проверка изменений",
+  "fullName" : "tests.android.tests.CartManagementTests.verifyOfficeAddressChange",
+  "historyId" : "bb44ec44300a1db803ad7dc85683763e",
+  "time" : {
+    "start" : 1756994352839,
+    "stop" : 1756994438448,
+    "duration" : 85609
+  },
+  "description" : "Тест проверяет функциональность смены офиса в корзине и корректность отображения выбранного адреса",
+  "descriptionHtml" : "<p>Тест проверяет функциональность смены офиса в корзине и корректность отображения выбранного адреса</p>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ {
+    "name" : "setup",
+    "time" : {
+      "start" : 1756994174622,
+      "stop" : 1756994174631,
+      "duration" : 9
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "addListener",
+    "time" : {
+      "start" : 1756994352839,
+      "stop" : 1756994372357,
+      "duration" : 19518
+    },
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "$(\"open\") ",
+      "time" : {
+        "start" : 1756994352839,
+        "stop" : 1756994372357,
+        "duration" : 19518
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "$(\"webdriver\") create()",
+        "time" : {
+          "start" : 1756994352840,
+          "stop" : 1756994372357,
+          "duration" : 19517
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 2,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  } ],
+  "testStage" : {
+    "description" : "Тест проверяет функциональность смены офиса в корзине и корректность отображения выбранного адреса",
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Подготавливаем приложение к работе",
+      "time" : {
+        "start" : 1756994372358,
+        "stop" : 1756994380008,
+        "duration" : 7650
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Ожидаем исчезновения лоадера",
+        "time" : {
+          "start" : 1756994372359,
+          "stop" : 1756994378693,
+          "duration" : 6334
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "$(\"AppiumBy.id: com.invitro.app:id/loader\") should([be hidden, 15 s.])",
+          "time" : {
+            "start" : 1756994372359,
+            "stop" : 1756994378693,
+            "duration" : 6334
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "Закрываем тулбар",
+        "time" : {
+          "start" : 1756994378693,
+          "stop" : 1756994380008,
+          "duration" : 1315
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "$(\"AppiumBy.id: com.invitro.app:id/toolbar/AppiumBy.id: com.invitro.app:id/backImageView\") should([be visible, 15 s.])",
+          "time" : {
+            "start" : 1756994378694,
+            "stop" : 1756994379217,
+            "duration" : 523
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "$(\"AppiumBy.id: com.invitro.app:id/toolbar/AppiumBy.id: com.invitro.app:id/backImageView\") click()",
+          "time" : {
+            "start" : 1756994379217,
+            "stop" : 1756994380008,
+            "duration" : 791
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 2,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 5,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Выбираем город: Волгоград",
+      "time" : {
+        "start" : 1756994380008,
+        "stop" : 1756994383935,
+        "duration" : 3927
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Выбираем город \"Волгоград\"",
+        "time" : {
+          "start" : 1756994380009,
+          "stop" : 1756994383935,
+          "duration" : 3926
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "$(\"AppiumBy.id: com.invitro.app:id/letter\") should be([visible, 15 s.])",
+          "time" : {
+            "start" : 1756994380009,
+            "stop" : 1756994381844,
+            "duration" : 1835
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "$(\"[text=Волгоград]\") scroll to()",
+          "time" : {
+            "start" : 1756994381844,
+            "stop" : 1756994382220,
+            "duration" : 376
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "$(\"[text=Волгоград]\") should be([visible, 15 s.])",
+          "time" : {
+            "start" : 1756994382221,
+            "stop" : 1756994382428,
+            "duration" : 207
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "$(\"[text=Волгоград]\") click()",
+          "time" : {
+            "start" : 1756994382428,
+            "stop" : 1756994383935,
+            "duration" : 1507
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "city",
+          "value" : "Волгоград"
+        } ],
+        "stepsCount" : 4,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 5,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Отклоняем разрешение на геолокацию",
+      "time" : {
+        "start" : 1756994383935,
+        "stop" : 1756994385486,
+        "duration" : 1551
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Отклоняем разрешение на геолокацию",
+        "time" : {
+          "start" : 1756994383936,
+          "stop" : 1756994385486,
+          "duration" : 1550
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "$(\"AppiumBy.id: com.android.permissioncontroller:id/grant_dialog\") is([visible, 1.500 s.])",
+          "time" : {
+            "start" : 1756994383937,
+            "stop" : 1756994385486,
+            "duration" : 1549
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Переходим к выбору анализов",
+      "time" : {
+        "start" : 1756994385487,
+        "stop" : 1756994389565,
+        "duration" : 4078
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Закрываем экран авторизации",
+        "time" : {
+          "start" : 1756994385487,
+          "stop" : 1756994385812,
+          "duration" : 325
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "$(\"AppiumBy.id: com.invitro.app:id/rightActionImageView\") click()",
+          "time" : {
+            "start" : 1756994385487,
+            "stop" : 1756994385812,
+            "duration" : 325
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "Выбираем пункт \"Каталог анализов\" в меню города",
+        "time" : {
+          "start" : 1756994385813,
+          "stop" : 1756994389565,
+          "duration" : 3752
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "$(\"AppiumBy.id: com.invitro.app:id/title_text.findBy(text \"Каталог анализов\")\") should be([visible, 15 s.])",
+          "time" : {
+            "start" : 1756994385813,
+            "stop" : 1756994388248,
+            "duration" : 2435
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "$(\"AppiumBy.id: com.invitro.app:id/title_text.findBy(text \"Каталог анализов\")\") click()",
+          "time" : {
+            "start" : 1756994388248,
+            "stop" : 1756994389565,
+            "duration" : 1317
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "menuName",
+          "value" : "Каталог анализов"
+        } ],
+        "stepsCount" : 2,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 5,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Выбираем категорию анализов и добавляем товар в корзину",
+      "time" : {
+        "start" : 1756994389565,
+        "stop" : 1756994420824,
+        "duration" : 31259
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Выбираем категорию анализов: \"Комплексы анализов\"",
+        "time" : {
+          "start" : 1756994389566,
+          "stop" : 1756994394580,
+          "duration" : 5014
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "$(\"AppiumBy.id: com.invitro.app:id/progress\") should be([hidden, 20 s.])",
+          "time" : {
+            "start" : 1756994389566,
+            "stop" : 1756994393662,
+            "duration" : 4096
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "$(\"AppiumBy.id: com.invitro.app:id/itemList\") should be(visible)",
+          "time" : {
+            "start" : 1756994393662,
+            "stop" : 1756994393847,
+            "duration" : 185
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "$(\"AppiumBy.id: com.invitro.app:id/tabLayout/[text=Комплексы анализов]\") should be(visible)",
+          "time" : {
+            "start" : 1756994393848,
+            "stop" : 1756994394121,
+            "duration" : 273
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "$(\"AppiumBy.id: com.invitro.app:id/tabLayout/[text=Комплексы анализов]\") click()",
+          "time" : {
+            "start" : 1756994394121,
+            "stop" : 1756994394580,
+            "duration" : 459
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "tabName",
+          "value" : "Комплексы анализов"
+        } ],
+        "stepsCount" : 4,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "Выбираем анализ из категории: \"COVID-19\"",
+        "time" : {
+          "start" : 1756994394581,
+          "stop" : 1756994397565,
+          "duration" : 2984
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "$(\"AppiumBy.id: com.invitro.app:id/progress\") should be([hidden, 20 s.])",
+          "time" : {
+            "start" : 1756994394581,
+            "stop" : 1756994395579,
+            "duration" : 998
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "$(\"AppiumBy.id: com.invitro.app:id/itemList\") should be(visible)",
+          "time" : {
+            "start" : 1756994395579,
+            "stop" : 1756994395767,
+            "duration" : 188
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "$(\"[text=COVID-19]\") scroll to()",
+          "time" : {
+            "start" : 1756994395767,
+            "stop" : 1756994396089,
+            "duration" : 322
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "$(\"[text=COVID-19]\") should be(visible)",
+          "time" : {
+            "start" : 1756994396089,
+            "stop" : 1756994396318,
+            "duration" : 229
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "$(\"[text=COVID-19]\") click()",
+          "time" : {
+            "start" : 1756994396318,
+            "stop" : 1756994397565,
+            "duration" : 1247
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "itemName",
+          "value" : "COVID-19"
+        } ],
+        "stepsCount" : 5,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "Выбираем анализ из списка: \"Для переболевших COVID-19. Витамины и минералы (For recovered from COVID-19. Vitamins and minerals)\"",
+        "time" : {
+          "start" : 1756994397566,
+          "stop" : 1756994418549,
+          "duration" : 20983
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "$(\"[text=Для переболевших COVID-19. Витамины и минералы (For recovered from COVID-19. Vitamins and minerals)]\") scroll to()",
+          "time" : {
+            "start" : 1756994397566,
+            "stop" : 1756994418149,
+            "duration" : 20583
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "$(\"[text=Для переболевших COVID-19. Витамины и минералы (For recovered from COVID-19. Vitamins and minerals)]\") click()",
+          "time" : {
+            "start" : 1756994418149,
+            "stop" : 1756994418549,
+            "duration" : 400
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "testName",
+          "value" : "Для переболевших COVID-19. Витамины и минералы (For recovered from COVID-19. Vitamins and minerals)"
+        } ],
+        "stepsCount" : 2,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "Добавляем товар в корзину",
+        "time" : {
+          "start" : 1756994418549,
+          "stop" : 1756994420824,
+          "duration" : 2275
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "$(\"AppiumBy.id: com.invitro.app:id/cart_button\") should be([visible, 15 s.])",
+          "time" : {
+            "start" : 1756994418550,
+            "stop" : 1756994419814,
+            "duration" : 1264
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "$(\"AppiumBy.id: com.invitro.app:id/cart_button\") should have(attribute text=\"Добавить в корзину\")",
+          "time" : {
+            "start" : 1756994419814,
+            "stop" : 1756994419991,
+            "duration" : 177
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "$(\"AppiumBy.id: com.invitro.app:id/cart_button\") click()",
+          "time" : {
+            "start" : 1756994419991,
+            "stop" : 1756994420824,
+            "duration" : 833
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 3,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 18,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Закрываем тулбар и переходим в корзину",
+      "time" : {
+        "start" : 1756994420825,
+        "stop" : 1756994422660,
+        "duration" : 1835
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Закрываем тулбар",
+        "time" : {
+          "start" : 1756994420825,
+          "stop" : 1756994421491,
+          "duration" : 666
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "$(\"AppiumBy.id: com.invitro.app:id/toolbar/AppiumBy.id: com.invitro.app:id/backImageView\") should([be visible, 15 s.])",
+          "time" : {
+            "start" : 1756994420825,
+            "stop" : 1756994421109,
+            "duration" : 284
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "$(\"AppiumBy.id: com.invitro.app:id/toolbar/AppiumBy.id: com.invitro.app:id/backImageView\") click()",
+          "time" : {
+            "start" : 1756994421109,
+            "stop" : 1756994421491,
+            "duration" : 382
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 2,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "Переходим в корзину",
+        "time" : {
+          "start" : 1756994421491,
+          "stop" : 1756994422660,
+          "duration" : 1169
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "$(\"AppiumBy.id: com.invitro.app:id/basket\") click()",
+          "time" : {
+            "start" : 1756994421492,
+            "stop" : 1756994422660,
+            "duration" : 1168
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 5,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Выбираем офис",
+      "time" : {
+        "start" : 1756994422661,
+        "stop" : 1756994434706,
+        "duration" : 12045
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Нажимаем на кнопку смены офиса",
+        "time" : {
+          "start" : 1756994422662,
+          "stop" : 1756994424377,
+          "duration" : 1715
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "$(\"AppiumBy.id: com.invitro.app:id/change_office_button\") click()",
+          "time" : {
+            "start" : 1756994422662,
+            "stop" : 1756994424377,
+            "duration" : 1715
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "Выбираем офис в списке",
+        "time" : {
+          "start" : 1756994424377,
+          "stop" : 1756994432637,
+          "duration" : 8260
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "$(\"[text=ул. Огарёва]\") scroll to()",
+          "time" : {
+            "start" : 1756994424378,
+            "stop" : 1756994431709,
+            "duration" : 7331
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "$(\"[text=ул. Огарёва]\") should be(visible)",
+          "time" : {
+            "start" : 1756994431709,
+            "stop" : 1756994431970,
+            "duration" : 261
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "$(\"[text=ул. Огарёва]\") should be(enabled)",
+          "time" : {
+            "start" : 1756994431970,
+            "stop" : 1756994432196,
+            "duration" : 226
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "$(\"[text=ул. Огарёва]\") click()",
+          "time" : {
+            "start" : 1756994432196,
+            "stop" : 1756994432637,
+            "duration" : 441
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "address",
+          "value" : "ул. Огарёва"
+        } ],
+        "stepsCount" : 4,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "Проверяем, что свойства офиса отображаются на странице",
+        "time" : {
+          "start" : 1756994432637,
+          "stop" : 1756994434045,
+          "duration" : 1408
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "$(\"AppiumBy.id: com.invitro.app:id/tag_name\") is([visible, 1.500 s.])",
+          "time" : {
+            "start" : 1756994432637,
+            "stop" : 1756994434045,
+            "duration" : 1408
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "Нажимаем на кнопку выбора офиса",
+        "time" : {
+          "start" : 1756994434045,
+          "stop" : 1756994434706,
+          "duration" : 661
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "$(\"AppiumBy.id: com.invitro.app:id/tag_name\") is([visible, 1.500 s.])",
+          "time" : {
+            "start" : 1756994434045,
+            "stop" : 1756994434204,
+            "duration" : 159
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "$(\"AppiumBy.className: android.widget.Button.findBy(attribute text=\"Выбрать\")\") click()",
+          "time" : {
+            "start" : 1756994434204,
+            "stop" : 1756994434706,
+            "duration" : 502
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 2,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 12,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Проверяем адрес выбранного офиса",
+      "time" : {
+        "start" : 1756994434707,
+        "stop" : 1756994436218,
+        "duration" : 1511
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Проверяем адрес выбранного офиса в корзине",
+        "time" : {
+          "start" : 1756994434707,
+          "stop" : 1756994436218,
+          "duration" : 1511
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "$(\"AppiumBy.id: com.invitro.app:id/name.findBy(text \"ул. Огарёва\")\") is(visible)",
+          "time" : {
+            "start" : 1756994434708,
+            "stop" : 1756994436218,
+            "duration" : 1510
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "officeAddress",
+          "value" : "ул. Огарёва"
+        } ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 62,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ {
+    "name" : "addAttachments",
+    "time" : {
+      "start" : 1756994436219,
+      "stop" : 1756994438447,
+      "duration" : 2228
+    },
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "$(\"webdriver\") close()",
+      "time" : {
+        "start" : 1756994436425,
+        "stop" : 1756994437377,
+        "duration" : 952
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    } ],
+    "attachments" : [ {
+      "uid" : "121800af5ee8e812",
+      "name" : "Android Page Source (XML)",
+      "source" : "121800af5ee8e812.xml",
+      "type" : "text/xml",
+      "size" : 31605
+    }, {
+      "uid" : "1d6242c85d2db146",
+      "name" : "BrowserStack Video",
+      "source" : "1d6242c85d2db146.html",
+      "type" : "text/html",
+      "size" : 445
+    }, {
+      "uid" : "e9962dcf5083102c",
+      "name" : "BrowserStack Session Report",
+      "source" : "e9962dcf5083102c.html",
+      "type" : "text/html",
+      "size" : 9687
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 1,
+    "attachmentsCount" : 3,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  }, {
+    "name" : "afterAll",
+    "time" : {
+      "start" : 1756994438452,
+      "stop" : 1756994438476,
+      "duration" : 24
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "android"
+  }, {
+    "name" : "junit.platform.uniqueid",
+    "value" : "[engine:junit-jupiter]/[class:tests.android.tests.CartManagementTests]/[method:verifyOfficeAddressChange()]"
+  }, {
+    "name" : "owner",
+    "value" : "germanmalykh"
+  }, {
+    "name" : "host",
+    "value" : "319ab4d25e4d"
+  }, {
+    "name" : "thread",
+    "value" : "24202@319ab4d25e4d.Test worker(1)"
+  }, {
+    "name" : "framework",
+    "value" : "junit-platform"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "package",
+    "value" : "tests.android.tests.CartManagementTests"
+  }, {
+    "name" : "testClass",
+    "value" : "tests.android.tests.CartManagementTests"
+  }, {
+    "name" : "testMethod",
+    "value" : "verifyOfficeAddressChange"
+  }, {
+    "name" : "suite",
+    "value" : "Android Tests"
+  }, {
+    "name" : "severity",
+    "value" : "normal"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "owner" : "germanmalykh",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 7,
+        "unknown" : 0,
+        "total" : 7
+      },
+      "items" : [ {
+        "uid" : "2e60987684a5a62",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/31/allure/#testresult/2e60987684a5a62",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756993658952,
+          "stop" : 1756993737912,
+          "duration" : 78960
+        }
+      }, {
+        "uid" : "2b7a5b6f3032106c",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/28/allure/#testresult/2b7a5b6f3032106c",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756992477266,
+          "stop" : 1756992561144,
+          "duration" : 83878
+        }
+      }, {
+        "uid" : "642fbbae5e14b0f4",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/26/allure/#testresult/642fbbae5e14b0f4",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756988526980,
+          "stop" : 1756988601031,
+          "duration" : 74051
+        }
+      }, {
+        "uid" : "3eee32dc68fab0f7",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/23/allure/#testresult/3eee32dc68fab0f7",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756986273346,
+          "stop" : 1756986353668,
+          "duration" : 80322
+        }
+      }, {
+        "uid" : "7231aac1f17e253a",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/20/allure/#testresult/7231aac1f17e253a",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756984971525,
+          "stop" : 1756985053761,
+          "duration" : 82236
+        }
+      }, {
+        "uid" : "53760b6b9be6d337",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/19/allure/#testresult/53760b6b9be6d337",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756983984416,
+          "stop" : 1756984061748,
+          "duration" : 77332
+        }
+      } ]
+    },
+    "tags" : [ "android" ]
+  },
+  "source" : "3c641ed8b847778d.json",
+  "parameterValues" : [ ]
+}

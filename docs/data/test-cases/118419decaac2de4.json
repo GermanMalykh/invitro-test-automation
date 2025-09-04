@@ -1,0 +1,334 @@
+{
+  "uid" : "118419decaac2de4",
+  "name" : "[API] Получение информации о продукте с указанием существующего идентификатора города",
+  "fullName" : "tests.api.tests.ProductsInfoApiTest.getProductInfoByCityId",
+  "historyId" : "c12cdd8cd1f4d38ba239b6f3e8b1e439",
+  "time" : {
+    "start" : 1756994580768,
+    "stop" : 1756994581847,
+    "duration" : 1079
+  },
+  "description" : "Проверяем, что API корректно возвращает информацию о продукте при указании cityId",
+  "descriptionHtml" : "<p>Проверяем, что API корректно возвращает информацию о продукте при указании cityId</p>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ {
+    "name" : "setUp",
+    "time" : {
+      "start" : 1756994579266,
+      "stop" : 1756994579266,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "description" : "Проверяем, что API корректно возвращает информацию о продукте при указании cityId",
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Выполняем запрос на получение списка всех городов",
+      "time" : {
+        "start" : 1756994580769,
+        "stop" : 1756994581437,
+        "duration" : 668
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "d5557a2b86cc407b",
+        "name" : "Request",
+        "source" : "d5557a2b86cc407b.html",
+        "type" : "text/html",
+        "size" : 6112
+      }, {
+        "uid" : "22e2173313f21c83",
+        "name" : "HTTP/1.1 200 ",
+        "source" : "22e2173313f21c83.html",
+        "type" : "text/html",
+        "size" : 213916
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 2,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Получаем идентификатор города",
+      "time" : {
+        "start" : 1756994581437,
+        "stop" : 1756994581446,
+        "duration" : 9
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Получаем информацию о продукте с указанием идентификатора города",
+      "time" : {
+        "start" : 1756994581447,
+        "stop" : 1756994581832,
+        "duration" : 385
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "49901c2c0614e609",
+        "name" : "Request",
+        "source" : "49901c2c0614e609.html",
+        "type" : "text/html",
+        "size" : 6230
+      }, {
+        "uid" : "eb78f77eae66efdf",
+        "name" : "HTTP/1.1 200 ",
+        "source" : "eb78f77eae66efdf.html",
+        "type" : "text/html",
+        "size" : 8650
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 2,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Проверяем, что статус код ответа: \"200\"",
+      "time" : {
+        "start" : 1756994581839,
+        "stop" : 1756994581839,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Проверяем, что API возвращает информацию о продукте с ценой для указанного города",
+      "time" : {
+        "start" : 1756994581839,
+        "stop" : 1756994581846,
+        "duration" : 7
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 5,
+    "attachmentsCount" : 4,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ {
+    "name" : "afterAll",
+    "time" : {
+      "start" : 1756994581847,
+      "stop" : 1756994581900,
+      "duration" : 53
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "api"
+  }, {
+    "name" : "junit.platform.uniqueid",
+    "value" : "[engine:junit-jupiter]/[class:tests.api.tests.ProductsInfoApiTest]/[method:getProductInfoByCityId()]"
+  }, {
+    "name" : "owner",
+    "value" : "germanmalykh"
+  }, {
+    "name" : "host",
+    "value" : "319ab4d25e4d"
+  }, {
+    "name" : "thread",
+    "value" : "24202@319ab4d25e4d.Test worker(1)"
+  }, {
+    "name" : "framework",
+    "value" : "junit-platform"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "package",
+    "value" : "tests.api.tests.ProductsInfoApiTest"
+  }, {
+    "name" : "testClass",
+    "value" : "tests.api.tests.ProductsInfoApiTest"
+  }, {
+    "name" : "testMethod",
+    "value" : "getProductInfoByCityId"
+  }, {
+    "name" : "suite",
+    "value" : "API Tests"
+  }, {
+    "name" : "severity",
+    "value" : "normal"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "owner" : "germanmalykh",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 13,
+        "unknown" : 0,
+        "total" : 13
+      },
+      "items" : [ {
+        "uid" : "d82896477797cfd1",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/31/allure/#testresult/d82896477797cfd1",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756993882019,
+          "stop" : 1756993882957,
+          "duration" : 938
+        }
+      }, {
+        "uid" : "2aeca97372280570",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/28/allure/#testresult/2aeca97372280570",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756992710992,
+          "stop" : 1756992711979,
+          "duration" : 987
+        }
+      }, {
+        "uid" : "86b710ec6b3806b3",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/26/allure/#testresult/86b710ec6b3806b3",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756988751380,
+          "stop" : 1756988752417,
+          "duration" : 1037
+        }
+      }, {
+        "uid" : "d8fafa0cab3022ed",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/23/allure/#testresult/d8fafa0cab3022ed",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756986495795,
+          "stop" : 1756986496734,
+          "duration" : 939
+        }
+      }, {
+        "uid" : "5e9a890183c36f54",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/20/allure/#testresult/5e9a890183c36f54",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756985200067,
+          "stop" : 1756985201070,
+          "duration" : 1003
+        }
+      }, {
+        "uid" : "a95a7565e7bbb213",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/19/allure/#testresult/a95a7565e7bbb213",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756984198434,
+          "stop" : 1756984199439,
+          "duration" : 1005
+        }
+      }, {
+        "uid" : "c212fa9a615ea744",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/7/allure/#testresult/c212fa9a615ea744",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756980251352,
+          "stop" : 1756980252500,
+          "duration" : 1148
+        }
+      }, {
+        "uid" : "2a901c3bff34ae8b",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/6/allure/#testresult/2a901c3bff34ae8b",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756980187151,
+          "stop" : 1756980188192,
+          "duration" : 1041
+        }
+      }, {
+        "uid" : "a48b80d61124ca5d",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/5/allure/#testresult/a48b80d61124ca5d",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756979175637,
+          "stop" : 1756979176854,
+          "duration" : 1217
+        }
+      }, {
+        "uid" : "185d344873481a82",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/4/allure/#testresult/185d344873481a82",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756978888896,
+          "stop" : 1756978889846,
+          "duration" : 950
+        }
+      }, {
+        "uid" : "b9f0f79c6fd4e79f",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/3/allure/#testresult/b9f0f79c6fd4e79f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756977961548,
+          "stop" : 1756977962574,
+          "duration" : 1026
+        }
+      }, {
+        "uid" : "dd2cf5a641050197",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/2/allure/#testresult/dd2cf5a641050197",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756977610014,
+          "stop" : 1756977611086,
+          "duration" : 1072
+        }
+      } ]
+    },
+    "tags" : [ "api" ]
+  },
+  "source" : "118419decaac2de4.json",
+  "parameterValues" : [ ]
+}

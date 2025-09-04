@@ -1,0 +1,40 @@
+[ {
+  "values" : [ "allRemoteTests" ],
+  "name" : "Gradle.Task"
+}, {
+  "values" : [ "128.0" ],
+  "name" : "Web.Browser.Version"
+}, {
+  "values" : [ "https://lk3.invitro.ru" ],
+  "name" : "API.BaseUrl"
+}, {
+  "values" : [ "all" ],
+  "name" : "Test.Type"
+}, {
+  "values" : [ "okhttp/4.9.3 (Android) InvitroApp" ],
+  "name" : "API.UserAgent.Mobile"
+}, {
+  "values" : [ "https://lk3-mobile-api.invitro.ru" ],
+  "name" : "API.BaseUrl.Mobile"
+}, {
+  "values" : [ "Samsung Galaxy S23" ],
+  "name" : "Android.Device"
+}, {
+  "values" : [ "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" ],
+  "name" : "API.UserAgent"
+}, {
+  "values" : [ "1920x1080" ],
+  "name" : "Web.Browser.Size"
+}, {
+  "values" : [ "13.0" ],
+  "name" : "Android.OS.Version"
+}, {
+  "values" : [ "remote" ],
+  "name" : "Environment"
+}, {
+  "values" : [ "chrome" ],
+  "name" : "Web.Browser"
+}, {
+  "values" : [ "https://***:***@selenoid.autotests.cloud/wd/hub" ],
+  "name" : "Web.Selenoid.Url"
+} ]

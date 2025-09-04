@@ -1,0 +1,664 @@
+{
+  "uid" : "84530617e2c4d45a",
+  "name" : "[Android] Проверка отображения секций в меню для города: Казань",
+  "fullName" : "tests.android.tests.CityInfoTests.verifyCityMenuSections",
+  "historyId" : "1ebe9ad88e708a15c0477c32873a8299",
+  "time" : {
+    "start" : 1756994438485,
+    "stop" : 1756994469864,
+    "duration" : 31379
+  },
+  "description" : "Тест проверяет корректное отображение всех секций меню для различных городов",
+  "descriptionHtml" : "<p>Тест проверяет корректное отображение всех секций меню для различных городов</p>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ {
+    "name" : "setup",
+    "time" : {
+      "start" : 1756994438478,
+      "stop" : 1756994438478,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "addListener",
+    "time" : {
+      "start" : 1756994438485,
+      "stop" : 1756994457930,
+      "duration" : 19445
+    },
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "$(\"open\") ",
+      "time" : {
+        "start" : 1756994438485,
+        "stop" : 1756994457930,
+        "duration" : 19445
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "$(\"webdriver\") create()",
+        "time" : {
+          "start" : 1756994438486,
+          "stop" : 1756994457930,
+          "duration" : 19444
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 2,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  } ],
+  "testStage" : {
+    "description" : "Тест проверяет корректное отображение всех секций меню для различных городов",
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Подготавливаем приложение к работе",
+      "time" : {
+        "start" : 1756994457931,
+        "stop" : 1756994461281,
+        "duration" : 3350
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Ожидаем исчезновения лоадера",
+        "time" : {
+          "start" : 1756994457932,
+          "stop" : 1756994459581,
+          "duration" : 1649
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "$(\"AppiumBy.id: com.invitro.app:id/loader\") should([be hidden, 15 s.])",
+          "time" : {
+            "start" : 1756994457932,
+            "stop" : 1756994459580,
+            "duration" : 1648
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "Закрываем тулбар",
+        "time" : {
+          "start" : 1756994459581,
+          "stop" : 1756994461281,
+          "duration" : 1700
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "$(\"AppiumBy.id: com.invitro.app:id/toolbar/AppiumBy.id: com.invitro.app:id/backImageView\") should([be visible, 15 s.])",
+          "time" : {
+            "start" : 1756994459581,
+            "stop" : 1756994460549,
+            "duration" : 968
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "$(\"AppiumBy.id: com.invitro.app:id/toolbar/AppiumBy.id: com.invitro.app:id/backImageView\") click()",
+          "time" : {
+            "start" : 1756994460549,
+            "stop" : 1756994461281,
+            "duration" : 732
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 2,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 5,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Выбираем город: Казань",
+      "time" : {
+        "start" : 1756994461282,
+        "stop" : 1756994465942,
+        "duration" : 4660
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Выбираем город \"Казань\"",
+        "time" : {
+          "start" : 1756994461282,
+          "stop" : 1756994465942,
+          "duration" : 4660
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "$(\"AppiumBy.id: com.invitro.app:id/letter\") should be([visible, 15 s.])",
+          "time" : {
+            "start" : 1756994461283,
+            "stop" : 1756994462902,
+            "duration" : 1619
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "$(\"[text=Казань]\") scroll to()",
+          "time" : {
+            "start" : 1756994462902,
+            "stop" : 1756994464308,
+            "duration" : 1406
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "$(\"[text=Казань]\") should be([visible, 15 s.])",
+          "time" : {
+            "start" : 1756994464308,
+            "stop" : 1756994464519,
+            "duration" : 211
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "$(\"[text=Казань]\") click()",
+          "time" : {
+            "start" : 1756994464519,
+            "stop" : 1756994465941,
+            "duration" : 1422
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "city",
+          "value" : "Казань"
+        } ],
+        "stepsCount" : 4,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 5,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Отклоняем разрешение на геолокацию",
+      "time" : {
+        "start" : 1756994465942,
+        "stop" : 1756994467561,
+        "duration" : 1619
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Отклоняем разрешение на геолокацию",
+        "time" : {
+          "start" : 1756994465943,
+          "stop" : 1756994467561,
+          "duration" : 1618
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "$(\"AppiumBy.id: com.android.permissioncontroller:id/grant_dialog\") is([visible, 1.500 s.])",
+          "time" : {
+            "start" : 1756994465943,
+            "stop" : 1756994467561,
+            "duration" : 1618
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Проверяем корректность отображения секций меню",
+      "time" : {
+        "start" : 1756994467562,
+        "stop" : 1756994467565,
+        "duration" : 3
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Проверяем отображение секции \"Все результаты\" в меню",
+        "time" : {
+          "start" : 1756994467563,
+          "stop" : 1756994467563,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "section",
+          "value" : "Все результаты"
+        } ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "Проверяем отображение секции \"Динамика результатов\" в меню",
+        "time" : {
+          "start" : 1756994467563,
+          "stop" : 1756994467563,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "section",
+          "value" : "Динамика результатов"
+        } ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "Проверяем отображение секции \"Мои записи\" в меню",
+        "time" : {
+          "start" : 1756994467563,
+          "stop" : 1756994467563,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "section",
+          "value" : "Мои записи"
+        } ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "Проверяем отображение секции \"Мои заказы\" в меню",
+        "time" : {
+          "start" : 1756994467564,
+          "stop" : 1756994467564,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "section",
+          "value" : "Мои заказы"
+        } ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "Проверяем отображение секции \"Каталог анализов\" в меню",
+        "time" : {
+          "start" : 1756994467564,
+          "stop" : 1756994467564,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "section",
+          "value" : "Каталог анализов"
+        } ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "Проверяем отображение секции \"Мед. услуги, запись к врачу\" в меню",
+        "time" : {
+          "start" : 1756994467564,
+          "stop" : 1756994467564,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "section",
+          "value" : "Мед. услуги, запись к врачу"
+        } ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "Проверяем отображение секции \"Адреса\" в меню",
+        "time" : {
+          "start" : 1756994467564,
+          "stop" : 1756994467564,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "section",
+          "value" : "Адреса"
+        } ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "Проверяем отображение секции \"Выезд на дом\" в меню",
+        "time" : {
+          "start" : 1756994467565,
+          "stop" : 1756994467565,
+          "duration" : 0
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "section",
+          "value" : "Выезд на дом"
+        } ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 8,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 24,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ {
+    "name" : "addAttachments",
+    "time" : {
+      "start" : 1756994467565,
+      "stop" : 1756994469863,
+      "duration" : 2298
+    },
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "$(\"webdriver\") close()",
+      "time" : {
+        "start" : 1756994467738,
+        "stop" : 1756994468830,
+        "duration" : 1092
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    } ],
+    "attachments" : [ {
+      "uid" : "3236b3938f519878",
+      "name" : "Android Page Source (XML)",
+      "source" : "3236b3938f519878.xml",
+      "type" : "text/xml",
+      "size" : 12237
+    }, {
+      "uid" : "8f819703ddab1483",
+      "name" : "BrowserStack Video",
+      "source" : "8f819703ddab1483.html",
+      "type" : "text/html",
+      "size" : 445
+    }, {
+      "uid" : "1ed9149a343e01c3",
+      "name" : "BrowserStack Session Report",
+      "source" : "1ed9149a343e01c3.html",
+      "type" : "text/html",
+      "size" : 9685
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 1,
+    "attachmentsCount" : 3,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  }, {
+    "name" : "afterAll",
+    "time" : {
+      "start" : 1756994527665,
+      "stop" : 1756994527692,
+      "duration" : 27
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "android"
+  }, {
+    "name" : "junit.platform.uniqueid",
+    "value" : "[engine:junit-jupiter]/[class:tests.android.tests.CityInfoTests]/[test-template:verifyCityMenuSections(tests.android.models.CityInfo)]/[test-template-invocation:#1]"
+  }, {
+    "name" : "owner",
+    "value" : "germanmalykh"
+  }, {
+    "name" : "host",
+    "value" : "319ab4d25e4d"
+  }, {
+    "name" : "thread",
+    "value" : "24202@319ab4d25e4d.Test worker(1)"
+  }, {
+    "name" : "framework",
+    "value" : "junit-platform"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "package",
+    "value" : "tests.android.tests.CityInfoTests"
+  }, {
+    "name" : "testClass",
+    "value" : "tests.android.tests.CityInfoTests"
+  }, {
+    "name" : "testMethod",
+    "value" : "verifyCityMenuSections"
+  }, {
+    "name" : "suite",
+    "value" : "Android Tests"
+  }, {
+    "name" : "severity",
+    "value" : "critical"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "arg0",
+    "value" : "Казань"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "critical",
+    "owner" : "germanmalykh",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 7,
+        "unknown" : 0,
+        "total" : 7
+      },
+      "items" : [ {
+        "uid" : "2166962c0a6987f0",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/31/allure/#testresult/2166962c0a6987f0",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756993737925,
+          "stop" : 1756993764129,
+          "duration" : 26204
+        }
+      }, {
+        "uid" : "71e40800a2259b13",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/28/allure/#testresult/71e40800a2259b13",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756992561161,
+          "stop" : 1756992594569,
+          "duration" : 33408
+        }
+      }, {
+        "uid" : "a6ed5a3f644ab823",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/26/allure/#testresult/a6ed5a3f644ab823",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756988601047,
+          "stop" : 1756988628688,
+          "duration" : 27641
+        }
+      }, {
+        "uid" : "f3836ab38a9adf25",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/23/allure/#testresult/f3836ab38a9adf25",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756986353681,
+          "stop" : 1756986382305,
+          "duration" : 28624
+        }
+      }, {
+        "uid" : "fab8a3d13be79c6d",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/20/allure/#testresult/fab8a3d13be79c6d",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756985053776,
+          "stop" : 1756985086319,
+          "duration" : 32543
+        }
+      }, {
+        "uid" : "a6c50c03823d2712",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/19/allure/#testresult/a6c50c03823d2712",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756984061762,
+          "stop" : 1756984086567,
+          "duration" : 24805
+        }
+      } ]
+    },
+    "tags" : [ "android" ]
+  },
+  "source" : "84530617e2c4d45a.json",
+  "parameterValues" : [ "Казань" ]
+}

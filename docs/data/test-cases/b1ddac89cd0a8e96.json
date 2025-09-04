@@ -1,0 +1,331 @@
+{
+  "uid" : "b1ddac89cd0a8e96",
+  "name" : "[API] Получение информации о конкретном городе",
+  "fullName" : "tests.api.tests.CitiesApiTest.getCityInfoAndCheckDetails",
+  "historyId" : "bb18137b7c7096596bae67fad9995306",
+  "time" : {
+    "start" : 1756994575299,
+    "stop" : 1756994576296,
+    "duration" : 997
+  },
+  "description" : "Тест проверяет получение детальной информации о конкретном городе по его ID",
+  "descriptionHtml" : "<p>Тест проверяет получение детальной информации о конкретном городе по его ID</p>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ {
+    "name" : "setUp",
+    "time" : {
+      "start" : 1756994571382,
+      "stop" : 1756994571382,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "description" : "Тест проверяет получение детальной информации о конкретном городе по его ID",
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Выполняем запрос на получение списка всех городов",
+      "time" : {
+        "start" : 1756994575300,
+        "stop" : 1756994575926,
+        "duration" : 626
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "8e3e5e44fde70b1f",
+        "name" : "Request",
+        "source" : "8e3e5e44fde70b1f.html",
+        "type" : "text/html",
+        "size" : 6112
+      }, {
+        "uid" : "a26ab37c41c1aa50",
+        "name" : "HTTP/1.1 200 ",
+        "source" : "a26ab37c41c1aa50.html",
+        "type" : "text/html",
+        "size" : 213916
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 2,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Получаем информацию о городе",
+      "time" : {
+        "start" : 1756994575926,
+        "stop" : 1756994576293,
+        "duration" : 367
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "96c3e0abba1df3c7",
+        "name" : "Request",
+        "source" : "96c3e0abba1df3c7.html",
+        "type" : "text/html",
+        "size" : 6186
+      }, {
+        "uid" : "981c89f079130555",
+        "name" : "HTTP/1.1 200 ",
+        "source" : "981c89f079130555.html",
+        "type" : "text/html",
+        "size" : 8053
+      }, {
+        "uid" : "92898427746ef76b",
+        "name" : "ID города",
+        "source" : "92898427746ef76b.txt",
+        "type" : "text/plain",
+        "size" : 36
+      }, {
+        "uid" : "6b304bee999a3cf2",
+        "name" : "Название города",
+        "source" : "6b304bee999a3cf2.txt",
+        "type" : "text/plain",
+        "size" : 20
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 4,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Проверяем, что статус код ответа: \"200\"",
+      "time" : {
+        "start" : 1756994576293,
+        "stop" : 1756994576293,
+        "duration" : 0
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "Проверяем, что ответ заполнен согласно структуре",
+      "time" : {
+        "start" : 1756994576293,
+        "stop" : 1756994576295,
+        "duration" : 2
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 4,
+    "attachmentsCount" : 6,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ {
+    "name" : "afterAll",
+    "time" : {
+      "start" : 1756994576896,
+      "stop" : 1756994576947,
+      "duration" : 51
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "api"
+  }, {
+    "name" : "junit.platform.uniqueid",
+    "value" : "[engine:junit-jupiter]/[class:tests.api.tests.CitiesApiTest]/[method:getCityInfoAndCheckDetails()]"
+  }, {
+    "name" : "owner",
+    "value" : "germanmalykh"
+  }, {
+    "name" : "host",
+    "value" : "319ab4d25e4d"
+  }, {
+    "name" : "thread",
+    "value" : "24202@319ab4d25e4d.Test worker(1)"
+  }, {
+    "name" : "framework",
+    "value" : "junit-platform"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "package",
+    "value" : "tests.api.tests.CitiesApiTest"
+  }, {
+    "name" : "testClass",
+    "value" : "tests.api.tests.CitiesApiTest"
+  }, {
+    "name" : "testMethod",
+    "value" : "getCityInfoAndCheckDetails"
+  }, {
+    "name" : "suite",
+    "value" : "API Tests"
+  }, {
+    "name" : "severity",
+    "value" : "critical"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "critical",
+    "owner" : "germanmalykh",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 13,
+        "unknown" : 0,
+        "total" : 13
+      },
+      "items" : [ {
+        "uid" : "f47d43f843eafe0",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/31/allure/#testresult/f47d43f843eafe0",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756993876908,
+          "stop" : 1756993877863,
+          "duration" : 955
+        }
+      }, {
+        "uid" : "91a8a265e1da60c6",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/28/allure/#testresult/91a8a265e1da60c6",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756992705246,
+          "stop" : 1756992706216,
+          "duration" : 970
+        }
+      }, {
+        "uid" : "26bb79df5dd9c48f",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/26/allure/#testresult/26bb79df5dd9c48f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756988745972,
+          "stop" : 1756988747037,
+          "duration" : 1065
+        }
+      }, {
+        "uid" : "6df2a0a5edf0d381",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/23/allure/#testresult/6df2a0a5edf0d381",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756986490511,
+          "stop" : 1756986491424,
+          "duration" : 913
+        }
+      }, {
+        "uid" : "3777d6b202b0a9cc",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/20/allure/#testresult/3777d6b202b0a9cc",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756985194713,
+          "stop" : 1756985195660,
+          "duration" : 947
+        }
+      }, {
+        "uid" : "79e0dc787a592f8c",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/19/allure/#testresult/79e0dc787a592f8c",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756984192986,
+          "stop" : 1756984193923,
+          "duration" : 937
+        }
+      }, {
+        "uid" : "f42e58894a2ca17f",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/7/allure/#testresult/f42e58894a2ca17f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756980245477,
+          "stop" : 1756980246557,
+          "duration" : 1080
+        }
+      }, {
+        "uid" : "d14b91a6e0f6921",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/6/allure/#testresult/d14b91a6e0f6921",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756980181612,
+          "stop" : 1756980182651,
+          "duration" : 1039
+        }
+      }, {
+        "uid" : "1fb179d2f387a0f5",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/5/allure/#testresult/1fb179d2f387a0f5",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756979170115,
+          "stop" : 1756979171162,
+          "duration" : 1047
+        }
+      }, {
+        "uid" : "ac8532cb62ecfe5",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/4/allure/#testresult/ac8532cb62ecfe5",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756978883501,
+          "stop" : 1756978884655,
+          "duration" : 1154
+        }
+      }, {
+        "uid" : "84594d0acaf98cd9",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/3/allure/#testresult/84594d0acaf98cd9",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756977955936,
+          "stop" : 1756977956967,
+          "duration" : 1031
+        }
+      }, {
+        "uid" : "8213b05d3e2e0875",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/2/allure/#testresult/8213b05d3e2e0875",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756977604400,
+          "stop" : 1756977605379,
+          "duration" : 979
+        }
+      } ]
+    },
+    "tags" : [ "api" ]
+  },
+  "source" : "b1ddac89cd0a8e96.json",
+  "parameterValues" : [ ]
+}

@@ -1,0 +1,490 @@
+{
+  "uid" : "aed2a04667a21e56",
+  "name" : "[Android] Проверка появления заглушки при поиске несуществующего города",
+  "fullName" : "tests.android.tests.CityInfoTests.verifyCityNotFoundPlaceholder",
+  "historyId" : "361bfc57b5fad967fcf843ea6e2902a5",
+  "time" : {
+    "start" : 1756994499716,
+    "stop" : 1756994527664,
+    "duration" : 27948
+  },
+  "description" : "Тест проверяет корректное отображение заглушки 'Город не найден' в приложении",
+  "descriptionHtml" : "<p>Тест проверяет корректное отображение заглушки 'Город не найден' в приложении</p>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ {
+    "name" : "setup",
+    "time" : {
+      "start" : 1756994438478,
+      "stop" : 1756994438478,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "addListener",
+    "time" : {
+      "start" : 1756994499716,
+      "stop" : 1756994515115,
+      "duration" : 15399
+    },
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "$(\"open\") ",
+      "time" : {
+        "start" : 1756994499716,
+        "stop" : 1756994515115,
+        "duration" : 15399
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "$(\"webdriver\") create()",
+        "time" : {
+          "start" : 1756994499716,
+          "stop" : 1756994515115,
+          "duration" : 15399
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 2,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  } ],
+  "testStage" : {
+    "description" : "Тест проверяет корректное отображение заглушки 'Город не найден' в приложении",
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Подготавливаем приложение к работе",
+      "time" : {
+        "start" : 1756994515115,
+        "stop" : 1756994517165,
+        "duration" : 2050
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Ожидаем исчезновения лоадера",
+        "time" : {
+          "start" : 1756994515116,
+          "stop" : 1756994516223,
+          "duration" : 1107
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "$(\"AppiumBy.id: com.invitro.app:id/loader\") should([be hidden, 15 s.])",
+          "time" : {
+            "start" : 1756994515116,
+            "stop" : 1756994516223,
+            "duration" : 1107
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "Закрываем тулбар",
+        "time" : {
+          "start" : 1756994516223,
+          "stop" : 1756994517165,
+          "duration" : 942
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "$(\"AppiumBy.id: com.invitro.app:id/toolbar/AppiumBy.id: com.invitro.app:id/backImageView\") should([be visible, 15 s.])",
+          "time" : {
+            "start" : 1756994516223,
+            "stop" : 1756994516601,
+            "duration" : 378
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "$(\"AppiumBy.id: com.invitro.app:id/toolbar/AppiumBy.id: com.invitro.app:id/backImageView\") click()",
+          "time" : {
+            "start" : 1756994516602,
+            "stop" : 1756994517165,
+            "duration" : 563
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 2,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 5,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Выполняем поиск несуществующего города",
+      "time" : {
+        "start" : 1756994517166,
+        "stop" : 1756994524678,
+        "duration" : 7512
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Поиск города: AQA",
+        "time" : {
+          "start" : 1756994517166,
+          "stop" : 1756994524678,
+          "duration" : 7512
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "$(\"AppiumBy.id: com.invitro.app:id/letter\") should be([visible, 15 s.])",
+          "time" : {
+            "start" : 1756994517167,
+            "stop" : 1756994518748,
+            "duration" : 1581
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "$(\"AppiumBy.id: android:id/search_src_text\") should be([visible, 2 s.])",
+          "time" : {
+            "start" : 1756994518749,
+            "stop" : 1756994518934,
+            "duration" : 185
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "$(\"AppiumBy.id: android:id/search_src_text\") type(AQA)",
+          "time" : {
+            "start" : 1756994518934,
+            "stop" : 1756994524678,
+            "duration" : 5744
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "city",
+          "value" : "AQA"
+        } ],
+        "stepsCount" : 3,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 4,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Проверяем отображение заглушки",
+      "time" : {
+        "start" : 1756994524679,
+        "stop" : 1756994525544,
+        "duration" : 865
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Проверяем плейсхолдер \"Город не найден\" для города",
+        "time" : {
+          "start" : 1756994524679,
+          "stop" : 1756994525544,
+          "duration" : 865
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "$(\"AppiumBy.id: com.invitro.app:id/city_list/[text*=Город не найден]\") should(be visible)",
+          "time" : {
+            "start" : 1756994524680,
+            "stop" : 1756994525544,
+            "duration" : 864
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "placeholderText",
+          "value" : "Город не найден"
+        } ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 14,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ {
+    "name" : "addAttachments",
+    "time" : {
+      "start" : 1756994525545,
+      "stop" : 1756994527664,
+      "duration" : 2119
+    },
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "$(\"webdriver\") close()",
+      "time" : {
+        "start" : 1756994525716,
+        "stop" : 1756994526654,
+        "duration" : 938
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    } ],
+    "attachments" : [ {
+      "uid" : "1f3b8fa33351c307",
+      "name" : "Android Page Source (XML)",
+      "source" : "1f3b8fa33351c307.xml",
+      "type" : "text/xml",
+      "size" : 10800
+    }, {
+      "uid" : "516021568f24ee57",
+      "name" : "BrowserStack Video",
+      "source" : "516021568f24ee57.html",
+      "type" : "text/html",
+      "size" : 445
+    }, {
+      "uid" : "1d1254d2775a9bb5",
+      "name" : "BrowserStack Session Report",
+      "source" : "1d1254d2775a9bb5.html",
+      "type" : "text/html",
+      "size" : 9687
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 1,
+    "attachmentsCount" : 3,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  }, {
+    "name" : "afterAll",
+    "time" : {
+      "start" : 1756994527665,
+      "stop" : 1756994527692,
+      "duration" : 27
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "android"
+  }, {
+    "name" : "junit.platform.uniqueid",
+    "value" : "[engine:junit-jupiter]/[class:tests.android.tests.CityInfoTests]/[method:verifyCityNotFoundPlaceholder()]"
+  }, {
+    "name" : "owner",
+    "value" : "germanmalykh"
+  }, {
+    "name" : "host",
+    "value" : "319ab4d25e4d"
+  }, {
+    "name" : "thread",
+    "value" : "24202@319ab4d25e4d.Test worker(1)"
+  }, {
+    "name" : "framework",
+    "value" : "junit-platform"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "package",
+    "value" : "tests.android.tests.CityInfoTests"
+  }, {
+    "name" : "testClass",
+    "value" : "tests.android.tests.CityInfoTests"
+  }, {
+    "name" : "testMethod",
+    "value" : "verifyCityNotFoundPlaceholder"
+  }, {
+    "name" : "suite",
+    "value" : "Android Tests"
+  }, {
+    "name" : "severity",
+    "value" : "normal"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "owner" : "germanmalykh",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 7,
+        "unknown" : 0,
+        "total" : 7
+      },
+      "items" : [ {
+        "uid" : "d4201c3596d74dc2",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/31/allure/#testresult/d4201c3596d74dc2",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756993796234,
+          "stop" : 1756993832503,
+          "duration" : 36269
+        }
+      }, {
+        "uid" : "64a1e322f397584f",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/28/allure/#testresult/64a1e322f397584f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756992621618,
+          "stop" : 1756992652338,
+          "duration" : 30720
+        }
+      }, {
+        "uid" : "482d632e896cf0e5",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/26/allure/#testresult/482d632e896cf0e5",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756988660082,
+          "stop" : 1756988693910,
+          "duration" : 33828
+        }
+      }, {
+        "uid" : "2b4eeed8c657597d",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/23/allure/#testresult/2b4eeed8c657597d",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756986410997,
+          "stop" : 1756986443646,
+          "duration" : 32649
+        }
+      }, {
+        "uid" : "ed3754c9b75826a6",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/20/allure/#testresult/ed3754c9b75826a6",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756985115466,
+          "stop" : 1756985144878,
+          "duration" : 29412
+        }
+      }, {
+        "uid" : "95c4a97b446599ea",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/19/allure/#testresult/95c4a97b446599ea",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756984113094,
+          "stop" : 1756984141465,
+          "duration" : 28371
+        }
+      } ]
+    },
+    "tags" : [ "android" ]
+  },
+  "source" : "aed2a04667a21e56.json",
+  "parameterValues" : [ ]
+}

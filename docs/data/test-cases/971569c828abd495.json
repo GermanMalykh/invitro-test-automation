@@ -1,0 +1,288 @@
+{
+  "uid" : "971569c828abd495",
+  "name" : "[API] Проверка соответствия \"Страна\" - \"Столица\". Стране \"ARMENIA\" соответствует столица \"Ереван\"",
+  "fullName" : "tests.api.tests.CitiesApiTest.getCapitalCityCountryAndCheckDetails",
+  "historyId" : "fccc6d79df07f8aae8208ae49cd8066d",
+  "time" : {
+    "start" : 1756994573268,
+    "stop" : 1756994573946,
+    "duration" : 678
+  },
+  "description" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ {
+    "name" : "setUp",
+    "time" : {
+      "start" : 1756994571382,
+      "stop" : 1756994571382,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Выполняем запрос на получение списка всех городов",
+      "time" : {
+        "start" : 1756994573269,
+        "stop" : 1756994573925,
+        "duration" : 656
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "9453445ff82c4d45",
+        "name" : "Request",
+        "source" : "9453445ff82c4d45.html",
+        "type" : "text/html",
+        "size" : 6112
+      }, {
+        "uid" : "d2ba5a466fd91787",
+        "name" : "HTTP/1.1 200 ",
+        "source" : "d2ba5a466fd91787.html",
+        "type" : "text/html",
+        "size" : 213916
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 2,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Проверяем, что для города 'Ереван' отображается актуальная информация о признаке столицы и страны",
+      "time" : {
+        "start" : 1756994573925,
+        "stop" : 1756994573945,
+        "duration" : 20
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "849e282adab50cde",
+        "name" : "Информация о городе",
+        "source" : "849e282adab50cde.txt",
+        "type" : "application/json",
+        "size" : 65
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 2,
+    "attachmentsCount" : 3,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ {
+    "name" : "afterAll",
+    "time" : {
+      "start" : 1756994576896,
+      "stop" : 1756994576947,
+      "duration" : 51
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "api"
+  }, {
+    "name" : "junit.platform.uniqueid",
+    "value" : "[engine:junit-jupiter]/[class:tests.api.tests.CitiesApiTest]/[test-template:getCapitalCityCountryAndCheckDetails(java.lang.String, java.lang.String)]/[test-template-invocation:#2]"
+  }, {
+    "name" : "owner",
+    "value" : "germanmalykh"
+  }, {
+    "name" : "host",
+    "value" : "319ab4d25e4d"
+  }, {
+    "name" : "thread",
+    "value" : "24202@319ab4d25e4d.Test worker(1)"
+  }, {
+    "name" : "framework",
+    "value" : "junit-platform"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "package",
+    "value" : "tests.api.tests.CitiesApiTest"
+  }, {
+    "name" : "testClass",
+    "value" : "tests.api.tests.CitiesApiTest"
+  }, {
+    "name" : "testMethod",
+    "value" : "getCapitalCityCountryAndCheckDetails"
+  }, {
+    "name" : "suite",
+    "value" : "API Tests"
+  }, {
+    "name" : "severity",
+    "value" : "critical"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "arg0",
+    "value" : "Ереван"
+  }, {
+    "name" : "arg1",
+    "value" : "ARMENIA"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "critical",
+    "owner" : "germanmalykh",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 13,
+        "unknown" : 0,
+        "total" : 13
+      },
+      "items" : [ {
+        "uid" : "9a37d077e6a8b800",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/31/allure/#testresult/9a37d077e6a8b800",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756993874937,
+          "stop" : 1756993875627,
+          "duration" : 690
+        }
+      }, {
+        "uid" : "b700ce525727aacc",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/28/allure/#testresult/b700ce525727aacc",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756992702969,
+          "stop" : 1756992703844,
+          "duration" : 875
+        }
+      }, {
+        "uid" : "98a94df969b1a4af",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/26/allure/#testresult/98a94df969b1a4af",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756988744018,
+          "stop" : 1756988744651,
+          "duration" : 633
+        }
+      }, {
+        "uid" : "eb38223e638be757",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/23/allure/#testresult/eb38223e638be757",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756986488440,
+          "stop" : 1756986489129,
+          "duration" : 689
+        }
+      }, {
+        "uid" : "3900bf52b12c26af",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/20/allure/#testresult/3900bf52b12c26af",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756985192842,
+          "stop" : 1756985193503,
+          "duration" : 661
+        }
+      }, {
+        "uid" : "a5080d07abbdf313",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/19/allure/#testresult/a5080d07abbdf313",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756984191008,
+          "stop" : 1756984191649,
+          "duration" : 641
+        }
+      }, {
+        "uid" : "27068ba4a5166d1",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/7/allure/#testresult/27068ba4a5166d1",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756980243183,
+          "stop" : 1756980243982,
+          "duration" : 799
+        }
+      }, {
+        "uid" : "526d5b0cfdda747c",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/6/allure/#testresult/526d5b0cfdda747c",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756980179532,
+          "stop" : 1756980180276,
+          "duration" : 744
+        }
+      }, {
+        "uid" : "cb2d165c19361ac2",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/5/allure/#testresult/cb2d165c19361ac2",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756979167816,
+          "stop" : 1756979168816,
+          "duration" : 1000
+        }
+      }, {
+        "uid" : "33efe384246f35d4",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/4/allure/#testresult/33efe384246f35d4",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756978881474,
+          "stop" : 1756978882216,
+          "duration" : 742
+        }
+      }, {
+        "uid" : "5ed3d9c026ac3045",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/3/allure/#testresult/5ed3d9c026ac3045",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756977953806,
+          "stop" : 1756977954611,
+          "duration" : 805
+        }
+      }, {
+        "uid" : "ad46c368af3b715f",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/2/allure/#testresult/ad46c368af3b715f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756977602116,
+          "stop" : 1756977602915,
+          "duration" : 799
+        }
+      } ]
+    },
+    "tags" : [ "api" ]
+  },
+  "source" : "971569c828abd495.json",
+  "parameterValues" : [ "Ереван", "ARMENIA" ]
+}

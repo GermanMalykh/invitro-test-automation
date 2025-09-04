@@ -1,0 +1,1051 @@
+{
+  "uid" : "794e6be9852a50e1",
+  "name" : "[Android] Блокировка проверки результатов анализов при частых запросах",
+  "fullName" : "tests.android.tests.ResultsBlockingTests.verifyResultsBlocking",
+  "historyId" : "225a4ee6cc6b370c0383a27ca0cfe10b",
+  "time" : {
+    "start" : 1756994527698,
+    "stop" : 1756994571350,
+    "duration" : 43652
+  },
+  "description" : "Проверяем, что UI ограничивает количество запросов и блокирует пользователя при превышении лимита",
+  "descriptionHtml" : "<p>Проверяем, что UI ограничивает количество запросов и блокирует пользователя при превышении лимита</p>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ {
+    "name" : "setup",
+    "time" : {
+      "start" : 1756994527696,
+      "stop" : 1756994527696,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "addListener",
+    "time" : {
+      "start" : 1756994527699,
+      "stop" : 1756994545364,
+      "duration" : 17665
+    },
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "$(\"open\") ",
+      "time" : {
+        "start" : 1756994527699,
+        "stop" : 1756994545364,
+        "duration" : 17665
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "$(\"webdriver\") create()",
+        "time" : {
+          "start" : 1756994527699,
+          "stop" : 1756994545364,
+          "duration" : 17665
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 1,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 2,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  } ],
+  "testStage" : {
+    "description" : "Проверяем, что UI ограничивает количество запросов и блокирует пользователя при превышении лимита",
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Подготавливаем приложение к работе",
+      "time" : {
+        "start" : 1756994545365,
+        "stop" : 1756994548076,
+        "duration" : 2711
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Ожидаем исчезновения лоадера",
+        "time" : {
+          "start" : 1756994545366,
+          "stop" : 1756994547103,
+          "duration" : 1737
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "$(\"AppiumBy.id: com.invitro.app:id/loader\") should([be hidden, 15 s.])",
+          "time" : {
+            "start" : 1756994545366,
+            "stop" : 1756994547103,
+            "duration" : 1737
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "Закрываем тулбар",
+        "time" : {
+          "start" : 1756994547103,
+          "stop" : 1756994548076,
+          "duration" : 973
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "$(\"AppiumBy.id: com.invitro.app:id/toolbar/AppiumBy.id: com.invitro.app:id/backImageView\") should([be visible, 15 s.])",
+          "time" : {
+            "start" : 1756994547104,
+            "stop" : 1756994547447,
+            "duration" : 343
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "$(\"AppiumBy.id: com.invitro.app:id/toolbar/AppiumBy.id: com.invitro.app:id/backImageView\") click()",
+          "time" : {
+            "start" : 1756994547447,
+            "stop" : 1756994548076,
+            "duration" : 629
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 2,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 5,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Выбираем город и настраиваем разрешения в приложении",
+      "time" : {
+        "start" : 1756994548077,
+        "stop" : 1756994553318,
+        "duration" : 5241
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Выбираем город \"Волгоград\"",
+        "time" : {
+          "start" : 1756994548078,
+          "stop" : 1756994551731,
+          "duration" : 3653
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "$(\"AppiumBy.id: com.invitro.app:id/letter\") should be([visible, 15 s.])",
+          "time" : {
+            "start" : 1756994548078,
+            "stop" : 1756994549751,
+            "duration" : 1673
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "$(\"[text=Волгоград]\") scroll to()",
+          "time" : {
+            "start" : 1756994549752,
+            "stop" : 1756994550105,
+            "duration" : 353
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "$(\"[text=Волгоград]\") should be([visible, 15 s.])",
+          "time" : {
+            "start" : 1756994550105,
+            "stop" : 1756994550298,
+            "duration" : 193
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "$(\"[text=Волгоград]\") click()",
+          "time" : {
+            "start" : 1756994550298,
+            "stop" : 1756994551731,
+            "duration" : 1433
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "city",
+          "value" : "Волгоград"
+        } ],
+        "stepsCount" : 4,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "Отклоняем разрешение на геолокацию",
+        "time" : {
+          "start" : 1756994551731,
+          "stop" : 1756994553318,
+          "duration" : 1587
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "$(\"AppiumBy.id: com.android.permissioncontroller:id/grant_dialog\") is([visible, 1.500 s.])",
+          "time" : {
+            "start" : 1756994551731,
+            "stop" : 1756994553318,
+            "duration" : 1587
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 7,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Переходим к форме проверки результатов",
+      "time" : {
+        "start" : 1756994553318,
+        "stop" : 1756994557008,
+        "duration" : 3690
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Закрываем экран авторизации",
+        "time" : {
+          "start" : 1756994553319,
+          "stop" : 1756994553616,
+          "duration" : 297
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "$(\"AppiumBy.id: com.invitro.app:id/rightActionImageView\") click()",
+          "time" : {
+            "start" : 1756994553319,
+            "stop" : 1756994553616,
+            "duration" : 297
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "Выбираем пункт \"Все результаты\" в меню города",
+        "time" : {
+          "start" : 1756994553617,
+          "stop" : 1756994557008,
+          "duration" : 3391
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "$(\"AppiumBy.id: com.invitro.app:id/title_text.findBy(text \"Все результаты\")\") should be([visible, 15 s.])",
+          "time" : {
+            "start" : 1756994553617,
+            "stop" : 1756994554970,
+            "duration" : 1353
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "$(\"AppiumBy.id: com.invitro.app:id/title_text.findBy(text \"Все результаты\")\") click()",
+          "time" : {
+            "start" : 1756994554970,
+            "stop" : 1756994557008,
+            "duration" : 2038
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "menuName",
+          "value" : "Все результаты"
+        } ],
+        "stepsCount" : 2,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 5,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Вводим тестовые данные в форму",
+      "time" : {
+        "start" : 1756994557009,
+        "stop" : 1756994562229,
+        "duration" : 5220
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Устанавливаем ИНЗ: \"588767096\"",
+        "time" : {
+          "start" : 1756994557010,
+          "stop" : 1756994558393,
+          "duration" : 1383
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "$(\"AppiumBy.id: com.invitro.app:id/inzText\") set value(588767096)",
+          "time" : {
+            "start" : 1756994557010,
+            "stop" : 1756994558393,
+            "duration" : 1383
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "inz",
+          "value" : "588767096"
+        } ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "Устанавливаем дату рождения: \"30.08.1971\"",
+        "time" : {
+          "start" : 1756994558394,
+          "stop" : 1756994560351,
+          "duration" : 1957
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "$(\"AppiumBy.id: com.invitro.app:id/birthdayText\") set value(30.08.1971)",
+          "time" : {
+            "start" : 1756994558394,
+            "stop" : 1756994560351,
+            "duration" : 1957
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "birthDate",
+          "value" : "30.08.1971"
+        } ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "Устанавливаем фамилию: \"Носкова\"",
+        "time" : {
+          "start" : 1756994560352,
+          "stop" : 1756994562229,
+          "duration" : 1877
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "$(\"AppiumBy.id: com.invitro.app:id/surnameText\") set value(Носкова)",
+          "time" : {
+            "start" : 1756994560352,
+            "stop" : 1756994562229,
+            "duration" : 1877
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "surname",
+          "value" : "Носкова"
+        } ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 6,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Проверяем текст ошибки при повторных попытках проверки анализов",
+      "time" : {
+        "start" : 1756994562230,
+        "stop" : 1756994567881,
+        "duration" : 5651
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Подтверждаем проверку результатов",
+        "time" : {
+          "start" : 1756994562230,
+          "stop" : 1756994563070,
+          "duration" : 840
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "$(\"AppiumBy.id: com.invitro.app:id/create_new_appointment\") click()",
+          "time" : {
+            "start" : 1756994562230,
+            "stop" : 1756994563070,
+            "duration" : 840
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "Проверяем текст ошибки",
+        "time" : {
+          "start" : 1756994563072,
+          "stop" : 1756994564314,
+          "duration" : 1242
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "$(\"AppiumBy.id: com.invitro.app:id/textinput_error\") should have(text \"По введенным данным результатов не найдено. Осталось 4 попытки\")",
+          "time" : {
+            "start" : 1756994563072,
+            "stop" : 1756994564314,
+            "duration" : 1242
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "attempts",
+          "value" : "4"
+        } ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "Подтверждаем проверку результатов",
+        "time" : {
+          "start" : 1756994564314,
+          "stop" : 1756994564686,
+          "duration" : 372
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "$(\"AppiumBy.id: com.invitro.app:id/create_new_appointment\") click()",
+          "time" : {
+            "start" : 1756994564315,
+            "stop" : 1756994564686,
+            "duration" : 371
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "Проверяем текст ошибки",
+        "time" : {
+          "start" : 1756994564686,
+          "stop" : 1756994565520,
+          "duration" : 834
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "$(\"AppiumBy.id: com.invitro.app:id/textinput_error\") should have(text \"По введенным данным результатов не найдено. Осталось 3 попытки\")",
+          "time" : {
+            "start" : 1756994564686,
+            "stop" : 1756994565520,
+            "duration" : 834
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "attempts",
+          "value" : "3"
+        } ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "Подтверждаем проверку результатов",
+        "time" : {
+          "start" : 1756994565520,
+          "stop" : 1756994566453,
+          "duration" : 933
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "$(\"AppiumBy.id: com.invitro.app:id/create_new_appointment\") click()",
+          "time" : {
+            "start" : 1756994565520,
+            "stop" : 1756994566453,
+            "duration" : 933
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "Проверяем текст ошибки",
+        "time" : {
+          "start" : 1756994566454,
+          "stop" : 1756994566750,
+          "duration" : 296
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "$(\"AppiumBy.id: com.invitro.app:id/textinput_error\") should have(text \"По введенным данным результатов не найдено. Осталось 2 попытки\")",
+          "time" : {
+            "start" : 1756994566454,
+            "stop" : 1756994566750,
+            "duration" : 296
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "attempts",
+          "value" : "2"
+        } ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "Подтверждаем проверку результатов",
+        "time" : {
+          "start" : 1756994566750,
+          "stop" : 1756994567080,
+          "duration" : 330
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "$(\"AppiumBy.id: com.invitro.app:id/create_new_appointment\") click()",
+          "time" : {
+            "start" : 1756994566750,
+            "stop" : 1756994567080,
+            "duration" : 330
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "Проверяем текст ошибки",
+        "time" : {
+          "start" : 1756994567080,
+          "stop" : 1756994567881,
+          "duration" : 801
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "$(\"AppiumBy.id: com.invitro.app:id/textinput_error\") should have(text \"По введенным данным результатов не найдено. Осталась 1 попытка\")",
+          "time" : {
+            "start" : 1756994567080,
+            "stop" : 1756994567881,
+            "duration" : 801
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "attempts",
+          "value" : "1"
+        } ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 16,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Проверяем отображение таймера ожидания",
+      "time" : {
+        "start" : 1756994567882,
+        "stop" : 1756994569252,
+        "duration" : 1370
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Подтверждаем проверку результатов",
+        "time" : {
+          "start" : 1756994567882,
+          "stop" : 1756994568215,
+          "duration" : 333
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "$(\"AppiumBy.id: com.invitro.app:id/create_new_appointment\") click()",
+          "time" : {
+            "start" : 1756994567882,
+            "stop" : 1756994568215,
+            "duration" : 333
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "Проверяем сообщение о таймере ожидания",
+        "time" : {
+          "start" : 1756994568215,
+          "stop" : 1756994569252,
+          "duration" : 1037
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "$(\"AppiumBy.id: com.invitro.app:id/alertMessageContainer\") should be([visible, 15 s.])",
+          "time" : {
+            "start" : 1756994568215,
+            "stop" : 1756994569076,
+            "duration" : 861
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "$(\"AppiumBy.id: com.invitro.app:id/alertMessageContainer\") should be(attribute displayed=\"true\")",
+          "time" : {
+            "start" : 1756994569076,
+            "stop" : 1756994569252,
+            "duration" : 176
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 2,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 5,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 50,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ {
+    "name" : "addAttachments",
+    "time" : {
+      "start" : 1756994569252,
+      "stop" : 1756994571350,
+      "duration" : 2098
+    },
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "$(\"webdriver\") close()",
+      "time" : {
+        "start" : 1756994569444,
+        "stop" : 1756994570282,
+        "duration" : 838
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    } ],
+    "attachments" : [ {
+      "uid" : "e77d8478b01d69ca",
+      "name" : "Android Page Source (XML)",
+      "source" : "e77d8478b01d69ca.xml",
+      "type" : "text/xml",
+      "size" : 16454
+    }, {
+      "uid" : "5f766d2bc91f269d",
+      "name" : "BrowserStack Video",
+      "source" : "5f766d2bc91f269d.html",
+      "type" : "text/html",
+      "size" : 445
+    }, {
+      "uid" : "161c4259027e5386",
+      "name" : "BrowserStack Session Report",
+      "source" : "161c4259027e5386.html",
+      "type" : "text/html",
+      "size" : 9686
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 1,
+    "attachmentsCount" : 3,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  }, {
+    "name" : "afterAll",
+    "time" : {
+      "start" : 1756994571351,
+      "stop" : 1756994571380,
+      "duration" : 29
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "android"
+  }, {
+    "name" : "junit.platform.uniqueid",
+    "value" : "[engine:junit-jupiter]/[class:tests.android.tests.ResultsBlockingTests]/[method:verifyResultsBlocking()]"
+  }, {
+    "name" : "owner",
+    "value" : "germanmalykh"
+  }, {
+    "name" : "host",
+    "value" : "319ab4d25e4d"
+  }, {
+    "name" : "thread",
+    "value" : "24202@319ab4d25e4d.Test worker(1)"
+  }, {
+    "name" : "framework",
+    "value" : "junit-platform"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "package",
+    "value" : "tests.android.tests.ResultsBlockingTests"
+  }, {
+    "name" : "testClass",
+    "value" : "tests.android.tests.ResultsBlockingTests"
+  }, {
+    "name" : "testMethod",
+    "value" : "verifyResultsBlocking"
+  }, {
+    "name" : "suite",
+    "value" : "Android Tests"
+  }, {
+    "name" : "severity",
+    "value" : "blocker"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "blocker",
+    "owner" : "germanmalykh",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 7,
+        "unknown" : 0,
+        "total" : 7
+      },
+      "items" : [ {
+        "uid" : "2fe586f4e497e78d",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/31/allure/#testresult/2fe586f4e497e78d",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756993832541,
+          "stop" : 1756993872999,
+          "duration" : 40458
+        }
+      }, {
+        "uid" : "e0ddecb340719261",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/28/allure/#testresult/e0ddecb340719261",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756992652345,
+          "stop" : 1756992700359,
+          "duration" : 48014
+        }
+      }, {
+        "uid" : "38f6692051323d41",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/26/allure/#testresult/38f6692051323d41",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756988693961,
+          "stop" : 1756988741918,
+          "duration" : 47957
+        }
+      }, {
+        "uid" : "cbb02a5a7d40c66b",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/23/allure/#testresult/cbb02a5a7d40c66b",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756986443682,
+          "stop" : 1756986486551,
+          "duration" : 42869
+        }
+      }, {
+        "uid" : "dc59dea1e6cb0269",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/20/allure/#testresult/dc59dea1e6cb0269",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756985144911,
+          "stop" : 1756985190450,
+          "duration" : 45539
+        }
+      }, {
+        "uid" : "3d60cbe1f50c762e",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/19/allure/#testresult/3d60cbe1f50c762e",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756984141511,
+          "stop" : 1756984188788,
+          "duration" : 47277
+        }
+      } ]
+    },
+    "tags" : [ "android" ]
+  },
+  "source" : "794e6be9852a50e1.json",
+  "parameterValues" : [ ]
+}

@@ -1,0 +1,288 @@
+{
+  "uid" : "daa808e5666cc652",
+  "name" : "[API] Проверка соответствия \"Страна\" - \"Столица\". Стране \"RUSSIA\" соответствует столица \"Москва\"",
+  "fullName" : "tests.api.tests.CitiesApiTest.getCapitalCityCountryAndCheckDetails",
+  "historyId" : "828337f9ec50b26413c630f5e1f04e66",
+  "time" : {
+    "start" : 1756994572468,
+    "stop" : 1756994573262,
+    "duration" : 794
+  },
+  "description" : "",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : false,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ {
+    "name" : "setUp",
+    "time" : {
+      "start" : 1756994571382,
+      "stop" : 1756994571382,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Выполняем запрос на получение списка всех городов",
+      "time" : {
+        "start" : 1756994572470,
+        "stop" : 1756994573207,
+        "duration" : 737
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "3095a24a90474c8c",
+        "name" : "Request",
+        "source" : "3095a24a90474c8c.html",
+        "type" : "text/html",
+        "size" : 6112
+      }, {
+        "uid" : "72a6460b18266e63",
+        "name" : "HTTP/1.1 200 ",
+        "source" : "72a6460b18266e63.html",
+        "type" : "text/html",
+        "size" : 213916
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 2,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Проверяем, что для города 'Москва' отображается актуальная информация о признаке столицы и страны",
+      "time" : {
+        "start" : 1756994573211,
+        "stop" : 1756994573261,
+        "duration" : 50
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ {
+        "uid" : "5735cb7df95f0a95",
+        "name" : "Информация о городе",
+        "source" : "5735cb7df95f0a95.txt",
+        "type" : "application/json",
+        "size" : 64
+      } ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 1,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 2,
+    "attachmentsCount" : 3,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ {
+    "name" : "afterAll",
+    "time" : {
+      "start" : 1756994576896,
+      "stop" : 1756994576947,
+      "duration" : 51
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "api"
+  }, {
+    "name" : "junit.platform.uniqueid",
+    "value" : "[engine:junit-jupiter]/[class:tests.api.tests.CitiesApiTest]/[test-template:getCapitalCityCountryAndCheckDetails(java.lang.String, java.lang.String)]/[test-template-invocation:#1]"
+  }, {
+    "name" : "owner",
+    "value" : "germanmalykh"
+  }, {
+    "name" : "host",
+    "value" : "319ab4d25e4d"
+  }, {
+    "name" : "thread",
+    "value" : "24202@319ab4d25e4d.Test worker(1)"
+  }, {
+    "name" : "framework",
+    "value" : "junit-platform"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "package",
+    "value" : "tests.api.tests.CitiesApiTest"
+  }, {
+    "name" : "testClass",
+    "value" : "tests.api.tests.CitiesApiTest"
+  }, {
+    "name" : "testMethod",
+    "value" : "getCapitalCityCountryAndCheckDetails"
+  }, {
+    "name" : "suite",
+    "value" : "API Tests"
+  }, {
+    "name" : "severity",
+    "value" : "critical"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ {
+    "name" : "arg0",
+    "value" : "Москва"
+  }, {
+    "name" : "arg1",
+    "value" : "RUSSIA"
+  } ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "critical",
+    "owner" : "germanmalykh",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 13,
+        "unknown" : 0,
+        "total" : 13
+      },
+      "items" : [ {
+        "uid" : "e2283a80ebf6f9c2",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/31/allure/#testresult/e2283a80ebf6f9c2",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756993874132,
+          "stop" : 1756993874933,
+          "duration" : 801
+        }
+      }, {
+        "uid" : "acd02300e7b3d0cb",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/28/allure/#testresult/acd02300e7b3d0cb",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756992701778,
+          "stop" : 1756992702925,
+          "duration" : 1147
+        }
+      }, {
+        "uid" : "233e16debbb6114c",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/26/allure/#testresult/233e16debbb6114c",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756988743050,
+          "stop" : 1756988744015,
+          "duration" : 965
+        }
+      }, {
+        "uid" : "ad1dd1a3d29ff76e",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/23/allure/#testresult/ad1dd1a3d29ff76e",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756986487645,
+          "stop" : 1756986488437,
+          "duration" : 792
+        }
+      }, {
+        "uid" : "ea32b71c843f232c",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/20/allure/#testresult/ea32b71c843f232c",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756985192023,
+          "stop" : 1756985192838,
+          "duration" : 815
+        }
+      }, {
+        "uid" : "df1dcc9a74fd0820",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/19/allure/#testresult/df1dcc9a74fd0820",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756984189995,
+          "stop" : 1756984191002,
+          "duration" : 1007
+        }
+      }, {
+        "uid" : "9b4b61b3c0c3b807",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/7/allure/#testresult/9b4b61b3c0c3b807",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756980242175,
+          "stop" : 1756980243156,
+          "duration" : 981
+        }
+      }, {
+        "uid" : "4d7b966133f0669a",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/6/allure/#testresult/4d7b966133f0669a",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756980178612,
+          "stop" : 1756980179500,
+          "duration" : 888
+        }
+      }, {
+        "uid" : "da3ef2ecdf0ef161",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/5/allure/#testresult/da3ef2ecdf0ef161",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756979166920,
+          "stop" : 1756979167807,
+          "duration" : 887
+        }
+      }, {
+        "uid" : "e2505ef4d9dd146e",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/4/allure/#testresult/e2505ef4d9dd146e",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756978880497,
+          "stop" : 1756978881456,
+          "duration" : 959
+        }
+      }, {
+        "uid" : "8e079b30396f20fc",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/3/allure/#testresult/8e079b30396f20fc",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756977952951,
+          "stop" : 1756977953797,
+          "duration" : 846
+        }
+      }, {
+        "uid" : "fbb6af3dbb105760",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/2/allure/#testresult/fbb6af3dbb105760",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756977601013,
+          "stop" : 1756977602107,
+          "duration" : 1094
+        }
+      } ]
+    },
+    "tags" : [ "api" ]
+  },
+  "source" : "daa808e5666cc652.json",
+  "parameterValues" : [ "Москва", "RUSSIA" ]
+}

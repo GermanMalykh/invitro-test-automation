@@ -1,0 +1,943 @@
+{
+  "uid" : "bd575676b9f5e372",
+  "name" : "[Web] Выбор офиса для сдачи анализов и проверка деталей заказа",
+  "fullName" : "tests.web.tests.CartConfigurationTest.choosingOfficeOrderInCartAndCheckOrderDetails",
+  "historyId" : "171e9a2157dad9d6e646b3b688e8dbfb",
+  "time" : {
+    "start" : 1756994067968,
+    "stop" : 1756994085940,
+    "duration" : 17972
+  },
+  "description" : "Тест проверяет процесс выбора медицинского офиса для сдачи анализов и переход к оформлению заказа",
+  "descriptionHtml" : "<p>Тест проверяет процесс выбора медицинского офиса для сдачи анализов и переход к оформлению заказа</p>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "newBroken" : false,
+  "newPassed" : true,
+  "retriesCount" : 0,
+  "retriesStatusChange" : false,
+  "beforeStages" : [ {
+    "name" : "setup",
+    "time" : {
+      "start" : 1756994052371,
+      "stop" : 1756994052390,
+      "duration" : 19
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  }, {
+    "name" : "addListener",
+    "time" : {
+      "start" : 1756994067970,
+      "stop" : 1756994067970,
+      "duration" : 0
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "description" : "Тест проверяет процесс выбора медицинского офиса для сдачи анализов и переход к оформлению заказа",
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "Подготавливаем исходные данные для корзины",
+      "time" : {
+        "start" : 1756994067970,
+        "stop" : 1756994077015,
+        "duration" : 9045
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Добавляем куку с данными города и продукта",
+        "time" : {
+          "start" : 1756994067971,
+          "stop" : 1756994077015,
+          "duration" : 9044
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "Добавляем куку с данными о продуктах",
+          "time" : {
+            "start" : 1756994067971,
+            "stop" : 1756994076934,
+            "duration" : 8963
+          },
+          "status" : "passed",
+          "steps" : [ {
+            "name" : "$(\"open\") https://lk3.invitro.ru/assets/edna-banner-close.svg",
+            "time" : {
+              "start" : 1756994067973,
+              "stop" : 1756994076926,
+              "duration" : 8953
+            },
+            "status" : "passed",
+            "steps" : [ {
+              "name" : "$(\"webdriver\") create()",
+              "time" : {
+                "start" : 1756994067973,
+                "stop" : 1756994075502,
+                "duration" : 7529
+              },
+              "status" : "passed",
+              "steps" : [ ],
+              "attachments" : [ ],
+              "parameters" : [ ],
+              "stepsCount" : 0,
+              "attachmentsCount" : 0,
+              "shouldDisplayMessage" : false,
+              "hasContent" : false
+            } ],
+            "attachments" : [ ],
+            "parameters" : [ ],
+            "stepsCount" : 1,
+            "attachmentsCount" : 0,
+            "shouldDisplayMessage" : false,
+            "hasContent" : true
+          } ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 2,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : true
+        }, {
+          "name" : "Добавляем куку с данными города",
+          "time" : {
+            "start" : 1756994076934,
+            "stop" : 1756994077015,
+            "duration" : 81
+          },
+          "status" : "passed",
+          "steps" : [ {
+            "name" : "$(\"open\") https://lk3.invitro.ru/assets/edna-banner-close.svg",
+            "time" : {
+              "start" : 1756994076934,
+              "stop" : 1756994077008,
+              "duration" : 74
+            },
+            "status" : "passed",
+            "steps" : [ ],
+            "attachments" : [ ],
+            "parameters" : [ ],
+            "stepsCount" : 0,
+            "attachmentsCount" : 0,
+            "shouldDisplayMessage" : false,
+            "hasContent" : false
+          } ],
+          "attachments" : [ ],
+          "parameters" : [ {
+            "name" : "cityId",
+            "value" : "9e4c02c6-274b-41e9-80bb-7f5d3359a463"
+          } ],
+          "stepsCount" : 1,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : true
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "cityId",
+          "value" : "9e4c02c6-274b-41e9-80bb-7f5d3359a463"
+        } ],
+        "stepsCount" : 5,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 6,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Переходим в корзину",
+      "time" : {
+        "start" : 1756994077015,
+        "stop" : 1756994078404,
+        "duration" : 1389
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Открываем адрес: \"https://lk3.invitro.ru/cart\"",
+        "time" : {
+          "start" : 1756994077015,
+          "stop" : 1756994078404,
+          "duration" : 1389
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "$(\"open\") https://lk3.invitro.ru/cart",
+          "time" : {
+            "start" : 1756994077016,
+            "stop" : 1756994078404,
+            "duration" : 1388
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "url",
+          "value" : "https://lk3.invitro.ru/cart"
+        } ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Выбираем офис для сдачи анализов",
+      "time" : {
+        "start" : 1756994078404,
+        "stop" : 1756994081870,
+        "duration" : 3466
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Кликаем на элемент с текстом \"В ИНВИТРО\"",
+        "time" : {
+          "start" : 1756994078405,
+          "stop" : 1756994080366,
+          "duration" : 1961
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "$(\"by text: В ИНВИТРО\") scroll to()",
+          "time" : {
+            "start" : 1756994078405,
+            "stop" : 1756994080148,
+            "duration" : 1743
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "$(\"by text: В ИНВИТРО\") should be([visible, 10 s.])",
+          "time" : {
+            "start" : 1756994080148,
+            "stop" : 1756994080192,
+            "duration" : 44
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "$(\"by text: В ИНВИТРО\") click()",
+          "time" : {
+            "start" : 1756994080192,
+            "stop" : 1756994080366,
+            "duration" : 174
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "text",
+          "value" : "В ИНВИТРО"
+        } ],
+        "stepsCount" : 3,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "Кликаем на элемент с текстом \"Выбрать медицинский офис\"",
+        "time" : {
+          "start" : 1756994080366,
+          "stop" : 1756994080562,
+          "duration" : 196
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "$(\"by text: Выбрать медицинский офис\") scroll to()",
+          "time" : {
+            "start" : 1756994080367,
+            "stop" : 1756994080413,
+            "duration" : 46
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "$(\"by text: Выбрать медицинский офис\") should be([visible, 10 s.])",
+          "time" : {
+            "start" : 1756994080413,
+            "stop" : 1756994080456,
+            "duration" : 43
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "$(\"by text: Выбрать медицинский офис\") click()",
+          "time" : {
+            "start" : 1756994080457,
+            "stop" : 1756994080561,
+            "duration" : 104
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "text",
+          "value" : "Выбрать медицинский офис"
+        } ],
+        "stepsCount" : 3,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "Кликаем на элемент с текстом \"Севастополь, ул. Адмирала Октябрьского, д. 8\"",
+        "time" : {
+          "start" : 1756994080562,
+          "stop" : 1756994081286,
+          "duration" : 724
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "$(\"by text: Севастополь, ул. Адмирала Октябрьского, д. 8\") scroll to()",
+          "time" : {
+            "start" : 1756994080562,
+            "stop" : 1756994080842,
+            "duration" : 280
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "$(\"by text: Севастополь, ул. Адмирала Октябрьского, д. 8\") should be([visible, 10 s.])",
+          "time" : {
+            "start" : 1756994080842,
+            "stop" : 1756994080879,
+            "duration" : 37
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "$(\"by text: Севастополь, ул. Адмирала Октябрьского, д. 8\") click()",
+          "time" : {
+            "start" : 1756994080879,
+            "stop" : 1756994081286,
+            "duration" : 407
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "text",
+          "value" : "Севастополь, ул. Адмирала Октябрьского, д. 8"
+        } ],
+        "stepsCount" : 3,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      }, {
+        "name" : "Кликаем на элемент с текстом \"Выбрать офис\"",
+        "time" : {
+          "start" : 1756994081287,
+          "stop" : 1756994081870,
+          "duration" : 583
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "$(\"by text: Выбрать офис\") scroll to()",
+          "time" : {
+            "start" : 1756994081287,
+            "stop" : 1756994081633,
+            "duration" : 346
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "$(\"by text: Выбрать офис\") should be([visible, 10 s.])",
+          "time" : {
+            "start" : 1756994081633,
+            "stop" : 1756994081668,
+            "duration" : 35
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "$(\"by text: Выбрать офис\") click()",
+          "time" : {
+            "start" : 1756994081668,
+            "stop" : 1756994081870,
+            "duration" : 202
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "text",
+          "value" : "Выбрать офис"
+        } ],
+        "stepsCount" : 3,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 16,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Переходим к оформлению заказа",
+      "time" : {
+        "start" : 1756994081871,
+        "stop" : 1756994083104,
+        "duration" : 1233
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Кликаем на элемент с текстом \"Оформить заказ\"",
+        "time" : {
+          "start" : 1756994081871,
+          "stop" : 1756994083104,
+          "duration" : 1233
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "$(\"by text: Оформить заказ\") scroll to()",
+          "time" : {
+            "start" : 1756994081871,
+            "stop" : 1756994081914,
+            "duration" : 43
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "$(\"by text: Оформить заказ\") should be([visible, 10 s.])",
+          "time" : {
+            "start" : 1756994081914,
+            "stop" : 1756994081953,
+            "duration" : 39
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        }, {
+          "name" : "$(\"by text: Оформить заказ\") click()",
+          "time" : {
+            "start" : 1756994081953,
+            "stop" : 1756994083104,
+            "duration" : 1151
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "text",
+          "value" : "Оформить заказ"
+        } ],
+        "stepsCount" : 3,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 4,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "Проверяем детали на странице оплаты заказа",
+      "time" : {
+        "start" : 1756994083104,
+        "stop" : 1756994083132,
+        "duration" : 28
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "Проверяем наличие заголовка \"Оформление заказа\"",
+        "time" : {
+          "start" : 1756994083104,
+          "stop" : 1756994083132,
+          "duration" : 28
+        },
+        "status" : "passed",
+        "steps" : [ {
+          "name" : "$(\"h1\") should have(text \"Оформление заказа\")",
+          "time" : {
+            "start" : 1756994083104,
+            "stop" : 1756994083132,
+            "duration" : 28
+          },
+          "status" : "passed",
+          "steps" : [ ],
+          "attachments" : [ ],
+          "parameters" : [ ],
+          "stepsCount" : 0,
+          "attachmentsCount" : 0,
+          "shouldDisplayMessage" : false,
+          "hasContent" : false
+        } ],
+        "attachments" : [ ],
+        "parameters" : [ {
+          "name" : "title",
+          "value" : "Оформление заказа"
+        } ],
+        "stepsCount" : 1,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : true
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 35,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ {
+    "name" : "addAttachments",
+    "time" : {
+      "start" : 1756994083132,
+      "stop" : 1756994085939,
+      "duration" : 2807
+    },
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "$(\"clearCookies\") ",
+      "time" : {
+        "start" : 1756994083409,
+        "stop" : 1756994085878,
+        "duration" : 2469
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "$(\"webdriver\") close()",
+      "time" : {
+        "start" : 1756994085885,
+        "stop" : 1756994085939,
+        "duration" : 54
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    } ],
+    "attachments" : [ {
+      "uid" : "41cde7b03ff7a06b",
+      "name" : "Last Screenshot",
+      "source" : "41cde7b03ff7a06b.png",
+      "type" : "image/png",
+      "size" : 72439
+    }, {
+      "uid" : "7e0b9cd0c610d2e4",
+      "name" : "Page Source",
+      "source" : "7e0b9cd0c610d2e4.html",
+      "type" : "text/plain",
+      "size" : 698134
+    }, {
+      "uid" : "d43f7b92e9a14bad",
+      "name" : "Browser Console Logs",
+      "source" : "d43f7b92e9a14bad.txt",
+      "type" : "text/plain",
+      "size" : 695
+    }, {
+      "uid" : "8505b02cb9e3a370",
+      "name" : "Selenoid Video",
+      "source" : "8505b02cb9e3a370.html",
+      "type" : "text/html",
+      "size" : 193
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 2,
+    "attachmentsCount" : 4,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  }, {
+    "name" : "afterAll",
+    "time" : {
+      "start" : 1756994085946,
+      "stop" : 1756994085949,
+      "duration" : 3
+    },
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "tag",
+    "value" : "web"
+  }, {
+    "name" : "junit.platform.uniqueid",
+    "value" : "[engine:junit-jupiter]/[class:tests.web.tests.CartConfigurationTest]/[method:choosingOfficeOrderInCartAndCheckOrderDetails()]"
+  }, {
+    "name" : "owner",
+    "value" : "germanmalykh"
+  }, {
+    "name" : "host",
+    "value" : "319ab4d25e4d"
+  }, {
+    "name" : "thread",
+    "value" : "24098@319ab4d25e4d.Test worker(1)"
+  }, {
+    "name" : "framework",
+    "value" : "junit-platform"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "package",
+    "value" : "tests.web.tests.CartConfigurationTest"
+  }, {
+    "name" : "testClass",
+    "value" : "tests.web.tests.CartConfigurationTest"
+  }, {
+    "name" : "testMethod",
+    "value" : "choosingOfficeOrderInCartAndCheckOrderDetails"
+  }, {
+    "name" : "suite",
+    "value" : "Web Tests"
+  }, {
+    "name" : "severity",
+    "value" : "critical"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "critical",
+    "owner" : "germanmalykh",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 9,
+        "skipped" : 0,
+        "passed" : 11,
+        "unknown" : 0,
+        "total" : 20
+      },
+      "items" : [ {
+        "uid" : "52dc0a0fb47d69e",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/31/allure/#testresult/52dc0a0fb47d69e",
+        "status" : "broken",
+        "statusDetails" : "JdkWebSocket initial request execution error\nBuild info: version: '4.35.0', revision: '1c58e5028b'\nSystem info: os.name: 'Linux', os.arch: 'amd64', os.version: '4.19.0-26-amd64', java.version: '17.0.9'\nDriver info: driver.version: unknown",
+        "time" : {
+          "start" : 1756993903578,
+          "stop" : 1756993926493,
+          "duration" : 22915
+        }
+      }, {
+        "uid" : "98915278830bd313",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/30/allure/#testresult/98915278830bd313",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756993317722,
+          "stop" : 1756993336062,
+          "duration" : 18340
+        }
+      }, {
+        "uid" : "bf217710b3bbfba4",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/29/allure/#testresult/bf217710b3bbfba4",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756993078871,
+          "stop" : 1756993097894,
+          "duration" : 19023
+        }
+      }, {
+        "uid" : "1de3a580c69b3955",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/28/allure/#testresult/1de3a580c69b3955",
+        "status" : "broken",
+        "statusDetails" : "JdkWebSocket initial request execution error\nBuild info: version: '4.35.0', revision: '1c58e5028b'\nSystem info: os.name: 'Linux', os.arch: 'amd64', os.version: '4.19.0-26-amd64', java.version: '17.0.9'\nDriver info: driver.version: unknown",
+        "time" : {
+          "start" : 1756992746683,
+          "stop" : 1756992763856,
+          "duration" : 17173
+        }
+      }, {
+        "uid" : "52e219c82c9ed621",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/27/allure/#testresult/52e219c82c9ed621",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756992098700,
+          "stop" : 1756992106362,
+          "duration" : 7662
+        }
+      }, {
+        "uid" : "7e4d1e1fb2cc9c45",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/26/allure/#testresult/7e4d1e1fb2cc9c45",
+        "status" : "broken",
+        "statusDetails" : "JdkWebSocket initial request execution error\nBuild info: version: '4.35.0', revision: '1c58e5028b'\nSystem info: os.name: 'Linux', os.arch: 'amd64', os.version: '4.19.0-26-amd64', java.version: '17.0.9'\nDriver info: driver.version: unknown",
+        "time" : {
+          "start" : 1756988773159,
+          "stop" : 1756988786367,
+          "duration" : 13208
+        }
+      }, {
+        "uid" : "8d24eff967446425",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/25/allure/#testresult/8d24eff967446425",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756987542946,
+          "stop" : 1756987552773,
+          "duration" : 9827
+        }
+      }, {
+        "uid" : "171a14a0465365f2",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/24/allure/#testresult/171a14a0465365f2",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756987036129,
+          "stop" : 1756987044270,
+          "duration" : 8141
+        }
+      }, {
+        "uid" : "1b5f4c875e0dd51",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/23/allure/#testresult/1b5f4c875e0dd51",
+        "status" : "broken",
+        "statusDetails" : "JdkWebSocket initial request execution error\nBuild info: version: '4.35.0', revision: '1c58e5028b'\nSystem info: os.name: 'Linux', os.arch: 'amd64', os.version: '4.19.0-26-amd64', java.version: '17.0.9'\nDriver info: driver.version: unknown",
+        "time" : {
+          "start" : 1756986517651,
+          "stop" : 1756986530693,
+          "duration" : 13042
+        }
+      }, {
+        "uid" : "b0fde51a0f3d8a54",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/22/allure/#testresult/b0fde51a0f3d8a54",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756985862716,
+          "stop" : 1756985870564,
+          "duration" : 7848
+        }
+      }, {
+        "uid" : "c54b12fedd1ea16f",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/21/allure/#testresult/c54b12fedd1ea16f",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756985453364,
+          "stop" : 1756985472014,
+          "duration" : 18650
+        }
+      }, {
+        "uid" : "dd0b8a79fcba6822",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/20/allure/#testresult/dd0b8a79fcba6822",
+        "status" : "broken",
+        "statusDetails" : "JdkWebSocket initial request execution error\nBuild info: version: '4.35.0', revision: '1c58e5028b'\nSystem info: os.name: 'Linux', os.arch: 'amd64', os.version: '4.19.0-26-amd64', java.version: '17.0.9'\nDriver info: driver.version: unknown",
+        "time" : {
+          "start" : 1756985222162,
+          "stop" : 1756985244575,
+          "duration" : 22413
+        }
+      }, {
+        "uid" : "dc5f8451173ad86c",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/19/allure/#testresult/dc5f8451173ad86c",
+        "status" : "broken",
+        "statusDetails" : "JdkWebSocket initial request execution error\nBuild info: version: '4.35.0', revision: '1c58e5028b'\nSystem info: os.name: 'Linux', os.arch: 'amd64', os.version: '4.19.0-26-amd64', java.version: '17.0.9'\nDriver info: driver.version: unknown",
+        "time" : {
+          "start" : 1756984220559,
+          "stop" : 1756984243731,
+          "duration" : 23172
+        }
+      }, {
+        "uid" : "7a2e61e145d5041c",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/18/allure/#testresult/7a2e61e145d5041c",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756983500340,
+          "stop" : 1756983519532,
+          "duration" : 19192
+        }
+      }, {
+        "uid" : "bd10550cf93f15a",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/17/allure/#testresult/bd10550cf93f15a",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756983123778,
+          "stop" : 1756983146510,
+          "duration" : 22732
+        }
+      }, {
+        "uid" : "5b87818bfe8cce92",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/16/allure/#testresult/5b87818bfe8cce92",
+        "status" : "passed",
+        "time" : {
+          "start" : 1756982897800,
+          "stop" : 1756982919032,
+          "duration" : 21232
+        }
+      }, {
+        "uid" : "bcac26c49414b0b4",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/15/allure/#testresult/bcac26c49414b0b4",
+        "status" : "broken",
+        "statusDetails" : "Class not found: ",
+        "time" : {
+          "start" : 1756982419784,
+          "stop" : 1756982419790,
+          "duration" : 6
+        }
+      }, {
+        "uid" : "6f72b5961e0cf65c",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/14/allure/#testresult/6f72b5961e0cf65c",
+        "status" : "broken",
+        "statusDetails" : "Class not found: ",
+        "time" : {
+          "start" : 1756982211026,
+          "stop" : 1756982211035,
+          "duration" : 9
+        }
+      }, {
+        "uid" : "ed50f97f12c420bc",
+        "reportUrl" : "https://jenkins.autotests.cloud/job/C14_gnmalykh_invitro_java/13/allure/#testresult/ed50f97f12c420bc",
+        "status" : "broken",
+        "statusDetails" : "Class not found: ",
+        "time" : {
+          "start" : 1756982015736,
+          "stop" : 1756982015743,
+          "duration" : 7
+        }
+      } ]
+    },
+    "tags" : [ "web" ]
+  },
+  "source" : "bd575676b9f5e372.json",
+  "parameterValues" : [ ]
+}

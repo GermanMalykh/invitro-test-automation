@@ -1,0 +1,26 @@
+[2025-09-04T13:54:55.511Z] [SEVERE] https://zap/favicon.ico - Failed to load resource: net::ERR_NAME_NOT_RESOLVED
+[2025-09-04T13:54:55.511Z] [SEVERE] https://burp/favicon.ico - Failed to load resource: net::ERR_NAME_NOT_RESOLVED
+[2025-09-04T13:54:55.865Z] [WARNING] https://www.invitro.ru/edna/threadswidget-5.3.0.min.js 1 The AudioContext was not allowed to start. It must be resumed (or created) after a user gesture on the page. https://goo.gl/7K7WLu
+[2025-09-04T13:54:55.966Z] [WARNING] https://www.invitro.ru/edna/threadswidget-5.3.0.min.js 1 The AudioContext was not allowed to start. It must be resumed (or created) after a user gesture on the page. https://goo.gl/7K7WLu
+[2025-09-04T13:54:56.269Z] [WARNING] https://www.invitro.ru/local/templates/invitro_main/webrtc/js/c2c_utils.js 67 The AudioContext was not allowed to start. It must be resumed (or created) after a user gesture on the page. https://goo.gl/7K7WLu
+[2025-09-04T13:54:56.514Z] [WARNING] https://www.invitro.ru/edna/threadswidget-5.3.0.min.js 1 The AudioContext was not allowed to start. It must be resumed (or created) after a user gesture on the page. https://goo.gl/7K7WLu
+[2025-09-04T13:54:56.514Z] [WARNING] https://www.invitro.ru/edna/threadswidget-5.3.0.min.js 1 The AudioContext was not allowed to start. It must be resumed (or created) after a user gesture on the page. https://goo.gl/7K7WLu
+[2025-09-04T13:54:56.514Z] [WARNING] https://www.invitro.ru/edna/threadswidget-5.3.0.min.js 1 The AudioContext was not allowed to start. It must be resumed (or created) after a user gesture on the page. https://goo.gl/7K7WLu
+[2025-09-04T13:54:57.021Z] [SEVERE] https://www.invitro.ru/edna/threadswidget-5.3.0.min.js 1:1503735 Uncaught TypeError: Cannot read properties of undefined (reading 'send')
+[2025-09-04T13:54:57.416Z] [SEVERE] https://www.invitro.ru/edna/threadswidget-5.3.0.min.js 1:1503735 Uncaught TypeError: Cannot read properties of undefined (reading 'send')
+[2025-09-04T13:54:59.145Z] [SEVERE] https://burp/favicon.ico - Failed to load resource: net::ERR_NAME_NOT_RESOLVED
+[2025-09-04T13:54:59.145Z] [SEVERE] https://zap/favicon.ico - Failed to load resource: net::ERR_NAME_NOT_RESOLVED
+[2025-09-04T13:55:00.889Z] [SEVERE] https://www.invitro.ru/edna/threadswidget-5.3.0.min.js 1:1503735 Uncaught TypeError: Cannot read properties of undefined (reading 'send')
+[2025-09-04T13:55:01.157Z] [SEVERE] https://www.invitro.ru/edna/threadswidget-5.3.0.min.js 1:1503735 Uncaught TypeError: Cannot read properties of undefined (reading 'send')
+[2025-09-04T13:55:01.636Z] [SEVERE] https://burp/favicon.ico - Failed to load resource: net::ERR_NAME_NOT_RESOLVED
+[2025-09-04T13:55:01.636Z] [SEVERE] https://zap/favicon.ico - Failed to load resource: net::ERR_NAME_NOT_RESOLVED
+[2025-09-04T13:55:02.465Z] [SEVERE] https://www.invitro.ru/edna/threadswidget-5.3.0.min.js 1:1503735 Uncaught TypeError: Cannot read properties of undefined (reading 'send')
+[2025-09-04T13:55:02.651Z] [SEVERE] https://www.invitro.ru/edna/threadswidget-5.3.0.min.js 1:1503735 Uncaught TypeError: Cannot read properties of undefined (reading 'send')
+[2025-09-04T13:55:02.842Z] [SEVERE] https://burp/favicon.ico - Failed to load resource: net::ERR_NAME_NOT_RESOLVED
+[2025-09-04T13:55:02.842Z] [SEVERE] https://zap/favicon.ico - Failed to load resource: net::ERR_NAME_NOT_RESOLVED
+[2025-09-04T13:55:04.397Z] [SEVERE] https://www.invitro.ru/analizes/profi/svetliy/3107/ - Access to XMLHttpRequest at 'https://ab-ct.ru/fields.php' from origin 'https://www.invitro.ru' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+[2025-09-04T13:55:04.397Z] [SEVERE] https://ab-ct.ru/fields.php - Failed to load resource: net::ERR_FAILED
+[2025-09-04T13:55:04.439Z] [SEVERE] https://www.invitro.ru/edna/threadswidget-5.3.0.min.js 1:1503735 Uncaught TypeError: Cannot read properties of undefined (reading 'send')
+[2025-09-04T13:55:04.587Z] [SEVERE] https://www.invitro.ru/edna/threadswidget-5.3.0.min.js 1:1503735 Uncaught TypeError: Cannot read properties of undefined (reading 'send')
+[2025-09-04T13:55:05.788Z] [SEVERE] https://burp/favicon.ico - Failed to load resource: net::ERR_NAME_NOT_RESOLVED
+[2025-09-04T13:55:05.788Z] [SEVERE] https://zap/favicon.ico - Failed to load resource: net::ERR_NAME_NOT_RESOLVED
