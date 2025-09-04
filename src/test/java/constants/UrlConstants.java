@@ -15,7 +15,7 @@ public class UrlConstants {
     public static final String CART_URL = INVITRO_API + "/cart";
     public static final String COOKIE_CONFIG_URL = INVITRO_API + "/assets/edna-banner-close.svg";
 
-    // User Agent строки
-    public static final String USER_AGENT_DESKTOP = "Mozilla/999.999 (Macintosh; Intel Mac OS X 99_99_99) Chrome/999.999.999.999 Safari/999.999";
+    // User Agent
+    public static final String USER_AGENT_DESKTOP = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36";
     public static final String USER_AGENT_MOBILE = "okhttp/4.9.3 (Android) InvitroApp";
 }

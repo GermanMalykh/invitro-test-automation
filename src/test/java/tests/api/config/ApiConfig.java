@@ -11,11 +11,10 @@ public class ApiConfig {
 
     @BeforeAll
     public static void setUp() {
-        // Проверяем, что это действительно API тест
         String testType = System.getProperty("test.type");
-        Assumptions.assumeTrue("api".equals(testType) || "all".equals(testType) || testType == null, 
-            "Этот тест должен запускаться только для API тестов или всех тестов");
-        
+        Assumptions.assumeTrue("api".equals(testType) || "all".equals(testType) || testType == null,
+                "Этот тест должен запускаться только для API тестов или всех тестов");
+
         RestAssured.baseURI = ApiConfigConstants.BASE_URL.getValue();
     }
 
