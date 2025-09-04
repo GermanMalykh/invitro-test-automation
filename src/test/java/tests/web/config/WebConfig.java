@@ -42,7 +42,7 @@ public class WebConfig {
     @AfterEach
     void addAttachments() {
         String env = System.getProperty("env", "local");
-        
+
         // Проверяем, что драйвер существует перед попыткой сделать скриншот
         if (Selenide.webdriver().driver().hasWebDriverStarted()) {
             Attach.screenshot();
@@ -56,10 +56,7 @@ public class WebConfig {
             Selenide.clearBrowserCookies();
             Selenide.clearBrowserLocalStorage();
         }
-        
-        if (env.equals("remote")) {
-            Selenide.closeWebDriver();
-        }
+
     }
 
     @AfterAll
@@ -87,7 +84,7 @@ public class WebConfig {
     private static void setupBasicConfiguration() {
         Configuration.timeout = 10000;
         Configuration.pageLoadTimeout = 60000;
-        
+
         Configuration.browser = ConfigReader.get("browser_name");
         Configuration.browserVersion = ConfigReader.get("browser_version");
         Configuration.browserSize = ConfigReader.get("browser_size");
