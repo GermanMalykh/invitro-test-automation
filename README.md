@@ -83,43 +83,40 @@ gradle clean ${GRADLE_TASK}
 > - apiLocalTests       - для API тестов локально
 > - apiRemoteTests      - для API тестов удаленно (исключая only-local-ru-ip)
 
-### Запуск всех тестов
 
-Дополнительно добавлена возможность запуска всех тестов локально и удаленно через задачи:
-
-```bash
-# Запуск всех тестов удаленно
-./gradlew runAllTestsRemote
-
-# Запуск всех тестов локально (последовательно)
-./gradlew runAllTestsLocal
-```
-
-**Описание задач:**
-> - *runAllTestsRemote* - запуск всех тестов удаленно (API + Web + Android) с настройкой `env=remote`
->- *runAllTestsLocal* - запуск всех тестов локально (Android → Web → API) с настройкой `env=local` **последовательно**
-
-`env` - определяет среду для запуска тестов _(не относится к API)_:
-> - *local*
->- *remote*
 
 ## <a name="Конфигурационные файлы">Конфигурационные файлы</a>
 
-Возможные конфигурации окружения для тестов в проекте описаны в файлах `*.properties`\
-Значения и параметры в файлах зависят от локального или удаленного запуска тестов\
-Ниже представлен пример параметров, которые используются для WEB тестов
+Конфигурации окружения для тестов описаны в файлах `*.properties` в папке `configs/`.\
+Значения параметров зависят от типа тестов и среды запуска.
 
+### Web тесты (`configs/web/remote.properties`)
 ```properties
 browser_name=...
 browser_version=...
 browser_size=...
 selenoid_url=...
+env=...
+```
+
+### Mobile тесты (`configs/mobile/remote.properties`)
+```properties
+app=...
+device=...
+os_version=...
+browserstack.user=...
+browserstack.key=...
+env=...
 ```
 
 > - *browser_name* - Имя запускаемого браузера
->- *browser_version* - Версия запускаемого браузера
->- *browser_size* - Разрешение в котором будет запущен браузер
->- *selenoid_url* - Ссылка для удалённого/локального запуска тестов в `Selenoid`
+>- *browser_version* - Версия запускаемого браузера  
+>- *browser_size* - Разрешение браузера
+>- *selenoid_url* - URL для удалённого запуска в Selenoid
+>- *app* - Путь к APK файлу приложения
+>- *device* - Название устройства для тестирования
+>- *os_version* - Версия операционной системы
+>- *browserstack.user/key* - Данные для доступа к BrowserStack
 
 ---
 
