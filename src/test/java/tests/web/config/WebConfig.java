@@ -79,7 +79,7 @@ public class WebConfig {
                 "enableVideo", true
         ));
 
-        Configuration.remote = ConfigReader.get("selenoid_url");;
+        Configuration.remote = ConfigReader.get("selenoid_url");
         Configuration.reopenBrowserOnFail = false;
     }
 
