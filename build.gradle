@@ -170,40 +170,24 @@ tasks.register('webLocalTests', Test) {
 }
 
 tasks.register('allLocalTests', Test) {
+    dependsOn 'webLocalTests'
     useJUnitPlatform {
-        includeTags("android", "web", "api")
+        includeTags("android", "api")
     }
     systemProperty "env", "local"
     systemProperty "test.type", "all"
     classpath = configurations.androidTest + sourceSets.test.runtimeClasspath
     description = 'Запускает все тесты локально (Android, Web, API)'
-    
-    // Настраиваем порядок выполнения тестов - веб-тесты первыми
-    testLogging {
-        events "started", "skipped", "failed", "standard_error", "standard_out"
-        exceptionFormat "short"
-    }
-    
-    // Добавляем системное свойство для указания приоритета веб-тестов
-    systemProperty "test.priority", "web-first"
 }
 
 tasks.register('allRemoteTests', Test) {
+    dependsOn 'webRemoteTests'
     useJUnitPlatform {
-        includeTags("android", "web", "api")
+        includeTags("android", "api")
         excludeTags("only-local-ru-ip")
     }
     systemProperty "env", "remote"
     systemProperty "test.type", "all"
     classpath = configurations.androidTest + sourceSets.test.runtimeClasspath
     description = 'Запускает все тесты удаленно (Android, Web, API) - исключая only-local-ru-ip'
-    
-    // Настраиваем порядок выполнения тестов - веб-тесты первыми
-    testLogging {
-        events "started", "skipped", "failed", "standard_error", "standard_out"
-        exceptionFormat "short"
-    }
-    
-    // Добавляем системное свойство для указания приоритета веб-тестов
-    systemProperty "test.priority", "web-first"
 }
