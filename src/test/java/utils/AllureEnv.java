@@ -22,6 +22,10 @@ public class AllureEnv {
         String environment = System.getProperty("env", "local");
         props.setProperty("Test.Type", testType);
         props.setProperty("Environment", environment);
+        
+        // Определяем конкретную задачу на основе тегов и окружения
+        String taskName = determineTaskName(testType, environment);
+        props.setProperty("Gradle.Task", taskName);
 
         if ("local".equals(environment)) {
             props.setProperty("OS", System.getProperty("os.name") + " " + System.getProperty("os.version"));
@@ -73,6 +77,24 @@ public class AllureEnv {
         try (FileOutputStream fos = new FileOutputStream(out)) {
             props.store(fos, "Allure Environment");
         } catch (IOException ignored) {
+        }
+    }
+
+    /**
+     * Определяет название Gradle задачи на основе типа тестов и окружения
+     */
+    private static String determineTaskName(String testType, String environment) {
+        switch (testType) {
+            case "api":
+                return "api" + (environment.equals("local") ? "LocalTests" : "RemoteTests");
+            case "android":
+                return "android" + (environment.equals("local") ? "LocalTests" : "RemoteTests");
+            case "web":
+                return "web" + (environment.equals("local") ? "LocalTests" : "RemoteTests");
+            case "all":
+                return "all" + (environment.equals("local") ? "LocalTests" : "RemoteTests");
+            default:
+                return "unknown";
         }
     }
 

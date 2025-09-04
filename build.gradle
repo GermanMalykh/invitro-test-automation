@@ -95,21 +95,34 @@ test {
     doFirst {
         println "Задача 'test' не запускает тесты по умолчанию."
         println "Используйте:"
-        println "  ./gradlew allRemoteTests      - для запуска всех тестов удаленно"
+        println "  ./gradlew allRemoteTests      - для запуска всех тестов удаленно (исключая only-local-ru-ip)"
         println "  ./gradlew allLocalTests       - для запуска всех тестов локально"
         println "  ./gradlew androidRemoteTests  - для запуска Android тестов удаленно"
         println "  ./gradlew androidLocalTests   - для запуска Android тестов локально"
         println "  ./gradlew webRemoteTests      - для запуска Web тестов удаленно"
         println "  ./gradlew webLocalTests       - для запуска Web тестов локально"
-        println "  ./gradlew api                 - для API тестов"
+        println "  ./gradlew apiLocalTests       - для API тестов локально"
+        println "  ./gradlew apiRemoteTests      - для API тестов удаленно (исключая only-local-ru-ip)"
     }
 }
 
-tasks.register('api', Test) {
+tasks.register('apiLocalTests', Test) {
     useJUnitPlatform {
         includeTags("api")
     }
+    systemProperty "env", "local"
     systemProperty "test.type", "api"
+    description = 'Запускает все API тесты локально'
+}
+
+tasks.register('apiRemoteTests', Test) {
+    useJUnitPlatform {
+        includeTags("api")
+        excludeTags("only-local-ru-ip")
+    }
+    systemProperty "env", "remote"
+    systemProperty "test.type", "api"
+    description = 'Запускает API тесты удаленно (исключая only-local-ru-ip)'
 }
 
 tasks.register('androidRemoteTests', Test) {
@@ -169,9 +182,10 @@ tasks.register('allLocalTests', Test) {
 tasks.register('allRemoteTests', Test) {
     useJUnitPlatform {
         includeTags("android", "web", "api")
+        excludeTags("only-local-ru-ip")
     }
     systemProperty "env", "remote"
     systemProperty "test.type", "all"
     classpath = configurations.androidTest + sourceSets.test.runtimeClasspath
-    description = 'Запускает все тесты удаленно (Android, Web, API)'
+    description = 'Запускает все тесты удаленно (Android, Web, API) - исключая only-local-ru-ip'
 }

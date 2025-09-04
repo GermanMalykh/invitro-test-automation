@@ -25,6 +25,7 @@ import static tests.api.constants.TestData.INVALID_INZ;
 import static tests.api.constants.TestData.INVALID_LAST_NAME;
 
 @Tag("api")
+@Tag("only-local-ru-ip")
 @Owner("germanmalykh")
 @DisplayName("API Tests")
 public class UnauthResultsApiTest extends ApiConfig {
