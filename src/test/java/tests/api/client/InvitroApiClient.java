@@ -16,29 +16,12 @@ public class InvitroApiClient {
     private static final String USER_AGENT = ApiConfigConstants.USER_AGENT.getValue();
     private static final String USER_AGENT_MOBILE = ApiConfigConstants.USER_AGENT_MOBILE.getValue();
 
-    /**
-     * Установка российских заголовков для обхода геоблокировки
-     */
-    private Map<String, String> russianHeaders() {
-        Map<String, String> headers = new HashMap<>();
-        headers.put("User-Agent", USER_AGENT);
-        headers.put("Accept-Language", "ru-RU,ru;q=0.9,en;q=0.8");
-        headers.put("Accept-Encoding", "gzip, deflate, br");
-        headers.put("DNT", "1");
-        headers.put("Connection", "keep-alive");
-        headers.put("Upgrade-Insecure-Requests", "1");
-        headers.put("Sec-Fetch-Dest", "document");
-        headers.put("Sec-Fetch-Mode", "navigate");
-        headers.put("Sec-Fetch-Site", "none");
-        headers.put("Cache-Control", "max-age=0");
-        return headers;
-    }
-
     @Description("GET /site/api/unauth/results - Получение результатов анализов")
     public ValidatableResponse getResultsInfo(String birthDate,
                                               String inz,
                                               String lastName) {
-        Map<String, String> headers = russianHeaders();
+        Map<String, String> headers = new HashMap<>();
+        headers.put("User-Agent", USER_AGENT);
         Map<String, String> params = new HashMap<>();
         params.put("birthDate", birthDate);
         params.put("inz", inz);
@@ -54,15 +37,11 @@ public class InvitroApiClient {
 
     @Description("GET /v3/unauth/results - Получение результатов анализов (Mobile)")
     public ValidatableResponse getResultsInfoMobile(String birthDate,
-                                                    String inz,
-                                                    String lastName) {
-        RestAssured.baseURI = ApiConfigConstants.BASE_URL_MOBILE.getValue();
+                                              String inz,
+                                              String lastName) {
+        RestAssured.baseURI= ApiConfigConstants.BASE_URL_MOBILE.getValue();
         Map<String, String> headers = new HashMap<>();
         headers.put("User-Agent", USER_AGENT_MOBILE);
-        headers.put("Accept-Language", "ru-RU,ru;q=0.9,en;q=0.8");
-        headers.put("Accept-Encoding", "gzip, deflate, br");
-        headers.put("DNT", "1");
-        headers.put("Connection", "keep-alive");
         Map<String, String> params = new HashMap<>();
         params.put("birthDate", birthDate);
         params.put("inz", inz);
@@ -79,7 +58,8 @@ public class InvitroApiClient {
     @Description("GET /site/api/products - Получение информации о позиции")
     public ValidatableResponse getProductsInfo(String articles,
                                                String cityId) {
-        Map<String, String> headers = russianHeaders();
+        Map<String, String> headers = new HashMap<>();
+        headers.put("User-Agent", USER_AGENT);
         Map<String, String> params = new HashMap<>();
         params.put("cityId", cityId);
         if (articles != null) params.put("articles", articles);
@@ -94,7 +74,8 @@ public class InvitroApiClient {
 
     @Description("GET /site/api/cities - Получение списка всех городов")
     public ValidatableResponse getAllCities() {
-        Map<String, String> headers = russianHeaders();
+        Map<String, String> headers = new HashMap<>();
+        headers.put("User-Agent", USER_AGENT);
         return RestAssured.given(RestSpec.requestSpecification)
                 .contentType(ContentType.JSON)
                 .headers(headers)
@@ -105,7 +86,8 @@ public class InvitroApiClient {
 
     @Description("GET /site/api/cities/cityId - Получение информации о городе")
     public ValidatableResponse getCityInfo(String cityId) {
-        Map<String, String> headers = russianHeaders();
+        Map<String, String> headers = new HashMap<>();
+        headers.put("User-Agent", USER_AGENT);
         return RestAssured.given(RestSpec.requestSpecification)
                 .contentType(ContentType.JSON)
                 .headers(headers)
@@ -116,7 +98,8 @@ public class InvitroApiClient {
 
     @Description("GET /site/api/cart/offices - Получение об офисе")
     public ValidatableResponse getOfficeInfo(String cityId) {
-        Map<String, String> headers = russianHeaders();
+        Map<String, String> headers = new HashMap<>();
+        headers.put("User-Agent", USER_AGENT);
         Map<String, String> params = new HashMap<>();
         params.put("cityId", cityId);
         return RestAssured.given(RestSpec.requestSpecification)
