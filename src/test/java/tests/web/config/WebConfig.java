@@ -17,6 +17,7 @@ import utils.AllureEnv;
 
 import java.util.Map;
 import java.util.HashMap;
+import java.util.List;
 
 public class WebConfig {
 
@@ -30,6 +31,13 @@ public class WebConfig {
         String testType = System.getProperty("test.type");
         String env = System.getProperty("env", "local");
         validateTestType(testType);
+        
+        // Отключаем DevTools для удаленной среды
+        if (env.equals("remote")) {
+            System.setProperty("webdriver.chrome.silentOutput", "true");
+            System.setProperty("webdriver.chrome.verboseLogging", "false");
+        }
+        
         DesiredCapabilities capabilities = new DesiredCapabilities();
         if (env.equals("remote")) {
             setupRemoteEnvironment(capabilities);
@@ -127,9 +135,18 @@ public class WebConfig {
             chromeOptions.addArguments("--disable-logging");
             chromeOptions.addArguments("--silent");
             chromeOptions.addArguments("--log-level=3");
+            
+            // Отключаем DevTools и логирование
+            chromeOptions.setExperimentalOption("excludeSwitches", List.of("enable-logging"));
+            chromeOptions.setExperimentalOption("useAutomationExtension", false);
+            chromeOptions.setExperimentalOption("excludeSwitches", List.of("enable-automation"));
         }
 
         capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
+
+        if (env.equals("remote")) {
+            capabilities.setCapability("goog:loggingPrefs", Map.of("browser", "OFF"));
+        }
     }
 
     private static void setupFirefoxBrowser(DesiredCapabilities capabilities) {
