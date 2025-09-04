@@ -9,22 +9,42 @@ public class ConfigReader {
 
     static {
         String env = System.getProperty("env", "local");
-        String path = "src/test/resources/configs/mobile/" + env + ".properties";
-
-        try (FileInputStream fis = new FileInputStream(path)) {
-            props.load(fis);
-        } catch (IOException e) {
+        
+        // Пробуем разные пути для поиска файла
+        String[] possiblePaths = {
+            "src/test/resources/configs/mobile/" + env + ".properties",
+            "configs/mobile/" + env + ".properties",
+            System.getProperty("user.dir") + "/src/test/resources/configs/mobile/" + env + ".properties"
+        };
+        
+        boolean loaded = false;
+        Exception lastException = null;
+        
+        for (String path : possiblePaths) {
             try {
-                String classPath = "configs/mobile/" + env + ".properties";
-                var inputStream = ConfigReader.class.getClassLoader().getResourceAsStream(classPath);
-                if (inputStream != null) {
-                    props.load(inputStream);
-                } else {
-                    throw new RuntimeException("Cannot load config file: " + path + " or " + classPath, e);
+                try (FileInputStream fis = new FileInputStream(path)) {
+                    props.load(fis);
+                    loaded = true;
+                    break;
                 }
-            } catch (IOException e2) {
-                throw new RuntimeException("Cannot load config file: " + path, e);
+            } catch (IOException e) {
+                lastException = e;
+                // Попробуем через ClassLoader
+                try {
+                    var inputStream = ConfigReader.class.getClassLoader().getResourceAsStream(path);
+                    if (inputStream != null) {
+                        props.load(inputStream);
+                        loaded = true;
+                        break;
+                    }
+                } catch (IOException e2) {
+                    lastException = e2;
+                }
             }
+        }
+        
+        if (!loaded) {
+            throw new RuntimeException("Cannot load config file. Tried paths: " + String.join(", ", possiblePaths), lastException);
         }
     }
 
