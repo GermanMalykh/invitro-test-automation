@@ -42,16 +42,21 @@ public class WebConfig {
     @AfterEach
     void addAttachments() {
         String env = System.getProperty("env", "local");
-        Attach.screenshot();
-        Attach.pageSource();
-        if (!Configuration.browser.equals("firefox")) {
-            Attach.browserConsoleLogs();
+        
+        // Проверяем, что драйвер существует перед попыткой сделать скриншот
+        if (Selenide.webdriver().driver().hasWebDriverStarted()) {
+            Attach.screenshot();
+            Attach.pageSource();
+            if (!Configuration.browser.equals("firefox")) {
+                Attach.browserConsoleLogs();
+            }
+            if (env.equals("remote")) {
+                Attach.addVideo();
+            }
+            Selenide.clearBrowserCookies();
+            Selenide.clearBrowserLocalStorage();
         }
-        if (env.equals("remote")) {
-            Attach.addVideo();
-        }
-        Selenide.clearBrowserCookies();
-        Selenide.clearBrowserLocalStorage();
+        
         if (env.equals("remote")) {
             Selenide.closeWebDriver();
         }
@@ -73,7 +78,11 @@ public class WebConfig {
                 "enableVNC", true,
                 "enableVideo", true
         ));
-        Configuration.remote = ConfigReader.get("selenoid_url");
+        
+        String selenoidUrl = ConfigReader.get("selenoid_url");
+        System.err.println("DEBUG: Selenoid URL: '" + selenoidUrl + "'");
+        
+        Configuration.remote = selenoidUrl;
         Configuration.reopenBrowserOnFail = false;
     }
 
@@ -81,9 +90,16 @@ public class WebConfig {
     private static void setupBasicConfiguration() {
         Configuration.timeout = 10000;
         Configuration.pageLoadTimeout = 60000;
-        Configuration.browser = ConfigReader.get("browser_name");
-        Configuration.browserVersion = ConfigReader.get("browser_version");
-        Configuration.browserSize = ConfigReader.get("browser_size");
+        
+        String browserName = ConfigReader.get("browser_name");
+        String browserVersion = ConfigReader.get("browser_version");
+        String browserSize = ConfigReader.get("browser_size");
+        
+        System.err.println("DEBUG: Browser config - name: '" + browserName + "', version: '" + browserVersion + "', size: '" + browserSize + "'");
+        
+        Configuration.browser = browserName;
+        Configuration.browserVersion = browserVersion;
+        Configuration.browserSize = browserSize;
         Configuration.pageLoadStrategy = "eager";
     }
 
