@@ -170,8 +170,9 @@ tasks.register('webLocalTests', Test) {
 }
 
 tasks.register('allLocalTests', Test) {
+    dependsOn 'webLocalTests'
     useJUnitPlatform {
-        includeTags("android", "web", "api")
+        includeTags("android", "api")
     }
     systemProperty "env", "local"
     systemProperty "test.type", "all"
@@ -180,8 +181,9 @@ tasks.register('allLocalTests', Test) {
 }
 
 tasks.register('allRemoteTests', Test) {
+    dependsOn 'webRemoteTests'
     useJUnitPlatform {
-        includeTags("android", "web", "api")
+        includeTags("android", "api")
         excludeTags("only-local-ru-ip")
     }
     systemProperty "env", "remote"
