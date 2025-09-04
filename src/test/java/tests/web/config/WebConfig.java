@@ -42,12 +42,13 @@ public class WebConfig {
     @AfterEach
     void addAttachments() {
         String env = System.getProperty("env", "local");
-
+        
         // Проверяем, что драйвер существует перед попыткой сделать скриншот
         if (Selenide.webdriver().driver().hasWebDriverStarted()) {
             Attach.screenshot();
             Attach.pageSource();
-            if (!Configuration.browser.equals("firefox")) {
+            // Отключаем логи браузера для удаленной среды чтобы избежать WebSocket ошибок
+            if (!Configuration.browser.equals("firefox") && !env.equals("remote")) {
                 Attach.browserConsoleLogs();
             }
             if (env.equals("remote")) {
@@ -84,7 +85,7 @@ public class WebConfig {
     private static void setupBasicConfiguration() {
         Configuration.timeout = 10000;
         Configuration.pageLoadTimeout = 60000;
-
+        
         Configuration.browser = ConfigReader.get("browser_name");
         Configuration.browserVersion = ConfigReader.get("browser_version");
         Configuration.browserSize = ConfigReader.get("browser_size");
@@ -114,6 +115,19 @@ public class WebConfig {
         prefs.put("intl.accept_languages", "ru");
         prefs.put("profile.default_content_setting_values.notifications", 2);
         chromeOptions.setExperimentalOption("prefs", prefs);
+
+        // Отключаем DevTools для удаленной среды чтобы избежать WebSocket ошибок
+        String env = System.getProperty("env", "local");
+        if (env.equals("remote")) {
+            chromeOptions.addArguments("--disable-dev-shm-usage");
+            chromeOptions.addArguments("--disable-gpu");
+            chromeOptions.addArguments("--no-sandbox");
+            chromeOptions.addArguments("--disable-web-security");
+            chromeOptions.addArguments("--disable-features=VizDisplayCompositor");
+            chromeOptions.addArguments("--disable-logging");
+            chromeOptions.addArguments("--silent");
+            chromeOptions.addArguments("--log-level=3");
+        }
 
         capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
     }
