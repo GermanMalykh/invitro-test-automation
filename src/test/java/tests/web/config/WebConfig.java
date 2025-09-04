@@ -17,7 +17,6 @@ import utils.AllureEnv;
 
 import java.util.Map;
 import java.util.HashMap;
-import java.util.List;
 
 public class WebConfig {
 
@@ -32,7 +31,7 @@ public class WebConfig {
         String env = System.getProperty("env", "local");
         validateTestType(testType);
         
-        // Отключаем DevTools для удаленной среды
+        // Отключаем verbose логирование Chrome для удаленной среды
         if (env.equals("remote")) {
             System.setProperty("webdriver.chrome.silentOutput", "true");
             System.setProperty("webdriver.chrome.verboseLogging", "false");
@@ -65,7 +64,16 @@ public class WebConfig {
             Selenide.clearBrowserCookies();
             Selenide.clearBrowserLocalStorage();
         }
-
+        
+        // Принудительно закрываем браузер для удаленной среды чтобы избежать накопления WebSocket соединений
+        if (env.equals("remote")) {
+            try {
+                Selenide.closeWebDriver();
+            } catch (Exception e) {
+                // Игнорируем ошибки при закрытии браузера
+                System.out.println("Предупреждение: Не удалось закрыть браузер: " + e.getMessage());
+            }
+        }
     }
 
     @AfterAll
@@ -111,6 +119,7 @@ public class WebConfig {
 
     private static void setupChromeBrowser(DesiredCapabilities capabilities) {
         ChromeOptions chromeOptions = new ChromeOptions();
+        String env = System.getProperty("env", "local");
 
         // Аргументы командной строки
         chromeOptions.addArguments(
@@ -118,35 +127,37 @@ public class WebConfig {
                 "--accept-lang=ru",
                 "--disable-blink-features=AutomationControlled");
 
+        // Дополнительные аргументы для удаленной среды
+        if (env.equals("remote")) {
+            chromeOptions.addArguments(
+                    "--disable-dev-shm-usage",
+                    "--disable-gpu",
+                    "--no-sandbox",
+                    "--disable-web-security",
+                    "--disable-features=VizDisplayCompositor",
+                    "--disable-logging",
+                    "--silent",
+                    "--log-level=3",
+                    "--disable-background-timer-throttling",
+                    "--disable-backgrounding-occluded-windows",
+                    "--disable-renderer-backgrounding"
+            );
+            
+            // Отключаем DevTools и логирование
+            chromeOptions.setExperimentalOption("excludeSwitches", java.util.List.of("enable-logging", "enable-automation"));
+            chromeOptions.setExperimentalOption("useAutomationExtension", false);
+            
+            // Отключаем логирование браузера
+            capabilities.setCapability("goog:loggingPrefs", Map.of("browser", "OFF", "driver", "OFF"));
+        }
+
         // Настройки предпочтений
         Map<String, Object> prefs = new HashMap<>();
         prefs.put("intl.accept_languages", "ru");
         prefs.put("profile.default_content_setting_values.notifications", 2);
         chromeOptions.setExperimentalOption("prefs", prefs);
 
-        // Отключаем DevTools для удаленной среды чтобы избежать WebSocket ошибок
-        String env = System.getProperty("env", "local");
-        if (env.equals("remote")) {
-            chromeOptions.addArguments("--disable-dev-shm-usage");
-            chromeOptions.addArguments("--disable-gpu");
-            chromeOptions.addArguments("--no-sandbox");
-            chromeOptions.addArguments("--disable-web-security");
-            chromeOptions.addArguments("--disable-features=VizDisplayCompositor");
-            chromeOptions.addArguments("--disable-logging");
-            chromeOptions.addArguments("--silent");
-            chromeOptions.addArguments("--log-level=3");
-            
-            // Отключаем DevTools и логирование
-            chromeOptions.setExperimentalOption("excludeSwitches", List.of("enable-logging"));
-            chromeOptions.setExperimentalOption("useAutomationExtension", false);
-            chromeOptions.setExperimentalOption("excludeSwitches", List.of("enable-automation"));
-        }
-
         capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
-
-        if (env.equals("remote")) {
-            capabilities.setCapability("goog:loggingPrefs", Map.of("browser", "OFF"));
-        }
     }
 
     private static void setupFirefoxBrowser(DesiredCapabilities capabilities) {
