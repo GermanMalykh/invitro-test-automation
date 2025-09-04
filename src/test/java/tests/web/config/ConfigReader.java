@@ -16,7 +16,7 @@ public class ConfigReader {
             path = "configs/web/remote.properties";
         } else {
             // Для локальных запусков читаем из ресурсов
-            path = "src/test/resources/configs/web/" + env + ".properties";
+            path = "src/test/resources/configs/web/local.properties";
         }
 
         try (FileInputStream fis = new FileInputStream(path)) {

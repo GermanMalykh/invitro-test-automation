@@ -78,11 +78,8 @@ public class WebConfig {
                 "enableVNC", true,
                 "enableVideo", true
         ));
-        
-        String selenoidUrl = ConfigReader.get("selenoid_url");
-        System.err.println("DEBUG: Selenoid URL: '" + selenoidUrl + "'");
-        
-        Configuration.remote = selenoidUrl;
+
+        Configuration.remote = ConfigReader.get("selenoid_url");;
         Configuration.reopenBrowserOnFail = false;
     }
 
@@ -91,15 +88,9 @@ public class WebConfig {
         Configuration.timeout = 10000;
         Configuration.pageLoadTimeout = 60000;
         
-        String browserName = ConfigReader.get("browser_name");
-        String browserVersion = ConfigReader.get("browser_version");
-        String browserSize = ConfigReader.get("browser_size");
-        
-        System.err.println("DEBUG: Browser config - name: '" + browserName + "', version: '" + browserVersion + "', size: '" + browserSize + "'");
-        
-        Configuration.browser = browserName;
-        Configuration.browserVersion = browserVersion;
-        Configuration.browserSize = browserSize;
+        Configuration.browser = ConfigReader.get("browser_name");
+        Configuration.browserVersion = ConfigReader.get("browser_version");
+        Configuration.browserSize = ConfigReader.get("browser_size");
         Configuration.pageLoadStrategy = "eager";
     }
 
