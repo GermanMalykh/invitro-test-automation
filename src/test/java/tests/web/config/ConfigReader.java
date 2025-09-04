@@ -14,7 +14,17 @@ public class ConfigReader {
         try (FileInputStream fis = new FileInputStream(path)) {
             props.load(fis);
         } catch (IOException e) {
-            throw new RuntimeException("Cannot load config file: " + path, e);
+            try {
+                String classPath = "configs/web/" + env + ".properties";
+                var inputStream = ConfigReader.class.getClassLoader().getResourceAsStream(classPath);
+                if (inputStream != null) {
+                    props.load(inputStream);
+                } else {
+                    throw new RuntimeException("Cannot load config file: " + path + " or " + classPath, e);
+                }
+            } catch (IOException e2) {
+                throw new RuntimeException("Cannot load config file: " + path, e);
+            }
         }
     }
 
